@@ -92,7 +92,7 @@ public class Film {
 	{
 		if (o instanceof Film) {
 			Film p = (Film) o;
-			return this.idFilm == p.idFilm;
+			return (this.idFilm == p.idFilm);
 		}
 		else
 			return false;

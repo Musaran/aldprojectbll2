@@ -1,8 +1,8 @@
 package metier;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+
 
 /**
  * 
@@ -36,7 +36,7 @@ public class Vote {
 	{
 		if (o instanceof Vote) {
 			Vote p = (Vote) o;
-			return (this.film.equals(p.film)&&this.professionnel.equals(p.professionnel));
+			return ((this.film.equals(p.film))&&(this.professionnel.equals(p.professionnel)));
 		}
 		else
 			return false;
@@ -47,7 +47,22 @@ public class Vote {
 				+ professionnel + "]";
 	}
 	
-	
+	public boolean rechercheVote(Set<Vote> liste)
+	{
+		Iterator<Vote> i=liste.iterator();
+		while(i.hasNext())
+		{
+			Vote v=i.next();
+			if(this.equals(v))
+			{
+				System.out.println("existe deja");
+				return true;
+			}
+		}
+		System.out.println("n'existe pas");
+		return false;
+	}
+
 	/*
 	 * Getters and setters
 	 */
