@@ -24,8 +24,8 @@ public class Professionnel {
 	private String nom;
 	private String prenom;
 	private String adresse;
-	///la liste des votes deja effectués
-	private Set<Film> votes = new HashSet<Film>();
+	///la liste des votes deja effectués par le professionel
+	private Set<Vote> votes = new HashSet<Vote>();
 	
 	/**
 	 * Constructeur complet
@@ -96,17 +96,17 @@ public class Professionnel {
 	 * @param note la note du film
 	 * @return Vote le vote retourné
 	 */
-	public Vote faitUnVote(Film f,int note)
+	public void faitUnVote(Film f,int note)
 	{
-		Iterator<Film> i = this.votes.iterator();
-		while(i.hasNext())
+		Vote tmp=new Vote(f, this, note);
+		boolean b=tmp.rechercheVote(this.votes);
+		if(!b)
 		{
-			if(f.equals(i))
-				return null;
-			i.next();
+			System.out.println("Vote ajouté pour "+f.getTitre());
+			this.votes.add(tmp);
+			
 		}
-		this.votes.add(f);
-		return new Vote(f, this, note);
+		
 	}
 	
 
@@ -156,6 +156,9 @@ public class Professionnel {
 	}
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+	public Set<Vote> getVotes() {
+		return votes;
 	}
 	
 	

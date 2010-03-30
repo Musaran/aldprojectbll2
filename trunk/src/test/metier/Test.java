@@ -34,7 +34,7 @@ public class Test extends TestCase {
 			 chuckNorris.toString());
 	 
 	 Film armaggeddon = new Film(1, "armaggeddon", null, 100, "lol", 10);
-	 Film lol = new Film(4, "armaggeddon", null, 100, "lol", 10);
+	 Film lol = new Film(4, "lol", null, 100, "lol", 10);
 	 assertEquals("Film [cout=100.0, dateSortie=null, idFilm=1, isValidateFilm=0, listDesActeurs=[], listeDesProducteurs=[], listeDesRealisateurs=[], listeRecompense=[], nombreRequetes=10, noteMoyenne=0.0," +
 	 		" synopsis=lol, titre=armaggeddon]", armaggeddon.toString()); 
 	 
@@ -66,18 +66,14 @@ public class Test extends TestCase {
 	 
 	 // test des votes
 	 
-	 Vote v3 = cinema.faitUnVote(armaggeddon, 7);
-	 assertEquals(v3.getNote(),7);
+	 cinema.faitUnVote(armaggeddon, 7);
 
-	 Vote v4 = cinema.faitUnVote(lol, 7);
-	 assertEquals(v4.getNote(),7);
+
+	 cinema.faitUnVote(lol, 7);
+	 cinema.faitUnVote(lol, 7);
 	 
-	 Vote v6 = cinema.faitUnVote(lol, 7);
-	 assertEquals(v6.getNote(),7);
-	 
-	 Vote v5 = cinema.faitUnVote(lol, 7);
-	 assertEquals(v5.getNote(),7);
-	 
+	 assertEquals(cinema.getVotes().size(),2);
+
 	 ///test des recompenses
 	 
 	 
