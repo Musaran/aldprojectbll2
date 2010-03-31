@@ -4,7 +4,7 @@ package metier;
  * 
  * @author jerome
  * La classe qui fait la jointure entre la récompense et une Personne
- * Elle stock toutes les recompenses d'une Personne
+ * Elle stocke la récompense qu'une personne a obtenue
  *
  */
 
