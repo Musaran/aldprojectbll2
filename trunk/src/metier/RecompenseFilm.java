@@ -4,7 +4,7 @@ package metier;
  * 
  * @author jerome
  * La classe qui fait la jointure entre la récompense et un film
- * Elle stock toutes les recopenses d'un film
+ * Elle stocke la récompense qu'un film a obtenu
  *
  */
 
