@@ -13,7 +13,7 @@ import metier.Personne;
 
 public interface DAOPersonne {
 
-	Personne			get(int code)					throws Exception;
+	Personne			get(int id)					throws Exception;
 	/// liste des personne ayant pour nom le paramètre donné
 	Set<Personne>		load(String nom)				throws Exception;
 	/// liste de toutes les personnes 

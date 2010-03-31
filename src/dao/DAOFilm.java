@@ -11,7 +11,7 @@ import metier.Film;
  */
 public interface DAOFilm {
 
-	Film			get(int code)				throws Exception;
+	Film			get(int id)				throws Exception;
 	/// liste des Film ayant pour titre le paramètre donné
 	Set<Film>		load(String titre)			throws Exception;
 	/// liste de toutes les Films 
