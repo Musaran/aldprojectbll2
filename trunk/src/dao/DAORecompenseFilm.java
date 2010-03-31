@@ -2,7 +2,10 @@ package dao;
 
 import java.util.Set;
 
+import metier.Film;
+import metier.Recompense;
 import metier.RecompenseFilm;
+import metier.TypeRecompenseFilm;
 /**
  * 
  * @author Matthieu
@@ -11,7 +14,8 @@ import metier.RecompenseFilm;
  */
 public interface DAORecompenseFilm {
 
-	//RecompenseFilm			get(int code)								throws Exception;
+	RecompenseFilm			get(Film film, Recompense recompense,
+			TypeRecompenseFilm typeRecompense, int annee)				throws Exception;
 
 	/// liste de toutes les RecompenseFilms 
 	Set<RecompenseFilm>		loadAll()									throws Exception;
