@@ -11,9 +11,8 @@ import metier.RecompenseFilm;
  */
 public interface DAORecompenseFilm {
 
-	RecompenseFilm			get(int code)								throws Exception;
-	/// liste des RecompenseFilm ayant pour titre le paramètre donné
-	Set<RecompenseFilm>		load(String titre)							throws Exception;
+	//RecompenseFilm			get(int code)								throws Exception;
+
 	/// liste de toutes les RecompenseFilms 
 	Set<RecompenseFilm>		loadAll()									throws Exception;
 	void					save(RecompenseFilm recompenseFilm)			throws Exception;
