@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * 
  * @author jerome
- * C'est la classe qui stock la note qu'un Professionnel à donné à un Film
+ * C'est la classe qui stocke la note qu'un Professionnel à donné à un Film
  *
  */
 
