@@ -1,5 +1,7 @@
 package test.metier;
 
+import java.util.Set;
+
 import junit.framework.TestCase;
 import metier.Film;
 import metier.Personne;
@@ -75,7 +77,8 @@ public class Test extends TestCase {
 	 assertEquals(cinema.getVotes().size(),2);
 
 	 ///test des recompenses
-	 DAOHibernateFilm daof= new DAOHibernateFilm();
-	 System.out.println(daof.get(2).getTitre());
+	 //DAOHibernateFilm daof= new DAOHibernateFilm();
+	 //Set<Film> set=daof.load("lo");
+	 //System.out.println(set.size());
 	}
 }
