@@ -27,7 +27,7 @@ public class Film {
 	private String synopsis;
 	private int nombreRequetes;
 	/// données concernant les membres de l'équipe
-	private Set<Personne> listeDesActeurs = new HashSet<Personne>();
+	private Set<Personne> listDesActeurs = new HashSet<Personne>();
 	private Set<Personne> listeDesRealisateurs = new HashSet<Personne>();
 	private Set<Personne> listeDesProducteurs = new HashSet<Personne>();
 	/// données concernant les recompense
@@ -36,6 +36,7 @@ public class Film {
 	private double noteMoyenne;
 	/// données concernant l acceptation
 	private int isValidateFilm;
+	
 	
 	
 	public Film() {
@@ -69,20 +70,21 @@ public class Film {
 	 * @param synopsis
 	 * @param requete
 	 */
-	public Film( String titre, Date sortie, double cout, String synopsis, int requete)
+	public Film( String titre, Date sortie, double cout, String synopsis, int requete, String photo)
 	{
 		this.titre = titre;
 		this.dateSortie = sortie;
 		this.cout = cout;
 		this.synopsis = synopsis;
 		this.nombreRequetes = requete;
+		this.affiche = photo;
 	}
 	
 	@Override
 	public String toString() {
 		return "Film [cout=" + cout + ", dateSortie=" + dateSortie
 				+ ", idFilm=" + idFilm + ", isValidateFilm=" + isValidateFilm
-				+ ", listDesActeurs=" + listeDesActeurs
+				+ ", listDesActeurs=" + listDesActeurs
 				+ ", listeDesProducteurs=" + listeDesProducteurs
 				+ ", listeDesRealisateurs=" + listeDesRealisateurs
 				+ ", listeRecompense=" + listeRecompense + ", nombreRequetes="
@@ -108,8 +110,8 @@ public class Film {
 	 */
 	public void ajoutPersonneActeur(Personne p)
 	{
-		if(!this.recherchePersonne(p, this.listeDesActeurs))
-			this.listeDesActeurs.add(p);
+		if(!this.recherchePersonne(p, this.listDesActeurs))
+			this.listDesActeurs.add(p);
 		if(!(p.rechercheFilm(this, p.getFilmographieActeur())))
 			p.getFilmographieActeur().add(this);		
 	}
@@ -217,10 +219,10 @@ public class Film {
 		this.nombreRequetes = nombreRequetes;
 	}
 	public Set<Personne> getListDesActeurs() {
-		return listeDesActeurs;
+		return listDesActeurs;
 	}
 	public void setListDesActeurs(Set<Personne> listDesActeurs) {
-		this.listeDesActeurs = listDesActeurs;
+		this.listDesActeurs = listDesActeurs;
 	}
 	public Set<Personne> getListeDesRealisateurs() {
 		return listeDesRealisateurs;
