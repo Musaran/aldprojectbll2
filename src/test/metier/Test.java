@@ -9,6 +9,7 @@ import metier.RecompenseFilm;
 import metier.RecompensePersonne;
 import metier.TypeRecompenseFilm;
 import metier.TypeRecompensePersonne;
+import dao.hibernate.DAOHibernateFilm;
 
 public class Test extends TestCase {
 
@@ -74,6 +75,7 @@ public class Test extends TestCase {
 	 assertEquals(cinema.getVotes().size(),2);
 
 	 ///test des recompenses
-	 
+	 DAOHibernateFilm daof= new DAOHibernateFilm();
+	 System.out.println(daof.get(2).getTitre());
 	}
 }

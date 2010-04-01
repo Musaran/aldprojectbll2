@@ -37,6 +37,11 @@ public class Film {
 	/// données concernant l acceptation
 	private int isValidateFilm;
 	
+	
+	public Film() {
+		super();
+	}
+
 	/**
 	 * Constructeur avec tous les champs
 	 * @param id
