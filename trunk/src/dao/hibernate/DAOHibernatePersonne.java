@@ -52,6 +52,9 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 	@Override
 	public void saveOrUpdate(Personne personne) throws Exception {
 		// TODO Auto-generated method stub
+		Session session = connect();
+		session.update(personne);
+		close(session);
 		
 	}
 

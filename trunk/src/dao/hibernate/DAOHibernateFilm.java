@@ -43,10 +43,10 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	}
 	/// liste de tous les films
 	@Override
-	public Set<Film> loadAll() throws Exception {
+	public ArrayList<Film> loadAll() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		Set<Film> set=(Set<Film>) session.createQuery("FROM film").list();	
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film").list();	
 		close(session);	
 		return set;
 	}
@@ -70,6 +70,9 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	@Override
 	public void saveOrUpdate(Film film) throws Exception {
 		// TODO Auto-generated method stub
+		Session session = connect();
+		session.update(film);
+		close(session);
 		
 	}
 
