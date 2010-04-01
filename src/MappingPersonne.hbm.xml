@@ -12,14 +12,14 @@
 	<!-- Définition des attributs de la classe -->
 	<property name="nom" type="string" column="nom"/>
 	<property name="prenom" type="string" column="prenom"/>
-	<property name="dateDeNaissance" type="timestamp" column="dateNaissance"/>
+	<property name="dateDeNaissance" type="date" column="dateNaissance"/>
 	<property name="biographie" type="string" column="biographie"/>
 	<property name="photo" type="string" column="photopersonne"/>
 	<property name="nombreRequetes" type="int" column="nombrerequetepersonne"/>
 	<property name="isValidatePersonne" type="int" column="isvalidatepersonne"/>
 	
 	<!-- Définition des relations -->
-	<set name="filmographieActeur" table="estunacteur" lazy="false">
+	<set name="filmographieActeur" table="estunacteur" inverse="true" lazy="false">
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
 	</set>
