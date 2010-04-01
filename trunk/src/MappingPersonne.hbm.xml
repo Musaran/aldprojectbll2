@@ -23,6 +23,16 @@
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
 	</set>
+	<!-- Définition des relations -->
+	<set name="filmographieRealisateur" table="estunrealisateur" inverse="true" lazy="false">
+		<key column="idpersonne"/>
+		<many-to-many class="metier.Film" column="idfilm"/>
+	</set>
+	<!-- Définition des relations -->
+	<set name="filmographieProducteur" table="estunproducteur" inverse="true" lazy="false">
+		<key column="idpersonne"/>
+		<many-to-many class="metier.Film" column="idfilm"/>
+	</set>
 
 </class>
 
