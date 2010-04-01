@@ -19,6 +19,9 @@ public class RecompensePersonne {
 	private int isValidateRecompense;
 	
 	
+	public RecompensePersonne() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * Constructeur complet
 	 * @param personne

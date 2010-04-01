@@ -33,6 +33,11 @@ public class Personne {
 	private int isValidatePersonne;
 	
 	
+	public Personne() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	/**
 	 * Constructeur avec tous les paramêtres
 	 * @param idPersonne

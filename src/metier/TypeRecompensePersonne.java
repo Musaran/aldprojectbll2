@@ -14,6 +14,9 @@ public class TypeRecompensePersonne {
 	private String nomTypeRecompensePersonne;
 	
 	
+	public TypeRecompensePersonne() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * Constructeur sans l'id
 	 * @param nomTypeRecompensePersonne

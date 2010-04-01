@@ -14,6 +14,10 @@ public class Recompense {
 	private String nomRecompense;
 	
 	
+	public Recompense() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Constructeur complet
 	 * @param idRecompense

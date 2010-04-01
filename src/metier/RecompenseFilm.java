@@ -19,6 +19,10 @@ public class RecompenseFilm {
 	private int isValidateRecompense;
 	
 	
+	public RecompenseFilm() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Constructeur complet
 	 * @param film
