@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+							"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="metier.Personne" lazy="false" table="personne">
+
+	<!-- Définition de la clé primaire -->
+	<id name="idPersonne" column="idpersonne" type="integer">
+		<generator class="increment" />
+	</id>
+	
+	<!-- Définition des attributs de la classe -->
+	<property name="nom" type="string" column="nom"/>
+	<property name="prenom" type="string" column="prenom"/>
+	<property name="dateDeNaissance" type="timestamp" column="dateNaissance"/>
+	<property name="biographie" type="string" column="biographie"/>
+	<property name="photo" type="string" column="photopersonne"/>
+	<property name="nombreRequetes" type="int" column="nombrerequetepersonne"/>
+	<property name="isValidatePersonne" type="int" column="isvalidatepersonne"/>
+	
+	<!-- Définition des relations -->
+	<set name="filmographieActeur" table="estunacteur" lazy="false">
+		<key column="idpersonne"/>
+		<many-to-many class="metier.Film" column="idfilm"/>
+	</set>
+
+</class>
+
+</hibernate-mapping>
