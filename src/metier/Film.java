@@ -27,7 +27,7 @@ public class Film {
 	private String synopsis;
 	private int nombreRequetes;
 	/// données concernant les membres de l'équipe
-	private Set<Personne> listDesActeurs = new HashSet<Personne>();
+	private Set<Personne> listeDesActeurs = new HashSet<Personne>();
 	private Set<Personne> listeDesRealisateurs = new HashSet<Personne>();
 	private Set<Personne> listeDesProducteurs = new HashSet<Personne>();
 	/// données concernant les recompense
@@ -82,7 +82,7 @@ public class Film {
 	public String toString() {
 		return "Film [cout=" + cout + ", dateSortie=" + dateSortie
 				+ ", idFilm=" + idFilm + ", isValidateFilm=" + isValidateFilm
-				+ ", listDesActeurs=" + listDesActeurs
+				+ ", listDesActeurs=" + listeDesActeurs
 				+ ", listeDesProducteurs=" + listeDesProducteurs
 				+ ", listeDesRealisateurs=" + listeDesRealisateurs
 				+ ", listeRecompense=" + listeRecompense + ", nombreRequetes="
@@ -108,8 +108,8 @@ public class Film {
 	 */
 	public void ajoutPersonneActeur(Personne p)
 	{
-		if(!this.recherchePersonne(p, this.listDesActeurs))
-			this.listDesActeurs.add(p);
+		if(!this.recherchePersonne(p, this.listeDesActeurs))
+			this.listeDesActeurs.add(p);
 		if(!(p.rechercheFilm(this, p.getFilmographieActeur())))
 			p.getFilmographieActeur().add(this);		
 	}
@@ -217,10 +217,10 @@ public class Film {
 		this.nombreRequetes = nombreRequetes;
 	}
 	public Set<Personne> getListDesActeurs() {
-		return listDesActeurs;
+		return listeDesActeurs;
 	}
 	public void setListDesActeurs(Set<Personne> listDesActeurs) {
-		this.listDesActeurs = listDesActeurs;
+		this.listeDesActeurs = listDesActeurs;
 	}
 	public Set<Personne> getListeDesRealisateurs() {
 		return listeDesRealisateurs;

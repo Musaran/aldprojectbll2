@@ -17,6 +17,13 @@
 	<property name="noteMoyenne" type="double" column="notemoyenne"/>
 	<property name="isValidateFilm" type="integer" column="isvalidatefilm"/>
 	
+	<!-- Définition des relations -->
+	<set name="listeDesActeurs" table="estunacteur" inverse="true" lazy="false">
+		<key column="idfilm"/>
+		<many-to-many class="metier.Personne" column="idpersonne"/>
+	</set>
+	
+	
 </class>
 
 </hibernate-mapping>
