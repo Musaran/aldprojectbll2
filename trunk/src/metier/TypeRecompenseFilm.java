@@ -13,6 +13,10 @@ public class TypeRecompenseFilm {
 	private int idTypeRecompenseFilm;
 	private String nomTypeRecompenseFilm;
 	
+	
+	public TypeRecompenseFilm() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * Constructeur sans l'id
 	 * @param nomTypeRecopenseFilm

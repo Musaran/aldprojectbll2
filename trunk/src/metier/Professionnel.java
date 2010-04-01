@@ -26,6 +26,10 @@ public class Professionnel {
 	///la liste des votes deja effectués par le professionel
 	private Set<Vote> votes = new HashSet<Vote>();
 	
+	
+	public Professionnel() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * Constructeur complet
 	 * @param idProfessionnel

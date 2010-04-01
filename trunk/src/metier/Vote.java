@@ -17,6 +17,10 @@ public class Vote {
 	private Professionnel professionnel;
 	private int note;
 	
+	
+	public Vote() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * Constructeur complet
 	 * @param film
