@@ -1,5 +1,6 @@
 package test.metier;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import junit.framework.TestCase;
@@ -76,9 +77,11 @@ public class Test extends TestCase {
 	 
 	 assertEquals(cinema.getVotes().size(),2);
 
-	 ///test des recompenses
-	 //DAOHibernateFilm daof= new DAOHibernateFilm();
-	 //Set<Film> set=daof.load("lo");
-	 //System.out.println(set.size());
+
+	 DAOHibernateFilm daof= new DAOHibernateFilm();
+	 //Set<Film> set=daof.loadAll();
+	 
+	 //System.out.println(daof.get(2).getTitre());
+	 //Set<Film> set=daof.loadAll();
 	}
 }
