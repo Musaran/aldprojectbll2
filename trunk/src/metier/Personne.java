@@ -21,7 +21,7 @@ public class Personne {
 	private String prenom;
 	private Date dateDeNaissance;
 	private String biographie;
-	private Image photo;
+	private String photo;
 	private int nombreRequetes;
 	///listes de ces boulots
 	private Set<Film> filmographieActeur = new HashSet<Film>();
@@ -49,7 +49,7 @@ public class Personne {
 	 * @param nombreRequetes
 	 */
 	public Personne(int idPersonne, String nom, String prenom,
-			Date dateDeNaissance, String biographie, Image photo,
+			Date dateDeNaissance, String biographie, String photo,
 			int nombreRequetes) {
 		super();
 		this.idPersonne = idPersonne;
@@ -72,7 +72,7 @@ public class Personne {
 	 * @param nombreRequetes
 	 */
 	public Personne(String nom, String prenom, Date dateDeNaissance,
-			String biographie, Image photo, int nombreRequetes) {
+			String biographie, String photo, int nombreRequetes) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -207,10 +207,10 @@ public class Personne {
 	public void setBiographie(String biographie) {
 		this.biographie = biographie;
 	}
-	public Image getPhoto() {
+	public String getPhoto() {
 		return photo;
 	}
-	public void setPhoto(Image photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
 	public int getNombreRequetes() {

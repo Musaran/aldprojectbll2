@@ -22,7 +22,7 @@ public class Film {
 	private int idFilm;
 	private String titre;
 	private Date dateSortie;
-	private Image affiche;
+	private String affiche;
 	private double cout;
 	private String synopsis;
 	private int nombreRequetes;
@@ -192,10 +192,10 @@ public class Film {
 	public void setDateSortie(Date dateSortie) {
 		this.dateSortie = dateSortie;
 	}
-	public Image getAffiche() {
+	public String getAffiche() {
 		return affiche;
 	}
-	public void setAffiche(Image affiche) {
+	public void setAffiche(String affiche) {
 		this.affiche = affiche;
 	}
 	public double getCout() {
