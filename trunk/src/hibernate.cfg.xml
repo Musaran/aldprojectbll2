@@ -13,6 +13,6 @@
     <property name="hibernate.show_sql">true</property>
 
 	<!-- mapping files -->
-	
+	<mapping resource="MappingFilm.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>

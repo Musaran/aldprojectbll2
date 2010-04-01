@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+							"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+							
+<hibernate-mapping>
+
+<class name="metier.Film" table="film" lazy="false">
+	<id name="idFilm" type="integer" column="idFilm">
+		<generator class="increment" />
+	</id>
+	<property name="titre" type="string" column="titre"/>
+	<property name="dateSortie" type="date" column="datesortie"/>
+	<property name="affiche" type="string" column="photoaffiche"/>
+	<property name="cout" type="double" column="cout"/>
+	<property name="synopsis" type="string" column="synopsis"/>
+	<property name="nombreRequetes" type="integer" column="nombrerequetefilm"/>
+	<property name="noteMoyenne" type="double" column="notemoyenne"/>
+	<property name="isValidateFilm" type="integer" column="isvalidatefilm"/>
+	
+</class>
+
+</hibernate-mapping>
