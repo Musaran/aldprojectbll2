@@ -1,5 +1,6 @@
 package test.metier;
 
+import junit.framework.TestCase;
 import metier.Film;
 import metier.Personne;
 import metier.Professionnel;
@@ -8,13 +9,11 @@ import metier.RecompenseFilm;
 import metier.RecompensePersonne;
 import metier.TypeRecompenseFilm;
 import metier.TypeRecompensePersonne;
-import metier.Vote;
-import junit.framework.TestCase;
 
 public class Test extends TestCase {
 
 	
-	public void test()
+	public void test() throws Exception
 	{
 		/**
 		 * On test tous les constructeurs 
@@ -75,13 +74,6 @@ public class Test extends TestCase {
 	 assertEquals(cinema.getVotes().size(),2);
 
 	 ///test des recompenses
-	 
-	 
-	 
-	 /*
-	  
-	  
-	  */
 	 
 	}
 }
