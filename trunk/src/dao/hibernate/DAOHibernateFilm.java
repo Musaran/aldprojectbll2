@@ -27,7 +27,6 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		Film f=(Film) session.get(Film.class, id);
-		System.out.println(f.getTitre());
 		close(session);	
 		return f;
 	}
@@ -36,8 +35,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	public Set<Film> load(String key) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		Set<Film> set=(Set<Film>) session.createQuery(
-				"SELECT * FROM film WHERE titre LIKE '%"+key+"%'").list();	
+		Set<Film> set=(Set<Film>) session.createQuery("FROM film WHERE titre LIKE '%"+key+"%'").list();	
 		close(session);	
 		return set;
 	}
