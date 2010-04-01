@@ -1,5 +1,6 @@
 package dao.hibernate;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import metier.Film;
@@ -36,6 +37,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		Set<Film> set=(Set<Film>) session.createQuery("FROM film WHERE titre LIKE '%"+key+"%'").list();	
+
 		close(session);	
 		return set;
 	}
@@ -48,6 +50,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		close(session);	
 		return set;
 	}
+
 	/// suppression d'un film
 	@Override
 	public void remove(Film film) throws Exception {

@@ -14,5 +14,6 @@
 
 	<!-- mapping files -->
 	<mapping resource="MappingFilm.hbm.xml"/>
+	<mapping resource="MappingPersonne.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>
