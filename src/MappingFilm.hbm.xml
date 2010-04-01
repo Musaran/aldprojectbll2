@@ -18,15 +18,15 @@
 	<property name="isValidateFilm" type="integer" column="isvalidatefilm"/>
 	
 	<!-- Définition des relations -->
-	<set name="listDesActeurs" table="estunacteur" lazy="false">
+	<set name="listDesActeurs" table="estunacteur" lazy="false" cascade="save-update">
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>
 	</set> 
-	<set name="listeDesProducteurs" table="estunproducteur" lazy="false">
+	<set name="listeDesProducteurs" table="estunproducteur" lazy="false" cascade="save-update">
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>
 	</set> 
-	<set name="listeDesRealisateurs" table="estunrealisateur" lazy="false">
+	<set name="listeDesRealisateurs" table="estunrealisateur" lazy="false" cascade="save-update">
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>
 	</set> 
