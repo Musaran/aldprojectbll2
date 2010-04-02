@@ -30,6 +30,7 @@
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>
 	</set> 
+
 	
 
 	
