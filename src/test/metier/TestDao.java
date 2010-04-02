@@ -23,9 +23,9 @@ public class TestDao extends TestCase {
 		Date Ddate = dateFormat.parse( "2008-11-21" );
 
 		
-		 Film armaggeddon = new Film( "test3", Ddate, 100, "lol2", 10,"pas_de_photo");
+		 Film armaggeddon = new Film( "armaggedon", Ddate, 100, "lol2", 10,"pas_de_photo");
 		 Personne chuckNorris = new Personne( "testlevrai10", "test2", Ddate, "il tet fort", "no_photo", 10);//!\personne existant deja dans la bdd
-		// daof.save(armaggeddon);
+		 //daof.save(armaggeddon);
 		// daop.save(chuckNorris);
 		 chuckNorris.setPhoto("c'est pas chuck norris qui est pris en photo..");
 		 armaggeddon.setTitre("jesuisunkikoulol");
@@ -37,10 +37,10 @@ public class TestDao extends TestCase {
 		 //daop.saveOrUpdate(chuckNorris);//avant de save le film avec sa nouvelle liste il faut s'assurer que l acteur a bien été enregistré
 		 						//sinon synchronisation pb
 		
-		 ArrayList<Film> set=daof.loadAll();
-		 assertEquals(set.size(),2);
+		 ArrayList<Film> set=(ArrayList<Film>) daof.load("o");
+		 //assertEquals(set.size(),2);
 		 //Film temp = daof.get(7);
-		 //System.out.println(temp.getDateSortie());
+		 //System.out.println(set.get(1).getTitre());
 		 //System.out.println(daof.get(2).getTitre());
 		 //Set<Film> set=daof.loadAll();
 	}
