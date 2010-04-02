@@ -20,7 +20,9 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	@Override
 	public void clear() throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.createQuery("DELETE Film").executeUpdate();
+		close(session);	
 	}
 	/// retourne un film d'après son id passé en paramètre
 	@Override
@@ -36,11 +38,11 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	public ArrayList<Film> load(String key) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<Film> set=(ArrayList<Film>) session.createQuery(
+		ArrayList<Film> liste=(ArrayList<Film>) session.createQuery(
 				"FROM Film as film WHERE film.titre LIKE '%"+key+"%'").list();	
 
 		close(session);	
-		return set;
+		return liste;
 	}
 	/// liste de tous les films
 	@Override
@@ -56,7 +58,17 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	@Override
 	public void remove(Film film) throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.delete(film);
+		close(session);	
+	}
+	/// suppression d'un film d'après son id
+	@Override
+	public void remove(int idfilm) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		session.delete(get(idfilm));	
+		close(session);	
 	}
 	/// enregistrement d'un film
 	@Override
@@ -64,6 +76,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		session.save(film);
+		
 		
 		close(session);	
 	}

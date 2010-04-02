@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import metier.Personne;
@@ -15,11 +16,13 @@ public interface DAOPersonne {
 
 	Personne			get(int id)					throws Exception;
 	/// liste des personne ayant pour nom le paramètre donné
-	Set<Personne>		load(String nom)				throws Exception;
+	ArrayList<Personne>		load(String key)				throws Exception;
 	/// liste de toutes les personnes 
-	Set<Personne>		loadAll()						throws Exception;
+	ArrayList<Personne>		loadAll()						throws Exception;
 	void				save(Personne personne)			throws Exception;
 	void				saveOrUpdate(Personne personne)	throws Exception;
 	void				remove(Personne personne)		throws Exception;
+	void 				remove(int idfilm) 				throws Exception;
 	void 				clear()							throws Exception;
+	
 }

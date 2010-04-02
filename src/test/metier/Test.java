@@ -80,7 +80,7 @@ public class Test extends TestCase {
 
 	 DAOHibernateFilm daof= new DAOHibernateFilm();
 	 //Set<Film> set=daof.loadAll();
-	 Film temp = daof.get(7);
+	 //Film temp = daof.get(7);
 	 //System.out.println(temp.getDateSortie());
 	 //System.out.println(daof.get(2).getTitre());
 	 //Set<Film> set=daof.loadAll();
