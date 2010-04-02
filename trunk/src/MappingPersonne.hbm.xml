@@ -22,7 +22,7 @@
 	<set name="filmographieActeur" table="estunacteur" inverse="true" lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
-	</set>
+	</set> 
 	<!-- Définition des relations -->
 	<set name="filmographieRealisateur" table="estunrealisateur" inverse="true" lazy="false" cascade="save-update">
 		<key column="idpersonne"/>

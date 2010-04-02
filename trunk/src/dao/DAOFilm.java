@@ -20,5 +20,7 @@ public interface DAOFilm {
 	void			save(Film film)				throws Exception;
 	void			saveOrUpdate(Film film)		throws Exception;
 	void			remove(Film film)			throws Exception;
+	void 			remove(int idfilm) 			throws Exception;
 	void 			clear()						throws Exception;
+	
 }
