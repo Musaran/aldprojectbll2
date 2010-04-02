@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+							"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="metier.Vote" table="evaluation" lazy="false">
+
+	<composite-id >
+        <key-many-to-one name="professionnel" column="idprofessionnel" />
+		<key-many-to-one name="film" column="idfilm" />
+    </composite-id>
+	<property name="note" type="int" column="note"/>
+	
+    
+    
+    
+
+</class>
+
+</hibernate-mapping>

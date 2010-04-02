@@ -27,6 +27,9 @@ public class Professionnel {
 	private Set<Vote> votes = new HashSet<Vote>();
 	
 	
+	public void setVotes(Set<Vote> votes) {
+		this.votes = votes;
+	}
 	public Professionnel() {
 		// TODO Auto-generated constructor stub
 	}

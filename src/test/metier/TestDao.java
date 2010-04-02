@@ -8,8 +8,11 @@ import java.util.Set;
 
 import metier.Film;
 import metier.Personne;
+import metier.Professionnel;
+import dao.DAOProfessionnel;
 import dao.hibernate.DAOHibernateFilm;
 import dao.hibernate.DAOHibernatePersonne;
+import dao.hibernate.DAOHibernateProfessionnel;
 import junit.framework.TestCase;
 
 public class TestDao extends TestCase {
@@ -18,16 +21,20 @@ public class TestDao extends TestCase {
 	{
 		DAOHibernateFilm daof= new DAOHibernateFilm();
 		DAOHibernatePersonne daop= new DAOHibernatePersonne();
+		DAOProfessionnel daopro= new DAOHibernateProfessionnel();
 		
 		DateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd" );
 		Date Ddate = dateFormat.parse( "2008-11-21" );
-
+		
 		
 		Film armaggeddon = new Film( "armaggedon", Ddate, 100, "film d escience fiction", 10,"pas_de_photo");
 		Personne chuckNorris = new Personne( "Chuck", "Norris", Ddate, "il tet fort", "no_photo", 10);//!\personne existant deja dans la bdd
+		 Professionnel cinema = new Professionnel( "cinema", "pass", Ddate, "kine", "polis", "123 fake street");
+
+		 
 		daof.save(armaggeddon);
-		daop.save(chuckNorris);
-		chuckNorris.setPhoto("c'est pas chuck norris qui est pris en photo..");
+		//daop.save(chuckNorris);
+		//chuckNorris.setPhoto("c'est pas chuck norris qui est pris en photo..");
 		//armaggeddon.setTitre("jesuisunkikoulol");
 		 
 		//chuckNorris.ajoutFilmProducteur(armaggeddon);
@@ -50,5 +57,11 @@ public class TestDao extends TestCase {
 		//System.out.println(set.get(1).getTitre());
 		//System.out.println(daof.get(2).getTitre());
 		//Set<Film> set=daof.loadAll();
+		
+		
+		cinema.faitUnVote(armaggeddon, 6);
+		daopro.save(cinema);
+		 Professionnel lepro = daopro.get(1);
+		 System.out.println(lepro.getAdresse());
 	}
 }

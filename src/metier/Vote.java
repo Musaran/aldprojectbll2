@@ -1,5 +1,6 @@
 package metier;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ import java.util.Set;
  *
  */
 
-public class Vote {
+public class Vote implements Serializable {
 	///données concernant les vote (notes des pros)
 	private Film film;
 	private Professionnel professionnel;
@@ -20,6 +21,13 @@ public class Vote {
 	
 	public Vote() {
 		// TODO Auto-generated constructor stub
+	}
+
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
 	}
 	/**
 	 * Constructeur complet
@@ -88,7 +96,7 @@ public class Vote {
 	public Professionnel getProfessionnel() {
 		return professionnel;
 	}
-	
+
 	
 
 }
