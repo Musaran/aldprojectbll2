@@ -33,10 +33,11 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	}
 	/// retourne les films qui contiennent dans leur titre le mot key
 	@Override
-	public Set<Film> load(String key) throws Exception {
+	public ArrayList<Film> load(String key) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		Set<Film> set=(Set<Film>) session.createQuery("FROM film WHERE titre LIKE '%"+key+"%'").list();	
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery(
+				"FROM Film as film WHERE film.titre LIKE '%"+key+"%'").list();	
 
 		close(session);	
 		return set;

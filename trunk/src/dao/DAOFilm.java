@@ -14,7 +14,7 @@ public interface DAOFilm {
 
 	Film			get(int id)				throws Exception;
 	/// retourne les films qui contiennent dans leur titre le mot key
-	Set<Film>		load(String key)			throws Exception;
+	ArrayList<Film>		load(String key)			throws Exception;
 	/// liste de toutes les Films 
 	ArrayList<Film>		loadAll()					throws Exception;
 	void			save(Film film)				throws Exception;
