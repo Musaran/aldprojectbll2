@@ -1,6 +1,7 @@
 package metier;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -24,6 +25,9 @@ public class Vote implements Serializable {
 	}
 
 	
+
+
+
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
@@ -40,6 +44,8 @@ public class Vote implements Serializable {
 		this.film = film;
 		this.professionnel = professionel;
 		this.note = note;
+
+		
 	}
 	/**
 	 * Les votes sont égaux s'ils concernent le mm film et le mm pro
@@ -73,6 +79,23 @@ public class Vote implements Serializable {
 		}
 		System.out.println("n'existe pas");
 		return false;
+	}
+	
+	public static void calculNoteMoyenne(Film film, Set<Vote>liste)
+	{
+		Iterator<Vote> i=liste.iterator();
+		int note =0;
+		int compteur=0;
+		while(i.hasNext())
+		{
+			Vote v=i.next();
+			if(v.getFilm().equals(film))
+			{
+				note+=v.getNote();	
+				compteur++;
+			}
+		}
+		film.setNoteMoyenne((note*1.0/compteur*1.0));
 	}
 
 	/*

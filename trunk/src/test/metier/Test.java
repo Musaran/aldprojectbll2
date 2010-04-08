@@ -1,6 +1,7 @@
 package test.metier;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import junit.framework.TestCase;
@@ -12,6 +13,7 @@ import metier.RecompenseFilm;
 import metier.RecompensePersonne;
 import metier.TypeRecompenseFilm;
 import metier.TypeRecompensePersonne;
+import metier.Vote;
 import dao.hibernate.DAOHibernateFilm;
 
 public class Test extends TestCase {
@@ -42,6 +44,7 @@ public class Test extends TestCase {
 	 		" synopsis=lol, titre=armaggeddon]", armaggeddon.toString()); 
 	 
 	 Professionnel cinema = new Professionnel(1, "cinema", "pass", null, "kine", "polis", "123 fake street");
+	 Professionnel cinema2 = new Professionnel(2, "cinema", "pass", null, "kine", "polis", "123 fake street");
 	 assertEquals("Professionnel [adresse=123 fake street, derniereConnexion=null, " +
 	 		"idProfessionnel=1, login=cinema, nom=kine, password=pass, prenom=polis]",cinema.toString());
 	 
@@ -61,7 +64,7 @@ public class Test extends TestCase {
 	//la j'ai testé les fonction ajout acteur/prod/real
 	 // j ai laissé que une fonction mais elle fonctionne toute normalement
 	 // Si un acteur est deja acteur ds un film on peut pas le rajouter une nouvelle fois
-	  armaggeddon.ajoutPersonneProducteur(chuckNorris);
+	/*  armaggeddon.ajoutPersonneProducteur(chuckNorris);
 	  chuckNorris.ajoutFilmProducteur(armaggeddon);
 	  
 	 assertEquals(armaggeddon.getListeDesProducteurs().size(),1);
@@ -77,12 +80,17 @@ public class Test extends TestCase {
 	 
 	 assertEquals(cinema.getVotes().size(),2);
 
-
-	 DAOHibernateFilm daof= new DAOHibernateFilm();
-	 //Set<Film> set=daof.loadAll();
-	 //Film temp = daof.get(7);
-	 //System.out.println(temp.getDateSortie());
-	 //System.out.println(daof.get(2).getTitre());
-	 //Set<Film> set=daof.loadAll();
+*/
+	 Set<Vote> liste = new HashSet<Vote>();
+	 liste.add(cinema.faitUnVote(armaggeddon, 5));
+	 Vote.calculNoteMoyenne(armaggeddon, liste);
+	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
+	 
+	 liste.add(cinema2.faitUnVote(armaggeddon, 6));
+	 Vote.calculNoteMoyenne(armaggeddon, liste);
+	 assertEquals(armaggeddon.getNoteMoyenne(),5.5);
+	 
+	 
+	 
 	}
 }

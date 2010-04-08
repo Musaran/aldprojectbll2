@@ -102,16 +102,17 @@ public class Professionnel {
 	 * @param note la note du film
 	 * @return Vote le vote retourné
 	 */
-	public void faitUnVote(Film f,int note)
+	public Vote faitUnVote(Film f,int note)
 	{
 		Vote tmp=new Vote(f, this, note);
 		boolean b=tmp.rechercheVote(this.votes);
 		if(!b)
 		{
 			System.out.println("Vote ajouté pour "+f.getTitre());
-			this.votes.add(tmp);
-			
+			//this.votes.add(tmp);
+			return tmp;
 		}
+		return null;
 		
 	}
 	
