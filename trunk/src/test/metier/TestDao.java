@@ -64,7 +64,7 @@ public class TestDao extends TestCase {
 		//System.out.println(daof.get(2).getTitre());
 		//Set<Film> set=daof.loadAll();
 		
-		/* exemple de vote */
+		/* exemple de vote 
 		 ArrayList<Vote> listeDesVotes=new ArrayList<Vote>();
 		 daopro.save(cinema);
 		daopro.save(cinema2);
@@ -82,7 +82,11 @@ public class TestDao extends TestCase {
 		daof.saveOrUpdate(armaggeddon);
 		System.out.println(armaggeddon.getNoteMoyenne());
 		/* FIN exemple de vote */
+		cinema = daopro.get(1);
+		armaggeddon = daof.get(1);
 		
+		System.out.println("la note est de : "+daovote.get(armaggeddon, cinema).getNote());
+		 
 		
 		 
 		 

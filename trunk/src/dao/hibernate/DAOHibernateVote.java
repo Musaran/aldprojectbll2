@@ -15,14 +15,21 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 	@Override
 	public void clear() throws Exception {
 		// TODO Auto-generated method stub
+		Session	session = connect();
+		session.createQuery("DELETE Vote").executeUpdate();
+		close(session);	
 		
 	}
 
 	@Override
 	public Vote get(Film film, Professionnel professionnel) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		Session	session = connect();
+		Vote f=(Vote) session.createQuery("from Vote as vote where vote.film = '"+film.getIdFilm()+"' and vote.professionnel = '"+professionnel.getIdProfessionnel()+"'").uniqueResult();
+		close(session);	
+		return f;
 	}
+
 
 	@Override
 	public ArrayList<Vote> loadAll() throws Exception {
