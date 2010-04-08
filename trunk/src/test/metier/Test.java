@@ -81,14 +81,14 @@ public class Test extends TestCase {
 	 assertEquals(cinema.getVotes().size(),2);
 
 */
-	 Set<Vote> liste = new HashSet<Vote>();
+	 ArrayList<Vote> liste = new ArrayList<Vote>();
 	 liste.add(cinema.faitUnVote(armaggeddon, 5));
 	 Vote.calculNoteMoyenne(armaggeddon, liste);
 	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
 	 
-	 liste.add(cinema2.faitUnVote(armaggeddon, 6));
+	 liste.add(cinema.faitUnVote(armaggeddon, 6));
 	 Vote.calculNoteMoyenne(armaggeddon, liste);
-	 assertEquals(armaggeddon.getNoteMoyenne(),5.5);
+	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
 	 
 	 
 	 

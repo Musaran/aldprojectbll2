@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import metier.Film;
@@ -15,7 +16,7 @@ public interface DAOVote {
 
 	Vote			get(Film film, Professionnel professionnel)	throws Exception;
 	/// liste de toutes les Votes 
-	Set<Vote>		loadAll()									throws Exception;
+	ArrayList<Vote>		loadAll()									throws Exception;
 	void			save(Vote vote)								throws Exception;
 	void			saveOrUpdate(Vote vote)						throws Exception;
 	void			remove(Vote vote)							throws Exception;

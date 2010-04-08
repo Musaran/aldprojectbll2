@@ -1,6 +1,7 @@
 package metier;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -86,7 +87,7 @@ public class Vote implements Serializable {
 	 * @param liste des notes
 	 */
 	
-	public static void calculNoteMoyenne(Film film, Set<Vote>liste)
+	public static void calculNoteMoyenne(Film film, ArrayList<Vote>liste)
 	{
 		Iterator<Vote> i=liste.iterator();
 		int note =0;
@@ -94,10 +95,13 @@ public class Vote implements Serializable {
 		while(i.hasNext())
 		{
 			Vote v=i.next();
-			if(v.getFilm().equals(film))
+			if(v!=null)
 			{
-				note+=v.getNote();	
-				compteur++;
+				if(v.getFilm().equals(film))
+				{
+					note+=v.getNote();	
+					compteur++;
+				}
 			}
 		}
 		film.setNoteMoyenne((note*1.0/compteur*1.0));
