@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import metier.Recompense;
@@ -15,7 +16,7 @@ public interface DAORecompense {
 	/// liste des Recompense ayant pour titre le paramètre donné
 	Set<Recompense>		load(String nomRecompense)			throws Exception;
 	/// liste de toutes les Recompenses 
-	Set<Recompense>		loadAll()							throws Exception;
+	ArrayList<Recompense>		loadAll()							throws Exception;
 	void				save(Recompense recompense)			throws Exception;
 	void				saveOrUpdate(Recompense recompense)	throws Exception;
 	void				remove(Recompense recompense)		throws Exception;
