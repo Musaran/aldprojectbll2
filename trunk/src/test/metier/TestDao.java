@@ -11,14 +11,17 @@ import metier.Film;
 import metier.Personne;
 import metier.Professionnel;
 import metier.TypeRecompenseFilm;
+import metier.TypeRecompensePersonne;
 import metier.Vote;
 import dao.DAOProfessionnel;
 import dao.DAOTypeRecompenseFilm;
+import dao.DAOTypeRecompensePersonne;
 import dao.DAOVote;
 import dao.hibernate.DAOHibernateFilm;
 import dao.hibernate.DAOHibernatePersonne;
 import dao.hibernate.DAOHibernateProfessionnel;
 import dao.hibernate.DAOHibernateTypeRecompenseFilm;
+import dao.hibernate.DAOHibernateTypeRecompensePersonne;
 import dao.hibernate.DAOHibernateVote;
 import junit.framework.TestCase;
 
@@ -31,6 +34,7 @@ public class TestDao extends TestCase {
 		DAOProfessionnel daopro= new DAOHibernateProfessionnel();
 		DAOVote daovote= new DAOHibernateVote();
 		DAOTypeRecompenseFilm daotrf= new DAOHibernateTypeRecompenseFilm();
+		DAOTypeRecompensePersonne daotrp = new DAOHibernateTypeRecompensePersonne();
 		
 		DateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd" );
 		Date Ddate = dateFormat.parse( "2008-11-21" );
@@ -41,6 +45,7 @@ public class TestDao extends TestCase {
 		 Professionnel cinema = new Professionnel( "cinema", "pass", Ddate, "kine", "polis", "123 fake street");
 		 Professionnel cinema2 = new Professionnel( "theatre", "pwd", Ddate, "le petit", "theatre", "dtc");
 		 TypeRecompenseFilm meilleurFilm= new TypeRecompenseFilm("meilleur film"); 
+		 TypeRecompensePersonne meilleurActeur= new TypeRecompensePersonne("meilleur acteur"); 
 
 		 
 		//daof.save(armaggeddon);
@@ -93,10 +98,7 @@ public class TestDao extends TestCase {
 		//System.out.println("la note est de : "+daovote.get(armaggeddon, cinema).getNote());
 		 
 		 
-		 ArrayList<TypeRecompenseFilm> liste = daotrf.loadAll();
-		 System.out.println(liste.size());
-		 TypeRecompenseFilm trf =daotrf.get(3);
-		 System.out.println(trf);
+		 
 		 
 		 
 	}
