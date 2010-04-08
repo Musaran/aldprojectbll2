@@ -11,7 +11,7 @@ public class TypeRecompenseFilm {
 
 	///données concernant les Type de recompenses pour les films 
 	private int idTypeRecompenseFilm;
-	private String nomTypeRecompenseFilm;
+	private String nomTypeRecompenseFilm="";
 	
 	
 	public TypeRecompenseFilm() {
@@ -71,10 +71,10 @@ public class TypeRecompenseFilm {
 	public void setIdTypeRecompenseFilm(int idTypeRecompenseFilm) {
 		this.idTypeRecompenseFilm = idTypeRecompenseFilm;
 	}
-	public String getNomTypeRecopenseFilm() {
+	public String getNomTypeRecompenseFilm() {
 		return nomTypeRecompenseFilm;
 	}
-	public void setNomTypeRecopenseFilm(String nomTypeRecompenseFilm) {
+	public void setNomTypeRecompenseFilm(String nomTypeRecompenseFilm) {
 		this.nomTypeRecompenseFilm = nomTypeRecompenseFilm;
 	}
 	
