@@ -109,7 +109,7 @@ public class Professionnel {
 		if(!b)
 		{
 			System.out.println("Vote ajouté pour "+f.getTitre());
-			//this.votes.add(tmp);
+			this.votes.add(tmp);
 			return tmp;
 		}
 		return null;

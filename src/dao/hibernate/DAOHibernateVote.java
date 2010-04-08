@@ -1,6 +1,9 @@
 package dao.hibernate;
 
+import java.util.ArrayList;
 import java.util.Set;
+
+import org.hibernate.Session;
 
 import metier.Film;
 import metier.Professionnel;
@@ -22,9 +25,11 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 	}
 
 	@Override
-	public Set<Vote> loadAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Vote> loadAll() throws Exception {
+		Session	session = connect();
+		ArrayList<Vote> set=(ArrayList<Vote>) session.createQuery("FROM Vote").list();	
+		close(session);	
+		return set;
 	}
 
 	@Override
@@ -36,6 +41,10 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 	@Override
 	public void save(Vote vote) throws Exception {
 		// TODO Auto-generated method stub
+		Session session = connect();
+		if(vote !=null)
+			session.save(vote);
+		close(session);
 		
 	}
 
