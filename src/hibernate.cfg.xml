@@ -19,5 +19,6 @@
 	<mapping resource="MappingVote.hbm.xml"/>
 	<mapping resource="MappingTypeRecompenseFilm.hbm.xml"/>
 	<mapping resource="MappingTypeRecompensePersonne.hbm.xml"/>
+	<mapping resource="MappingRecompense.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>
