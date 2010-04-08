@@ -80,6 +80,11 @@ public class Vote implements Serializable {
 		System.out.println("n'existe pas");
 		return false;
 	}
+	/**
+	 * fonction qui calcule et attribu la note moyenne à un film
+	 * @param film que le veut noter
+	 * @param liste des notes
+	 */
 	
 	public static void calculNoteMoyenne(Film film, Set<Vote>liste)
 	{
