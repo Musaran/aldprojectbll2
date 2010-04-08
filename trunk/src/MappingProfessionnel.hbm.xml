@@ -15,6 +15,7 @@
 	<property name="derniereConnexion" type="date" column="derniereconnexion"/>	
 	
 	<!-- Définition des relations --> 
+	<!-- Mapping vers Vote -->
 	<set name="votes"  lazy="false" cascade="all">
 		<key column="idprofessionnel"/>
 		<one-to-many class="metier.Vote" />

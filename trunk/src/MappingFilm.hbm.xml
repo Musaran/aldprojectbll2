@@ -18,6 +18,7 @@
 	<property name="isValidateFilm" type="integer" column="isvalidatefilm"/>
 	
 	<!-- Définition des relations -->
+	<!-- Mapping vers Personne -->
 	<set name="listDesActeurs" table="estunacteur" lazy="false" cascade="save-update">
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>

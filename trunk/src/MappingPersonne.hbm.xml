@@ -19,16 +19,15 @@
 	<property name="isValidatePersonne" type="int" column="isvalidatepersonne"/>
 	
 	<!-- Définition des relations -->
+	<!-- Mapping vers Film -->
 	<set name="filmographieActeur" table="estunacteur" inverse="true" lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
 	</set> 
-	<!-- Définition des relations -->
 	<set name="filmographieRealisateur" table="estunrealisateur" inverse="true" lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
 	</set>
-	<!-- Définition des relations -->
 	<set name="filmographieProducteur" table="estunproducteur" inverse="true" lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
