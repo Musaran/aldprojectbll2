@@ -14,7 +14,9 @@ public class DAOHibernateTypeRecompensePersonne extends DAOHibernate implements 
 	@Override
 	public void clear() throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.createQuery("DELETE TypeRecompensePersonne").executeUpdate();
+		close(session);	
 	}
 
 	@Override
@@ -39,7 +41,9 @@ public class DAOHibernateTypeRecompensePersonne extends DAOHibernate implements 
 	public void remove(TypeRecompensePersonne typeRecompensePersonne)
 			throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.delete(typeRecompensePersonne);
+		close(session);	
 	}
 
 	@Override
@@ -56,7 +60,9 @@ public class DAOHibernateTypeRecompensePersonne extends DAOHibernate implements 
 	public void saveOrUpdate(TypeRecompensePersonne typeRecompensePersonne)
 			throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session session = connect();
+		session.update(typeRecompensePersonne);
+		close(session);
 	}
 
 }
