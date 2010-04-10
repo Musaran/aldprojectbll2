@@ -1,12 +1,11 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
-import java.util.Set;
+
+import metier.TypeRecompenseFilm;
 
 import org.hibernate.Session;
 
-import metier.Film;
-import metier.TypeRecompenseFilm;
 import dao.DAOTypeRecompenseFilm;
 
 public class DAOHibernateTypeRecompenseFilm extends DAOHibernate implements DAOTypeRecompenseFilm{
@@ -28,6 +27,7 @@ public class DAOHibernateTypeRecompenseFilm extends DAOHibernate implements DAOT
 		return f;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<TypeRecompenseFilm> loadAll() throws Exception {
 		// TODO Auto-generated method stub

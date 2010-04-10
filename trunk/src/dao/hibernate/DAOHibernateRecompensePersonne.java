@@ -39,6 +39,7 @@ public class DAOHibernateRecompensePersonne extends DAOHibernate implements DAOR
 		return f;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RecompensePersonne> loadAll() throws Exception {
 		// TODO Auto-generated method stub

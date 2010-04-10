@@ -1,13 +1,13 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
-import java.util.Set;
-
-import org.hibernate.Session;
 
 import metier.Film;
 import metier.Professionnel;
 import metier.Vote;
+
+import org.hibernate.Session;
+
 import dao.DAOVote;
 
 public class DAOHibernateVote extends DAOHibernate implements DAOVote {
@@ -31,6 +31,7 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Vote> loadAll() throws Exception {
 		Session	session = connect();

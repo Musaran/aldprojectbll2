@@ -1,17 +1,15 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
-import java.util.Set;
-
-import org.hibernate.Session;
 
 import metier.Film;
 import metier.Recompense;
 import metier.RecompenseFilm;
 import metier.TypeRecompenseFilm;
-import metier.Vote;
+
+import org.hibernate.Session;
+
 import dao.DAORecompenseFilm;
-import dao.DAOTypeRecompenseFilm;
 
 public class DAOHibernateRecompenseFilm extends DAOHibernate implements DAORecompenseFilm{
 
@@ -41,6 +39,7 @@ public class DAOHibernateRecompenseFilm extends DAOHibernate implements DAORecom
 		return f;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RecompenseFilm> loadAll() throws Exception {
 		// TODO Auto-generated method stub

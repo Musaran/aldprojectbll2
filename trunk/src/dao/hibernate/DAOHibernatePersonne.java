@@ -1,12 +1,11 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
-import java.util.Set;
+
+import metier.Personne;
 
 import org.hibernate.Session;
 
-import metier.Film;
-import metier.Personne;
 import dao.DAOPersonne;
 
 public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
@@ -28,6 +27,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		return p;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Personne> load(String key) throws Exception {
 		// TODO Auto-generated method stub
@@ -39,6 +39,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		return liste;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Personne> loadAll() throws Exception {
 		// TODO Auto-generated method stub

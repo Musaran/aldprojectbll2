@@ -1,7 +1,6 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 import metier.Film;
 
@@ -34,6 +33,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		return f;
 	}
 	/// retourne les films qui contiennent dans leur titre le mot key
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Film> load(String key) throws Exception {
 		// TODO Auto-generated method stub
@@ -45,6 +45,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		return liste;
 	}
 	/// liste de tous les films
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Film> loadAll() throws Exception {
 		// TODO Auto-generated method stub

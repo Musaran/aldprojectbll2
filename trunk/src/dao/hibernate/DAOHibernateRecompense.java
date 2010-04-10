@@ -1,13 +1,11 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
-import java.util.Set;
+
+import metier.Recompense;
 
 import org.hibernate.Session;
 
-import metier.Personne;
-import metier.Recompense;
-import metier.TypeRecompenseFilm;
 import dao.DAORecompense;
 
 public class DAOHibernateRecompense extends DAOHibernate implements DAORecompense {
@@ -29,6 +27,7 @@ public class DAOHibernateRecompense extends DAOHibernate implements DAORecompens
 		return f;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Recompense> load(String nomRecompense) throws Exception {
 		// TODO Auto-generated method stub
@@ -40,6 +39,7 @@ public class DAOHibernateRecompense extends DAOHibernate implements DAORecompens
 		return liste;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Recompense>loadAll() throws Exception {
 		// TODO Auto-generated method stub
