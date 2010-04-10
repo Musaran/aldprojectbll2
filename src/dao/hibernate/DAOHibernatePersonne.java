@@ -42,7 +42,11 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 	@Override
 	public ArrayList<Personne> loadAll() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		Session	session = connect();
+		ArrayList<Personne> set=(ArrayList<Personne>) session.createQuery(
+				"FROM Personne").list();	
+		close(session);	
+		return set;
 	}
 
 	@Override

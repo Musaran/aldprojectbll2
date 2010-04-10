@@ -14,7 +14,7 @@ public interface DAORecompense {
 
 	Recompense			get(int id)						throws Exception;
 	/// liste des Recompense ayant pour titre le paramètre donné
-	Set<Recompense>		load(String nomRecompense)			throws Exception;
+	ArrayList<Recompense>		load(String nomRecompense)			throws Exception;
 	/// liste de toutes les Recompenses 
 	ArrayList<Recompense>		loadAll()							throws Exception;
 	void				save(Recompense recompense)			throws Exception;
