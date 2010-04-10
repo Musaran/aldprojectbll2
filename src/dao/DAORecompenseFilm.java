@@ -1,6 +1,6 @@
 package dao;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 import metier.Film;
 import metier.Recompense;
@@ -18,7 +18,7 @@ public interface DAORecompenseFilm {
 			TypeRecompenseFilm typeRecompense, int annee)				throws Exception;
 
 	/// liste de toutes les RecompenseFilms 
-	Set<RecompenseFilm>		loadAll()									throws Exception;
+	ArrayList<RecompenseFilm>		loadAll()									throws Exception;
 	void					save(RecompenseFilm recompenseFilm)			throws Exception;
 	void					saveOrUpdate(RecompenseFilm recompenseFilm)	throws Exception;
 	void					remove(RecompenseFilm recompenseFilm)		throws Exception;
