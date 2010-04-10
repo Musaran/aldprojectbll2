@@ -14,7 +14,9 @@ public class DAOHibernateTypeRecompenseFilm extends DAOHibernate implements DAOT
 	@Override
 	public void clear() throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.createQuery("DELETE TypeRecompenseFilm").executeUpdate();
+		close(session);	
 	}
 
 	@Override
@@ -38,7 +40,9 @@ public class DAOHibernateTypeRecompenseFilm extends DAOHibernate implements DAOT
 	@Override
 	public void remove(TypeRecompenseFilm typeRecompenseFilm) throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.delete(typeRecompenseFilm);
+		close(session);	
 	}
 
 	@Override
@@ -53,7 +57,9 @@ public class DAOHibernateTypeRecompenseFilm extends DAOHibernate implements DAOT
 	public void saveOrUpdate(TypeRecompenseFilm typeRecompenseFilm)
 			throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session session = connect();
+		session.update(typeRecompenseFilm);
+		close(session);
 	}
 
 }
