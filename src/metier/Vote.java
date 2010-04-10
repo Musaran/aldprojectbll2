@@ -2,7 +2,6 @@ package metier;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -15,6 +14,10 @@ import java.util.Set;
  */
 
 public class Vote implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	///données concernant les vote (notes des pros)
 	private Film film;
 	private Professionnel professionnel;

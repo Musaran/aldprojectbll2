@@ -1,6 +1,5 @@
 package metier;
 
-import java.awt.Image;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
