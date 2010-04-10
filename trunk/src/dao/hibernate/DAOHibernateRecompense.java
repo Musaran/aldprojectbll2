@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.hibernate.Session;
 
+import metier.Personne;
 import metier.Recompense;
 import metier.TypeRecompenseFilm;
 import dao.DAORecompense;
@@ -14,7 +15,9 @@ public class DAOHibernateRecompense extends DAOHibernate implements DAORecompens
 	@Override
 	public void clear() throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.createQuery("DELETE Recompense").executeUpdate();
+		close(session);	
 	}
 
 	@Override
@@ -27,16 +30,22 @@ public class DAOHibernateRecompense extends DAOHibernate implements DAORecompens
 	}
 
 	@Override
-	public Set<Recompense> load(String nomRecompense) throws Exception {
+	public ArrayList<Recompense> load(String nomRecompense) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		Session	session = connect();
+		ArrayList<Recompense> liste=(ArrayList<Recompense>) session.createQuery(
+				"FROM Recompense as rec WHERE rec.nomRecompense " +
+				"LIKE '%"+nomRecompense+"%'").list();
+		close(session);	
+		return liste;
 	}
 
 	@Override
 	public ArrayList<Recompense>loadAll() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<Recompense>  set=(ArrayList<Recompense> ) session.createQuery("FROM Recompense").list();	
+		ArrayList<Recompense>  set=(ArrayList<Recompense> ) session.createQuery(
+				"FROM Recompense").list();	
 		close(session);	
 		return set;
 	}
@@ -44,7 +53,9 @@ public class DAOHibernateRecompense extends DAOHibernate implements DAORecompens
 	@Override
 	public void remove(Recompense recompense) throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session	session = connect();
+		session.delete(recompense);	
+		close(session);	
 	}
 
 	@Override
@@ -58,7 +69,9 @@ public class DAOHibernateRecompense extends DAOHibernate implements DAORecompens
 	@Override
 	public void saveOrUpdate(Recompense recompense) throws Exception {
 		// TODO Auto-generated method stub
-		
+		Session session = connect();
+		session.update(recompense);
+		close(session);
 	}
 
 }
