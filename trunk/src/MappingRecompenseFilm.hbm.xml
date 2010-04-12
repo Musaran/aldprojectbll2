@@ -13,7 +13,6 @@
 		<key-property name="annee" column="anneerecompensefilm" />
 
     </composite-id>
-    <property name="annee" type="integer" column="anneerecompensefilm" />
 	<property name="isValidateRecompense" type="integer" column="isvalidaterecompensefilm"/>
 </class>
 
