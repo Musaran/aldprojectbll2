@@ -10,8 +10,13 @@ import java.io.Serializable;
  *
  */
 
-public class RecompenseFilm implements Serializable{
+public class RecompenseFilm implements Serializable {
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	///données concernant les recompenses d'un film
 	private Film film;
 	private Recompense recompense;
