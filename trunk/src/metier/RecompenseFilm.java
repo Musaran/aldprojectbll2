@@ -1,5 +1,7 @@
 package metier;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author jerome
@@ -8,7 +10,7 @@ package metier;
  *
  */
 
-public class RecompenseFilm {
+public class RecompenseFilm implements Serializable{
 
 	///données concernant les recompenses d'un film
 	private Film film;
