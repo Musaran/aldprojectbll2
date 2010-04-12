@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+							"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="metier.RecompenseFilm" table="recompensefilm" lazy="false">
+
+	<composite-id >
+        <key-many-to-one name="recompense" column="idrecompense" />
+		<key-many-to-one name="film" column="idfilm" />
+		<key-many-to-one name="typeRecompense" column="idtyperecompensefilm" />
+		<key-many-to-one name="annee" column="anneerecompensefilm" />
+    </composite-id>
+    
+	<property name="isValidateRecompense" type="integer" column="isvalidaterecompensefilm"/>
+</class>
+
+</hibernate-mapping>

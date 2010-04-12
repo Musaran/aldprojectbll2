@@ -21,6 +21,7 @@ import dao.DAORecompensePersonne;
 import dao.DAOTypeRecompenseFilm;
 import dao.DAOTypeRecompensePersonne;
 import dao.DAOVote;
+import dao.hibernate.DAOHibernate;
 import dao.hibernate.DAOHibernateFilm;
 import dao.hibernate.DAOHibernatePersonne;
 import dao.hibernate.DAOHibernateProfessionnel;
@@ -69,6 +70,13 @@ public class TestDao extends TestCase {
 		RecompensePersonne recp1=new RecompensePersonne(christianBale, oscar, meilleurActeur, 2006);
 		
 		//Exemple de base de données
+		//DAOHibernate.Nettoyage();
+		/*daof.clear();
+		daop.clear();
+		daopro.clear();
+		daotrf.clear();
+		daotrp.clear();
+		daorec.clear();*/
 		
 		daof.save(armaggeddon);
 		daof.save(terminator);
@@ -79,7 +87,6 @@ public class TestDao extends TestCase {
 		chuckNorris.ajoutFilmProducteur(armaggeddon);
 		armaggeddon.ajoutPersonneActeur(chuckNorris);
 		
-		chuckNorris.ajoutFilmProducteur(armaggeddon);
 		terminator.ajoutPersonneActeur(christianBale);
 		terminator.ajoutPersonneActeur(chuckNorris);
 		 
@@ -92,9 +99,18 @@ public class TestDao extends TestCase {
 		daorec.save(cesar);
 		daorec.save(oscar);
 		
-		daorf.save(recf1);
-		daorf.save(recf2);
-		daorp.save(recp1);
+		
+		
+		terminator.ajoutRecompense(oscar, meilleurFilm, 1998);
+		
+		daop.saveOrUpdate(chuckNorris);
+		daop.saveOrUpdate(christianBale);
+		daof.saveOrUpdate(terminator);
+		daof.saveOrUpdate(armaggeddon);
+		
+		//daorf.save(recf1);
+		//daorf.save(recf2);
+		//daorp.save(recp1);
 		
 		//fin exemple de base de données
 		
