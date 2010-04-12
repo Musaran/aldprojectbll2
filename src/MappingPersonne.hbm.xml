@@ -32,7 +32,12 @@
 		<key column="idpersonne"/>
 		<many-to-many class="metier.Film" column="idfilm"/>
 	</set>
-
+<!-- 
+	<set name="listeRecompense" table="recompensepersonne" lazy="false" cascade="save-update">
+		<key column="idpersonne"/>
+		<one-to-many class="metier.RecompensePersonne"/>
+	</set> 
+	 -->
 </class>
 
 </hibernate-mapping>
