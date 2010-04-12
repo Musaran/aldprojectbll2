@@ -16,7 +16,7 @@
 	<property name="biographie" type="string" column="biographie"/>
 	<property name="photo" type="string" column="photopersonne"/>
 	<property name="nombreRequetes" type="int" column="nombrerequetepersonne"/>
-	<property name="isValidatePersonne" type="int" column="isvalidatepersonne"/>
+	<property name="isValidatePersonne" type="integer" column="isvalidatepersonne"/>
 	
 	<!-- Définition des relations -->
 	<!-- Mapping vers Film -->

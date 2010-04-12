@@ -22,7 +22,7 @@
 	<set name="listDesActeurs" table="estunacteur" lazy="false" cascade="save-update">
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>
-	</set> 
+	</set>
 	<set name="listeDesProducteurs" table="estunproducteur" lazy="false" cascade="save-update">
 		<key column="idfilm"/>
 		<many-to-many class="metier.Personne" column="idpersonne"/>
@@ -33,7 +33,10 @@
 	</set> 
 
 	
-
+	<set name="listeRecompense" table="recompensefilm" lazy="false" cascade="save-update">
+		<key column="idfilm"/>
+		<one-to-many class="metier.RecompenseFilm"/>
+	</set> 
 	
 	
 	

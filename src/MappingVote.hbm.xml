@@ -10,11 +10,7 @@
         <key-many-to-one name="professionnel" column="idprofessionnel" />
 		<key-many-to-one name="film" column="idfilm" />
     </composite-id>
-	<property name="note" type="int" column="note"/>
-	
-    
-    
-    
+	<property name="note" type="integer" column="note"/>
 
 </class>
 
