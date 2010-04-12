@@ -102,7 +102,7 @@ public class TestDao extends TestCase {
 		
 		
 		terminator.ajoutRecompense(oscar, meilleurFilm, 1998);
-		
+		chuckNorris.ajoutRecompense(cesar, meilleurActeur, 2002);
 		daop.saveOrUpdate(chuckNorris);
 		daop.saveOrUpdate(christianBale);
 		daof.saveOrUpdate(terminator);
