@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Jeu 01 Avril 2010 à 15:58
+-- Généré le : Lun 12 Avril 2010 à 20:45
 -- Version du serveur: 5.1.37
 -- Version de PHP: 5.3.0
 
@@ -22,7 +22,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE IF NOT EXISTS `estunacteur` (
   `idfilm` int(11) NOT NULL,
   `idpersonne` int(11) NOT NULL,
-  `isvalidateacteur` int(11) NOT NULL,
+  `isvalidateacteur` int(11) DEFAULT NULL,
   PRIMARY KEY (`idfilm`,`idpersonne`),
   KEY `FK_estunacteur_idpersonne` (`idpersonne`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `estunacteur` (
 CREATE TABLE IF NOT EXISTS `estunproducteur` (
   `idfilm` int(11) NOT NULL,
   `idpersonne` int(11) NOT NULL,
-  `isvalidateproducteur` int(11) NOT NULL,
+  `isvalidateproducteur` int(11) DEFAULT NULL,
   PRIMARY KEY (`idfilm`,`idpersonne`),
   KEY `FK_estunproducteur_idpersonne` (`idpersonne`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `estunproducteur` (
 CREATE TABLE IF NOT EXISTS `estunrealisateur` (
   `idfilm` int(11) NOT NULL,
   `idpersonne` int(11) NOT NULL,
-  `isvalidaterealisateur` int(11) NOT NULL,
+  `isvalidaterealisateur` int(11) DEFAULT NULL,
   PRIMARY KEY (`idfilm`,`idpersonne`),
   KEY `FK_estunrealisateur_idpersonne` (`idpersonne`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -78,10 +78,10 @@ CREATE TABLE IF NOT EXISTS `estunrealisateur` (
 
 CREATE TABLE IF NOT EXISTS `evaluation` (
   `idfilm` int(11) NOT NULL,
-  `idprofessionnel` int(11) NOT NULL,
+  `professionnel` varchar(255) NOT NULL,
   `note` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idfilm`,`idprofessionnel`),
-  KEY `FK_evaluation_idprofessionnel` (`idprofessionnel`)
+  PRIMARY KEY (`idfilm`,`professionnel`),
+  KEY `FK_evaluation_idprofessionnel` (`professionnel`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -143,15 +143,14 @@ CREATE TABLE IF NOT EXISTS `personne` (
 --
 
 CREATE TABLE IF NOT EXISTS `professionnel` (
-  `idprofessionnel` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(255) DEFAULT NULL,
+  `login` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) DEFAULT NULL,
   `derniereconnexion` date DEFAULT NULL,
   `nompro` varchar(255) NOT NULL,
   `adressepro` varchar(255) NOT NULL,
   `prenompro` varchar(255) NOT NULL,
-  PRIMARY KEY (`idprofessionnel`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`login`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `professionnel`
@@ -182,13 +181,15 @@ CREATE TABLE IF NOT EXISTS `recompense` (
 --
 
 CREATE TABLE IF NOT EXISTS `recompensefilm` (
-  `idrecompense` int(11) NOT NULL,
   `idfilm` int(11) NOT NULL,
   `anneerecompensefilm` int(11) NOT NULL DEFAULT '0',
   `idtyperecompensefilm` int(11) NOT NULL,
-  PRIMARY KEY (`idrecompense`,`idfilm`,`anneerecompensefilm`,`idtyperecompensefilm`),
-  KEY `FK_recompensefilm_idfilm` (`idfilm`),
-  KEY `FK_recompensefilm_idtyperecompensefilm` (`idtyperecompensefilm`)
+  `idrecompense` int(11) NOT NULL,
+  `isvalidaterecompensefilm` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`anneerecompensefilm`,`idtyperecompensefilm`,`idrecompense`,`idfilm`,`isvalidaterecompensefilm`),
+  KEY `FK_recompensefilm_idtyperecompensefilm` (`idtyperecompensefilm`),
+  KEY `idrecompense` (`idrecompense`),
+  KEY `idfilm` (`idfilm`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -203,13 +204,15 @@ CREATE TABLE IF NOT EXISTS `recompensefilm` (
 --
 
 CREATE TABLE IF NOT EXISTS `recompensepersonne` (
-  `idrecompense` int(11) NOT NULL,
   `idpersonne` int(11) NOT NULL,
   `idtyperecompensepersonne` int(11) NOT NULL,
   `anneerecompensepersonne` int(11) NOT NULL,
-  PRIMARY KEY (`idrecompense`,`idpersonne`,`idtyperecompensepersonne`,`anneerecompensepersonne`),
+  `isvalidaterecompensepersonne` int(1) NOT NULL DEFAULT '0',
+  `idrecompense` int(11) NOT NULL,
+  PRIMARY KEY (`idpersonne`,`idtyperecompensepersonne`,`anneerecompensepersonne`,`idrecompense`,`isvalidaterecompensepersonne`),
   KEY `FK_recompensepersonne_idtyperecompensepersonne` (`idtyperecompensepersonne`),
-  KEY `FK_recompensepersonne_idpersonne` (`idpersonne`)
+  KEY `FK_recompensepersonne_idpersonne` (`idpersonne`),
+  KEY `idrecompense` (`idrecompense`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --

@@ -16,7 +16,6 @@ import java.util.Set;
 public class Professionnel {
 	
 	///données propres au professionnel
-	private int idProfessionnel;
 	private String login;
 	private String password;
 	private Date derniereConnexion;
@@ -43,10 +42,10 @@ public class Professionnel {
 	 * @param prenom
 	 * @param adresse
 	 */
-	public Professionnel(int idProfessionnel, String login, String password,
+	public Professionnel(String login, String password,
 			Date derniereConnexion, String nom, String prenom, String adresse) {
 		super();
-		this.idProfessionnel = idProfessionnel;
+
 		this.login = login;
 		this.password = password;
 		this.derniereConnexion = derniereConnexion;
@@ -54,27 +53,7 @@ public class Professionnel {
 		this.prenom = prenom;
 		this.adresse = adresse;
 	}
-	/**
-	 * Constructeur sans l'id
-	 * @param login
-	 * @param password
-	 * @param derniereConnexion
-	 * @param nom
-	 * @param prenom
-	 * @param adresse
-	 */
-	
-	public Professionnel(String login, String password, Date derniereConnexion,
-			String nom, String prenom, String adresse) {
-		super();
-		this.login = login;
-		this.password = password;
-		this.derniereConnexion = derniereConnexion;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.adresse = adresse;
-	}
-	
+
 	/**
 	 * Les Professionnels sont égaux s'ils ont le même id
 	 */
@@ -82,7 +61,7 @@ public class Professionnel {
 	{
 		if (o instanceof Professionnel) {
 			Professionnel p = (Professionnel) o;
-			return this.idProfessionnel == p.idProfessionnel;
+			return this.login.equals(p.login);
 		}
 		else
 			return false;
@@ -91,8 +70,7 @@ public class Professionnel {
 	@Override
 	public String toString() {
 		return "Professionnel [adresse=" + adresse + ", derniereConnexion="
-				+ derniereConnexion + ", idProfessionnel=" + idProfessionnel
-				+ ", login=" + login + ", nom=" + nom + ", password="
+				+ derniereConnexion + ", login=" + login + ", nom=" + nom + ", password="
 				+ password + ", prenom=" + prenom + "]";
 	}
 	
@@ -115,19 +93,9 @@ public class Professionnel {
 		return null;
 		
 	}
-	
-
-
 	/*
 	 * Getters and setters
 	 */
-	
-	public int getIdProfessionnel() {
-		return idProfessionnel;
-	}
-	public void setIdProfessionnel(int idProfessionnel) {
-		this.idProfessionnel = idProfessionnel;
-	}
 	public String getLogin() {
 		return login;
 	}
@@ -167,10 +135,4 @@ public class Professionnel {
 	public Set<Vote> getVotes() {
 		return votes;
 	}
-	
-	
-	
-	
-	
-
 }

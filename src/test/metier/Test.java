@@ -43,8 +43,8 @@ public class Test extends TestCase {
 	 assertEquals("Film [cout=100.0, dateSortie=null, idFilm=1, isValidateFilm=0, listDesActeurs=[], listeDesProducteurs=[], listeDesRealisateurs=[], listeRecompense=[], nombreRequetes=10, noteMoyenne=0.0," +
 	 		" synopsis=lol, titre=armaggeddon]", armaggeddon.toString()); 
 	 
-	 Professionnel cinema = new Professionnel(1, "cinema", "pass", null, "kine", "polis", "123 fake street");
-	 Professionnel cinema2 = new Professionnel(2, "cinema", "pass", null, "kine", "polis", "123 fake street");
+	 Professionnel cinema = new Professionnel("cinema", "pass", null, "kine", "polis", "123 fake street");
+	 Professionnel cinema2 = new Professionnel("cinema", "pass", null, "kine", "polis", "123 fake street");
 	 assertEquals("Professionnel [adresse=123 fake street, derniereConnexion=null, " +
 	 		"idProfessionnel=1, login=cinema, nom=kine, password=pass, prenom=polis]",cinema.toString());
 	 
