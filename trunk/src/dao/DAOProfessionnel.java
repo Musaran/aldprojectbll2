@@ -12,9 +12,7 @@ import metier.Professionnel;
 
 public interface DAOProfessionnel {
 
-	Professionnel		get(int id)								throws Exception;
-	/// liste des Professionnel ayant pour nom le paramètre donné
-	ArrayList<Professionnel>	load(String nom)							throws Exception;
+	Professionnel	get(String nom)							throws Exception;
 	/// liste de toutes les Professionnels 
 	ArrayList<Professionnel>	loadAll()									throws Exception;
 	void				save(Professionnel professionnel)			throws Exception;

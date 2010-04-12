@@ -4,10 +4,7 @@
 
 <hibernate-mapping>
 <class name="metier.Professionnel" table="professionnel" lazy="false">
-	<id name="idProfessionnel" type="integer" column="idprofessionnel">
-		<generator class="increment" />
-	</id>
-	<property name="login" type="string" column="login"/>
+	<id name="login" type="string" column="login"/>
 	<property name="password" type="string" column="password"/>
 	<property name="nom" type="string" column="nompro"/>
 	<property name="prenom" type="string" column="prenompro"/>
@@ -17,7 +14,7 @@
 	<!-- Définition des relations --> 
 	<!-- Mapping vers Vote -->
 	<set name="votes"  lazy="false" cascade="all">
-		<key column="idprofessionnel"/>
+		<key column="professionnel"/>
 		<one-to-many class="metier.Vote" />
 	</set> 
 	

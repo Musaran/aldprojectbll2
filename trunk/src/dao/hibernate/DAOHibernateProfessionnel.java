@@ -19,24 +19,12 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 	}
 
 	@Override
-	public Professionnel get(int id) throws Exception {
+	public Professionnel get(String nom) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		Professionnel p=(Professionnel) session.get(Professionnel.class, id);
+		Professionnel p=(Professionnel) session.get(Professionnel.class, nom);
 		close(session);	
 		return p;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public ArrayList<Professionnel> load(String nom) throws Exception {
-		// TODO Auto-generated method stub
-		Session	session = connect();
-		ArrayList<Professionnel> liste=(ArrayList<Professionnel>) session.createQuery(
-				"FROM Professionnel as pro WHERE pro.nom LIKE '%"+nom+"%'").list();	
-
-		close(session);	
-		return liste;
 	}
 
 	@SuppressWarnings("unchecked")

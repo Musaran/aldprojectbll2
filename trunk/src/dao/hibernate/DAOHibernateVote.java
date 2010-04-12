@@ -25,7 +25,7 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 	public Vote get(Film film, Professionnel professionnel) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		Vote f=(Vote) session.createQuery("from Vote as vote where vote.film = '"+film.getIdFilm()+"' and vote.professionnel = '"+professionnel.getIdProfessionnel()+"'").uniqueResult();
+		Vote f=(Vote) session.createQuery("from Vote as vote where vote.film = '"+film.getIdFilm()+"' and vote.professionnel = '"+professionnel.getLogin()+"'").uniqueResult();
 		close(session);	
 		return f;
 	}

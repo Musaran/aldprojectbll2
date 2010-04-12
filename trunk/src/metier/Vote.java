@@ -27,11 +27,6 @@ public class Vote implements Serializable {
 	public Vote() {
 		// TODO Auto-generated constructor stub
 	}
-
-	
-
-
-
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub

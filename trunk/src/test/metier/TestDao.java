@@ -14,6 +14,7 @@ import metier.RecompenseFilm;
 import metier.RecompensePersonne;
 import metier.TypeRecompenseFilm;
 import metier.TypeRecompensePersonne;
+import metier.Vote;
 import dao.DAOProfessionnel;
 import dao.DAORecompense;
 import dao.DAORecompenseFilm;
@@ -115,7 +116,7 @@ public class TestDao extends TestCase {
 		//fin exemple de base de données
 		
 		
-		/* exemple de vote 
+		// exemple de vote 
 		 ArrayList<Vote> listeDesVotes=new ArrayList<Vote>();
 		
 		Vote V=cinema.faitUnVote(armaggeddon, 6);
