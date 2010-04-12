@@ -5,10 +5,13 @@
 <hibernate-mapping>
 <class name="metier.RecompenseFilm" table="recompensefilm" lazy="false">
 
+
 	<composite-id>
-        <key-many-to-one name="recompense" class="metier.Recompense" column="idrecompense" />
-		<key-many-to-one name="film" class="metier.Film" column="idfilm" />
-		<key-many-to-one name="typeRecompense" class="metier.TypeRecompenseFilm" column="idtyperecompensefilm" />
+        <key-many-to-one name="recompense" column="idrecompense" />
+		<key-many-to-one name="film" column="idfilm" />
+		<key-many-to-one name="typeRecompense" column="idtyperecompensefilm" />
+		<key-property name="annee" column="anneerecompensefilm" />
+
     </composite-id>
     <property name="annee" type="integer" column="anneerecompensefilm" />
 	<property name="isValidateRecompense" type="integer" column="isvalidaterecompensefilm"/>
