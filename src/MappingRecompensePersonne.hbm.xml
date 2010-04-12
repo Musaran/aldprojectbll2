@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+							"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="metier.RecompensePersonne" table="recompensepersonne" lazy="false">
+
+	<composite-id>
+        <key-many-to-one name="recompense" class="metier.Recompense" column="idrecompense" />
+		<key-many-to-one name="personne" class="metier.Personne" column="idpersonne" />
+		<key-many-to-one name="typeRecompense" class="metier.TypeRecompensePersonne" column="idtyperecompensepersonne" />
+    </composite-id>
+    <property name="annee" type="integer" column="anneerecompensepersonne" />
+	<property name="isValidateRecompense" type="integer" column="isvalidaterecompensepersonne"/>
+</class>
+
+</hibernate-mapping>

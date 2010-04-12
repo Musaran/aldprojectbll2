@@ -18,6 +18,7 @@
 	<mapping resource="MappingProfessionnel.hbm.xml"/>
 	<mapping resource="MappingRecompense.hbm.xml"/>
 	<mapping resource="MappingRecompenseFilm.hbm.xml"/>
+	<mapping resource="MappingRecompensePersonne.hbm.xml"/>
 	<mapping resource="MappingTypeRecompenseFilm.hbm.xml"/>
 	<mapping resource="MappingTypeRecompensePersonne.hbm.xml"/>
 	<mapping resource="MappingVote.hbm.xml"/>

@@ -1,5 +1,7 @@
 package metier;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author jerome
@@ -8,7 +10,7 @@ package metier;
  *
  */
 
-public class RecompensePersonne {
+public class RecompensePersonne implements Serializable{
 	
 	///données concernant les recompenses d'une personne
 	private Personne personne;
