@@ -38,10 +38,6 @@
 		<one-to-many class="metier.RecompenseFilm"/>
 	</set> 
 	
-	
-	
-	
-	
 </class>
 
 </hibernate-mapping>
