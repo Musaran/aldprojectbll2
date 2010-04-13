@@ -46,7 +46,7 @@ public class Test extends TestCase {
 	 Professionnel cinema = new Professionnel("cinema", "pass", null, "kine", "polis", "123 fake street");
 	 Professionnel cinema2 = new Professionnel("cinema", "pass", null, "kine", "polis", "123 fake street");
 	 assertEquals("Professionnel [adresse=123 fake street, derniereConnexion=null, " +
-	 		"idProfessionnel=1, login=cinema, nom=kine, password=pass, prenom=polis]",cinema.toString());
+	 		"login=cinema, nom=kine, password=pass, prenom=polis]",cinema.toString());
 	 
 	 RecompenseFilm recfilm = new RecompenseFilm(armaggeddon, oscar, meilleurFilm, 2010);
 	 assertEquals("RecompenseFilm [annee=2010, film="+recfilm.getFilm().toString()+", isValidateRecompense=0," +

@@ -10,7 +10,7 @@
 	<property name="prenom" type="string" column="prenompro"/>
 	<property name="adresse" type="string" column="adressepro"/>
 	<property name="derniereConnexion" type="date" column="derniereconnexion"/>	
-	
+		
 	<!-- Définition des relations --> 
 	<!-- Mapping vers Vote -->
 	<set name="votes"  lazy="false" cascade="all">
