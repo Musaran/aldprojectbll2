@@ -56,8 +56,8 @@ public class TestDao extends TestCase {
 		Personne christianBale = new Personne( "Christian", "Bale", Ddate, "c lui ki fait batman aussi", "no_photo_forever", 30);//!\personne existant deja dans la bdd
 		Personne chuckNorris = new Personne( "Chuck", "Norris", Ddate, "il tet fort", "no_photo", 10);//!\personne existant deja dans la bdd
 		
-		Professionnel cinema = new Professionnel( "cinema", "pass", Ddate, "kine", "polis", "123 fake street");
-		Professionnel cinema2 = new Professionnel( "theatre", "pwd", Ddate, "le petit", "theatre", "dtc");
+		Professionnel cinema = new Professionnel("cinema", "pass", Ddate, "kine", "polis", "123 fake street");
+		Professionnel cinema2 = new Professionnel("theatre", "pwd", Ddate, "le petit", "theatre", "dtc");
 		
 		TypeRecompenseFilm meilleurFilm= new TypeRecompenseFilm("meilleur film"); 
 		TypeRecompensePersonne meilleurActeur= new TypeRecompensePersonne("meilleur acteur");
