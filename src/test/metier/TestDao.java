@@ -84,15 +84,15 @@ public class TestDao extends TestCase {
 		
 		daop.save(chuckNorris);
 		daop.save(christianBale);
-		 
+		
 		chuckNorris.ajoutFilmProducteur(armaggeddon);
 		armaggeddon.ajoutPersonneActeur(chuckNorris);
 		
 		terminator.ajoutPersonneActeur(christianBale);
 		terminator.ajoutPersonneActeur(chuckNorris);
 		 
-		daopro.save(cinema);
-		daopro.save(cinema2);
+		daopro.saveOrUpdate(cinema);
+		daopro.saveOrUpdate(cinema2);
 		
 		daotrf.save(meilleurFilm);
 		daotrp.save(meilleurActeur);
@@ -100,14 +100,19 @@ public class TestDao extends TestCase {
 		daorec.save(cesar);
 		daorec.save(oscar);
 		
-		
+		terminator.setCout(399);
 		
 		terminator.ajoutRecompense(oscar, meilleurFilm, 1998);
 		chuckNorris.ajoutRecompense(cesar, meilleurActeur, 2002);
+		
 		daop.saveOrUpdate(chuckNorris);
 		daop.saveOrUpdate(christianBale);
 		daof.saveOrUpdate(terminator);
 		daof.saveOrUpdate(armaggeddon);
+		
+		
+		
+		
 		
 		//daorf.save(recf1);
 		//daorf.save(recf2);
@@ -116,7 +121,7 @@ public class TestDao extends TestCase {
 		//fin exemple de base de données
 		
 		
-		// exemple de vote 
+		/* exemple de vote 
 		 ArrayList<Vote> listeDesVotes=new ArrayList<Vote>();
 		
 		Vote V=cinema.faitUnVote(armaggeddon, 6);
@@ -137,5 +142,8 @@ public class TestDao extends TestCase {
 		//armaggeddon = daof.get(1);
 		
 		//System.out.println("la note est de : "+daovote.get(armaggeddon, cinema).getNote());	 
+		//daop.clear();
+		
+		//daop.remove(chuckNorris);
 	}
 }

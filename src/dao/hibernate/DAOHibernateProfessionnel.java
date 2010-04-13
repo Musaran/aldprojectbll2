@@ -37,14 +37,6 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		close(session);	
 		return set;
 	}
-	
-	@SuppressWarnings("unchecked")
-	public ArrayList<Professionnel> load(String login) throws Exception {
-		ArrayList<Professionnel> set = null;
-		Session session = connect();
-		set = (ArrayList<Professionnel>) session.createQuery("from Professionnel where nom=\'"+login+"\'").list();
-		return set;
-	}
 
 	@Override
 	public void remove(Professionnel professionnel) throws Exception {
@@ -57,25 +49,18 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 	@Override
 	public void save(Professionnel professionnel) throws Exception {
 		// TODO Auto-generated method stub
-		if(load(professionnel.getLogin())==null) {
-			Session session = connect();
-			session.save(professionnel);
-			close(session);
-		}
-		else {
-			System.out.println("login existant");
-		}
+		Session session = connect();
+		session.saveOrUpdate(professionnel);
+		close(session);
 		
 	}
 
 	@Override
 	public void saveOrUpdate(Professionnel professionnel) throws Exception {
 		// TODO Auto-generated method stub
-		if(load(professionnel.getLogin())==null) {
-			Session session = connect();
-			session.update(professionnel);
-			close(session);
-		}
+		Session session = connect();
+		session.update(professionnel);
+		close(session);
 	}
 
 }

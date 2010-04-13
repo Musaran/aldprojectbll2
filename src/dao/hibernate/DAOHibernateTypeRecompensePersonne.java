@@ -51,7 +51,7 @@ public class DAOHibernateTypeRecompensePersonne extends DAOHibernate implements 
 			throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		session.save(typeRecompensePersonne);
+		session.saveOrUpdate(typeRecompensePersonne);
 		close(session);	
 		
 	}
