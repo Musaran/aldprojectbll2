@@ -21,7 +21,6 @@ public interface DAOPersonne {
 	void				save(Personne personne)			throws Exception;
 	void				saveOrUpdate(Personne personne)	throws Exception;
 	void				remove(Personne personne)		throws Exception;
-	void 				remove(int idfilm) 				throws Exception;
 	void 				clear()							throws Exception;
 	
 }

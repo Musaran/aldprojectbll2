@@ -76,7 +76,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	public void save(Film film) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		session.save(film);
+		session.saveOrUpdate(film);
 		
 		
 		close(session);	

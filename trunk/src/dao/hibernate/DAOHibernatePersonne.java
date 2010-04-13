@@ -57,20 +57,12 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		session.delete(personne);	
 		close(session);	
 	}
-	/// suppression d'un film d'après son id
-	@Override
-	public void remove(int idfilm) throws Exception {
-		// TODO Auto-generated method stub
-		Session	session = connect();
-		session.delete(get(idfilm));	
-		close(session);	
-	}
 
 	@Override
 	public void save(Personne personne) throws Exception {
 		// TODO Auto-generated method stub
 		Session session =  connect();
-		session.save(personne);
+		session.saveOrUpdate(personne);
 		close(session);
 		
 		

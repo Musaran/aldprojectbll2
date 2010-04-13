@@ -49,7 +49,7 @@ public class DAOHibernateTypeRecompenseFilm extends DAOHibernate implements DAOT
 	public void save(TypeRecompenseFilm typeRecompenseFilm) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		session.save(typeRecompenseFilm);
+		session.saveOrUpdate(typeRecompenseFilm);
 		close(session);	
 	}
 

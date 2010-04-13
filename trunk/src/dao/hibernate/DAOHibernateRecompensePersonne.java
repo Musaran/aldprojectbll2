@@ -62,7 +62,7 @@ public class DAOHibernateRecompensePersonne extends DAOHibernate implements DAOR
 	public void save(RecompensePersonne recompensePersonne) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		session.save(recompensePersonne);
+		session.saveOrUpdate(recompensePersonne);
 		close(session);	
 	}
 
