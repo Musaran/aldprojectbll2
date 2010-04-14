@@ -83,11 +83,11 @@ public class Test extends TestCase {
 */
 	 ArrayList<Vote> liste = new ArrayList<Vote>();
 	 liste.add(cinema.faitUnVote(armaggeddon, 5));
-	 Vote.calculNoteMoyenne(armaggeddon, liste);
+	 armaggeddon.calculNoteMoyenne(liste);
 	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
 	 
 	 liste.add(cinema.faitUnVote(armaggeddon, 6));
-	 Vote.calculNoteMoyenne(armaggeddon, liste);
+	 armaggeddon.calculNoteMoyenne(liste);
 	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
 	 
 	 

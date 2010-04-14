@@ -14,8 +14,12 @@ import metier.Vote;
 public interface DAOVote {
 
 	Vote			get(Film film, Professionnel professionnel)	throws Exception;
+	/// liste des Votes pour un Film
+	ArrayList<Vote>		loadFilmVote(Film film)					throws Exception;
+	/// liste des Votes d'un professionnel
+	ArrayList<Vote>		loadProVote(Professionnel professionnel)throws Exception;
 	/// liste de toutes les Votes 
-	ArrayList<Vote>		loadAll()									throws Exception;
+	ArrayList<Vote>		loadAll()								throws Exception;
 	void			save(Vote vote)								throws Exception;
 	void			saveOrUpdate(Vote vote)						throws Exception;
 	void			remove(Vote vote)							throws Exception;

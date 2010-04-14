@@ -1,5 +1,6 @@
 package metier;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -83,10 +84,7 @@ public class Film {
 	public String toString() {
 		return "Film [cout=" + cout + ", dateSortie=" + dateSortie
 				+ ", idFilm=" + idFilm + ", isValidateFilm=" + isValidateFilm
-				+ ", listDesActeurs=" + listDesActeurs
-				+ ", listeDesProducteurs=" + listeDesProducteurs
-				+ ", listeDesRealisateurs=" + listeDesRealisateurs
-				+ ", listeRecompense=" + listeRecompense + ", nombreRequetes="
+
 				+ nombreRequetes + ", noteMoyenne=" + noteMoyenne
 				+ ", synopsis=" + synopsis + ", titre=" + titre + "]";
 	}
@@ -166,6 +164,34 @@ public class Film {
 		RecompenseFilm temp= new RecompenseFilm(this, r, t, annee);
 		this.listeRecompense.add(temp);
 	}
+	
+	
+	/**
+	 * fonction qui calcule et attribu la note moyenne à un film
+	 * @param film que le veut noter
+	 * @param liste des notes
+	 */
+	
+	public void calculNoteMoyenne(ArrayList<Vote> liste)
+	{
+		Iterator<Vote> i=liste.iterator();
+		int note =0;
+		int compteur=0;
+		while(i.hasNext())
+		{
+			Vote v=i.next();
+			if(v!=null)
+			{
+				if(v.getFilm().equals(this))
+				{
+					note+=v.getNote();	
+					compteur++;
+				}
+			}
+		}
+		this.setNoteMoyenne((note*1.0/compteur*1.0));
+	}
+	
 	
 	
 	/*

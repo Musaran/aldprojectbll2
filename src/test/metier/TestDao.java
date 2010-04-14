@@ -91,8 +91,8 @@ public class TestDao extends TestCase {
 		terminator.ajoutPersonneActeur(christianBale);
 		terminator.ajoutPersonneActeur(chuckNorris);
 		 
-		daopro.saveOrUpdate(cinema);
-		daopro.saveOrUpdate(cinema2);
+		daopro.save(cinema);
+		daopro.save(cinema2);
 		
 		daotrf.save(meilleurFilm);
 		daotrp.save(meilleurActeur);
@@ -100,7 +100,7 @@ public class TestDao extends TestCase {
 		daorec.save(cesar);
 		daorec.save(oscar);
 		
-		terminator.setCout(399);
+		//terminator.setCout(399);
 		
 		terminator.ajoutRecompense(oscar, meilleurFilm, 1998);
 		chuckNorris.ajoutRecompense(cesar, meilleurActeur, 2002);
@@ -109,11 +109,7 @@ public class TestDao extends TestCase {
 		daop.saveOrUpdate(christianBale);
 		daof.saveOrUpdate(terminator);
 		daof.saveOrUpdate(armaggeddon);
-		
-		
-		
-		
-		
+
 		//daorf.save(recf1);
 		//daorf.save(recf2);
 		//daorp.save(recp1);
@@ -121,20 +117,17 @@ public class TestDao extends TestCase {
 		//fin exemple de base de données
 		
 		
-		/* exemple de vote 
-		 ArrayList<Vote> listeDesVotes=new ArrayList<Vote>();
+		// exemple de vote 
 		
 		Vote V=cinema.faitUnVote(armaggeddon, 6);
 		daovote.save(V);
-		listeDesVotes = daovote.loadAll();
-		Vote.calculNoteMoyenne(armaggeddon, listeDesVotes);
+		armaggeddon.calculNoteMoyenne(daovote.loadFilmVote(armaggeddon));
 		daof.saveOrUpdate(armaggeddon);
 
 		
 		Vote V2=cinema2.faitUnVote(armaggeddon, 9);
 		daovote.save(V2);
-		listeDesVotes = daovote.loadAll();
-		Vote.calculNoteMoyenne(armaggeddon, listeDesVotes);
+		armaggeddon.calculNoteMoyenne(daovote.loadFilmVote(armaggeddon));
 		daof.saveOrUpdate(armaggeddon);
 		System.out.println(armaggeddon.getNoteMoyenne());
 		/* FIN exemple de vote */
