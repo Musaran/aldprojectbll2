@@ -79,31 +79,6 @@ public class Vote implements Serializable {
 		System.out.println("n'existe pas");
 		return false;
 	}
-	/**
-	 * fonction qui calcule et attribu la note moyenne à un film
-	 * @param film que le veut noter
-	 * @param liste des notes
-	 */
-	
-	public static void calculNoteMoyenne(Film film, ArrayList<Vote>liste)
-	{
-		Iterator<Vote> i=liste.iterator();
-		int note =0;
-		int compteur=0;
-		while(i.hasNext())
-		{
-			Vote v=i.next();
-			if(v!=null)
-			{
-				if(v.getFilm().equals(film))
-				{
-					note+=v.getNote();	
-					compteur++;
-				}
-			}
-		}
-		film.setNoteMoyenne((note*1.0/compteur*1.0));
-	}
 
 	/*
 	 * Getters and setters

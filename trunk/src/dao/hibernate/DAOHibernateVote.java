@@ -62,4 +62,26 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 		
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Vote> loadFilmVote(Film film) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Vote> set=(ArrayList<Vote>) session.createQuery(
+				"FROM Vote as vote WHERE vote.film="+film.getIdFilm()).list();	
+		close(session);	
+		return set;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Vote> loadProVote(Professionnel professionnel) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Vote> set=(ArrayList<Vote>) session.createQuery(
+				"FROM Vote as vote WHERE vote.professionnel="+professionnel.getLogin()).list();	
+		close(session);	
+		return set;
+	}
+
 }
