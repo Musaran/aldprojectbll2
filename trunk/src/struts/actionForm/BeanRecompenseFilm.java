@@ -63,13 +63,13 @@ public class BeanRecompenseFilm extends ActionForm{
 		if (this.getAnnee() <=0) {
 			erreurs.add("Une année valide est requise", new ActionMessage("BeanRecompenseFilm.erreur.annee.requise"));
 		}
-		if (this.getFilm() == null) {
+		if (this.getFilm() == null || this.getFilm().equals("")) {
 			erreurs.add("Un nom de film est requis", new ActionMessage("BeanRecompenseFilm.erreur.nomfilm.requis"));
 		}
-		if (this.getRecompense()==null) {
+		if (this.getRecompense()==null || this.getRecompense().equals("")) {
 			erreurs.add("Une recompense est requise", new ActionMessage("BeanRecompenseFilm.erreur.recompense.requise"));
 		}
-		if (this.getTypeRecompense() == null) {
+		if (this.getTypeRecompense() == null || this.getTypeRecompense().equals("")) {
 			erreurs.add("Un type de recompense est requis", new ActionMessage("BeanRecompenseFilm.erreur.typerecompense.requis"));
 		}
 		return erreurs;

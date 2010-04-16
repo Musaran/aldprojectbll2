@@ -11,6 +11,10 @@ import org.apache.struts.action.ActionMessage;
 
 public class BeanProfessionnel extends ActionForm{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Professionnel pro = null;
 	
 	public Professionnel getProfessionnel() {
