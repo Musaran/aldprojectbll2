@@ -63,13 +63,13 @@ public class BeanRecompensePersonne extends ActionForm{
 		if (this.getAnnee() <=0) {
 			erreurs.add("Une année valide est requise", new ActionMessage("BeanRecompensePersonne.erreur.annee.requise"));
 		}
-		if (this.getPersonne() == null) {
+		if (this.getPersonne() == null || this.getPersonne().equals("")) {
 			erreurs.add("Une personne est requise", new ActionMessage("BeanRecompensePersonne.erreur.personne.requise"));
 		}
-		if (this.getRecompense()==null) {
+		if (this.getRecompense()==null || this.getRecompense().equals("")) {
 			erreurs.add("Une recompense est requise", new ActionMessage("BeanRecompensePersonne.erreur.recompense.requise"));
 		}
-		if (this.getTypeRecompense() == null) {
+		if (this.getTypeRecompense() == null || this.getTypeRecompense().equals("")) {
 			erreurs.add("Un type de recompense est requis", new ActionMessage("BeanRecompensePersonne.erreur.typerecompense.requis"));
 		}
 		return erreurs;
