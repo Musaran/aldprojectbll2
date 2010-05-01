@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import junit.framework.TestCase;
 import metier.Film;
@@ -137,6 +139,22 @@ public class TestDao extends TestCase {
 		//System.out.println("la note est de : "+daovote.get(armaggeddon, cinema).getNote());	 
 		//daop.clear();
 		
+		/* [1]
+		chuckNorris.supprimeFilmProducteur(armaggeddon);
+		daop.saveOrUpdate(chuckNorris);
+		*/
+		/* [2] */
+		Personne p1 = daop.get(1);
+		System.out.println("p1 :"+p1.getIdPersonne()+".");
+		Film f1 = daof.get(1);
+		System.out.println("f1 :"+f1.getIdFilm()+".");
+		System.out.println("taille de liste  : "+p1.getFilmographieProducteur().size());
+		p1.supprimeFilmProducteur(f1);
+		System.out.println("taille de liste  : "+p1.getFilmographieProducteur().size());
+		daop.saveOrUpdate(p1);
+		
 		//daop.remove(chuckNorris);
+	
+
 	}
 }
