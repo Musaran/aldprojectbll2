@@ -24,6 +24,7 @@ public class Test extends TestCase {
 		/**
 		 * On test tous les constructeurs 
 		 */
+		/*
 	Recompense oscar = new Recompense(1, "oscar");
 	 assertEquals("Recompense [idRecompense=1, nomRecompense=oscar]", oscar.toString());
 	 
@@ -55,7 +56,7 @@ public class Test extends TestCase {
 	 RecompensePersonne recpersonne = new RecompensePersonne(chuckNorris, oscar, meilleurActeur, 2010);
 	 assertEquals("RecompensePersonne [annee=2010, isValidateRecompense=0, personne="+recpersonne.getPersonne().toString()+
 			 ", recompense="+recpersonne.getRecompense().toString()+", typeRecompense="+recpersonne.getTypeRecompense().toString()+"]",recpersonne.toString());
-	 
+	 */
 	 //Vote vote = new Vote(armaggeddon, cinema, 7);
 	// assertEquals("Vote [film="+vote.getFilm().toString()+", note=7, professionel="+vote.getProfessionnel().toString()+"]",vote.toString());
 	 /**
@@ -81,15 +82,21 @@ public class Test extends TestCase {
 	 assertEquals(cinema.getVotes().size(),2);
 
 */
-	 ArrayList<Vote> liste = new ArrayList<Vote>();
-	 liste.add(cinema.faitUnVote(armaggeddon, 5));
-	 armaggeddon.calculNoteMoyenne(liste);
-	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
+		 Personne chuckNorris = new Personne(1, "norris", "chuck", null, "il est fort", null, 10);
+
+		 
+		 Film armaggeddon = new Film(1, "armaggeddon", null, 100, "lol", 10);
+		 Film lol = new Film(4, "lol", null, 100, "lol", 10);
+		 Film lol5 = new Film(6, "lol", null, 100, "lol", 10);
+ 
+		 
+	 chuckNorris.ajoutFilmProducteur(armaggeddon);
 	 
-	 liste.add(cinema.faitUnVote(armaggeddon, 6));
-	 armaggeddon.calculNoteMoyenne(liste);
-	 assertEquals(armaggeddon.getNoteMoyenne(),5.0);
-	 
+
+	 System.out.println(chuckNorris.getFilmographieProducteur().size());
+	 chuckNorris.supprimeFilmProducteur(armaggeddon);
+	 System.out.println(chuckNorris.getFilmographieProducteur().size());
+	 System.out.println(armaggeddon.getListeDesProducteurs().size());
 	 
 	 
 	}

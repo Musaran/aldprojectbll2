@@ -143,6 +143,34 @@ public class Personne {
 	}
 	
 	/**
+	 * fonction qui supprime un film auquel la personne aurait participé en tant que producteur
+	 * @param film
+	 */
+	public void supprimeFilmProducteur(Film f)
+	{		
+		this.filmographieProducteur.remove(f);
+		f.getListeDesProducteurs().remove(this);			
+	}
+	/**
+	 * fonction qui supprime un film auquel la personne aurait participé en tant que realisateur
+	 * @param film
+	 */
+	public void supprimeFilmRealisateur(Film f)
+	{		
+		this.filmographieRealisateur.remove(f);
+		f.getListeDesRealisateurs().remove(this);			
+	}
+	/**
+	 * fonction qui supprime un film auquel la personne aurait participé en tant qu acteur
+	 * @param film
+	 */
+	public void supprimeFilmActeur(Film f)
+	{		
+		this.filmographieActeur.remove(f);
+		f.getListDesActeurs().remove(this);			
+	}
+	
+	/**
 	 * fonction qui recherche un film dans une liste
 	 * @param film recherché
 	 * @param liste de recherche

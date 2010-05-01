@@ -134,6 +134,33 @@ public class Film {
 		if(!(p.rechercheFilm(this, p.getFilmographieProducteur())))
 			p.getFilmographieProducteur().add(this);		
 	}
+	/**
+	 * Permet de supprimer un producteur à un film
+	 * @param p personne à supprimer
+	 */
+	public void supprimePersonneProducteur(Personne p)
+	{		
+			this.listeDesProducteurs.remove(p);
+			p.getFilmographieProducteur().remove(this);		
+	}
+	/**
+	 * Permet de supprimer un realisateur à un film
+	 * @param p personne à supprimer
+	 */
+	public void supprimePersonneRealisateur(Personne p)
+	{		
+			this.listeDesRealisateurs.remove(p);
+			p.getFilmographieRealisateur().remove(this);		
+	}
+	/**
+	 * Permet de supprimer un acteur à un film
+	 * @param p personne à supprimer
+	 */
+	public void supprimePersonneActeur(Personne p)
+	{		
+			this.listDesActeurs.remove(p);
+			p.getFilmographieActeur().remove(this);		
+	}
 	
 	/**
 	 * Fonction qui recherche une personne à partir d'une liste
