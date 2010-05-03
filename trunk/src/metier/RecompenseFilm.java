@@ -23,7 +23,7 @@ public class RecompenseFilm implements Serializable {
 	private TypeRecompenseFilm typeRecompense;
 	private int annee;
 	/// données concernant l acceptation
-	private int isValidateRecompense;
+	private int isValidateRecompense=0;
 	
 	
 	public RecompenseFilm() {
