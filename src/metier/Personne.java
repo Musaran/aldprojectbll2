@@ -29,7 +29,7 @@ public class Personne {
 	/// listes des recompenses
 	private Set<RecompensePersonne> listeRecompense = new HashSet<RecompensePersonne>();
 	/// données concernant l acceptation
-	private int isValidatePersonne;
+	private int isValidatePersonne=0;
 	
 	
 	public Personne() {
@@ -86,6 +86,8 @@ public class Personne {
 	 */
 	public boolean	equals(Object o)
 	{
+		System.out.println("ils ne sont pas égaux");
+
 		if (o instanceof Personne) {
 			Personne p = (Personne) o;
 			return this.idPersonne == p.idPersonne;
@@ -97,12 +99,12 @@ public class Personne {
 	@Override
 	public String toString() {
 		return "Personne [biographie=" + biographie + ", dateDeNaissance="
-				+ dateDeNaissance + ", filmographieActeur="
-				+ filmographieActeur + ", filmographieProducteur="
-				+ filmographieProducteur + ", filmographieRealisateur="
-				+ filmographieRealisateur + ", idPersonne=" + idPersonne
+				+ dateDeNaissance + ", "
+				
+				
+				+ ", idPersonne=" + idPersonne
 				+ ", isValidatePersonne=" + isValidatePersonne
-				+ ", listeRecompense=" + listeRecompense + ", nom=" + nom
+				+ ", nom=" + nom
 				+ ", nombreRequetes=" + nombreRequetes + ", photo=" + photo
 				+ ", prenom=" + prenom + "]";
 	}
@@ -147,9 +149,28 @@ public class Personne {
 	 * @param film
 	 */
 	public void supprimeFilmProducteur(Film f)
-	{		
-		this.filmographieProducteur.remove(f);
-		f.getListeDesProducteurs().remove(this);			
+	{	
+		Iterator<Film> i = this.filmographieProducteur.iterator();
+		while(i.hasNext())
+		{
+			Film a = i.next();
+			if(a.getIdFilm()==f.getIdFilm())
+			{
+				i.remove();
+				break;
+			}
+		}
+		
+		Iterator<Personne> j = f.getListeDesProducteurs().iterator();
+		while(j.hasNext())
+		{
+			Personne a = j.next();
+			if(a.getIdPersonne()==this.idPersonne)
+			{
+				j.remove();
+				break;
+			}
+		}		
 	}
 	/**
 	 * fonction qui supprime un film auquel la personne aurait participé en tant que realisateur
@@ -157,8 +178,27 @@ public class Personne {
 	 */
 	public void supprimeFilmRealisateur(Film f)
 	{		
-		this.filmographieRealisateur.remove(f);
-		f.getListeDesRealisateurs().remove(this);			
+		Iterator<Film> i = this.filmographieRealisateur.iterator();
+		while(i.hasNext())
+		{
+			Film a = i.next();
+			if(a.getIdFilm()==f.getIdFilm())
+			{
+				i.remove();
+				break;
+			}
+		}
+		
+		Iterator<Personne> j = f.getListeDesRealisateurs().iterator();
+		while(j.hasNext())
+		{
+			Personne a = j.next();
+			if(a.getIdPersonne()==this.idPersonne)
+			{
+				j.remove();
+				break;
+			}
+		}			
 	}
 	/**
 	 * fonction qui supprime un film auquel la personne aurait participé en tant qu acteur
@@ -166,8 +206,27 @@ public class Personne {
 	 */
 	public void supprimeFilmActeur(Film f)
 	{		
-		this.filmographieActeur.remove(f);
-		f.getListDesActeurs().remove(this);			
+		Iterator<Film> i = this.filmographieActeur.iterator();
+		while(i.hasNext())
+		{
+			Film a = i.next();
+			if(a.getIdFilm()==f.getIdFilm())
+			{
+				i.remove();
+				break;
+			}
+		}
+		
+		Iterator<Personne> j = f.getListDesActeurs().iterator();
+		while(j.hasNext())
+		{
+			Personne a = j.next();
+			if(a.getIdPersonne()==this.idPersonne)
+			{
+				j.remove();
+				break;
+			}
+		}		
 	}
 	
 	/**

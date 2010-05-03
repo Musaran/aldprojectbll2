@@ -18,7 +18,7 @@ public class RecompensePersonne implements Serializable{
 	private TypeRecompensePersonne typeRecompense;
 	private int annee;
 	/// données concernant l acceptation
-	private int isValidateRecompense;
+	private int isValidateRecompense=0;
 	
 	
 	public RecompensePersonne() {
