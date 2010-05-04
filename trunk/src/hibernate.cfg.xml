@@ -22,5 +22,8 @@
 	<mapping resource="MappingTypeRecompenseFilm.hbm.xml"/>
 	<mapping resource="MappingTypeRecompensePersonne.hbm.xml"/>
 	<mapping resource="MappingVote.hbm.xml"/>
+	<mapping resource="MappingRoleActeur.hbm.xml"/>
+	<mapping resource="MappingRoleProducteur.hbm.xml"/>
+	<mapping resource="MappingRoleRealisateur.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>
