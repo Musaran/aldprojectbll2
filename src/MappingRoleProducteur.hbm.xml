@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+							"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="metier.RoleProducteur" table="estunproducteur" lazy="false">
+
+	
+	<composite-id >
+        <key-many-to-one name="personne" column="idpersonne" />
+		<key-many-to-one name="film" column="idfilm" />
+    </composite-id>
+	<property name="isValidateRoleProducteur" type="integer" column="isvalidateproducteur"/>
+
+</class>
+
+</hibernate-mapping>

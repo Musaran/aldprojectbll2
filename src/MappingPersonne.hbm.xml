@@ -19,20 +19,20 @@
 	<property name="isValidatePersonne" type="integer" column="isvalidatepersonne"/>
 	
 	<!-- Définition des relations -->
-	<!-- Mapping vers Film -->
-	<set name="filmographieActeur" table="estunacteur" inverse="true" lazy="false" cascade="save-update">
+	<!-- Mapping vers les roles... -->
+	<set name="filmographieActeur"  lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
-		<many-to-many class="metier.Film" column="idfilm"/>
+		<one-to-many class="metier.RoleActeur" />
 	</set> 
-	<set name="filmographieRealisateur" table="estunrealisateur" inverse="true" lazy="false" cascade="save-update">
+	<set name="filmographieProducteur"  lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
-		<many-to-many class="metier.Film" column="idfilm"/>
-	</set>
-	<set name="filmographieProducteur" table="estunproducteur" inverse="true" lazy="false" cascade="save-update">
+		<one-to-many class="metier.RoleProducteur" />
+	</set> 
+	<set name="filmographieRealisateur"  lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
-		<many-to-many class="metier.Film" column="idfilm"/>
+		<one-to-many class="metier.RoleRealisateur" />
 	</set>
-
+	<!-- Mapping vers les recompenses... -->
 	<set name="listeRecompense" table="recompensepersonne" lazy="false" cascade="save-update">
 		<key column="idpersonne"/>
 		<one-to-many class="metier.RecompensePersonne"/>

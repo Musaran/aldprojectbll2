@@ -1,5 +1,6 @@
 package metier;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -16,8 +17,12 @@ import java.util.Set;
  *
  */
 
-public class Film {
+public class Film  {
 
+	/**
+	 * 
+	 */
+	
 	/// données propre au film
 	private int idFilm;
 	private String titre;
@@ -27,9 +32,9 @@ public class Film {
 	private String synopsis;
 	private int nombreRequetes;
 	/// données concernant les membres de l'équipe
-	private Set<Personne> listDesActeurs = new HashSet<Personne>();
-	private Set<Personne> listeDesRealisateurs = new HashSet<Personne>();
-	private Set<Personne> listeDesProducteurs = new HashSet<Personne>();
+	private Set<RoleActeur> listDesActeurs = new HashSet<RoleActeur>();
+	private Set<RoleRealisateur> listeDesRealisateurs = new HashSet<RoleRealisateur>();
+	private Set<RoleProducteur> listeDesProducteurs = new HashSet<RoleProducteur>();
 	/// données concernant les recompense
 	private Set<RecompenseFilm> listeRecompense = new HashSet<RecompenseFilm>();
 	/// données concernant la note du film (moyenne de tous les votes)
@@ -103,119 +108,7 @@ public class Film {
 		else
 			return false;
 	}
-	/**
-	 * Permet d'ajouter un acteur à un film
-	 * @param p personne à ajouter
-	 */
-	public void ajoutPersonneActeur(Personne p)
-	{
-		if(!this.recherchePersonne(p, this.listDesActeurs))
-			this.listDesActeurs.add(p);
-		if(!(p.rechercheFilm(this, p.getFilmographieActeur())))
-			p.getFilmographieActeur().add(this);		
-	}
-	/**
-	 * Permet d'ajouter un realisateur à un film
-	 * @param p personne à ajouter
-	 */
-	public void ajoutPersonneRealisateur(Personne p)
-	{
-		if(!this.recherchePersonne(p, this.listeDesRealisateurs))
-			this.listeDesRealisateurs.add(p);
-		if(!(p.rechercheFilm(this, p.getFilmographieRealisateur())))
-			p.getFilmographieRealisateur().add(this);		
-	}
-	/**
-	 * Permet d'ajouter un producteur à un film
-	 * @param p personne à ajouter
-	 */
-	public void ajoutPersonneProducteur(Personne p)
-	{
-		if(!this.recherchePersonne(p, this.listeDesProducteurs))
-			this.listeDesProducteurs.add(p);
-		if(!(p.rechercheFilm(this, p.getFilmographieProducteur())))
-			p.getFilmographieProducteur().add(this);		
-	}
-	/**
-	 * Permet de supprimer un producteur à un film
-	 * @param p personne à supprimer
-	 */
-	public void supprimePersonneProducteur(Personne p)
-	{			
-			Iterator<Personne> i = listeDesProducteurs.iterator();
-			while(i.hasNext())
-			{
-				Personne a = i.next();
-				if(a.getIdPersonne()==p.getIdPersonne())
-				{
-					i.remove();
-					break;
-				}
-			}
-			
-			Iterator<Film> j = p.getFilmographieProducteur().iterator();
-			while(j.hasNext())
-			{
-				Film a = j.next();
-				if(a.getIdFilm()==this.idFilm)
-					j.remove();
-			}		
-	}
-	/**
-	 * Permet de supprimer un realisateur à un film
-	 * @param p personne à supprimer
-	 */
-	public void supprimePersonneRealisateur(Personne p)
-	{		
-		Iterator<Personne> i = listeDesRealisateurs.iterator();
-		while(i.hasNext())
-		{
-			Personne a = i.next();
-			if(a.getIdPersonne()==p.getIdPersonne())
-			{
-				i.remove();
-				break;
-			}
-		}
-		
-		Iterator<Film> j = p.getFilmographieActeur().iterator();
-		while(j.hasNext())
-		{
-			Film a = j.next();
-			if(a.getIdFilm()==this.idFilm)
-			{
-				j.remove();
-			}
-		}		
-	}
-	/**
-	 * Permet de supprimer un acteur à un film
-	 * @param p personne à supprimer
-	 */
-	public void supprimePersonneActeur(Personne p)
-	{		
-		Iterator<Personne> i = this.listDesActeurs.iterator();
-		while(i.hasNext())
-		{
-			Personne a = i.next();
-			if(a.getIdPersonne()==p.getIdPersonne())
-			{
-				i.remove();
-				break;
-			}
-		}
-		
-		Iterator<Film> j = p.getFilmographieActeur().iterator();
-		while(j.hasNext())
-		{
-			Film a = j.next();
-			if(a.getIdFilm()==this.idFilm)
-			{
-				j.remove();
-				break;
-			}
-		}		
-	}
+
 	
 	/**
 	 * Fonction qui recherche une personne à partir d'une liste
@@ -325,22 +218,22 @@ public class Film {
 	public void setNombreRequetes(int nombreRequetes) {
 		this.nombreRequetes = nombreRequetes;
 	}
-	public Set<Personne> getListDesActeurs() {
+	public Set<RoleActeur> getListDesActeurs() {
 		return listDesActeurs;
 	}
-	public void setListDesActeurs(Set<Personne> listDesActeurs) {
+	public void setListDesActeurs(Set<RoleActeur> listDesActeurs) {
 		this.listDesActeurs = listDesActeurs;
 	}
-	public Set<Personne> getListeDesRealisateurs() {
+	public Set<RoleRealisateur> getListeDesRealisateurs() {
 		return listeDesRealisateurs;
 	}
-	public void setListeDesRealisateurs(Set<Personne> listeDesRealisateurs) {
+	public void setListeDesRealisateurs(Set<RoleRealisateur> listeDesRealisateurs) {
 		this.listeDesRealisateurs = listeDesRealisateurs;
 	}
-	public Set<Personne> getListeDesProducteurs() {
+	public Set<RoleProducteur> getListeDesProducteurs() {
 		return listeDesProducteurs;
 	}
-	public void setListeDesProducteurs(Set<Personne> listeDesProducteurs) {
+	public void setListeDesProducteurs(Set<RoleProducteur> listeDesProducteurs) {
 		this.listeDesProducteurs = listeDesProducteurs;
 	}
 	public Set<RecompenseFilm> getListeRecompense() {
