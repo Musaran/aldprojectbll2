@@ -1,7 +1,11 @@
 package metier;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * @author jerome
+ * Classe qui stock les realisateurs
+ */
 public class RoleRealisateur implements Serializable {
 	private Personne personne;
 	private Film film;
@@ -10,7 +14,9 @@ public class RoleRealisateur implements Serializable {
 	
 	
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public RoleRealisateur() {
 		super();
 	}

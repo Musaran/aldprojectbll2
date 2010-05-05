@@ -97,6 +97,9 @@ public class Personne {
 	}
 	
 	@Override
+	/**
+	 * Methode de conversion de l'objet en string
+	 */
 	public String toString() {
 		return "Personne [biographie=" + biographie + ", dateDeNaissance="
 				+ dateDeNaissance + ", "

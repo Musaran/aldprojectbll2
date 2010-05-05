@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class Vote implements Serializable {
 	/**
-	 * 
+	 * données membres
 	 */
 	private static final long serialVersionUID = 1L;
 	///données concernant les vote (notes des pros)
@@ -23,7 +23,9 @@ public class Vote implements Serializable {
 	private Professionnel professionnel;
 	private int note;
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public Vote() {
 		// TODO Auto-generated constructor stub
 	}

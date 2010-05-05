@@ -14,7 +14,7 @@ public class RecompenseFilm implements Serializable {
 
 
 	/**
-	 * 
+	 * Données membres
 	 */
 	private static final long serialVersionUID = 1L;
 	///données concernant les recompenses d'un film
@@ -25,7 +25,9 @@ public class RecompenseFilm implements Serializable {
 	/// données concernant l acceptation
 	private int isValidateRecompense=0;
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public RecompenseFilm() {
 		// TODO Auto-generated constructor stub
 	}
@@ -59,6 +61,9 @@ public class RecompenseFilm implements Serializable {
 		else
 			return false;
 	}
+	/**
+	 * Methode qui convertit l'objet en string
+	 */
 	@Override
 	public String toString() {
 		return "RecompenseFilm [annee=" + annee + ", film=" + film

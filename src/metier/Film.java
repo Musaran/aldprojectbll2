@@ -20,7 +20,7 @@ import java.util.Set;
 public class Film  {
 
 	/**
-	 * 
+	 * Données membres
 	 */
 	
 	/// données propre au film
@@ -43,7 +43,9 @@ public class Film  {
 	private int isValidateFilm=0;
 	
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public Film() {
 
 	}
@@ -86,6 +88,9 @@ public class Film  {
 		
 	}
 	
+	/**
+	 * Methode qui permet de transformer en chaine de caractere
+	 */
 	@Override
 	public String toString() {
 		return "Film [cout=" + cout + ", dateSortie=" + dateSortie
