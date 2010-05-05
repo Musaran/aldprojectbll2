@@ -13,7 +13,9 @@ public class TypeRecompensePersonne {
 	private int idTypeRecompensePersonne;
 	private String nomTypeRecompensePersonne;
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public TypeRecompensePersonne() {
 		// TODO Auto-generated constructor stub
 	}

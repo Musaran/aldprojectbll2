@@ -92,7 +92,4 @@ public class RecompensePersonne implements Serializable{
 		this.isValidateRecompense = isValidateRecompense;
 	}
 	
-	/*
-	 * Constructeur
-	 */
 }

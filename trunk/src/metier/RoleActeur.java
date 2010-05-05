@@ -2,6 +2,11 @@ package metier;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @author jerome
+ * Classe qui stock les roles des acteurs
+ */
 public class RoleActeur implements Serializable {
 	private Personne personne;
 	private Film film;
@@ -9,7 +14,9 @@ public class RoleActeur implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public RoleActeur() {
 		super();
 	}

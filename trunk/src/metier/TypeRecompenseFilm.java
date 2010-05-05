@@ -13,7 +13,9 @@ public class TypeRecompenseFilm {
 	private int idTypeRecompenseFilm;
 	private String nomTypeRecompenseFilm="";
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public TypeRecompenseFilm() {
 		// TODO Auto-generated constructor stub
 	}

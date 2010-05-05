@@ -13,7 +13,9 @@ public class Recompense {
 	private int idRecompense;
 	private String nomRecompense;
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public Recompense() {
 		// TODO Auto-generated constructor stub
 	}
@@ -51,6 +53,9 @@ public class Recompense {
 			return false;
 	}
 
+	/**
+	 * Methode qui permet de convertir en string
+	 */
 	@Override
 	public String toString() {
 		return "Recompense [idRecompense=" + idRecompense + ", nomRecompense="

@@ -1,10 +1,15 @@
 package metier;
 
 import java.io.Serializable;
+/**
+ * 
+ * @author jerome
+ * Classe qui stock les producteurs
+ */
 
 public class RoleProducteur implements Serializable {
 	/**
-	 * 
+	 * données membres
 	 */
 	private static final long serialVersionUID = 1L;
 	private Personne personne;
@@ -13,7 +18,9 @@ public class RoleProducteur implements Serializable {
 	
 	
 	
-	
+	/**
+	 * Constructeur par défaut
+	 */
 	public RoleProducteur() {
 		super();
 	}
