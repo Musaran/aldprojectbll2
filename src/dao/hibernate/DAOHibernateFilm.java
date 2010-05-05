@@ -90,5 +90,21 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		close(session);
 		
 	}
+	@Override
+	public ArrayList<Film> loadFilmInvalide() throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film WHERE isValidateFilm=0").list();	
+		close(session);	
+		return set;
+	}
+	@Override
+	public ArrayList<Film> loadFilmValide() throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film WHERE isValidateFilm=1").list();	
+		close(session);	
+		return set;
+	}
 
 }

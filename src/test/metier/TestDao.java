@@ -93,7 +93,7 @@ public class TestDao extends TestCase {
 		daotrp.clear();
 		daorec.clear();*/
 		
-		daof.save(armaggeddon);
+		/*daof.save(armaggeddon);
 		daof.save(terminator);
 		
 		daop.save(chuckNorris);
@@ -154,7 +154,7 @@ public class TestDao extends TestCase {
 		
 		//System.out.println("la note est de : "+daovote.get(armaggeddon, cinema).getNote());	 
 		//daop.clear();
-		
+		/*
 		System.out.println("il y a "+daora.loadActeurValide().size()+"acteurs valides");
 		System.out.println("il y a "+daorop.loadProducteurValide().size()+"producteur valides");
 		System.out.println("il y a "+daoropr.loadRealisateurValide().size()+"realisateur valides");
@@ -194,7 +194,9 @@ public class TestDao extends TestCase {
 		daora.saveOrUpdate(r5);
 		
 				//daop.remove(chuckNorris);
-		
+		*/
+		System.out.println(daorp.loadInvalideRecompensePersonne().size());
+		System.out.println(daorp.loadValideRecompensePersonne().size());
 
 	}
 }

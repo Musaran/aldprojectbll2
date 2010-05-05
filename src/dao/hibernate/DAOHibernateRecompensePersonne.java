@@ -75,4 +75,23 @@ public class DAOHibernateRecompensePersonne extends DAOHibernate implements DAOR
 		close(session);
 	}
 
+	@Override
+	public ArrayList<RecompensePersonne> loadInvalideRecompensePersonne()
+			throws Exception {
+		Session	session = connect();
+		ArrayList<RecompensePersonne>  set=(ArrayList<RecompensePersonne> ) session.createQuery("FROM RecompensePersonne WHERE isValidateRecompense=0").list();	
+		close(session);	
+		return set;
+	}
+
+	@Override
+	public ArrayList<RecompensePersonne> loadValideRecompensePersonne()
+			throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<RecompensePersonne>  set=(ArrayList<RecompensePersonne> ) session.createQuery("FROM RecompensePersonne WHERE isValidateRecompense=1").list();	
+		close(session);	
+		return set;
+	}
+
 }

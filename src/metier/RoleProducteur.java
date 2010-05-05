@@ -9,7 +9,7 @@ public class RoleProducteur implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Personne personne;
 	private Film film;
-	private int isValidateRoleProducteur;
+	private int isValidateRoleProducteur=0;
 	
 	
 	

@@ -75,4 +75,22 @@ public class DAOHibernateRecompenseFilm extends DAOHibernate implements DAORecom
 		close(session);
 	}
 
+	@Override
+	public ArrayList<RecompenseFilm> loadInvalideRecompenseFilm()
+			throws Exception {
+		Session	session = connect();
+		ArrayList<RecompenseFilm>  set=(ArrayList<RecompenseFilm> ) session.createQuery("FROM RecompenseFilm WHERE isValidateRecompense=0").list();	
+		close(session);	
+		return set;
+	}
+
+	@Override
+	public ArrayList<RecompenseFilm> loadValideRecompenseFilm()
+			throws Exception {
+		Session	session = connect();
+		ArrayList<RecompenseFilm>  set=(ArrayList<RecompenseFilm> ) session.createQuery("FROM RecompenseFilm WHERE isValidateRecompense=1").list();	
+		close(session);	
+		return set;
+	}
+
 }
