@@ -22,5 +22,7 @@ public interface DAOPersonne {
 	void				saveOrUpdate(Personne personne)	throws Exception;
 	void				remove(Personne personne)		throws Exception;
 	void 				clear()							throws Exception;
+	ArrayList<Personne> loadInvalidePersonne() throws Exception;
+	ArrayList<Personne> loadValidePersonne() throws Exception;
 	
 }

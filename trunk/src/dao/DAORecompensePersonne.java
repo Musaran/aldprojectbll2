@@ -22,4 +22,7 @@ public interface DAORecompensePersonne {
 	void						saveOrUpdate(RecompensePersonne recompensePersonne)	throws Exception;
 	void						remove(RecompensePersonne recompensePersonne)		throws Exception;
 	void 						clear()												throws Exception;
+	ArrayList<RecompensePersonne> loadInvalideRecompensePersonne() throws Exception;
+	ArrayList<RecompensePersonne> loadValideRecompensePersonne() throws Exception;
+	
 }

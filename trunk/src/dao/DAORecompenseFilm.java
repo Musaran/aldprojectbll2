@@ -23,4 +23,6 @@ public interface DAORecompenseFilm {
 	void					saveOrUpdate(RecompenseFilm recompenseFilm)	throws Exception;
 	void					remove(RecompenseFilm recompenseFilm)		throws Exception;
 	void 					clear()										throws Exception;
+	ArrayList<RecompenseFilm> loadInvalideRecompenseFilm()throws Exception;
+	ArrayList<RecompenseFilm> loadValideRecompenseFilm()throws Exception;
 }

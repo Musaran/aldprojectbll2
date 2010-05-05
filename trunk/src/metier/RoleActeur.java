@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class RoleActeur implements Serializable {
 	private Personne personne;
 	private Film film;
-	private int isValidateRoleActeur;
+	private int isValidateRoleActeur=0;
 	private static final long serialVersionUID = 1L;
 	
 	
