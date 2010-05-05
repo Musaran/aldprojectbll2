@@ -79,9 +79,20 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		ArrayList<Vote> set=(ArrayList<Vote>) session.createQuery(
-				"FROM Vote as vote WHERE vote.professionnel="+professionnel.getLogin()).list();	
+				"FROM Vote as vote WHERE vote.professionnel='"+professionnel.getLogin()+"'").list();	
 		close(session);	
 		return set;
+	}
+
+	@Override
+	public ArrayList<Film> loadFilmNonVote(Professionnel p) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Film> f=(ArrayList<Film>) session.createQuery(
+				"FROM Film f where f not in ( SELECT vote.film FROM Vote vote where vote.professionnel ='"+p.getLogin()+"')")
+				.list();
+		close(session);	
+		return f;
 	}
 
 }

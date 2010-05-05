@@ -195,8 +195,10 @@ public class TestDao extends TestCase {
 		
 				//daop.remove(chuckNorris);
 		*/
-		System.out.println(daorp.loadInvalideRecompensePersonne().size());
-		System.out.println(daorp.loadValideRecompensePersonne().size());
+		Professionnel pro = daopro.get("cinema");
+		
+		System.out.println("le pro est "+pro.getLogin() );
+		System.out.println("il peut voter pour "+daovote.loadFilmNonVote(pro).size() );;
 
 	}
 }

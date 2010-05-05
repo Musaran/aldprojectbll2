@@ -1,6 +1,8 @@
 package dao;
 
 import java.util.ArrayList;
+
+import metier.Film;
 import metier.Professionnel;
 
 /**

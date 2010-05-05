@@ -2,6 +2,7 @@ package dao.hibernate;
 
 import java.util.ArrayList;
 
+import metier.Film;
 import metier.Professionnel;
 
 import org.hibernate.Session;
@@ -62,5 +63,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		session.update(professionnel);
 		close(session);
 	}
+
+	
 
 }
