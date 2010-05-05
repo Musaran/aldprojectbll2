@@ -24,4 +24,5 @@ public interface DAOVote {
 	void			saveOrUpdate(Vote vote)						throws Exception;
 	void			remove(Vote vote)							throws Exception;
 	void 			clear()										throws Exception;
+	ArrayList<Film> loadFilmNonVote(Professionnel p)throws Exception;
 }
