@@ -54,12 +54,9 @@
     </action-mappings>
 
 
-
 <!-- ======================================== Message Resources Definitions -->
 
     <message-resources parameter="MessageResources" />
-
-
 
 </struts-config>
 
