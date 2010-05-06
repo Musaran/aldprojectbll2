@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import metier.Film;
 import metier.Professionnel;
@@ -21,4 +22,5 @@ public interface DAOProfessionnel {
 	void				saveOrUpdate(Professionnel professionnel)	throws Exception;
 	void				remove(Professionnel professionnel)			throws Exception;
 	void 				clear()										throws Exception;
+	ArrayList<Professionnel>	loadInactif(Date d)							throws Exception;
 }

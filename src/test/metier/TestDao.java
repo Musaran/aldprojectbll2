@@ -3,6 +3,7 @@ package test.metier;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -195,10 +196,16 @@ public class TestDao extends TestCase {
 		
 				//daop.remove(chuckNorris);
 		*/
-		Professionnel pro = daopro.get("cinema");
-		
-		System.out.println("le pro est "+pro.getLogin() );
-		System.out.println("il peut voter pour "+daovote.loadFilmNonVote(pro).size() );;
+		/* DELIRE des dates */
+		Calendar c = Calendar.getInstance();
+		c.add(Calendar.MONTH, -1);
+		Date bonne = c.getTime();
+		java.sql.Date jsqlD = new java.sql.Date( c.getTime().getTime() );
 
+		
+		System.out.println("Les inactifs sont :  "+daopro.loadInactif(jsqlD).size() );
+		System.out.println(jsqlD);
+		System.out.println(dateFormat.format(c.getTime()));
+	
 	}
 }
