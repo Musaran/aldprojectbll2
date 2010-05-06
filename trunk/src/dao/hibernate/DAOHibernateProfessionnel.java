@@ -1,10 +1,12 @@
 package dao.hibernate;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import metier.Film;
 import metier.Professionnel;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import dao.DAOProfessionnel;
@@ -62,6 +64,18 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		Session session = connect();
 		session.update(professionnel);
 		close(session);
+	}
+
+	@Override
+	public ArrayList<Professionnel> loadInactif(Date d) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		 Query req = session.createQuery(
+				"FROM Professionnel WHERE derniereConnexion < '"+d+"'");
+		 //req.setDate(0,d);
+		 ArrayList<Professionnel> set=(ArrayList<Professionnel>) req.list();
+		close(session);	
+		return set;
 	}
 
 	
