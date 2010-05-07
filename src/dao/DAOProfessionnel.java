@@ -23,4 +23,5 @@ public interface DAOProfessionnel {
 	void				remove(Professionnel professionnel)			throws Exception;
 	void 				clear()										throws Exception;
 	ArrayList<Professionnel>	loadInactif(Date d)							throws Exception;
+	ArrayList<Professionnel>	loadInscritDuMoi()throws Exception;
 }

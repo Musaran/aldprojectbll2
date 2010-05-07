@@ -196,7 +196,7 @@ public class TestDao extends TestCase {
 		
 				//daop.remove(chuckNorris);
 		*/
-		/* DELIRE des dates */
+		/* DELIRE des dates 
 		Calendar c = Calendar.getInstance();
 		c.add(Calendar.MONTH, -1);
 		Date bonne = c.getTime();
@@ -206,6 +206,7 @@ public class TestDao extends TestCase {
 		System.out.println("Les inactifs sont :  "+daopro.loadInactif(jsqlD).size() );
 		System.out.println(jsqlD);
 		System.out.println(dateFormat.format(c.getTime()));
-	
+	*/
+		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMoi().size() );
 	}
 }

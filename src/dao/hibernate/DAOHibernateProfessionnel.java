@@ -78,6 +78,18 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		return set;
 	}
 
+	@Override
+	public ArrayList<Professionnel> loadInscritDuMoi() throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		 Query req = session.createQuery(
+				"FROM Professionnel WHERE month(derniereConnexion) = month(now()) AND year(now()) = year(derniereConnexion)");
+		 //req.setDate(0,d);
+		 ArrayList<Professionnel> set=(ArrayList<Professionnel>) req.list();
+		close(session);	
+		return set;
+	}
+
 	
 
 }
