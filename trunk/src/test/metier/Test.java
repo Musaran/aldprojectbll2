@@ -90,11 +90,9 @@ public class Test extends TestCase {
 		 Film lol5 = new Film(6, "lol", null, 100, "lol", 10);
  
 		 
-	 chuckNorris.ajoutFilmProducteur(armaggeddon);
 	 
 
 	 System.out.println(chuckNorris.getFilmographieProducteur().size());
-	 chuckNorris.supprimeFilmProducteur(armaggeddon);
 	 System.out.println(chuckNorris.getFilmographieProducteur().size());
 	 System.out.println(armaggeddon.getListeDesProducteurs().size());
 	 
