@@ -5,7 +5,7 @@
 <html:html>
 
 <head>
-	<title></title>
+	<title><bean:message key="Index.titre"/></title>
 </head>
 
 <body>
