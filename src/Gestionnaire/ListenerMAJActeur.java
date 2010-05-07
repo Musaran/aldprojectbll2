@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import metier.RoleActeur;
 
 /**
- * Le listener qui va écouter les clic des boutons et seulement ceux la 
+ * Le listener qui va écouter les clic des boutons et seulement ceux la  
  * @author jerome
  *
  */
