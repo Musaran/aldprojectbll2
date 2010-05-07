@@ -49,6 +49,21 @@ public class ListenerMAJActeur implements ActionListener {
 		{
 			gestionnaire.supprimeRole(liste);
 		}
+		else if(source.getText().equals(
+				AffichageGestionnaire.getInstance().getBoutonRefusAllActeur().getText()))
+		{
+			gestionnaire.supprimeAll();
+		}
+		else if(source.getText().equals(
+				AffichageGestionnaire.getInstance().getBoutonAcceptActeur().getText()))
+		{
+			gestionnaire.acceptRole(liste);
+		}
+		else if(source.getText().equals(
+				AffichageGestionnaire.getInstance().getBoutonAcceptAllActeur().getText()))
+		{
+			gestionnaire.acceptAll();
+		}
 			
 		
 	}
