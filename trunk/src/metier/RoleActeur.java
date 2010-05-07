@@ -17,8 +17,15 @@ public class RoleActeur implements Serializable {
 	/**
 	 * Constructeur par défaut
 	 */
+	
+	
 	public RoleActeur() {
 		super();
+	}
+	@Override
+	public String toString() {
+		return personne.getNom()+" "+personne.getPrenom()+" (id="+personne.getIdPersonne()+")à joué dans "+
+		film.getTitre()+" (id="+film.getIdFilm()+")";
 	}
 	@Override
 	public int hashCode() {
