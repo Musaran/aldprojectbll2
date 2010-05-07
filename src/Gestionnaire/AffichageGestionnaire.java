@@ -1,10 +1,18 @@
 package Gestionnaire;
 
 import javax.swing.JFrame;
-
+/**
+ * Classe Singleton pour l'affichage de l'application administrateur
+ * @author jerome
+ *
+ */
 public class AffichageGestionnaire extends JFrame {
 	private static AffichageGestionnaire instance;
 	
+	/**
+	 * Fonction qui permet de recupérer l'affichage
+	 * @return instance de la classe
+	 */
 	public static AffichageGestionnaire getInstance()
 	{
 		if(instance==null)
@@ -12,10 +20,17 @@ public class AffichageGestionnaire extends JFrame {
 		
 		return instance;
 	}
-	
+	/**
+	 * Constructeur par défaut appelé pour avoir l'instance si elle n'existe pas
+	 */
 	private AffichageGestionnaire()
 	{
 		initComponents();
+		conteneurOnglet.addChangeListener(new ListenerOnglet() );
+		boutonAcceptActeur.addActionListener(new ListenerMAJActeur());
+		boutonAcceptAllActeur.addActionListener(new ListenerMAJActeur());
+		boutonRefusActeur.addActionListener(new ListenerMAJActeur());
+	    boutonRefusAllActeur.addActionListener(new ListenerMAJActeur());
 	}
 	
 	 // Variables declaration - do not modify
@@ -971,6 +986,628 @@ public class AffichageGestionnaire extends JFrame {
 
 	        pack();
 	    }// </editor-fold>
+	public javax.swing.JButton getBoutonAcceptActeur() {
+		return boutonAcceptActeur;
+	}
+	public void setBoutonAcceptActeur(javax.swing.JButton boutonAcceptActeur) {
+		this.boutonAcceptActeur = boutonAcceptActeur;
+	}
+	public javax.swing.JButton getBoutonAcceptAllActeur() {
+		return boutonAcceptAllActeur;
+	}
+	public void setBoutonAcceptAllActeur(javax.swing.JButton boutonAcceptAllActeur) {
+		this.boutonAcceptAllActeur = boutonAcceptAllActeur;
+	}
+	public javax.swing.JButton getBoutonAcceptAllFilm() {
+		return boutonAcceptAllFilm;
+	}
+	public void setBoutonAcceptAllFilm(javax.swing.JButton boutonAcceptAllFilm) {
+		this.boutonAcceptAllFilm = boutonAcceptAllFilm;
+	}
+	public javax.swing.JButton getBoutonAcceptAllInscrit() {
+		return boutonAcceptAllInscrit;
+	}
+	public void setBoutonAcceptAllInscrit(javax.swing.JButton boutonAcceptAllInscrit) {
+		this.boutonAcceptAllInscrit = boutonAcceptAllInscrit;
+	}
+	public javax.swing.JButton getBoutonAcceptAllPersonne() {
+		return boutonAcceptAllPersonne;
+	}
+	public void setBoutonAcceptAllPersonne(
+			javax.swing.JButton boutonAcceptAllPersonne) {
+		this.boutonAcceptAllPersonne = boutonAcceptAllPersonne;
+	}
+	public javax.swing.JButton getBoutonAcceptAllProducteur() {
+		return boutonAcceptAllProducteur;
+	}
+	public void setBoutonAcceptAllProducteur(
+			javax.swing.JButton boutonAcceptAllProducteur) {
+		this.boutonAcceptAllProducteur = boutonAcceptAllProducteur;
+	}
+	public javax.swing.JButton getBoutonAcceptAllRealisateur() {
+		return boutonAcceptAllRealisateur;
+	}
+	public void setBoutonAcceptAllRealisateur(
+			javax.swing.JButton boutonAcceptAllRealisateur) {
+		this.boutonAcceptAllRealisateur = boutonAcceptAllRealisateur;
+	}
+	public javax.swing.JButton getBoutonAcceptAllRecompenseFilm() {
+		return boutonAcceptAllRecompenseFilm;
+	}
+	public void setBoutonAcceptAllRecompenseFilm(
+			javax.swing.JButton boutonAcceptAllRecompenseFilm) {
+		this.boutonAcceptAllRecompenseFilm = boutonAcceptAllRecompenseFilm;
+	}
+	public javax.swing.JButton getBoutonAcceptAllRecompensePersonne() {
+		return boutonAcceptAllRecompensePersonne;
+	}
+	public void setBoutonAcceptAllRecompensePersonne(
+			javax.swing.JButton boutonAcceptAllRecompensePersonne) {
+		this.boutonAcceptAllRecompensePersonne = boutonAcceptAllRecompensePersonne;
+	}
+	public javax.swing.JButton getBoutonAcceptFilm() {
+		return boutonAcceptFilm;
+	}
+	public void setBoutonAcceptFilm(javax.swing.JButton boutonAcceptFilm) {
+		this.boutonAcceptFilm = boutonAcceptFilm;
+	}
+	public javax.swing.JButton getBoutonAcceptInscrit() {
+		return boutonAcceptInscrit;
+	}
+	public void setBoutonAcceptInscrit(javax.swing.JButton boutonAcceptInscrit) {
+		this.boutonAcceptInscrit = boutonAcceptInscrit;
+	}
+	public javax.swing.JButton getBoutonAcceptPersonne() {
+		return boutonAcceptPersonne;
+	}
+	public void setBoutonAcceptPersonne(javax.swing.JButton boutonAcceptPersonne) {
+		this.boutonAcceptPersonne = boutonAcceptPersonne;
+	}
+	public javax.swing.JButton getBoutonAcceptProducteur() {
+		return boutonAcceptProducteur;
+	}
+	public void setBoutonAcceptProducteur(javax.swing.JButton boutonAcceptProducteur) {
+		this.boutonAcceptProducteur = boutonAcceptProducteur;
+	}
+	public javax.swing.JButton getBoutonAcceptRealisateur() {
+		return boutonAcceptRealisateur;
+	}
+	public void setBoutonAcceptRealisateur(
+			javax.swing.JButton boutonAcceptRealisateur) {
+		this.boutonAcceptRealisateur = boutonAcceptRealisateur;
+	}
+	public javax.swing.JButton getBoutonAcceptRecompenseFilm() {
+		return boutonAcceptRecompenseFilm;
+	}
+	public void setBoutonAcceptRecompenseFilm(
+			javax.swing.JButton boutonAcceptRecompenseFilm) {
+		this.boutonAcceptRecompenseFilm = boutonAcceptRecompenseFilm;
+	}
+	public javax.swing.JButton getBoutonAcceptRecompensePersonne() {
+		return boutonAcceptRecompensePersonne;
+	}
+	public void setBoutonAcceptRecompensePersonne(
+			javax.swing.JButton boutonAcceptRecompensePersonne) {
+		this.boutonAcceptRecompensePersonne = boutonAcceptRecompensePersonne;
+	}
+	public javax.swing.JButton getBoutonRefusActeur() {
+		return boutonRefusActeur;
+	}
+	public void setBoutonRefusActeur(javax.swing.JButton boutonRefusActeur) {
+		this.boutonRefusActeur = boutonRefusActeur;
+	}
+	public javax.swing.JButton getBoutonRefusAllActeur() {
+		return boutonRefusAllActeur;
+	}
+	public void setBoutonRefusAllActeur(javax.swing.JButton boutonRefusAllActeur) {
+		this.boutonRefusAllActeur = boutonRefusAllActeur;
+	}
+	public javax.swing.JButton getBoutonRefusAllFilm() {
+		return boutonRefusAllFilm;
+	}
+	public void setBoutonRefusAllFilm(javax.swing.JButton boutonRefusAllFilm) {
+		this.boutonRefusAllFilm = boutonRefusAllFilm;
+	}
+	public javax.swing.JButton getBoutonRefusAllInscrit() {
+		return boutonRefusAllInscrit;
+	}
+	public void setBoutonRefusAllInscrit(javax.swing.JButton boutonRefusAllInscrit) {
+		this.boutonRefusAllInscrit = boutonRefusAllInscrit;
+	}
+	public javax.swing.JButton getBoutonRefusAllPersonne() {
+		return boutonRefusAllPersonne;
+	}
+	public void setBoutonRefusAllPersonne(javax.swing.JButton boutonRefusAllPersonne) {
+		this.boutonRefusAllPersonne = boutonRefusAllPersonne;
+	}
+	public javax.swing.JButton getBoutonRefusAllProducteur() {
+		return boutonRefusAllProducteur;
+	}
+	public void setBoutonRefusAllProducteur(
+			javax.swing.JButton boutonRefusAllProducteur) {
+		this.boutonRefusAllProducteur = boutonRefusAllProducteur;
+	}
+	public javax.swing.JButton getBoutonRefusAllRealisateur() {
+		return boutonRefusAllRealisateur;
+	}
+	public void setBoutonRefusAllRealisateur(
+			javax.swing.JButton boutonRefusAllRealisateur) {
+		this.boutonRefusAllRealisateur = boutonRefusAllRealisateur;
+	}
+	public javax.swing.JButton getBoutonRefusAllRecompenseFilm() {
+		return boutonRefusAllRecompenseFilm;
+	}
+	public void setBoutonRefusAllRecompenseFilm(
+			javax.swing.JButton boutonRefusAllRecompenseFilm) {
+		this.boutonRefusAllRecompenseFilm = boutonRefusAllRecompenseFilm;
+	}
+	public javax.swing.JButton getBoutonRefusAllRecompensePersonne() {
+		return boutonRefusAllRecompensePersonne;
+	}
+	public void setBoutonRefusAllRecompensePersonne(
+			javax.swing.JButton boutonRefusAllRecompensePersonne) {
+		this.boutonRefusAllRecompensePersonne = boutonRefusAllRecompensePersonne;
+	}
+	public javax.swing.JButton getBoutonRefusFilm() {
+		return boutonRefusFilm;
+	}
+	public void setBoutonRefusFilm(javax.swing.JButton boutonRefusFilm) {
+		this.boutonRefusFilm = boutonRefusFilm;
+	}
+	public javax.swing.JButton getBoutonRefusInscrit() {
+		return boutonRefusInscrit;
+	}
+	public void setBoutonRefusInscrit(javax.swing.JButton boutonRefusInscrit) {
+		this.boutonRefusInscrit = boutonRefusInscrit;
+	}
+	public javax.swing.JButton getBoutonRefusPersonne() {
+		return boutonRefusPersonne;
+	}
+	public void setBoutonRefusPersonne(javax.swing.JButton boutonRefusPersonne) {
+		this.boutonRefusPersonne = boutonRefusPersonne;
+	}
+	public javax.swing.JButton getBoutonRefusProducteur() {
+		return boutonRefusProducteur;
+	}
+	public void setBoutonRefusProducteur(javax.swing.JButton boutonRefusProducteur) {
+		this.boutonRefusProducteur = boutonRefusProducteur;
+	}
+	public javax.swing.JButton getBoutonRefusRealisateur() {
+		return boutonRefusRealisateur;
+	}
+	public void setBoutonRefusRealisateur(javax.swing.JButton boutonRefusRealisateur) {
+		this.boutonRefusRealisateur = boutonRefusRealisateur;
+	}
+	public javax.swing.JButton getBoutonRefusRecompenseFilm() {
+		return boutonRefusRecompenseFilm;
+	}
+	public void setBoutonRefusRecompenseFilm(
+			javax.swing.JButton boutonRefusRecompenseFilm) {
+		this.boutonRefusRecompenseFilm = boutonRefusRecompenseFilm;
+	}
+	public javax.swing.JButton getBoutonRefusRecompensePersonne() {
+		return boutonRefusRecompensePersonne;
+	}
+	public void setBoutonRefusRecompensePersonne(
+			javax.swing.JButton boutonRefusRecompensePersonne) {
+		this.boutonRefusRecompensePersonne = boutonRefusRecompensePersonne;
+	}
+	public javax.swing.JTabbedPane getConteneurOnglet() {
+		return conteneurOnglet;
+	}
+	public void setConteneurOnglet(javax.swing.JTabbedPane conteneurOnglet) {
+		this.conteneurOnglet = conteneurOnglet;
+	}
+	public javax.swing.JLabel getLabelAccueilActeur() {
+		return labelAccueilActeur;
+	}
+	public void setLabelAccueilActeur(javax.swing.JLabel labelAccueilActeur) {
+		this.labelAccueilActeur = labelAccueilActeur;
+	}
+	public javax.swing.JLabel getLabelAccueilFilm() {
+		return labelAccueilFilm;
+	}
+	public void setLabelAccueilFilm(javax.swing.JLabel labelAccueilFilm) {
+		this.labelAccueilFilm = labelAccueilFilm;
+	}
+	public javax.swing.JLabel getLabelAccueilInscrit() {
+		return labelAccueilInscrit;
+	}
+	public void setLabelAccueilInscrit(javax.swing.JLabel labelAccueilInscrit) {
+		this.labelAccueilInscrit = labelAccueilInscrit;
+	}
+	public javax.swing.JLabel getLabelAccueilPersonne() {
+		return labelAccueilPersonne;
+	}
+	public void setLabelAccueilPersonne(javax.swing.JLabel labelAccueilPersonne) {
+		this.labelAccueilPersonne = labelAccueilPersonne;
+	}
+	public javax.swing.JLabel getLabelAccueilProducteur() {
+		return labelAccueilProducteur;
+	}
+	public void setLabelAccueilProducteur(javax.swing.JLabel labelAccueilProducteur) {
+		this.labelAccueilProducteur = labelAccueilProducteur;
+	}
+	public javax.swing.JLabel getLabelAccueilRealisateur() {
+		return labelAccueilRealisateur;
+	}
+	public void setLabelAccueilRealisateur(
+			javax.swing.JLabel labelAccueilRealisateur) {
+		this.labelAccueilRealisateur = labelAccueilRealisateur;
+	}
+	public javax.swing.JLabel getLabelAccueilRecompenseFilm() {
+		return labelAccueilRecompenseFilm;
+	}
+	public void setLabelAccueilRecompenseFilm(
+			javax.swing.JLabel labelAccueilRecompenseFilm) {
+		this.labelAccueilRecompenseFilm = labelAccueilRecompenseFilm;
+	}
+	public javax.swing.JLabel getLabelAccueilRecompensePersonne() {
+		return labelAccueilRecompensePersonne;
+	}
+	public void setLabelAccueilRecompensePersonne(
+			javax.swing.JLabel labelAccueilRecompensePersonne) {
+		this.labelAccueilRecompensePersonne = labelAccueilRecompensePersonne;
+	}
+	public javax.swing.JLabel getLabelListeActeur() {
+		return labelListeActeur;
+	}
+	public void setLabelListeActeur(javax.swing.JLabel labelListeActeur) {
+		this.labelListeActeur = labelListeActeur;
+	}
+	public javax.swing.JLabel getLabelListeFilm() {
+		return labelListeFilm;
+	}
+	public void setLabelListeFilm(javax.swing.JLabel labelListeFilm) {
+		this.labelListeFilm = labelListeFilm;
+	}
+	public javax.swing.JLabel getLabelListeInscrit() {
+		return labelListeInscrit;
+	}
+	public void setLabelListeInscrit(javax.swing.JLabel labelListeInscrit) {
+		this.labelListeInscrit = labelListeInscrit;
+	}
+	public javax.swing.JLabel getLabelListeNouveauxInscrit() {
+		return labelListeNouveauxInscrit;
+	}
+	public void setLabelListeNouveauxInscrit(
+			javax.swing.JLabel labelListeNouveauxInscrit) {
+		this.labelListeNouveauxInscrit = labelListeNouveauxInscrit;
+	}
+	public javax.swing.JLabel getLabelListePersonne() {
+		return labelListePersonne;
+	}
+	public void setLabelListePersonne(javax.swing.JLabel labelListePersonne) {
+		this.labelListePersonne = labelListePersonne;
+	}
+	public javax.swing.JLabel getLabelListeProducteur() {
+		return labelListeProducteur;
+	}
+	public void setLabelListeProducteur(javax.swing.JLabel labelListeProducteur) {
+		this.labelListeProducteur = labelListeProducteur;
+	}
+	public javax.swing.JLabel getLabelListeRealisateur() {
+		return labelListeRealisateur;
+	}
+	public void setLabelListeRealisateur(javax.swing.JLabel labelListeRealisateur) {
+		this.labelListeRealisateur = labelListeRealisateur;
+	}
+	public javax.swing.JLabel getLabelListeRecompenseFilm() {
+		return labelListeRecompenseFilm;
+	}
+	public void setLabelListeRecompenseFilm(
+			javax.swing.JLabel labelListeRecompenseFilm) {
+		this.labelListeRecompenseFilm = labelListeRecompenseFilm;
+	}
+	public javax.swing.JLabel getLabelListeRecompensePersonne() {
+		return labelListeRecompensePersonne;
+	}
+	public void setLabelListeRecompensePersonne(
+			javax.swing.JLabel labelListeRecompensePersonne) {
+		this.labelListeRecompensePersonne = labelListeRecompensePersonne;
+	}
+	public javax.swing.JLabel getLabelLogin() {
+		return labelLogin;
+	}
+	public void setLabelLogin(javax.swing.JLabel labelLogin) {
+		this.labelLogin = labelLogin;
+	}
+	public javax.swing.JLabel getLabelMessage() {
+		return labelMessage;
+	}
+	public void setLabelMessage(javax.swing.JLabel labelMessage) {
+		this.labelMessage = labelMessage;
+	}
+	public javax.swing.JLabel getLabelNombreChiffreActeur() {
+		return labelNombreChiffreActeur;
+	}
+	public void setLabelNombreChiffreActeur(
+			javax.swing.JLabel labelNombreChiffreActeur) {
+		this.labelNombreChiffreActeur = labelNombreChiffreActeur;
+	}
+	public javax.swing.JLabel getLabelNombreRecompenseFilm() {
+		return labelNombreRecompenseFilm;
+	}
+	public void setLabelNombreRecompenseFilm(
+			javax.swing.JLabel labelNombreRecompenseFilm) {
+		this.labelNombreRecompenseFilm = labelNombreRecompenseFilm;
+	}
+	public javax.swing.JLabel getLabelNombreTexteActeur() {
+		return labelNombreTexteActeur;
+	}
+	public void setLabelNombreTexteActeur(javax.swing.JLabel labelNombreTexteActeur) {
+		this.labelNombreTexteActeur = labelNombreTexteActeur;
+	}
+	public javax.swing.JLabel getLabelNombreTexteFilm() {
+		return labelNombreTexteFilm;
+	}
+	public void setLabelNombreTexteFilm(javax.swing.JLabel labelNombreTexteFilm) {
+		this.labelNombreTexteFilm = labelNombreTexteFilm;
+	}
+	public javax.swing.JLabel getLabelNombreTexteInscrit() {
+		return labelNombreTexteInscrit;
+	}
+	public void setLabelNombreTexteInscrit(
+			javax.swing.JLabel labelNombreTexteInscrit) {
+		this.labelNombreTexteInscrit = labelNombreTexteInscrit;
+	}
+	public javax.swing.JLabel getLabelNombreTextePersonne() {
+		return labelNombreTextePersonne;
+	}
+	public void setLabelNombreTextePersonne(
+			javax.swing.JLabel labelNombreTextePersonne) {
+		this.labelNombreTextePersonne = labelNombreTextePersonne;
+	}
+	public javax.swing.JLabel getLabelNombreTexteProducteur() {
+		return labelNombreTexteProducteur;
+	}
+	public void setLabelNombreTexteProducteur(
+			javax.swing.JLabel labelNombreTexteProducteur) {
+		this.labelNombreTexteProducteur = labelNombreTexteProducteur;
+	}
+	public javax.swing.JLabel getLabelNombreTexteRealisateur() {
+		return labelNombreTexteRealisateur;
+	}
+	public void setLabelNombreTexteRealisateur(
+			javax.swing.JLabel labelNombreTexteRealisateur) {
+		this.labelNombreTexteRealisateur = labelNombreTexteRealisateur;
+	}
+	public javax.swing.JLabel getLabelNombreTexteRecompensePersonne() {
+		return labelNombreTexteRecompensePersonne;
+	}
+	public void setLabelNombreTexteRecompensePersonne(
+			javax.swing.JLabel labelNombreTexteRecompensePersonne) {
+		this.labelNombreTexteRecompensePersonne = labelNombreTexteRecompensePersonne;
+	}
+	public javax.swing.JLabel getLabelNouveauxInscrit() {
+		return labelNouveauxInscrit;
+	}
+	public void setLabelNouveauxInscrit(javax.swing.JLabel labelNouveauxInscrit) {
+		this.labelNouveauxInscrit = labelNouveauxInscrit;
+	}
+	public javax.swing.JLabel getLabelNouveauxInscritNombre() {
+		return labelNouveauxInscritNombre;
+	}
+	public void setLabelNouveauxInscritNombre(
+			javax.swing.JLabel labelNouveauxInscritNombre) {
+		this.labelNouveauxInscritNombre = labelNouveauxInscritNombre;
+	}
+	public javax.swing.JLabel getLabelPassword() {
+		return labelPassword;
+	}
+	public void setLabelPassword(javax.swing.JLabel labelPassword) {
+		this.labelPassword = labelPassword;
+	}
+	public javax.swing.JList getListeActeur() {
+		return listeActeur;
+	}
+	public void setListeActeur(javax.swing.JList listeActeur) {
+		this.listeActeur = listeActeur;
+	}
+	public javax.swing.JList getListeFilm() {
+		return listeFilm;
+	}
+	public void setListeFilm(javax.swing.JList listeFilm) {
+		this.listeFilm = listeFilm;
+	}
+	public javax.swing.JList getListeInscrit() {
+		return listeInscrit;
+	}
+	public void setListeInscrit(javax.swing.JList listeInscrit) {
+		this.listeInscrit = listeInscrit;
+	}
+	public javax.swing.JList getListeNouveauxInscrit() {
+		return listeNouveauxInscrit;
+	}
+	public void setListeNouveauxInscrit(javax.swing.JList listeNouveauxInscrit) {
+		this.listeNouveauxInscrit = listeNouveauxInscrit;
+	}
+	public javax.swing.JList getListePersonne() {
+		return listePersonne;
+	}
+	public void setListePersonne(javax.swing.JList listePersonne) {
+		this.listePersonne = listePersonne;
+	}
+	public javax.swing.JList getListeProducteur() {
+		return listeProducteur;
+	}
+	public void setListeProducteur(javax.swing.JList listeProducteur) {
+		this.listeProducteur = listeProducteur;
+	}
+	public javax.swing.JList getListeRealisateur() {
+		return listeRealisateur;
+	}
+	public void setListeRealisateur(javax.swing.JList listeRealisateur) {
+		this.listeRealisateur = listeRealisateur;
+	}
+	public javax.swing.JList getListeRecompenseFilm() {
+		return listeRecompenseFilm;
+	}
+	public void setListeRecompenseFilm(javax.swing.JList listeRecompenseFilm) {
+		this.listeRecompenseFilm = listeRecompenseFilm;
+	}
+	public javax.swing.JList getListeRecompensePersonne() {
+		return listeRecompensePersonne;
+	}
+	public void setListeRecompensePersonne(javax.swing.JList listeRecompensePersonne) {
+		this.listeRecompensePersonne = listeRecompensePersonne;
+	}
+	public javax.swing.JMenu getMenuAutre() {
+		return menuAutre;
+	}
+	public void setMenuAutre(javax.swing.JMenu menuAutre) {
+		this.menuAutre = menuAutre;
+	}
+	
+	public void setMenuBar(javax.swing.JMenuBar menuBar) {
+		this.menuBar = menuBar;
+	}
+	public javax.swing.JMenu getMenuFichier() {
+		return menuFichier;
+	}
+	public void setMenuFichier(javax.swing.JMenu menuFichier) {
+		this.menuFichier = menuFichier;
+	}
+	public javax.swing.JPanel getPanelConnexion() {
+		return panelConnexion;
+	}
+	public void setPanelConnexion(javax.swing.JPanel panelConnexion) {
+		this.panelConnexion = panelConnexion;
+	}
+	public javax.swing.JPanel getPanelGestionActeur() {
+		return panelGestionActeur;
+	}
+	public void setPanelGestionActeur(javax.swing.JPanel panelGestionActeur) {
+		this.panelGestionActeur = panelGestionActeur;
+	}
+	public javax.swing.JPanel getPanelGestionFilm() {
+		return panelGestionFilm;
+	}
+	public void setPanelGestionFilm(javax.swing.JPanel panelGestionFilm) {
+		this.panelGestionFilm = panelGestionFilm;
+	}
+	public javax.swing.JPanel getPanelGestionInscrit() {
+		return panelGestionInscrit;
+	}
+	public void setPanelGestionInscrit(javax.swing.JPanel panelGestionInscrit) {
+		this.panelGestionInscrit = panelGestionInscrit;
+	}
+	public javax.swing.JPanel getPanelGestionPersonne() {
+		return panelGestionPersonne;
+	}
+	public void setPanelGestionPersonne(javax.swing.JPanel panelGestionPersonne) {
+		this.panelGestionPersonne = panelGestionPersonne;
+	}
+	public javax.swing.JPanel getPanelGestionProducteur() {
+		return panelGestionProducteur;
+	}
+	public void setPanelGestionProducteur(javax.swing.JPanel panelGestionProducteur) {
+		this.panelGestionProducteur = panelGestionProducteur;
+	}
+	public javax.swing.JPanel getPanelGestionRealisateur() {
+		return panelGestionRealisateur;
+	}
+	public void setPanelGestionRealisateur(
+			javax.swing.JPanel panelGestionRealisateur) {
+		this.panelGestionRealisateur = panelGestionRealisateur;
+	}
+	public javax.swing.JPanel getPanelGestionRecompenseFilm() {
+		return panelGestionRecompenseFilm;
+	}
+	public void setPanelGestionRecompenseFilm(
+			javax.swing.JPanel panelGestionRecompenseFilm) {
+		this.panelGestionRecompenseFilm = panelGestionRecompenseFilm;
+	}
+	public javax.swing.JPanel getPanelGestionRecompensePersonne() {
+		return panelGestionRecompensePersonne;
+	}
+	public void setPanelGestionRecompensePersonne(
+			javax.swing.JPanel panelGestionRecompensePersonne) {
+		this.panelGestionRecompensePersonne = panelGestionRecompensePersonne;
+	}
+	public javax.swing.JPanel getPanelNavigateur() {
+		return panelNavigateur;
+	}
+	public void setPanelNavigateur(javax.swing.JPanel panelNavigateur) {
+		this.panelNavigateur = panelNavigateur;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeActeur() {
+		return scrollPaneListeActeur;
+	}
+	public void setScrollPaneListeActeur(
+			javax.swing.JScrollPane scrollPaneListeActeur) {
+		this.scrollPaneListeActeur = scrollPaneListeActeur;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeFilm() {
+		return scrollPaneListeFilm;
+	}
+	public void setScrollPaneListeFilm(javax.swing.JScrollPane scrollPaneListeFilm) {
+		this.scrollPaneListeFilm = scrollPaneListeFilm;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeInscrit() {
+		return scrollPaneListeInscrit;
+	}
+	public void setScrollPaneListeInscrit(
+			javax.swing.JScrollPane scrollPaneListeInscrit) {
+		this.scrollPaneListeInscrit = scrollPaneListeInscrit;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeNouveauxInscrit() {
+		return scrollPaneListeNouveauxInscrit;
+	}
+	public void setScrollPaneListeNouveauxInscrit(
+			javax.swing.JScrollPane scrollPaneListeNouveauxInscrit) {
+		this.scrollPaneListeNouveauxInscrit = scrollPaneListeNouveauxInscrit;
+	}
+	public javax.swing.JScrollPane getScrollPaneListePersonne() {
+		return scrollPaneListePersonne;
+	}
+	public void setScrollPaneListePersonne(
+			javax.swing.JScrollPane scrollPaneListePersonne) {
+		this.scrollPaneListePersonne = scrollPaneListePersonne;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeProducteur() {
+		return scrollPaneListeProducteur;
+	}
+	public void setScrollPaneListeProducteur(
+			javax.swing.JScrollPane scrollPaneListeProducteur) {
+		this.scrollPaneListeProducteur = scrollPaneListeProducteur;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeRealisateur() {
+		return scrollPaneListeRealisateur;
+	}
+	public void setScrollPaneListeRealisateur(
+			javax.swing.JScrollPane scrollPaneListeRealisateur) {
+		this.scrollPaneListeRealisateur = scrollPaneListeRealisateur;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeRecompenseFilm() {
+		return scrollPaneListeRecompenseFilm;
+	}
+	public void setScrollPaneListeRecompenseFilm(
+			javax.swing.JScrollPane scrollPaneListeRecompenseFilm) {
+		this.scrollPaneListeRecompenseFilm = scrollPaneListeRecompenseFilm;
+	}
+	public javax.swing.JScrollPane getScrollPaneListeRecompensePersonne() {
+		return scrollPaneListeRecompensePersonne;
+	}
+	public void setScrollPaneListeRecompensePersonne(
+			javax.swing.JScrollPane scrollPaneListeRecompensePersonne) {
+		this.scrollPaneListeRecompensePersonne = scrollPaneListeRecompensePersonne;
+	}
+	public javax.swing.JTextField getTextfieldLogin() {
+		return textfieldLogin;
+	}
+	public void setTextfieldLogin(javax.swing.JTextField textfieldLogin) {
+		this.textfieldLogin = textfieldLogin;
+	}
+	public javax.swing.JTextField getTextfieldPassword() {
+		return textfieldPassword;
+	}
+	public void setTextfieldPassword(javax.swing.JTextField textfieldPassword) {
+		this.textfieldPassword = textfieldPassword;
+	}
+	public static void setInstance(AffichageGestionnaire instance) {
+		AffichageGestionnaire.instance = instance;
+	}
 
 	   
 }
