@@ -2,6 +2,7 @@ package struts.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import metier.Professionnel;
 
@@ -22,7 +23,8 @@ public class ActionConnexion extends Action{
 		ActionFormConnexion connexion=(ActionFormConnexion)form;
 		try {
 			Professionnel pro=daoPro.get(connexion.getLogin());
-			request.setAttribute("SESSION", pro);
+			HttpSession session=request.getSession();
+			session.setAttribute("PRO", pro);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
