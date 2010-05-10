@@ -47,7 +47,7 @@
 <!-- =========================================== Action Mapping Definitions -->
 
     <action-mappings>
-    	<action path="/connexion" type="org.springframwork.web.struts.DelegatingActionProxy"
+    	<action path="/connexion" type="org.springframework.web.struts.DelegatingActionProxy"
     		name="formActionConnexion" scope="request" validate="true" input="/vues/erreurs.jsp">
     		<forward name="ConnexionEffectue" path="/vues/index.jsp"></forward>
     		
@@ -66,7 +66,7 @@
     <message-resources parameter="MessageResources" />
 
 	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
-		<set-property property="contextConfigLocation" value="/Beans.xml"/>
+		<set-property property="contextConfigLocation" value="/WEB-INF/Beans.xml"/>
 	</plug-in>
 </struts-config>
 

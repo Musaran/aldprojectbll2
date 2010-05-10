@@ -30,4 +30,12 @@ public class ActionConnexion extends Action{
 		return mapping.findForward("ConnexionEffectue");
 		
 	}
+
+	public DAOProfessionnel getDaoPro() {
+		return daoPro;
+	}
+
+	public void setDaoPro(DAOProfessionnel daoPro) {
+		this.daoPro = daoPro;
+	}
 }
