@@ -49,7 +49,7 @@
     <action-mappings>
     	<action path="/connexion" type="org.springframework.web.struts.DelegatingActionProxy"
     		name="formActionConnexion" scope="request" validate="true" input="/vues/erreurs.jsp">
-    		<forward name="ConnexionEffectue" path="/vues/index.jsp"></forward>
+    		<forward name="ConnexionEffectue" path="/vues/connecte.jsp"></forward>
     		
     	</action>
     

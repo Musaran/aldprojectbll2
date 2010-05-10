@@ -22,9 +22,9 @@ public class ActionFormConnexion extends ActionForm{
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
 		ActionErrors erreurs=new ActionErrors();
 		if(login.trim().equals(""))
-			erreurs.add("champ login vide",new ActionMessage("erreur.co.login.vide"));
+			erreurs.add("champ login vide",new ActionMessage("Erreur.co.login.vide"));
 		if(motDePasse.trim().equals(""))
-			erreurs.add("champ mot de passe vide",new ActionMessage("erreur.co.motDePasse.vide"));
+			erreurs.add("champ mot de passe vide",new ActionMessage("Erreur.co.motDePasse.vide"));
 		return erreurs;
 	}
 
