@@ -22,13 +22,21 @@ public class ActionConnexion extends Action{
 			HttpServletResponse response){
 		ActionFormConnexion connexion=(ActionFormConnexion)form;
 		try {
-			Professionnel pro=daoPro.get(connexion.getLogin());
-			HttpSession session=request.getSession(true);
-			session.setAttribute("login", pro.getLogin());
-			//request.setAttribute("SESSION", pro);
+			HttpSession session=request.getSession();
+			Professionnel pro=daoPro.get(connexion.getLogin(),connexion.getMotDePasse());
+			if(!pro.equals(null))
+			{
+				session.setAttribute("login", pro.getLogin());
+				//request.setAttribute("SESSION", pro);
+			}
+			else
+			{
+				session.invalidate();
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return mapping.findForward("ConnexionImpossible"); 
 		}
 		return mapping.findForward("ConnexionEffectue");
 		
