@@ -24,8 +24,8 @@ public class ActionConnexion extends Action{
 		try {
 			Professionnel pro=daoPro.get(connexion.getLogin());
 			HttpSession session=request.getSession(true);
-			session.setAttribute("PRO", pro);
-			request.setAttribute("SESSION", pro);
+			session.setAttribute("login", pro.getLogin());
+			//request.setAttribute("SESSION", pro);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

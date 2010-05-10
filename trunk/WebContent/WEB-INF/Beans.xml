@@ -7,5 +7,5 @@
 	<bean name="/connexion" class="struts.action.ActionConnexion">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
 	</bean>
-		
+	
 </beans>

@@ -26,6 +26,7 @@
 			<form-bean name="BeanVote" type="struts.actionForm.BeanVote"></form-bean>
 
 			<form-bean name="formActionConnexion" type="struts.actionForm.ActionFormConnexion"></form-bean>
+			
 
     </form-beans>
 
@@ -48,12 +49,9 @@
 
     <action-mappings>
     	<action path="/connexion" type="org.springframework.web.struts.DelegatingActionProxy"
-    		name="formActionConnexion" scope="request" validate="true" input="/vues/erreurs.jsp">
-    		<forward name="ConnexionEffectue" path="/vues/connecte.jsp"></forward>
-    		
+    		name="formActionConnexion" scope="request" validate="true" input="/vues/erreur.jsp">
+    		<forward name="ConnexionEffectue" path="/vues/index.jsp"></forward>
     	</action>
-    
-
     </action-mappings>
 
 
