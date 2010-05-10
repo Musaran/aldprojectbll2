@@ -10,6 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		JFrame frame = AffichageGestionnaire.getInstance();
+		frame.setLocationRelativeTo(frame.getParent());
+
 		frame.setVisible(true);
 	}
 

@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import metier.Film;
 import metier.Personne;
 import metier.RecompenseFilm;
+import metier.RoleActeur;
+import metier.RoleProducteur;
+import metier.RoleRealisateur;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -46,18 +49,6 @@ public class BeanFilm extends ActionForm{
 
 	public int getIsValidateFilm() {
 		return f.getIsValidateFilm();
-	}
-
-	public Set<Personne> getListDesActeurs() {
-		return f.getListDesActeurs();
-	}
-
-	public Set<Personne> getListeDesProducteurs() {
-		return f.getListeDesProducteurs();
-	}
-
-	public Set<Personne> getListeDesRealisateurs() {
-		return f.getListeDesRealisateurs();
 	}
 
 	public Set<RecompenseFilm> getListeRecompense() {
@@ -100,15 +91,28 @@ public class BeanFilm extends ActionForm{
 		f.setIsValidateFilm(isValidateFilm);
 	}
 
-	public void setListDesActeurs(Set<Personne> listDesActeurs) {
+	public Set<RoleActeur> getListDesActeurs() {
+		return f.getListDesActeurs();
+	}
+
+	public Set<RoleProducteur> getListeDesProducteurs() {
+		return f.getListeDesProducteurs();
+	}
+
+	public Set<RoleRealisateur> getListeDesRealisateurs() {
+		return f.getListeDesRealisateurs();
+	}
+
+	public void setListDesActeurs(Set<RoleActeur> listDesActeurs) {
 		f.setListDesActeurs(listDesActeurs);
 	}
 
-	public void setListeDesProducteurs(Set<Personne> listeDesProducteurs) {
+	public void setListeDesProducteurs(Set<RoleProducteur> listeDesProducteurs) {
 		f.setListeDesProducteurs(listeDesProducteurs);
 	}
 
-	public void setListeDesRealisateurs(Set<Personne> listeDesRealisateurs) {
+	public void setListeDesRealisateurs(
+			Set<RoleRealisateur> listeDesRealisateurs) {
 		f.setListeDesRealisateurs(listeDesRealisateurs);
 	}
 
