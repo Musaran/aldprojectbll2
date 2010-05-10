@@ -15,7 +15,19 @@
 		<div id="header">
 			<h1></h1>
 			<div id="menuBarre">
-				<html:form action="/connexion.do">
+			<% 
+			if(request.getParameter("deco") != null)
+			{
+				//session.removeAttribute("login");  
+				session.invalidate();
+				response.sendRedirect("index.jsp");
+			}
+			else 
+			{
+				if(session.getAttribute("login")==null){  
+			
+				// User is not logged in.  
+					%><html:form action="/connexion.do">
 					<table>
 						<tr>
 							<td>Login</td>
@@ -36,7 +48,16 @@
 							<td><html:errors/></td>
 						</tr>
 					</table>				
-				</html:form>
+				</html:form><%
+				}else{  
+				// User IS logged in.  
+					out.println(session.getAttribute("login") + " est connecté");
+					%><br /><html:link href="index.jsp?deco=true">se déconnecter</html:link>
+					<%
+				}  
+			}
+			
+			%>
         	</div>
 	        <div id="searchBarre">
 	        </div>
