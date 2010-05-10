@@ -33,7 +33,7 @@
 							<td></td>
 						</tr>
 						<tr>
-							<td></td>
+							<td><html:errors/></td>
 						</tr>
 					</table>				
 				</html:form>

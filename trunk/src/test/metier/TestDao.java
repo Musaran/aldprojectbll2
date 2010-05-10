@@ -94,7 +94,7 @@ public class TestDao extends TestCase {
 		daotrp.clear();
 		daorec.clear();*/
 		
-		/*daof.save(armaggeddon);
+		daof.save(armaggeddon);
 		daof.save(terminator);
 		
 		daop.save(chuckNorris);
