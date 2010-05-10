@@ -30,6 +30,18 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		return p;
 	}
 
+	@Override
+	public Professionnel get(String login, String pass) throws Exception {
+		// TODO Auto-generated method stub
+		Professionnel pro=null;
+		Session	session = connect();
+		 Query req = session.createQuery(
+				"FROM Professionnel WHERE login ='"+login+"' AND password='"+pass+"'");
+		 pro=(Professionnel) req.uniqueResult();
+		close(session);	
+		return pro;
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Professionnel> loadAll() throws Exception {
@@ -89,6 +101,8 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		close(session);	
 		return set;
 	}
+
+	
 
 	
 
