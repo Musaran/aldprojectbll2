@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+	<bean id="daoProfessionnelHBM" class="dao.hibernate.DAOHibernateProfessionnel"/>
+	
+	<bean name="/connexion" class="struts.action.ActionConnexion">
+		<property name="daoProfessionnel" ref="daoProfessionnelHBM"/>
+	</bean>
+		
+</beans>
