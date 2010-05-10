@@ -4,7 +4,7 @@
 	<bean id="daoProfessionnelHBM" class="dao.hibernate.DAOHibernateProfessionnel"/>
 	
 	<bean name="/connexion" class="struts.action.ActionConnexion">
-		<property name="daoProfessionnel" ref="daoProfessionnelHBM"/>
+		<property name="daoPro" ref="daoProfessionnelHBM"/>
 	</bean>
 		
 </beans>
