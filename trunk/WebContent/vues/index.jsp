@@ -15,7 +15,7 @@
 		<div id="header">
 			<h1></h1>
 			<div id="menuBarre">
-				<%--<html:form action="/connexion.do">
+				<html:form action="/connexion.do">
 					<table>
 						<tr>
 							<td>Login</td>
@@ -29,8 +29,14 @@
 							<td></td>
 							<td><html:submit>OK</html:submit></td>
 						</tr>
+						<tr>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+						</tr>
 					</table>				
-				</html:form>--%>
+				</html:form>
         	</div>
 	        <div id="searchBarre">
 	        </div>
