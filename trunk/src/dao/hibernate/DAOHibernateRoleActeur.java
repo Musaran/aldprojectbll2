@@ -2,14 +2,11 @@ package dao.hibernate;
 
 import java.util.ArrayList;
 
-import javax.management.relation.Role;
-
 import org.hibernate.Session;
 
 import metier.Film;
 import metier.Personne;
 import metier.RoleActeur;
-import metier.Vote;
 import dao.DAORoleActeur;
 
 public class DAOHibernateRoleActeur extends DAOHibernate implements DAORoleActeur {

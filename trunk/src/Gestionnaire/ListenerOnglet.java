@@ -13,21 +13,14 @@ public class ListenerOnglet implements ChangeListener{
 
 	@Override
 	public void stateChanged(ChangeEvent arg0) {
-		// TODO Auto-generated method stub
 		JTabbedPane source= (JTabbedPane)arg0.getSource();
 		
 		switch(source.getSelectedIndex()) {
-		case 1: GestionnaireRoleActeur gest = new GestionnaireRoleActeur(); gest.refresh(); break;
-		
-		
-//		case 8: WebBrowser wb = new WebBrowser(); break;
+		case 1: GestionnaireRoleActeur gestact = new GestionnaireRoleActeur(); gestact.refresh(); break;
+		case 2: GestionnaireRoleProducteur gestprod = new GestionnaireRoleProducteur(); gestprod.refresh();break;
+		case 3: GestionnaireRoleRealisateur gestreal = new GestionnaireRoleRealisateur(); gestreal.refresh();break;
+		case 4: GestionnaireFilm gestfilm = new GestionnaireFilm(); gestfilm.refresh();break;
 		}
-//		}
-//		if(source.getSelectedIndex()==1)
-//		{
-//			GestionnaireRoleActeur gest = new GestionnaireRoleActeur();
-//			gest.refresh();
-//		}
 	}
 
 }

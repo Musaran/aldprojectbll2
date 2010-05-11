@@ -91,6 +91,7 @@ public class Film  {
 	/**
 	 * Methode qui permet de transformer en chaine de caractere
 	 */
+	/*
 	@Override
 	public String toString() {
 		return "Film [cout=" + cout + ", dateSortie=" + dateSortie
@@ -98,6 +99,14 @@ public class Film  {
 
 				+"nombre requete "+ nombreRequetes + ", noteMoyenne=" + noteMoyenne
 				+ ", synopsis=" + synopsis + ", titre=" + titre + "]";
+	}*/
+	
+	//methode toString plus lisible dans le client lourd
+	@Override
+	public String toString() {
+		return this.getTitre()+" "+this.getDateSortie()+" (id="+this.getIdFilm()+")"+" Cout:"+
+		this.getCout()+" Note moyenne: " + this.getNoteMoyenne() +" Nombre requetes: "+this.getNombreRequetes()+" valide: "+this.getIsValidateFilm();
+		
 	}
 	
 	/**

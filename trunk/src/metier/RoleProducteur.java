@@ -84,6 +84,12 @@ public class RoleProducteur implements Serializable {
 	public void setIsValidateRoleProducteur(int isValidateRoleProducteur) {
 		this.isValidateRoleProducteur = isValidateRoleProducteur;
 	}
+	@Override
+	public String toString() {
+		return personne.getNom()+" "+personne.getPrenom()+" (id="+personne.getIdPersonne()+")est producteur de "+
+		film.getTitre()+" (id="+film.getIdFilm()+")";
+		
+	}
 	
 	
 }

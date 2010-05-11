@@ -82,6 +82,12 @@ public class RoleRealisateur implements Serializable {
 		this.isValidateRoleRealisateur = isValidateRoleRealisateur;
 	}
 	
+	@Override
+	public String toString() {
+		return personne.getNom()+" "+personne.getPrenom()+" (id="+personne.getIdPersonne()+")est réalisateur de "+
+		film.getTitre()+" (id="+film.getIdFilm()+")";
+		
+	}
 	
 
 }

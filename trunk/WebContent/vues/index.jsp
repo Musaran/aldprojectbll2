@@ -19,17 +19,17 @@
 			<% if(loginSession != null){ %>
 				Bienvenue <%= session.getAttribute("login") %> !
 				<%-- se deconnecter --%>
-				<html:link action="">se deconnecter</html:link>
+				<html:link action=""><bean:message key="Deconnecter"/></html:link>
 			<% }else{ %>
-				Bonjour visiteur, merci de vous identifier grace a ce formulaire...<br />
+				<bean:message key="Message.accueil"/><br />
 				<html:form action="/connexion.do">
 					<table>
 						<tr>
-							<td>Login</td>
+							<td><bean:message key="Login"/></td>
 							<td><html:text property="login" size="10" /></td>
 						</tr>
 						<tr>
-							<td>Mot de passe</td>
+							<td><bean:message key="Mot.de.passe"/></td>
 							<td><html:text property="motDePasse" size="10" /></td>
 						</tr>
 						<tr>

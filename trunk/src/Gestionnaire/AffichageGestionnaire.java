@@ -12,6 +12,7 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -49,14 +50,57 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 		boutonAcceptAllActeur.addActionListener(new ListenerMAJActeur());
 		boutonRefusActeur.addActionListener(new ListenerMAJActeur());
 	    boutonRefusAllActeur.addActionListener(new ListenerMAJActeur());
+	    
+		boutonAcceptProducteur.addActionListener(new ListenerMAJProducteur());
+		boutonAcceptAllProducteur.addActionListener(new ListenerMAJProducteur());
+		boutonRefusProducteur.addActionListener(new ListenerMAJProducteur());
+	    boutonRefusAllProducteur.addActionListener(new ListenerMAJProducteur());
+	    
+		boutonAcceptRealisateur.addActionListener(new ListenerMAJRealisateur());
+		boutonAcceptAllRealisateur.addActionListener(new ListenerMAJRealisateur());
+		boutonRefusRealisateur.addActionListener(new ListenerMAJRealisateur());
+	    boutonRefusAllRealisateur.addActionListener(new ListenerMAJRealisateur());
+	    
+	    boutonAcceptFilm.addActionListener(new ListenerMAJFilm());
+		boutonAcceptAllFilm.addActionListener(new ListenerMAJFilm());
+		boutonRefusFilm.addActionListener(new ListenerMAJFilm());
+	    boutonRefusAllFilm.addActionListener(new ListenerMAJFilm());
+	    
+	    boutonAccueilNavigateur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            	boutonAccueilNavigateurMouseClicked(evt);
+            }
+        });
+
+        conteneurOnglet.addTab("Navigateur", panelNavigateur);
+        panelNavigateur.setLayout(new BorderLayout());
+        JPanel pnlURL = new JPanel();
+        pnlURL.setLayout(new BorderLayout());
+        pnlURL.add(new JLabel("URL: "), BorderLayout.WEST);
+        pnlURL.add(boutonAccueilNavigateur, BorderLayout.EAST);
+        pnlURL.add(txtURL, BorderLayout.CENTER);
+        panelNavigateur.add(pnlURL,BorderLayout.NORTH);
+
+        jScrollPaneNavigateur = new JScrollPane(jEditorPaneNavigateur);
+        panelNavigateur.add(jScrollPaneNavigateur, BorderLayout.CENTER);
+
+        panelNavigateur.add(lblStatus, BorderLayout.SOUTH);
+        txtURL.addActionListener(al);
+        try {
+			jEditorPaneNavigateur.setPage("http://localhost:8080/sitewebald/vues/index.jsp");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	 // Variables declaration - do not modify
 	
 	private javax.swing.JTextField txtURL;
-	private javax.swing.JEditorPane ep;
+	private javax.swing.JEditorPane jEditorPaneNavigateur;
     private javax.swing.JLabel lblStatus;
-    private javax.swing.JScrollPane test;
+    private javax.swing.JScrollPane jScrollPaneNavigateur;
+    private javax.swing.JButton boutonAccueilNavigateur;
 	
     private javax.swing.JButton boutonAcceptActeur;
     private javax.swing.JButton boutonAcceptAllActeur;
@@ -92,6 +136,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
     private javax.swing.JButton boutonRefusRecompenseFilm;
     private javax.swing.JButton boutonRefusRecompensePersonne;
     private javax.swing.JTabbedPane conteneurOnglet;
+    private javax.swing.JMenuItem jMenuItemQuitter;
     private javax.swing.JLabel labelAccueilActeur;
     private javax.swing.JLabel labelAccueilFilm;
     private javax.swing.JLabel labelAccueilInscrit;
@@ -112,6 +157,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
     private javax.swing.JLabel labelLogin;
     private javax.swing.JLabel labelMessage;
     private javax.swing.JLabel labelNombreChiffreActeur;
+    private javax.swing.JLabel labelNombreChiffreFilm;
+    private javax.swing.JLabel labelNombreChiffreInscrit;
+    private javax.swing.JLabel labelNombreChiffrePersonne;
+    private javax.swing.JLabel labelNombreChiffreProducteur;
+    private javax.swing.JLabel labelNombreChiffreRealisateur;
+  	private javax.swing.JLabel labelNombreChiffreRecompenseFilm;
+    private javax.swing.JLabel labelNombreChiffreRecompensePersonne;
     private javax.swing.JLabel labelNombreRecompenseFilm;
     private javax.swing.JLabel labelNombreTexteActeur;
     private javax.swing.JLabel labelNombreTexteFilm;
@@ -156,7 +208,6 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
     private javax.swing.JScrollPane scrollPaneListeRecompensePersonne;
     private javax.swing.JTextField textfieldLogin;
     private javax.swing.JTextField textfieldPassword;
-    private JMenuItem jMenuItemQuitter;
 	
     private void initComponents() {
 
@@ -189,6 +240,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonAcceptAllProducteur = new javax.swing.JButton();
         boutonRefusProducteur = new javax.swing.JButton();
         boutonAcceptProducteur = new javax.swing.JButton();
+        labelNombreChiffreProducteur = new javax.swing.JLabel();
         panelGestionRealisateur = new javax.swing.JPanel();
         labelAccueilRealisateur = new javax.swing.JLabel();
         labelNombreTexteRealisateur = new javax.swing.JLabel();
@@ -199,6 +251,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonAcceptAllRealisateur = new javax.swing.JButton();
         boutonRefusRealisateur = new javax.swing.JButton();
         boutonAcceptRealisateur = new javax.swing.JButton();
+        labelNombreChiffreRealisateur = new javax.swing.JLabel();
         panelGestionFilm = new javax.swing.JPanel();
         labelAccueilFilm = new javax.swing.JLabel();
         labelNombreTexteFilm = new javax.swing.JLabel();
@@ -209,6 +262,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonAcceptAllFilm = new javax.swing.JButton();
         boutonAcceptFilm = new javax.swing.JButton();
         boutonRefusFilm = new javax.swing.JButton();
+        labelNombreChiffreFilm = new javax.swing.JLabel();
         panelGestionInscrit = new javax.swing.JPanel();
         labelAccueilInscrit = new javax.swing.JLabel();
         labelNombreTexteInscrit = new javax.swing.JLabel();
@@ -224,6 +278,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         labelNouveauxInscritNombre = new javax.swing.JLabel();
         boutonAcceptInscrit = new javax.swing.JButton();
         boutonRefusInscrit = new javax.swing.JButton();
+        labelNombreChiffreInscrit = new javax.swing.JLabel();
         panelGestionRecompenseFilm = new javax.swing.JPanel();
         labelAccueilRecompenseFilm = new javax.swing.JLabel();
         labelNombreRecompenseFilm = new javax.swing.JLabel();
@@ -234,6 +289,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonAcceptAllRecompenseFilm = new javax.swing.JButton();
         boutonAcceptRecompenseFilm = new javax.swing.JButton();
         boutonRefusRecompenseFilm = new javax.swing.JButton();
+        labelNombreChiffreRecompenseFilm = new javax.swing.JLabel();
         panelGestionRecompensePersonne = new javax.swing.JPanel();
         labelAccueilRecompensePersonne = new javax.swing.JLabel();
         labelNombreTexteRecompensePersonne = new javax.swing.JLabel();
@@ -244,6 +300,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonAcceptAllRecompensePersonne = new javax.swing.JButton();
         boutonAcceptRecompensePersonne = new javax.swing.JButton();
         boutonRefusRecompensePersonne = new javax.swing.JButton();
+        JLabel labelNombreChiffreRecompensePersonne = new javax.swing.JLabel();
         panelNavigateur = new javax.swing.JPanel();
         panelGestionPersonne = new javax.swing.JPanel();
         labelAccueilPersonne = new javax.swing.JLabel();
@@ -255,18 +312,19 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         labelNombreTextePersonne = new javax.swing.JLabel();
         boutonAcceptPersonne = new javax.swing.JButton();
         boutonRefusPersonne = new javax.swing.JButton();
+        labelNombreChiffrePersonne = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
-        menuAutre = new javax.swing.JMenu();
         jMenuItemQuitter = new javax.swing.JMenuItem();
+        menuAutre = new javax.swing.JMenu();
+		boutonAccueilNavigateur = new javax.swing.JButton("Accueil");
     	txtURL= new javax.swing.JTextField("");
-    	ep = new javax.swing.JEditorPane();
+    	jEditorPaneNavigateur = new javax.swing.JEditorPane();
         lblStatus= new javax.swing.JLabel(" ");
-        test = new JScrollPane();
-        ep.setEditable(false);
-        ep.addHyperlinkListener(this);
+        jScrollPaneNavigateur = new JScrollPane();
+        jEditorPaneNavigateur.setEditable(false);
+        jEditorPaneNavigateur.addHyperlinkListener(this);
 
-        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         conteneurOnglet.setEnabled(false);
@@ -441,6 +499,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                     .addComponent(boutonRefusProducteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptProducteur, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
+            .addGroup(panelGestionProducteurLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(labelNombreChiffreProducteur)
+                .addContainerGap(519, Short.MAX_VALUE))
             .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -466,11 +528,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionProducteurLayout.setVerticalGroup(
             panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionProducteurLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addGap(49, 49, 49)
+                .addComponent(labelNombreChiffreProducteur)
+                .addGap(63, 63, 63)
                 .addComponent(boutonAcceptProducteur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusProducteur)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
             .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -521,6 +585,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                     .addComponent(boutonRefusRealisateur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptRealisateur, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
+            .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(labelNombreChiffreRealisateur)
+                .addContainerGap(519, Short.MAX_VALUE))
             .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -546,11 +614,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionRealisateurLayout.setVerticalGroup(
             panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(50, 50, 50)
+                .addComponent(labelNombreChiffreRealisateur)
+                .addGap(66, 66, 66)
                 .addComponent(boutonAcceptRealisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusRealisateur)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
             .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -601,6 +671,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                     .addComponent(boutonRefusFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptFilm, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
+            .addGroup(panelGestionFilmLayout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(labelNombreChiffreFilm)
+                .addContainerGap(521, Short.MAX_VALUE))
             .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -626,11 +700,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionFilmLayout.setVerticalGroup(
             panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionFilmLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addGap(48, 48, 48)
+                .addComponent(labelNombreChiffreFilm)
+                .addGap(64, 64, 64)
                 .addComponent(boutonAcceptFilm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusFilm)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
             .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -674,7 +750,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         });
         scrollPaneListeNouveauxInscrit.setViewportView(listeNouveauxInscrit);
 
-        labelListeNouveauxInscrit.setText("Liste des nouveaux inscrits du mois : ");
+        labelListeNouveauxInscrit.setText("Liste des nouveaux inscrits du moi : ");
 
         labelNouveauxInscrit.setText("Nombre Nouveaux Inscrit : ");
 
@@ -702,7 +778,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                         .addContainerGap(463, Short.MAX_VALUE)
                         .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(boutonRefusInscrit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(boutonAcceptInscrit, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addComponent(boutonAcceptInscrit, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(panelGestionInscritLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(labelNombreChiffreInscrit)))
                 .addContainerGap())
             .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionInscritLayout.createSequentialGroup()
@@ -732,7 +811,9 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionInscritLayout.setVerticalGroup(
             panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionInscritLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
+                .addGap(64, 64, 64)
+                .addComponent(labelNombreChiffreInscrit)
+                .addGap(65, 65, 65)
                 .addComponent(boutonAcceptInscrit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusInscrit)
@@ -793,6 +874,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                     .addComponent(boutonRefusRecompenseFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptRecompenseFilm, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
+            .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(labelNombreChiffreRecompenseFilm)
+                .addContainerGap(523, Short.MAX_VALUE))
             .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -818,11 +903,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionRecompenseFilmLayout.setVerticalGroup(
             panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
+                .addGap(50, 50, 50)
+                .addComponent(labelNombreChiffreRecompenseFilm)
+                .addGap(77, 77, 77)
                 .addComponent(boutonAcceptRecompenseFilm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusRecompenseFilm)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
             .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -873,6 +960,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                     .addComponent(boutonRefusRecompensePersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptRecompensePersonne, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
+            .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(labelNombreChiffreRecompensePersonne)
+                .addContainerGap(520, Short.MAX_VALUE))
             .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -898,11 +989,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionRecompensePersonneLayout.setVerticalGroup(
             panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(50, 50, 50)
+                .addComponent(labelNombreChiffreRecompensePersonne)
+                .addGap(61, 61, 61)
                 .addComponent(boutonAcceptRecompensePersonne)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusRecompensePersonne)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
             .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -933,23 +1026,9 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
             .addGap(0, 394, Short.MAX_VALUE)
         );
 
-        conteneurOnglet.addTab("Navigateur", panelNavigateur);
-        panelNavigateur.setLayout(new BorderLayout());
-        JPanel pnlURL = new JPanel();
-        pnlURL.setLayout(new BorderLayout());
-        pnlURL.add(new JLabel("URL: "), BorderLayout.WEST);
-        pnlURL.add(txtURL, BorderLayout.CENTER);
-        panelNavigateur.add(pnlURL,BorderLayout.NORTH);
-
-//        ep.addHyperlinkListener(this);
-        test = new JScrollPane(ep);
-        panelNavigateur.add(test, BorderLayout.CENTER);
-
-//        panelNavigateur.add(ep, BorderLayout.CENTER);
-        panelNavigateur.add(lblStatus, BorderLayout.SOUTH);
-        txtURL.addActionListener(al);
-
+       
         
+
         labelAccueilPersonne.setText("Gestion des personnes");
 
         boutonAcceptAllPersonne.setText("Accepter toutes les mise à jour");
@@ -981,6 +1060,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                     .addComponent(boutonRefusPersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptPersonne, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
+            .addGroup(panelGestionPersonneLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(labelNombreChiffrePersonne)
+                .addContainerGap(523, Short.MAX_VALUE))
             .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionPersonneLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -1006,11 +1089,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionPersonneLayout.setVerticalGroup(
             panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionPersonneLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
+                .addGap(51, 51, 51)
+                .addComponent(labelNombreChiffrePersonne)
+                .addGap(68, 68, 68)
                 .addComponent(boutonAcceptPersonne)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusPersonne)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
             .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionPersonneLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -1060,11 +1145,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         );
 
         pack();
-    }// </editor-fold>
+    }
     
     
     protected void jMenuItemQuitterActionPerformed(ActionEvent evt) {
-		// TODO Auto-generated method stub
     	dispose(); 
 		
 	}
@@ -1079,40 +1163,43 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 			connect.setAutoCommit(false);
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
         return connect;
     }
     
+	private void boutonAccueilNavigateurMouseClicked(java.awt.event.MouseEvent evt) {
+		
+		try {
+			txtURL.setText("http://localhost:8080/sitewebald/vues/index.jsp");
+			jEditorPaneNavigateur.setPage("http://localhost:8080/sitewebald/vues/index.jsp");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
     private void boutonConnexionMouseClicked(java.awt.event.MouseEvent evt) {
-        // TODO add your handling code here:
     	
     	String LOGIN=textfieldLogin.getText();
         String PASSWORD=textfieldPassword.getText();
     	
     	Connection co = null;
-		try {
-			co = identification(LOGIN, PASSWORD);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
+
     	try {
-			if (co.isValid(30)) {
+    		co = identification(LOGIN, PASSWORD);
+			if (co.isValid(1)) {
 				conteneurOnglet.setEnabled(true);
+				co.close();
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block		
 			JOptionPane.showMessageDialog(conteneurOnglet, "Acces refuse pour l'utilisateur.");
 		}
-    	
-    }
+    
+}
     
     ActionListener al = new ActionListener() {
         public void actionPerformed(ActionEvent ae) {
@@ -1120,7 +1207,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                 String url = ae.getActionCommand().toLowerCase();
                 if (url.startsWith("http://"))
                 url = url.substring(7);
-                ep.setPage("http://" + IDN.toASCII(url));
+                jEditorPaneNavigateur.setPage("http://" + IDN.toASCII(url));
             } catch (Exception e) {
                 e.printStackTrace();
                 //  JOptionPane.showMessageDialog(WebBrowser.this, "Browser problem: " + e.getMessage());
@@ -1756,7 +1843,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 	public void hyperlinkUpdate(HyperlinkEvent event) {
 		if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
 	          try {
-	            ep.setPage(event.getURL());
+	        	jEditorPaneNavigateur.setPage(event.getURL());
 	            txtURL.setText(event.getURL().toExternalForm());
 	          } catch(IOException ioe) {
 	            
@@ -1764,6 +1851,53 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 	        }
 		
 	}
-
+	public void setLabelNombreChiffreProducteur(
+			javax.swing.JLabel labelNombreChiffreProducteur) {
+		this.labelNombreChiffreProducteur = labelNombreChiffreProducteur;
+	}
+	public javax.swing.JLabel getLabelNombreChiffreProducteur() {
+		return labelNombreChiffreProducteur;
+	}
+	  public javax.swing.JLabel getLabelNombreChiffreFilm() {
+			return labelNombreChiffreFilm;
+		}
+		public void setLabelNombreChiffreFilm(javax.swing.JLabel labelNombreChiffreFilm) {
+			this.labelNombreChiffreFilm = labelNombreChiffreFilm;
+		}
+		public javax.swing.JLabel getLabelNombreChiffreInscrit() {
+			return labelNombreChiffreInscrit;
+		}
+		public void setLabelNombreChiffreInscrit(
+				javax.swing.JLabel labelNombreChiffreInscrit) {
+			this.labelNombreChiffreInscrit = labelNombreChiffreInscrit;
+		}
+		public javax.swing.JLabel getLabelNombreChiffrePersonne() {
+			return labelNombreChiffrePersonne;
+		}
+		public void setLabelNombreChiffrePersonne(
+				javax.swing.JLabel labelNombreChiffrePersonne) {
+			this.labelNombreChiffrePersonne = labelNombreChiffrePersonne;
+		}
+		public javax.swing.JLabel getLabelNombreChiffreRealisateur() {
+			return labelNombreChiffreRealisateur;
+		}
+		public void setLabelNombreChiffreRealisateur(
+				javax.swing.JLabel labelNombreChiffreRealisateur) {
+			this.labelNombreChiffreRealisateur = labelNombreChiffreRealisateur;
+		}
+		public javax.swing.JLabel getLabelNombreChiffreRecompenseFilm() {
+			return labelNombreChiffreRecompenseFilm;
+		}
+		public void setLabelNombreChiffreRecompenseFilm(
+				javax.swing.JLabel labelNombreChiffreRecompenseFilm) {
+			this.labelNombreChiffreRecompenseFilm = labelNombreChiffreRecompenseFilm;
+		}
+		public javax.swing.JLabel getLabelNombreChiffreRecompensePersonne() {
+			return labelNombreChiffreRecompensePersonne;
+		}
+		public void setLabelNombreChiffreRecompensePersonne(
+				javax.swing.JLabel labelNombreChiffreRecompensePersonne) {
+			this.labelNombreChiffreRecompensePersonne = labelNombreChiffreRecompensePersonne;
+		}
 	   
 }
