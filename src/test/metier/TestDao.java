@@ -207,6 +207,6 @@ public class TestDao extends TestCase {
 		System.out.println(jsqlD);
 		System.out.println(dateFormat.format(c.getTime()));
 	*/
-		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMoi().size() );
+		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );
 	}
 }

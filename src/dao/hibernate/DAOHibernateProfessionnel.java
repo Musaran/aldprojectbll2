@@ -91,7 +91,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 	}
 
 	@Override
-	public ArrayList<Professionnel> loadInscritDuMoi() throws Exception {
+	public ArrayList<Professionnel> loadInscritDuMois() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		 Query req = session.createQuery(

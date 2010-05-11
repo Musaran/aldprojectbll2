@@ -15,8 +15,8 @@ import metier.Professionnel;
 
 public interface DAOProfessionnel {
 
-	Professionnel	get(String nom)							throws Exception;
-	Professionnel	get(String login,String pass)			throws Exception;
+	Professionnel	get(String nom)										throws Exception;
+	Professionnel	get(String login,String pass)						throws Exception;
 	/// liste de toutes les Professionnels 
 	ArrayList<Professionnel>	loadAll()									throws Exception;
 	void				save(Professionnel professionnel)			throws Exception;
@@ -24,5 +24,5 @@ public interface DAOProfessionnel {
 	void				remove(Professionnel professionnel)			throws Exception;
 	void 				clear()										throws Exception;
 	ArrayList<Professionnel>	loadInactif(Date d)							throws Exception;
-	ArrayList<Professionnel>	loadInscritDuMoi()throws Exception;
+	ArrayList<Professionnel>	loadInscritDuMois()throws Exception;
 }

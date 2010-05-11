@@ -7,7 +7,7 @@
 <title><bean:message key="Erreurs.titre"/></title>
 </head>
 <body>
-	<h1>Erreurs</h1>
+	<center><h1><bean:message key="Liste.des.erreurs"/></h1></center>
 	<html:errors/>
 </body>
 </html:html>

@@ -6,7 +6,6 @@ import org.hibernate.Session;
 
 import metier.Film;
 import metier.Personne;
-import metier.RoleActeur;
 import metier.RoleProducteur;
 import dao.DAORoleProducteur;
 

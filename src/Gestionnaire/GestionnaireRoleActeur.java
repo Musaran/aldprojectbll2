@@ -105,7 +105,7 @@ public class GestionnaireRoleActeur {
 	 */
 	public  void refresh() 
 	{
-		int nombreRequete=0;
+		int nombreRequete =0;
 		Vector <RoleActeur> liste = new Vector <RoleActeur>();
 		ArrayList<RoleActeur> temp= new ArrayList<RoleActeur>();
 		try {
