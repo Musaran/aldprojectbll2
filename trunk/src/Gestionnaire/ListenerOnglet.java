@@ -16,11 +16,18 @@ public class ListenerOnglet implements ChangeListener{
 		// TODO Auto-generated method stub
 		JTabbedPane source= (JTabbedPane)arg0.getSource();
 		
-		if(source.getSelectedIndex()==1)
-		{
-			GestionnaireRoleActeur gest = new GestionnaireRoleActeur();
-			gest.refresh();
+		switch(source.getSelectedIndex()) {
+		case 1: GestionnaireRoleActeur gest = new GestionnaireRoleActeur(); gest.refresh(); break;
+		
+		
+//		case 8: WebBrowser wb = new WebBrowser(); break;
 		}
+//		}
+//		if(source.getSelectedIndex()==1)
+//		{
+//			GestionnaireRoleActeur gest = new GestionnaireRoleActeur();
+//			gest.refresh();
+//		}
 	}
 
 }
