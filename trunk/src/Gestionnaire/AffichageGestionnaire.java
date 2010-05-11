@@ -72,7 +72,6 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
             }
         });
 
-        conteneurOnglet.addTab("Navigateur", panelNavigateur);
         panelNavigateur.setLayout(new BorderLayout());
         JPanel pnlURL = new JPanel();
         pnlURL.setLayout(new BorderLayout());
@@ -86,11 +85,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         panelNavigateur.add(lblStatus, BorderLayout.SOUTH);
         txtURL.addActionListener(al);
-        try {
-			jEditorPaneNavigateur.setPage("http://localhost:8080/sitewebald/vues/index.jsp");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        
 
 	}
 	
@@ -300,7 +295,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonAcceptAllRecompensePersonne = new javax.swing.JButton();
         boutonAcceptRecompensePersonne = new javax.swing.JButton();
         boutonRefusRecompensePersonne = new javax.swing.JButton();
-        JLabel labelNombreChiffreRecompensePersonne = new javax.swing.JLabel();
+        labelNombreChiffreRecompensePersonne = new javax.swing.JLabel();
         panelNavigateur = new javax.swing.JPanel();
         panelGestionPersonne = new javax.swing.JPanel();
         labelAccueilPersonne = new javax.swing.JLabel();
@@ -1026,8 +1021,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
             .addGap(0, 394, Short.MAX_VALUE)
         );
 
-       
-        
+        conteneurOnglet.addTab("Navigateur", panelNavigateur);
 
         labelAccueilPersonne.setText("Gestion des personnes");
 
@@ -1147,11 +1141,11 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         pack();
     }
     
-    
     protected void jMenuItemQuitterActionPerformed(ActionEvent evt) {
     	dispose(); 
 		
 	}
+    
 	public static Connection identification(String login, String Pass) throws SQLException{
     	final String DRIVER ="com.mysql.jdbc.Driver";
     	final String URL="jdbc:mysql://localhost/ald";
@@ -1171,15 +1165,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         return connect;
     }
     
-	private void boutonAccueilNavigateurMouseClicked(java.awt.event.MouseEvent evt) {
-		
+	private void boutonAccueilNavigateurMouseClicked(java.awt.event.MouseEvent evt) {	
 		try {
 			txtURL.setText("http://localhost:8080/sitewebald/vues/index.jsp");
 			jEditorPaneNavigateur.setPage("http://localhost:8080/sitewebald/vues/index.jsp");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
     private void boutonConnexionMouseClicked(java.awt.event.MouseEvent evt) {
@@ -1898,6 +1890,19 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 		public void setLabelNombreChiffreRecompensePersonne(
 				javax.swing.JLabel labelNombreChiffreRecompensePersonne) {
 			this.labelNombreChiffreRecompensePersonne = labelNombreChiffreRecompensePersonne;
+		}
+		public javax.swing.JTextField getTxtURL() {
+			return txtURL;
+		}
+		public void setTxtURL(javax.swing.JTextField txtURL) {
+			this.txtURL = txtURL;
+		}
+		public javax.swing.JEditorPane getjEditorPaneNavigateur() {
+			return jEditorPaneNavigateur;
+		}
+		public void setjEditorPaneNavigateur(
+				javax.swing.JEditorPane jEditorPaneNavigateur) {
+			this.jEditorPaneNavigateur = jEditorPaneNavigateur;
 		}
 	   
 }
