@@ -269,7 +269,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        conteneurOnglet.setEnabled(true);
+        conteneurOnglet.setEnabled(false);
 
         labelMessage.setText("Merci de vous authentifier");
 
