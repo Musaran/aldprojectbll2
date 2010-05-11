@@ -6,11 +6,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-/**
- * Classe qui ecoute un changement d'onglet pour mettre a jour les champs
- * @author jerome
- *
- */
 public class ListenerOnglet implements ChangeListener{
 
 	@Override
@@ -30,8 +25,8 @@ public class ListenerOnglet implements ChangeListener{
 				catch (IOException e) {
 					e.printStackTrace();
 				}
-			}
+			};break;
+			case 9: GestionnairePersonne gestpers = new GestionnairePersonne(); gestpers.refresh();break;
 		}
 	}
-
 }

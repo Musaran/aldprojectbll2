@@ -57,7 +57,7 @@ public class GestionnaireFilm {
 	 * Fonction qui accepte les roles dans la liste
 	 * @param liste passé en parametre recup du listener qui lui la recup de la form
 	 */
-	public void acceptRole(ArrayList<Film> liste) {
+	public void accept(ArrayList<Film> liste) {
 		for(int i=0;i<liste.size();i++)
 		{
 			try {
