@@ -1,11 +1,21 @@
 package Gestionnaire;
 
 import javax.swing.JButton;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.IDN;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,7 +24,7 @@ import java.sql.SQLException;
  * @author jerome
  *
  */
-public class AffichageGestionnaire extends JFrame {
+public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 	private static AffichageGestionnaire instance;
 	
 	/**
@@ -42,6 +52,11 @@ public class AffichageGestionnaire extends JFrame {
 	}
 	
 	 // Variables declaration - do not modify
+	
+	private javax.swing.JTextField txtURL;
+	private javax.swing.JEditorPane ep;
+    private javax.swing.JLabel lblStatus;
+    private javax.swing.JScrollPane test;
 	
     private javax.swing.JButton boutonAcceptActeur;
     private javax.swing.JButton boutonAcceptAllActeur;
@@ -244,10 +259,17 @@ public class AffichageGestionnaire extends JFrame {
         menuFichier = new javax.swing.JMenu();
         menuAutre = new javax.swing.JMenu();
         jMenuItemQuitter = new javax.swing.JMenuItem();
+    	txtURL= new javax.swing.JTextField("");
+    	ep = new javax.swing.JEditorPane();
+        lblStatus= new javax.swing.JLabel(" ");
+        test = new JScrollPane();
+        ep.setEditable(false);
+        ep.addHyperlinkListener(this);
 
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        conteneurOnglet.setEnabled(false);
+        conteneurOnglet.setEnabled(true);
 
         labelMessage.setText("Merci de vous authentifier");
 
@@ -256,7 +278,6 @@ public class AffichageGestionnaire extends JFrame {
         labelPassword.setText("Mot de passe : ");
 
         boutonConnexion.setText("Connexion");
-        
         boutonConnexion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boutonConnexionMouseClicked(evt);
@@ -282,7 +303,7 @@ public class AffichageGestionnaire extends JFrame {
                     .addComponent(textfieldLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
                 .addContainerGap(332, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConnexionLayout.createSequentialGroup()
-                .addContainerGap(322, Short.MAX_VALUE)
+                .addContainerGap(312, Short.MAX_VALUE)
                 .addComponent(boutonConnexion)
                 .addGap(283, 283, 283))
         );
@@ -653,7 +674,7 @@ public class AffichageGestionnaire extends JFrame {
         });
         scrollPaneListeNouveauxInscrit.setViewportView(listeNouveauxInscrit);
 
-        labelListeNouveauxInscrit.setText("Liste des nouveaux inscrits du moi : ");
+        labelListeNouveauxInscrit.setText("Liste des nouveaux inscrits du mois : ");
 
         labelNouveauxInscrit.setText("Nombre Nouveaux Inscrit : ");
 
@@ -913,7 +934,22 @@ public class AffichageGestionnaire extends JFrame {
         );
 
         conteneurOnglet.addTab("Navigateur", panelNavigateur);
+        panelNavigateur.setLayout(new BorderLayout());
+        JPanel pnlURL = new JPanel();
+        pnlURL.setLayout(new BorderLayout());
+        pnlURL.add(new JLabel("URL: "), BorderLayout.WEST);
+        pnlURL.add(txtURL, BorderLayout.CENTER);
+        panelNavigateur.add(pnlURL,BorderLayout.NORTH);
 
+//        ep.addHyperlinkListener(this);
+        test = new JScrollPane(ep);
+        panelNavigateur.add(test, BorderLayout.CENTER);
+
+//        panelNavigateur.add(ep, BorderLayout.CENTER);
+        panelNavigateur.add(lblStatus, BorderLayout.SOUTH);
+        txtURL.addActionListener(al);
+
+        
         labelAccueilPersonne.setText("Gestion des personnes");
 
         boutonAcceptAllPersonne.setText("Accepter toutes les mise à jour");
@@ -995,8 +1031,8 @@ public class AffichageGestionnaire extends JFrame {
         conteneurOnglet.addTab("Personne", panelGestionPersonne);
 
         menuFichier.setText("Fichier");
-        
-		jMenuItemQuitter.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+
+        jMenuItemQuitter.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemQuitter.setText("Quitter");
         jMenuItemQuitter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1076,11 +1112,23 @@ public class AffichageGestionnaire extends JFrame {
 			JOptionPane.showMessageDialog(conteneurOnglet, "Acces refuse pour l'utilisateur.");
 		}
     	
-		
-        
     }
     
-   
+    ActionListener al = new ActionListener() {
+        public void actionPerformed(ActionEvent ae) {
+            try {
+                String url = ae.getActionCommand().toLowerCase();
+                if (url.startsWith("http://"))
+                url = url.substring(7);
+                ep.setPage("http://" + IDN.toASCII(url));
+            } catch (Exception e) {
+                e.printStackTrace();
+                //  JOptionPane.showMessageDialog(WebBrowser.this, "Browser problem: " + e.getMessage());
+            }
+        }
+    };
+ 
+  
     
 	public javax.swing.JButton getBoutonAcceptActeur() {
 		return boutonAcceptActeur;
@@ -1703,6 +1751,18 @@ public class AffichageGestionnaire extends JFrame {
 	}
 	public static void setInstance(AffichageGestionnaire instance) {
 		AffichageGestionnaire.instance = instance;
+	}
+	@Override
+	public void hyperlinkUpdate(HyperlinkEvent event) {
+		if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+	          try {
+	            ep.setPage(event.getURL());
+	            txtURL.setText(event.getURL().toExternalForm());
+	          } catch(IOException ioe) {
+	            
+	          }
+	        }
+		
 	}
 
 	   
