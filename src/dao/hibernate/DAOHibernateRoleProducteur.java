@@ -20,6 +20,7 @@ public class DAOHibernateRoleProducteur extends DAOHibernate implements DAORoleP
 		return v;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RoleProducteur> loadProducteurInvalide() throws Exception {
 		// TODO Auto-generated method stub
@@ -29,6 +30,7 @@ public class DAOHibernateRoleProducteur extends DAOHibernate implements DAORoleP
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RoleProducteur> loadProducteurValide() throws Exception {
 		// TODO Auto-generated method stub

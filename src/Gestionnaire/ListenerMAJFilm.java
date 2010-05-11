@@ -52,7 +52,7 @@ public class ListenerMAJFilm implements ActionListener {
 			else if(source.getText().equals(
 					AffichageGestionnaire.getInstance().getBoutonAcceptFilm().getText()))
 			{
-				gestionnaire.acceptRole(liste);
+				gestionnaire.accept(liste);
 			}
 			else if(source.getText().equals(
 					AffichageGestionnaire.getInstance().getBoutonAcceptAllFilm().getText()))

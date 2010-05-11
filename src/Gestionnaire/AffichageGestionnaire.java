@@ -66,6 +66,11 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 		boutonRefusFilm.addActionListener(new ListenerMAJFilm());
 	    boutonRefusAllFilm.addActionListener(new ListenerMAJFilm());
 	    
+	    boutonAcceptPersonne.addActionListener(new ListenerMAJPersonne());
+		boutonAcceptAllPersonne.addActionListener(new ListenerMAJPersonne());
+		boutonRefusPersonne.addActionListener(new ListenerMAJPersonne());
+	    boutonRefusAllPersonne.addActionListener(new ListenerMAJPersonne());
+	    
 	    boutonAccueilNavigateur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
             	boutonAccueilNavigateurMouseClicked(evt);
@@ -86,7 +91,6 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelNavigateur.add(lblStatus, BorderLayout.SOUTH);
         txtURL.addActionListener(al);
         
-
 	}
 	
 	 // Variables declaration - do not modify
@@ -132,6 +136,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
     private javax.swing.JButton boutonRefusRecompensePersonne;
     private javax.swing.JTabbedPane conteneurOnglet;
     private javax.swing.JMenuItem jMenuItemQuitter;
+    private javax.swing.JMenuItem jMenuItemRefresh;
     private javax.swing.JLabel labelAccueilActeur;
     private javax.swing.JLabel labelAccueilFilm;
     private javax.swing.JLabel labelAccueilInscrit;
@@ -311,6 +316,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         menuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
         jMenuItemQuitter = new javax.swing.JMenuItem();
+        jMenuItemRefresh = new javax.swing.JMenuItem();
         menuAutre = new javax.swing.JMenu();
 		boutonAccueilNavigateur = new javax.swing.JButton("Accueil");
     	txtURL= new javax.swing.JTextField("");
@@ -379,7 +385,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         conteneurOnglet.addTab("Connexion", panelConnexion);
 
-        labelNombreTexteActeur.setText("Nombre de mise a jour :");
+        labelNombreTexteActeur.setText("Nombre de mise à jour :");
 
         labelAccueilActeur.setText("Gestion des acteurs");
 
@@ -465,7 +471,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilProducteur.setText("Gestion des producteurs");
 
-        labelNombreTexteProducteur.setText("Nombre de mise a jour :");
+        labelNombreTexteProducteur.setText("Nombre de mise à jour :");
 
         labelListeProducteur.setText("Liste des mise à jour : ");
 
@@ -551,7 +557,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilRealisateur.setText("Gestion des realisateurs");
 
-        labelNombreTexteRealisateur.setText("Nombre de mise a jour :");
+        labelNombreTexteRealisateur.setText("Nombre de mise à jour :");
 
         labelListeRealisateur.setText("Liste des mise à jour : ");
 
@@ -637,7 +643,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilFilm.setText("Gestion des films");
 
-        labelNombreTexteFilm.setText("Nombre de mise a jour :");
+        labelNombreTexteFilm.setText("Nombre de mise à jour :");
 
         labelListeFilm.setText("Liste des mise à jour : ");
 
@@ -723,7 +729,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilInscrit.setText("Gestion des inscrits");
 
-        labelNombreTexteInscrit.setText("Nombre de mise a jour :");
+        labelNombreTexteInscrit.setText("Nombre de mise à jour :");
 
         labelListeInscrit.setText("Liste des mise à jour : ");
 
@@ -745,7 +751,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         });
         scrollPaneListeNouveauxInscrit.setViewportView(listeNouveauxInscrit);
 
-        labelListeNouveauxInscrit.setText("Liste des nouveaux inscrits du moi : ");
+        labelListeNouveauxInscrit.setText("Liste des nouveaux inscrits du mois : ");
 
         labelNouveauxInscrit.setText("Nombre Nouveaux Inscrit : ");
 
@@ -840,7 +846,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilRecompenseFilm.setText("Gestion des recompense de film");
 
-        labelNombreRecompenseFilm.setText("Nombre de mise a jour :");
+        labelNombreRecompenseFilm.setText("Nombre de mise à jour :");
 
         labelListeRecompenseFilm.setText("Liste des mise à jour : ");
 
@@ -926,7 +932,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilRecompensePersonne.setText("Gestion des recompenses personnes");
 
-        labelNombreTexteRecompensePersonne.setText("Nombre de mise a jour :");
+        labelNombreTexteRecompensePersonne.setText("Nombre de mise à jour :");
 
         labelListeRecompensePersonne.setText("Liste des mise à jour : ");
 
@@ -1038,7 +1044,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelListePersonne.setText("Liste des mise à jour : ");
 
-        labelNombreTextePersonne.setText("Nombre de mise a jour :");
+        labelNombreTextePersonne.setText("Nombre de mise à jour :");
 
         boutonAcceptPersonne.setText("Accepter la mise à jour selectionnée");
 
@@ -1110,6 +1116,17 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         conteneurOnglet.addTab("Personne", panelGestionPersonne);
 
         menuFichier.setText("Fichier");
+        
+        jMenuItemRefresh.setText("Rafrachir");
+        jMenuItemRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jMenuItemRefreshActionPerformed(evt);
+            }
+
+        });
+        
+        menuFichier.add(jMenuItemRefresh);
+//        jMenuItemRefresh.setEnabled(false);
 
         jMenuItemQuitter.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemQuitter.setText("Quitter");
@@ -1141,11 +1158,19 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         pack();
     }
     
-    protected void jMenuItemQuitterActionPerformed(ActionEvent evt) {
+    private void jMenuItemQuitterActionPerformed(ActionEvent evt) {
     	dispose(); 
 		
 	}
     
+    private void jMenuItemRefreshActionPerformed(ActionEvent evt) {
+    	GestionnaireRoleActeur gestact = new GestionnaireRoleActeur(); gestact.refresh();
+    	GestionnairePersonne gestpers = new GestionnairePersonne(); gestpers.refresh();
+    	GestionnaireRoleProducteur gestprod = new GestionnaireRoleProducteur(); gestprod.refresh();
+    	GestionnaireRoleRealisateur gestreal = new GestionnaireRoleRealisateur(); gestreal.refresh();
+    	GestionnaireFilm gestfilm = new GestionnaireFilm(); gestfilm.refresh();
+	}
+	
 	public static Connection identification(String login, String Pass) throws SQLException{
     	final String DRIVER ="com.mysql.jdbc.Driver";
     	final String URL="jdbc:mysql://localhost/ald";
