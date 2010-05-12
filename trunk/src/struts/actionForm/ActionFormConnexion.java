@@ -21,10 +21,11 @@ public class ActionFormConnexion extends ActionForm{
 	
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
 		ActionErrors erreurs=new ActionErrors();
+		
 		if(login.trim().equals(""))
-			erreurs.add("champ login vide",new ActionMessage("Erreur.co.login.vide"));
+			erreurs.add("login",new ActionMessage("Erreur.champ.vide","login"));
 		if(motDePasse.trim().equals(""))
-			erreurs.add("champ mot de passe vide",new ActionMessage("Erreur.co.motDePasse.vide"));
+			erreurs.add("mot de passe",new ActionMessage("Erreur.champ.vide","mot de passe"));
 		return erreurs;
 	}
 
@@ -43,5 +44,5 @@ public class ActionFormConnexion extends ActionForm{
 	public String getMotDePasse() {
 		return motDePasse;
 	}
-	
+
 }

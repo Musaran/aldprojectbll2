@@ -17,11 +17,10 @@
 			<div id="menuBarre">
 			<% String loginSession = (String)session.getAttribute("login"); %>
 			<% if(loginSession != null){ %>
-				Bienvenue <%= session.getAttribute("login") %> !
+				Bienvenue <%= loginSession %> !
 				<%-- se deconnecter --%>
-				<html:link action=""><bean:message key="Deconnecter"/></html:link>
+				<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
 			<% }else{ %>
-				<bean:message key="Message.accueil"/><br />
 				<html:form action="/connexion.do">
 					<table>
 						<tr>
@@ -31,13 +30,7 @@
 						<tr>
 							<td><bean:message key="Mot.de.passe"/></td>
 							<td><html:text property="motDePasse" size="10" /></td>
-						</tr>
-						<tr>
-							<td></td>
 							<td><html:submit>OK</html:submit></td>
-						</tr>
-						<tr>
-							<td></td>
 						</tr>
 						<tr>
 							<td><html:errors/></td>
