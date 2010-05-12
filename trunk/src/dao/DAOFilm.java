@@ -16,6 +16,7 @@ public interface DAOFilm {
 	ArrayList<Film>		load(String key)			throws Exception;
 	/// liste de toutes les Films 
 	ArrayList<Film>		loadAll()					throws Exception;
+	ArrayList<Film>		loadLasts(int nb)					throws Exception;
 	void			save(Film film)				throws Exception;
 	void			saveOrUpdate(Film film)		throws Exception;
 	void			remove(Film film)			throws Exception;

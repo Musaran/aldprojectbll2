@@ -54,6 +54,16 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		close(session);	
 		return set;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Film> loadLasts(int nb) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film DESC").setMaxResults(nb);	
+		close(session);	
+		return set;
+	}
 
 	/// suppression d'un film
 	@Override
@@ -90,6 +100,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		close(session);
 		
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Film> loadFilmInvalide() throws Exception {
 		// TODO Auto-generated method stub
@@ -98,6 +109,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		close(session);	
 		return set;
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Film> loadFilmValide() throws Exception {
 		// TODO Auto-generated method stub
@@ -106,5 +118,6 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 		close(session);	
 		return set;
 	}
+
 
 }

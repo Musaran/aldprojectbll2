@@ -26,7 +26,7 @@
 			<form-bean name="BeanVote" type="struts.actionForm.BeanVote"></form-bean>
 
 			<form-bean name="formActionConnexion" type="struts.actionForm.ActionFormConnexion"></form-bean>
-			
+			<form-bean name="formActionRecherche" type="struts.actionForm.ActionFormRecherche"></form-bean>
 
     </form-beans>
 
@@ -55,8 +55,21 @@
     	</action>
     	
     	<action path="/deconnexion" type="org.springframework.web.struts.DelegatingActionProxy"
-    		name="actionDeconnexion" scope="session" >
+    		scope="session" >
     		<forward name="DeconnexionEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    	</action>
+
+    	<action path="/search" type="org.springframework.web.struts.DelegatingActionProxy"
+    		scope="request" name="formActionRecherche" validate="true" input="/vues/index.jsp?page=search" >
+    		<forward name="VueListeRechercheFilm" path="/vues/index.jsp?page=search" ></forward>
+    	</action>
+    	
+    	<action path="/ListeDerniersFilms" type="org.springframework.web.struts.DelegatingActionProxy">
+    		<forward name="VueListeDerniersFilms" path="/vues/index.jsp"></forward>
+    	</action>
+    	
+    	<action path="/listeFilms" type="org.springframework.web.struts.DelegatingActionProxy">
+    		<forward name="VueListeFilms" path="/vues/index.jsp?page=films"></forward>
     	</action>
     </action-mappings>
 
