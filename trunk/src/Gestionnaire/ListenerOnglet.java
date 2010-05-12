@@ -2,6 +2,7 @@ package Gestionnaire;
 
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -26,6 +27,7 @@ public class ListenerOnglet implements ChangeListener{
 					AffichageGestionnaire.getInstance().getTxtURL().setText("http://localhost:8080/sitewebald/vues/index.jsp");
 				} 
 				catch (IOException e) {
+					JOptionPane.showMessageDialog(AffichageGestionnaire.getInstance().getConteneurOnglet(), "Connexion impossible. Serveur Down ?");
 					e.printStackTrace();
 				}
 			};break;
