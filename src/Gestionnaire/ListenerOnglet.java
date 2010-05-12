@@ -19,6 +19,7 @@ public class ListenerOnglet implements ChangeListener{
 			case 4: GestionnaireFilm gestfilm = new GestionnaireFilm(); gestfilm.refresh();break;
 			case 5: GestionnaireInscrits gestinscrits = new GestionnaireInscrits(); gestinscrits.refresh();break;
 			case 6: GestionnaireRecompenseFilm gestrecompensefilm = new GestionnaireRecompenseFilm(); gestrecompensefilm.refresh();break;
+			case 7: GestionnaireRecompensePersonne gestrecompensepersonne = new GestionnaireRecompensePersonne(); gestrecompensepersonne.refresh();break;
 			case 8: {
 				try {
 					AffichageGestionnaire.getInstance().getjEditorPaneNavigateur().setPage("http://localhost:8080/sitewebald/vues/index.jsp");
