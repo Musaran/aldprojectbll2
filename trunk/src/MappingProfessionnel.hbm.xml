@@ -10,12 +10,14 @@
 	<property name="prenom" type="string" column="prenompro"/>
 	<property name="adresse" type="string" column="adressepro"/>
 	<property name="derniereConnexion" type="date" column="derniereconnexion"/>	
+	<property name="dateInscription" type="date" column="dateinscription"/>	
+	
 		
 	<!-- Définition des relations --> 
 	<!-- Mapping vers Vote -->
-	<set name="votes"  lazy="false" cascade="all">
-		<key column="professionnel"/>
-		<one-to-many class="metier.Vote" />
+	<set name="votes"  lazy="false" cascade="save-update" inverse="true" >
+		<key column="professionnel" />
+		<one-to-many class="metier.Vote"  />
 	</set> 
 	
 </class>

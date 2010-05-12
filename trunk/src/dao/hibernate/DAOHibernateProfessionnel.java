@@ -95,7 +95,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		 Query req = session.createQuery(
-				"FROM Professionnel WHERE month(derniereConnexion) = month(now()) AND year(now()) = year(derniereConnexion)");
+				"FROM Professionnel WHERE month(dateInscription) = month(now()) AND year(now()) = year(dateInscription)");
 		 //req.setDate(0,d);
 		 ArrayList<Professionnel> set=(ArrayList<Professionnel>) req.list();
 		close(session);	

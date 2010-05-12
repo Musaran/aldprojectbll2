@@ -71,8 +71,8 @@ public class TestDao extends TestCase {
 		Personne christianBale = new Personne( "Christian", "Bale", Ddate, "c lui ki fait batman aussi", "no_photo_forever", 30);//!\personne existant deja dans la bdd
 		Personne chuckNorris = new Personne( "Chuck", "Norris", Ddate, "il tet fort", "no_photo", 10);//!\personne existant deja dans la bdd
 		
-		Professionnel cinema = new Professionnel("cinema", "pass", Ddate, "kine", "polis", "123 fake street");
-		Professionnel cinema2 = new Professionnel("theatre", "pwd", Ddate, "le petit", "theatre", "dtc");
+		Professionnel cinema = new Professionnel("cinema", "pass", Ddate, "kine", "polis", "123 fake street", Ddate);
+		Professionnel cinema2 = new Professionnel("theatre", "pwd", Ddate, "le petit", "theatre", "dtc", Ddate);
 		
 		TypeRecompenseFilm meilleurFilm= new TypeRecompenseFilm("meilleur film"); 
 		TypeRecompensePersonne meilleurActeur= new TypeRecompensePersonne("meilleur acteur");
@@ -93,7 +93,7 @@ public class TestDao extends TestCase {
 		daotrf.clear();
 		daotrp.clear();
 		daorec.clear();*/
-		
+		/*
 		daof.save(armaggeddon);
 		daof.save(terminator);
 		
@@ -137,17 +137,17 @@ public class TestDao extends TestCase {
 		
 		
 		// exemple de vote 
-		
+		*/
 		Vote V=cinema.faitUnVote(armaggeddon, 6);
-		daovote.save(V);
+		//daovote.save(V);
 		armaggeddon.calculNoteMoyenne(daovote.loadFilmVote(armaggeddon));
-		daof.saveOrUpdate(armaggeddon);
+		//daof.saveOrUpdate(armaggeddon);
 
 		
 		Vote V2=cinema2.faitUnVote(armaggeddon, 9);
-		daovote.save(V2);
+		//daovote.save(V2);
 		armaggeddon.calculNoteMoyenne(daovote.loadFilmVote(armaggeddon));
-		daof.saveOrUpdate(armaggeddon);
+		//daof.saveOrUpdate(armaggeddon);
 		System.out.println(armaggeddon.getNoteMoyenne());
 		/* FIN exemple de vote */
 		//cinema = daopro.get(1);
@@ -196,7 +196,7 @@ public class TestDao extends TestCase {
 		
 				//daop.remove(chuckNorris);
 		*/
-		/* DELIRE des dates 
+		/* DELIRE des dates */
 		Calendar c = Calendar.getInstance();
 		c.add(Calendar.MONTH, -1);
 		Date bonne = c.getTime();
@@ -206,7 +206,7 @@ public class TestDao extends TestCase {
 		System.out.println("Les inactifs sont :  "+daopro.loadInactif(jsqlD).size() );
 		System.out.println(jsqlD);
 		System.out.println(dateFormat.format(c.getTime()));
-	*/
+	
 		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );
 	}
 }
