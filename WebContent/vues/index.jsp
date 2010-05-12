@@ -15,39 +15,21 @@
 		<div id="header">
 			<h1></h1>
 			<div id="menuBarre">
-			<% String loginSession = (String)session.getAttribute("login"); %>
-			<% if(loginSession != null){ %>
-				Bienvenue <%= loginSession %> !
-				<%-- se deconnecter --%>
-				<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
-			<% }else{ %>
-				<html:form action="/connexion.do">
-					<table>
-						<tr>
-							<td><bean:message key="Login"/></td>
-							<td><html:text property="login" size="10" /></td>
-						</tr>
-						<tr>
-							<td><bean:message key="Mot.de.passe"/></td>
-							<td><html:text property="motDePasse" size="10" /></td>
-							<td><html:submit>OK</html:submit></td>
-						</tr>
-						<tr>
-							<td><html:errors/></td>
-						</tr>
-					</table>				
-				</html:form>
-			<% } %> 
+				<jsp:include page="/includes/connexion.jsp" />
 			</div>
 	        <div id="searchBarre">
+	       	 	<jsp:include page="/includes/search.jsp" />
 	        </div>
 		</div>
 	    <div id="barreNews">
+	    	<jsp:include page="/includes/news.jsp" />
 	   	</div>
 	   	<div id="mainContainer">
         	<div id="menuContent">
+        		<jsp:include page="/includes/menu.jsp" />
      		</div>
         	<div id="content">
+        		<jsp:include page="/includes/content.jsp" />
         	</div>
         </div>
 	    <div id="footer">
