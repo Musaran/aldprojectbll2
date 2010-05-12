@@ -19,6 +19,7 @@ public class Professionnel {
 	private String login;
 	private String password;
 	private Date derniereConnexion;
+	private Date dateInscription;
 	private String nom;
 	private String prenom;
 	private String adresse;
@@ -43,9 +44,10 @@ public class Professionnel {
 	 * @param nom
 	 * @param prenom
 	 * @param adresse
+	 * @param date inscription
 	 */
 	public Professionnel(String login, String password,
-			Date derniereConnexion, String nom, String prenom, String adresse) {
+			Date derniereConnexion, String nom, String prenom, String adresse, Date dateInscription) {
 		super();
 
 		this.login = login;
@@ -54,6 +56,7 @@ public class Professionnel {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
+		this.dateInscription = dateInscription;
 	}
 
 	/**
@@ -74,9 +77,7 @@ public class Professionnel {
 	 * Methode de conversion de l'objet en string
 	 */
 	public String toString() {
-		return "Professionnel [adresse=" + adresse + ", derniereConnexion="
-				+ derniereConnexion + ", login=" + login + ", nom=" + nom + ", password="
-				+ password + ", prenom=" + prenom + "]";
+		return nom+" (id="+login+") "+prenom+" habite à "+adresse+", derniere connection : "+derniereConnexion;
 	}
 	
 	/**
@@ -130,6 +131,12 @@ public class Professionnel {
 	}
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+	public Date getDateInscription() {
+		return dateInscription;
+	}
+	public void setDateInscription(Date dateInscription) {
+		this.dateInscription = dateInscription;
 	}
 	public String getAdresse() {
 		return adresse;

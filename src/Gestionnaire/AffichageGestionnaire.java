@@ -71,6 +71,12 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 		boutonRefusPersonne.addActionListener(new ListenerMAJPersonne());
 	    boutonRefusAllPersonne.addActionListener(new ListenerMAJPersonne());
 	    
+	    boutonAcceptInscrit.addActionListener(new ListenerMAJInscrits());
+	    boutonAcceptAllInscrit.addActionListener(new ListenerMAJInscrits());
+	    boutonRefusInscrit.addActionListener(new ListenerMAJInscrits());
+	    boutonRefusAllInscrit.addActionListener(new ListenerMAJInscrits());
+	    
+	    
 	    boutonAccueilNavigateur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
             	boutonAccueilNavigateurMouseClicked(evt);

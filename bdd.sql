@@ -149,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `professionnel` (
   `nompro` varchar(255) NOT NULL,
   `adressepro` varchar(255) NOT NULL,
   `prenompro` varchar(255) NOT NULL,
+  `dateinscription` date DEFAULT NULL,
   PRIMARY KEY (`login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
