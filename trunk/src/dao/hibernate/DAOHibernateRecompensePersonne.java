@@ -28,7 +28,7 @@ public class DAOHibernateRecompensePersonne extends DAOHibernate implements DAOR
 		Session	session = connect();
 		RecompensePersonne f=(RecompensePersonne) session.createQuery(
 				"from RecompensePersonne as rec where " 
-				+"rec.Personne = '"+personne.getIdPersonne()
+				+"rec.personne = '"+personne.getIdPersonne()
 				+"' and rec.recompense = '"+recompense.getIdRecompense()
 				+"' and rec.typeRecompense = '"+typeRecompense.getIdTypeRecompensePersonne()
 				+"' and rec.annee = '"+annee
