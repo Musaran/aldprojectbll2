@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `recompensefilm` (
   `idtyperecompensefilm` int(11) NOT NULL,
   `idrecompense` int(11) NOT NULL,
   `isvalidaterecompensefilm` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`anneerecompensefilm`,`idtyperecompensefilm`,`idrecompense`,`idfilm`,`isvalidaterecompensefilm`),
+  PRIMARY KEY (`idfilm`,`anneerecompensefilm`,`idtyperecompensefilm`,`idrecompense`),
   KEY `FK_recompensefilm_idtyperecompensefilm` (`idtyperecompensefilm`),
   KEY `idrecompense` (`idrecompense`),
   KEY `idfilm` (`idfilm`)
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `recompensepersonne` (
   `anneerecompensepersonne` int(11) NOT NULL,
   `isvalidaterecompensepersonne` int(1) NOT NULL DEFAULT '0',
   `idrecompense` int(11) NOT NULL,
-  PRIMARY KEY (`idpersonne`,`idtyperecompensepersonne`,`anneerecompensepersonne`,`idrecompense`,`isvalidaterecompensepersonne`),
+  PRIMARY KEY (`idpersonne`,`idtyperecompensepersonne`,`anneerecompensepersonne`,`isvalidaterecompensepersonne`),
   KEY `FK_recompensepersonne_idtyperecompensepersonne` (`idtyperecompensepersonne`),
   KEY `FK_recompensepersonne_idpersonne` (`idpersonne`),
   KEY `idrecompense` (`idrecompense`)

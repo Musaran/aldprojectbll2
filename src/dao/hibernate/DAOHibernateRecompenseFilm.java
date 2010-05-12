@@ -71,7 +71,7 @@ public class DAOHibernateRecompenseFilm extends DAOHibernate implements DAORecom
 			throws Exception {
 		// TODO Auto-generated method stub
 		Session session = connect();
-		session.update(recompenseFilm);
+		session.saveOrUpdate(recompenseFilm);
 		close(session);
 	}
 

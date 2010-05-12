@@ -10,9 +10,9 @@
 		<key-many-to-one name="personne" class="metier.Personne" column="idpersonne" />
 		<key-many-to-one name="typeRecompense" class="metier.TypeRecompensePersonne" column="idtyperecompensepersonne" />
 		<key-property name="annee" column="anneerecompensepersonne" />
-		<key-property name="isValidateRecompense" column="isvalidaterecompensepersonne"/>
+		
     </composite-id>
-	
+		<property name="isValidateRecompense" column="isvalidaterecompensepersonne"/>
 </class>
 
 </hibernate-mapping>
