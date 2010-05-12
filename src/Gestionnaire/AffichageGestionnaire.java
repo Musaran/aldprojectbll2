@@ -1,10 +1,7 @@
 package Gestionnaire;
 
-import javax.swing.JButton;
-import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -12,7 +9,6 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -44,7 +40,18 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 	 */
 	private AffichageGestionnaire()
 	{
+		jMenuItemRefresh = new javax.swing.JMenuItem();
+		boutonAccueilNavigateur = new javax.swing.JButton("Accueil");
+    	txtURL= new javax.swing.JTextField("");
+    	jEditorPaneNavigateur = new javax.swing.JEditorPane();
+        lblStatus= new javax.swing.JLabel(" ");
+        jScrollPaneNavigateur = new JScrollPane();
+        jEditorPaneNavigateur.setEditable(false);
+        jEditorPaneNavigateur.addHyperlinkListener(this);
+    		
 		initComponents();
+		conteneurOnglet.setEnabled(false);
+		
 		conteneurOnglet.addChangeListener(new ListenerOnglet() );
 		boutonAcceptActeur.addActionListener(new ListenerMAJActeur());
 		boutonAcceptAllActeur.addActionListener(new ListenerMAJActeur());
@@ -237,8 +244,8 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         boutonConnexion = new javax.swing.JButton();
         panelGestionActeur = new javax.swing.JPanel();
         labelNombreTexteActeur = new javax.swing.JLabel();
-        labelAccueilActeur = new javax.swing.JLabel();
         labelNombreChiffreActeur = new javax.swing.JLabel();
+        labelAccueilActeur = new javax.swing.JLabel();
         labelListeActeur = new javax.swing.JLabel();
         scrollPaneListeActeur = new javax.swing.JScrollPane();
         listeActeur = new javax.swing.JList();
@@ -332,15 +339,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         menuBar = new javax.swing.JMenuBar();
         menuFichier = new javax.swing.JMenu();
         jMenuItemQuitter = new javax.swing.JMenuItem();
-        jMenuItemRefresh = new javax.swing.JMenuItem();
         menuAutre = new javax.swing.JMenu();
-		boutonAccueilNavigateur = new javax.swing.JButton("Accueil");
-    	txtURL= new javax.swing.JTextField("");
-    	jEditorPaneNavigateur = new javax.swing.JEditorPane();
-        lblStatus= new javax.swing.JLabel(" ");
-        jScrollPaneNavigateur = new JScrollPane();
-        jEditorPaneNavigateur.setEditable(false);
-        jEditorPaneNavigateur.addHyperlinkListener(this);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -366,7 +365,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConnexionLayout.createSequentialGroup()
                 .addContainerGap(240, Short.MAX_VALUE)
                 .addComponent(labelMessage)
-                .addGap(315, 315, 315))
+                .addGap(317, 317, 317))
             .addGroup(panelConnexionLayout.createSequentialGroup()
                 .addGap(156, 156, 156)
                 .addGroup(panelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -376,11 +375,11 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                 .addGroup(panelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(textfieldPassword)
                     .addComponent(textfieldLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConnexionLayout.createSequentialGroup()
                 .addContainerGap(312, Short.MAX_VALUE)
                 .addComponent(boutonConnexion)
-                .addGap(283, 283, 283))
+                .addGap(285, 285, 285))
         );
         panelConnexionLayout.setVerticalGroup(
             panelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,7 +400,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         conteneurOnglet.addTab("Connexion", panelConnexion);
 
-        labelNombreTexteActeur.setText("Nombre de mise à jour :");
+        labelNombreTexteActeur.setText("Nombre de mise a jour :");
 
         labelAccueilActeur.setText("Gestion des acteurs");
 
@@ -429,7 +428,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
             .addGroup(panelGestionActeurLayout.createSequentialGroup()
                 .addGap(233, 233, 233)
                 .addComponent(labelAccueilActeur)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
             .addGroup(panelGestionActeurLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(panelGestionActeurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,7 +446,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                                 .addContainerGap())))
                     .addGroup(panelGestionActeurLayout.createSequentialGroup()
                         .addComponent(labelListeActeur)
-                        .addContainerGap(554, Short.MAX_VALUE))))
+                        .addContainerGap(556, Short.MAX_VALUE))))
             .addGroup(panelGestionActeurLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrollPaneListeActeur, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -487,7 +486,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilProducteur.setText("Gestion des producteurs");
 
-        labelNombreTexteProducteur.setText("Nombre de mise à jour :");
+        labelNombreTexteProducteur.setText("Nombre de mise a jour :");
 
         labelListeProducteur.setText("Liste des mise à jour : ");
 
@@ -511,15 +510,15 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionProducteurLayout.setHorizontalGroup(
             panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionProducteurLayout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
+                .addContainerGap(465, Short.MAX_VALUE)
                 .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(boutonRefusProducteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptProducteur, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(panelGestionProducteurLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
+                .addGap(165, 165, 165)
                 .addComponent(labelNombreChiffreProducteur)
-                .addContainerGap(519, Short.MAX_VALUE))
+                .addContainerGap(521, Short.MAX_VALUE))
             .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -529,13 +528,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                                     .addComponent(labelNombreTexteProducteur)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllProducteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllProducteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                                     .addComponent(labelListeProducteur)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                             .addGap(233, 233, 233)
                             .addComponent(labelAccueilProducteur))
@@ -545,13 +544,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionProducteurLayout.setVerticalGroup(
             panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionProducteurLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffreProducteur)
-                .addGap(63, 63, 63)
+                .addGap(61, 61, 61)
                 .addComponent(boutonAcceptProducteur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusProducteur)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
             .addGroup(panelGestionProducteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionProducteurLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -573,7 +572,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilRealisateur.setText("Gestion des realisateurs");
 
-        labelNombreTexteRealisateur.setText("Nombre de mise à jour :");
+        labelNombreTexteRealisateur.setText("Nombre de mise a jour :");
 
         labelListeRealisateur.setText("Liste des mise à jour : ");
 
@@ -597,15 +596,15 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionRealisateurLayout.setHorizontalGroup(
             panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionRealisateurLayout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
+                .addContainerGap(465, Short.MAX_VALUE)
                 .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(boutonRefusRealisateur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptRealisateur, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
+                .addGap(168, 168, 168)
                 .addComponent(labelNombreChiffreRealisateur)
-                .addContainerGap(519, Short.MAX_VALUE))
+                .addContainerGap(514, Short.MAX_VALUE))
             .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -618,26 +617,26 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
                                     .addComponent(labelNombreTexteRealisateur)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllRealisateur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllRealisateur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
                                     .addComponent(labelListeRealisateur)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(scrollPaneListeRealisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(5, 5, 5)))
         );
         panelGestionRealisateurLayout.setVerticalGroup(
             panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionRealisateurLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffreRealisateur)
-                .addGap(66, 66, 66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(boutonAcceptRealisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusRealisateur)
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addGap(212, 212, 212))
             .addGroup(panelGestionRealisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRealisateurLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -659,7 +658,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilFilm.setText("Gestion des films");
 
-        labelNombreTexteFilm.setText("Nombre de mise à jour :");
+        labelNombreTexteFilm.setText("Nombre de mise a jour :");
 
         labelListeFilm.setText("Liste des mise à jour : ");
 
@@ -683,15 +682,15 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionFilmLayout.setHorizontalGroup(
             panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionFilmLayout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
+                .addContainerGap(465, Short.MAX_VALUE)
                 .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(boutonRefusFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptFilm, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(panelGestionFilmLayout.createSequentialGroup()
-                .addGap(159, 159, 159)
+                .addGap(166, 166, 166)
                 .addComponent(labelNombreChiffreFilm)
-                .addContainerGap(521, Short.MAX_VALUE))
+                .addContainerGap(516, Short.MAX_VALUE))
             .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -704,26 +703,26 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                                     .addComponent(labelNombreTexteFilm)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                                     .addComponent(labelListeFilm)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(scrollPaneListeFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(5, 5, 5)))
         );
         panelGestionFilmLayout.setVerticalGroup(
             panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionFilmLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffreFilm)
-                .addGap(64, 64, 64)
+                .addGap(62, 62, 62)
                 .addComponent(boutonAcceptFilm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusFilm)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
             .addGroup(panelGestionFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -745,7 +744,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilInscrit.setText("Gestion des inscrits");
 
-        labelNombreTexteInscrit.setText("Nombre de mise à jour :");
+        labelNombreTexteInscrit.setText("Nombre de mise a jour :");
 
         labelListeInscrit.setText("Liste des mise à jour : ");
 
@@ -775,6 +774,8 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         boutonRefusInscrit.setText("Refuser la mise à jour selectionnée");
 
+        labelNombreChiffreInscrit.setText("113");
+
         javax.swing.GroupLayout panelGestionInscritLayout = new javax.swing.GroupLayout(panelGestionInscrit);
         panelGestionInscrit.setLayout(panelGestionInscritLayout);
         panelGestionInscritLayout.setHorizontalGroup(
@@ -783,7 +784,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                 .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGestionInscritLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(scrollPaneListeNouveauxInscrit, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE))
+                        .addComponent(scrollPaneListeNouveauxInscrit, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE))
                     .addGroup(panelGestionInscritLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(labelListeNouveauxInscrit)
@@ -792,12 +793,12 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelNouveauxInscritNombre))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionInscritLayout.createSequentialGroup()
-                        .addContainerGap(463, Short.MAX_VALUE)
+                        .addContainerGap(465, Short.MAX_VALUE)
                         .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(boutonRefusInscrit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(boutonAcceptInscrit, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(panelGestionInscritLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
+                        .addGap(165, 165, 165)
                         .addComponent(labelNombreChiffreInscrit)))
                 .addContainerGap())
             .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -812,25 +813,25 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionInscritLayout.createSequentialGroup()
                                     .addComponent(labelNombreTexteInscrit)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllInscrit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllInscrit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionInscritLayout.createSequentialGroup()
                                     .addComponent(labelListeInscrit)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGap(5, 5, 5))
                 .addGroup(panelGestionInscritLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(scrollPaneListeInscrit, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(220, Short.MAX_VALUE)))
+                    .addContainerGap(222, Short.MAX_VALUE)))
         );
         panelGestionInscritLayout.setVerticalGroup(
             panelGestionInscritLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionInscritLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffreInscrit)
-                .addGap(65, 65, 65)
+                .addGap(66, 66, 66)
                 .addComponent(boutonAcceptInscrit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusInscrit)
@@ -862,7 +863,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilRecompenseFilm.setText("Gestion des recompense de film");
 
-        labelNombreRecompenseFilm.setText("Nombre de mise à jour :");
+        labelNombreRecompenseFilm.setText("Nombre de mise a jour :");
 
         labelListeRecompenseFilm.setText("Liste des mise à jour : ");
 
@@ -886,13 +887,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionRecompenseFilmLayout.setHorizontalGroup(
             panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionRecompenseFilmLayout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
+                .addContainerGap(465, Short.MAX_VALUE)
                 .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(boutonRefusRecompenseFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptRecompenseFilm, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
+                .addGap(165, 165, 165)
                 .addComponent(labelNombreChiffreRecompenseFilm)
                 .addContainerGap(523, Short.MAX_VALUE))
             .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -907,26 +908,26 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
                                     .addComponent(labelNombreRecompenseFilm)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllRecompenseFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllRecompenseFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
                                     .addComponent(labelListeRecompenseFilm)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(scrollPaneListeRecompenseFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(5, 5, 5)))
         );
         panelGestionRecompenseFilmLayout.setVerticalGroup(
             panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffreRecompenseFilm)
                 .addGap(77, 77, 77)
                 .addComponent(boutonAcceptRecompenseFilm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusRecompenseFilm)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
             .addGroup(panelGestionRecompenseFilmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRecompenseFilmLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -948,7 +949,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelAccueilRecompensePersonne.setText("Gestion des recompenses personnes");
 
-        labelNombreTexteRecompensePersonne.setText("Nombre de mise à jour :");
+        labelNombreTexteRecompensePersonne.setText("Nombre de mise a jour :");
 
         labelListeRecompensePersonne.setText("Liste des mise à jour : ");
 
@@ -972,13 +973,13 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionRecompensePersonneLayout.setHorizontalGroup(
             panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionRecompensePersonneLayout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
+                .addContainerGap(465, Short.MAX_VALUE)
                 .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(boutonRefusRecompensePersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptRecompensePersonne, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addGap(165, 165, 165)
                 .addComponent(labelNombreChiffreRecompensePersonne)
                 .addContainerGap(520, Short.MAX_VALUE))
             .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -993,26 +994,26 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
                                     .addComponent(labelNombreTexteRecompensePersonne)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllRecompensePersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllRecompensePersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
                                     .addComponent(labelListeRecompensePersonne)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(scrollPaneListeRecompensePersonne, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(5, 5, 5)))
         );
         panelGestionRecompensePersonneLayout.setVerticalGroup(
             panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffreRecompensePersonne)
                 .addGap(61, 61, 61)
                 .addComponent(boutonAcceptRecompensePersonne)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusRecompensePersonne)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
             .addGroup(panelGestionRecompensePersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionRecompensePersonneLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -1036,7 +1037,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelNavigateur.setLayout(panelNavigateurLayout);
         panelNavigateurLayout.setHorizontalGroup(
             panelNavigateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGap(0, 682, Short.MAX_VALUE)
         );
         panelNavigateurLayout.setVerticalGroup(
             panelNavigateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1060,7 +1061,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         labelListePersonne.setText("Liste des mise à jour : ");
 
-        labelNombreTextePersonne.setText("Nombre de mise à jour :");
+        labelNombreTextePersonne.setText("Nombre de mise a jour :");
 
         boutonAcceptPersonne.setText("Accepter la mise à jour selectionnée");
 
@@ -1071,15 +1072,15 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         panelGestionPersonneLayout.setHorizontalGroup(
             panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionPersonneLayout.createSequentialGroup()
-                .addContainerGap(463, Short.MAX_VALUE)
+                .addContainerGap(465, Short.MAX_VALUE)
                 .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(boutonRefusPersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boutonAcceptPersonne, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(panelGestionPersonneLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
+                .addGap(166, 166, 166)
                 .addComponent(labelNombreChiffrePersonne)
-                .addContainerGap(523, Short.MAX_VALUE))
+                .addContainerGap(516, Short.MAX_VALUE))
             .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionPersonneLayout.createSequentialGroup()
                     .addGap(5, 5, 5)
@@ -1092,26 +1093,26 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                             .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(panelGestionPersonneLayout.createSequentialGroup()
                                     .addComponent(labelNombreTextePersonne)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 354, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
                                     .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boutonRefusAllPersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(boutonAcceptAllPersonne, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(panelGestionPersonneLayout.createSequentialGroup()
                                     .addComponent(labelListePersonne)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(scrollPaneListePersonne, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(5, 5, 5)))
         );
         panelGestionPersonneLayout.setVerticalGroup(
             panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionPersonneLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(53, 53, 53)
                 .addComponent(labelNombreChiffrePersonne)
-                .addGap(68, 68, 68)
+                .addGap(69, 69, 69)
                 .addComponent(boutonAcceptPersonne)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boutonRefusPersonne)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
             .addGroup(panelGestionPersonneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelGestionPersonneLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -1133,6 +1134,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 
         menuFichier.setText("Fichier");
         
+        
         jMenuItemRefresh.setText("Rafrachir");
         jMenuItemRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1142,7 +1144,14 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         });
         
         menuFichier.add(jMenuItemRefresh);
-//        jMenuItemRefresh.setEnabled(false);
+
+        jMenuItemQuitter.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemQuitter.setText("Quitter");
+        jMenuItemQuitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemQuitterActionPerformed(evt);
+            }
+        });
 
         jMenuItemQuitter.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemQuitter.setText("Quitter");
@@ -1172,7 +1181,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
         );
 
         pack();
-    }
+    }// </editor-fold>
     
     private void jMenuItemQuitterActionPerformed(ActionEvent evt) {
     	dispose(); 
@@ -1185,6 +1194,9 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
     	GestionnaireRoleProducteur gestprod = new GestionnaireRoleProducteur(); gestprod.refresh();
     	GestionnaireRoleRealisateur gestreal = new GestionnaireRoleRealisateur(); gestreal.refresh();
     	GestionnaireFilm gestfilm = new GestionnaireFilm(); gestfilm.refresh();
+    	GestionnaireInscrits gestinscrits = new GestionnaireInscrits(); gestinscrits.refresh();
+    	GestionnaireRecompenseFilm gestrecompensefilm = new GestionnaireRecompenseFilm(); gestrecompensefilm.refresh();
+    	GestionnaireRecompensePersonne gestrecompensepersonne = new GestionnaireRecompensePersonne(); gestrecompensepersonne.refresh();
 	}
 	
 	public static Connection identification(String login, String Pass) throws SQLException{
@@ -1243,7 +1255,6 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
                 jEditorPaneNavigateur.setPage("http://" + IDN.toASCII(url));
             } catch (Exception e) {
                 e.printStackTrace();
-                //  JOptionPane.showMessageDialog(WebBrowser.this, "Browser problem: " + e.getMessage());
             }
         }
     };
@@ -1946,4 +1957,6 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 			this.jEditorPaneNavigateur = jEditorPaneNavigateur;
 		}
 	   
+		
+		
 }

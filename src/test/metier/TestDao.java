@@ -93,7 +93,7 @@ public class TestDao extends TestCase {
 		daotrf.clear();
 		daotrp.clear();
 		daorec.clear();*/
-		/*
+		
 		daof.save(armaggeddon);
 		daof.save(terminator);
 		
@@ -137,7 +137,7 @@ public class TestDao extends TestCase {
 		
 		
 		// exemple de vote 
-		*/
+		
 		Vote V=cinema.faitUnVote(armaggeddon, 6);
 		//daovote.save(V);
 		armaggeddon.calculNoteMoyenne(daovote.loadFilmVote(armaggeddon));
