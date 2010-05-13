@@ -15,16 +15,7 @@
 <!-- ================================================ Form Bean Definitions -->
 
     <form-beans>
-			<form-bean name="BeanFilm" type="struts.actionForm.BeanFilm"></form-bean>
-			<form-bean name="BeanPersonne" type="struts.actionForm.BeanPersonne"></form-bean>
-			<form-bean name="BeanProfessionnel" type="struts.actionForm.BeanProfessionnel"></form-bean>
-			<form-bean name="BeanRecompense" type="struts.actionForm.BeanRecompense"></form-bean>
-			<form-bean name="BeanRecompenseFilm" type="struts.actionForm.BeanRecompenseFilm"></form-bean>
-			<form-bean name="BeanRecompensePersonne" type="struts.actionForm.BeanRecompensePersonne"></form-bean>
-			<form-bean name="BeanTypeRecompenseFilm" type="struts.actionForm.BeanTypeRecompenseFilm"></form-bean>
-			<form-bean name="BeanTypeRecompensePersonne" type="struts.actionForm.BeanTypeRecompensePersonne"></form-bean>
-			<form-bean name="BeanVote" type="struts.actionForm.BeanVote"></form-bean>
-
+			
 			<form-bean name="formActionConnexion" type="struts.actionForm.ActionFormConnexion"></form-bean>
 			<form-bean name="formActionRecherche" type="struts.actionForm.ActionFormRecherche"></form-bean>
 
