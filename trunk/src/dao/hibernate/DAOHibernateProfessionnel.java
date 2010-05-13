@@ -65,7 +65,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 	public void save(Professionnel professionnel) throws Exception {
 		// TODO Auto-generated method stub
 		Session session = connect();
-		session.saveOrUpdate(professionnel);
+		session.save(professionnel);
 		close(session);
 		
 	}
@@ -74,7 +74,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 	public void saveOrUpdate(Professionnel professionnel) throws Exception {
 		// TODO Auto-generated method stub
 		Session session = connect();
-		session.update(professionnel);
+		session.saveOrUpdate(professionnel);
 		close(session);
 	}
 

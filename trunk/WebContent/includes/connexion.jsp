@@ -1,11 +1,18 @@
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
+
 <% String loginSession = (String)session.getAttribute("login"); %>
+
+<!-- ----------------------------Pro Connecté--------------------------------------------- -->
+
 <% if(loginSession != null){ %>
 	Bienvenue <%= loginSession %> !
 	<%-- se deconnecter --%>
 	<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
+	
+<!-- ----------------------------non Connecté--------------------------------------------- -->
+
 <% }else{ %>
 	<html:form action="/connexion.do">
 		<table>
@@ -20,6 +27,9 @@
 			</tr>
 			<tr>
 				<td><html:errors/></td>
+			</tr>
+			<tr>
+				<td><html:link href="./inscription.jsp">s'incrire</html:link></td>
 			</tr>
 		</table>				
 	</html:form>

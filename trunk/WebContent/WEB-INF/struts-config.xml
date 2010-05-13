@@ -18,6 +18,7 @@
 			
 			<form-bean name="formActionConnexion" type="struts.actionForm.ActionFormConnexion"></form-bean>
 			<form-bean name="formActionRecherche" type="struts.actionForm.ActionFormRecherche"></form-bean>
+			<form-bean name="formActionInscription" type="struts.actionForm.ActionFormInscription"></form-bean>
 
     </form-beans>
 
@@ -62,6 +63,13 @@
     	<action path="/listeFilms" type="org.springframework.web.struts.DelegatingActionProxy">
     		<forward name="VueListeFilms" path="/vues/listefilms.jsp" redirect="true"></forward>
     	</action>
+    	
+    	<action path="/inscription" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionInscription" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="InscriptionEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="InscriptionImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	
     </action-mappings>
 
 

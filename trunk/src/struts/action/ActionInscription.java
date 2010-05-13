@@ -9,39 +9,38 @@ import javax.servlet.http.HttpSession;
 import metier.Professionnel;
 
 import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
-import struts.actionForm.ActionFormConnexion;
-
+import struts.actionForm.ActionFormInscription;
 import dao.DAOProfessionnel;
 
-public class ActionConnexion extends Action{
+public class ActionInscription extends Action{
 	private DAOProfessionnel daoPro=null;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response){
-		ActionFormConnexion connexion=(ActionFormConnexion)form;
+		ActionFormInscription formPro=(ActionFormInscription)form;
 		try {
+			Professionnel pro=new Professionnel(formPro.getLogin(), formPro.getPassword(), new Date(), 
+					formPro.getNom(), formPro.getPrenom(), formPro.getAdresse(), new Date());
+			
+			//sauvegarde dans Bdd
+			daoPro.save(pro);
+			
+			// + connexion
 			HttpSession session=request.getSession();
-			Professionnel pro=daoPro.get(connexion.getLogin(),connexion.getMotDePasse());
-			if(!pro.equals(null))
-			{
-				session.setAttribute("login", pro.getLogin());
-				pro.setDerniereConnexion(new Date());
-				daoPro.saveOrUpdate(pro);
-			}
-			else
-			{
-				session.invalidate();
-			}
+			session.setAttribute("login", pro.getLogin());
+				
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return mapping.findForward("ConnexionImpossible"); 
+			return mapping.findForward("InscriptionImpossible"); 
 		}
-		return mapping.findForward("ConnexionEffectue");
+		return mapping.findForward("InscriptionEffectue");
 		
 	}
 
