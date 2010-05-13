@@ -11,7 +11,6 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import dao.DAOFilm;
 
 public class ActionListeFilms extends Action{
@@ -23,12 +22,10 @@ public class ActionListeFilms extends Action{
 		try {
 			films=daoFilm.loadAll();
 			System.out.println("films "+films.size());
-			request.setAttribute("LISTEFILMS", films);
+			request.getSession().setAttribute("LISTEFILMS", films);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			films.add(new Film());
-			request.setAttribute("LISTEFILMS", films);
 		}
 		return mapping.findForward("VueListeFilms");
 		
