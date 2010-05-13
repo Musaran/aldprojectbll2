@@ -21,7 +21,7 @@ public class ActionDerniersFilms extends Action{
 			HttpServletResponse response){
 			try {
 				ArrayList<Film> derniersFilms=daof.loadLasts(1);
-				request.setAttribute("DERNIERSFILMS", derniersFilms);
+				request.getSession().setAttribute("DERNIERSFILMS", derniersFilms);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

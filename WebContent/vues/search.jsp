@@ -13,8 +13,21 @@
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
 	
+	<table>
+		<tr>
+			<th>Titre</th>
+			<th></th>
+		</tr>
+		<logic:iterate id="recherche" name="RECHERCHEFILM" scope="session">
+		<tr>
+			<td><bean:write name="recherche" property="titre"/></td>
+			<td></td>
+		</tr>
+		</logic:iterate>
+	</table>
+	
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />
-</body>
+	</body>
 
 </html:html>

@@ -30,7 +30,7 @@ public class ActionRecherche extends Action{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.setAttribute("RECHERCHEFILM", films);
+		request.getSession().setAttribute("RECHERCHEFILM", films);
 		return mapping.findForward("VueListeRechercheFilm");
 		
 	}
