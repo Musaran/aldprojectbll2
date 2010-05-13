@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 public class ActionFormRecherche extends ActionForm{
 	/**
@@ -18,7 +19,11 @@ public class ActionFormRecherche extends ActionForm{
 	}
 	
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
-		return null;
+		ActionErrors erreurs=new ActionErrors();
+		if(keywords.trim().equals(""))
+			erreurs.add("keywords", new ActionMessage("Erreur.champ.vide", "Recherche"));
+		
+		return erreurs;
 	}
 
 	public void setKeywords(String keywords) {
