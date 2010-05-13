@@ -101,15 +101,7 @@ public class Personne {
 	 * Methode de conversion de l'objet en string
 	 */
 	public String toString() {
-		return "Personne [biographie=" + biographie + ", dateDeNaissance="
-				+ dateDeNaissance + ", "
-				
-				
-				+ ", idPersonne=" + idPersonne
-				+ ", isValidatePersonne=" + isValidatePersonne
-				+ ", nom=" + nom
-				+ ", nombreRequetes=" + nombreRequetes + ", photo=" + photo
-				+ ", prenom=" + prenom + "]";
+		return nom+" "+prenom+" date de naissance "+ dateDeNaissance+" biographie "+biographie+" "+photo+" nb requete "+nombreRequetes+ " valide : " +isValidatePersonne;
 	}
 	
 
