@@ -20,8 +20,7 @@ public class ActionListeFilms extends Action{
 			HttpServletResponse response){
 		ArrayList<Film> films=null;
 		try {
-			films=daoFilm.loadAll();
-			System.out.println("films "+films.size());
+			films=daoFilm.loadFilmValide();
 			request.getSession().setAttribute("LISTEFILMS", films);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

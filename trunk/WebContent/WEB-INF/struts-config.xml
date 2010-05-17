@@ -55,8 +55,8 @@
     	</action>
 
     	<action path="/search" type="org.springframework.web.struts.DelegatingActionProxy"
-    		scope="request" name="formActionRecherche" validate="true" input="/vues/index.jsp?page=search" >
-    		<forward name="VueListeRechercheFilm" path="/vues/search.jsp" redirect="true" ></forward>
+    		scope="session" name="formActionRecherche" validate="true" input="/vues/erreurs.jsp" >
+    		<forward name="VueListeRecherche" path="/vues/search.jsp" redirect="true" ></forward>
     	</action>
     	
     	<action path="/ListeDerniersFilms" type="org.springframework.web.struts.DelegatingActionProxy">
@@ -78,7 +78,10 @@
 			<forward name="welcome" path="/vues/index.jsp" redirect="true"></forward>
 			<forward name="VueListeFilms" path="/vues/welcome.jsp" redirect="true"></forward>
 		</action>
-    	
+		
+    	<action path="/modifierfilm" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="formModifierFilm" path="/vues/welcome.jsp" redirect="true"></forward>
+		</action>
     	
     </action-mappings>
 
