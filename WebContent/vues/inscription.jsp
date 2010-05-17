@@ -43,7 +43,6 @@
 				<td><html:submit>inscription</html:submit></td>
 			</tr>	
 		</html:form>
-		
 	</table>
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />

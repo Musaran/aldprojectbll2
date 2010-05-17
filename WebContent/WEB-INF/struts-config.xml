@@ -33,7 +33,10 @@
 <!-- =========================================== Global Forward Definitions -->
 
     <global-forwards>
-
+		<forward
+            name="welcome"
+            path="/welcome.do"/>
+		
     </global-forwards>
 
 
@@ -69,6 +72,13 @@
     		<forward name="InscriptionEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="InscriptionImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
+    	
+    	
+		<action path="/welcome" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="welcome" path="/vues/index.jsp" redirect="true"></forward>
+			<forward name="VueListeFilms" path="/vues/welcome.jsp" redirect="true"></forward>
+		</action>
+    	
     	
     </action-mappings>
 
