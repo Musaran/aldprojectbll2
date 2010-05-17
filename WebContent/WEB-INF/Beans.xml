@@ -4,6 +4,7 @@
 <beans>
 	<bean id="daoProfessionnelHBM" class="dao.hibernate.DAOHibernateProfessionnel"/>
 	<bean id="daoFilmHBM" class="dao.hibernate.DAOHibernateFilm"/>
+	<bean id="daoPersonneHBM" class="dao.hibernate.DAOHibernatePersonne"/>
 	
 	<bean name="/connexion" class="struts.action.ActionConnexion">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
@@ -11,6 +12,7 @@
 	
 	<bean name="/search" class="struts.action.ActionRecherche">
 		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
 	</bean>
 	
 	<bean name="/deconnexion" class="struts.action.ActionDeconnexion">

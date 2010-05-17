@@ -105,7 +105,7 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	public ArrayList<Film> loadFilmInvalide() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film WHERE isValidateFilm=0").list();	
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film WHERE isValidateFilm<>0").list();	
 		close(session);	
 		return set;
 	}
@@ -114,9 +114,20 @@ public class DAOHibernateFilm extends DAOHibernate implements DAOFilm{
 	public ArrayList<Film> loadFilmValide() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film WHERE isValidateFilm=1").list();	
+		ArrayList<Film> set=(ArrayList<Film>) session.createQuery("FROM Film WHERE isValidateFilm=0").list();	
 		close(session);	
 		return set;
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Film> loadFilmValide(String key) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Film> liste=(ArrayList<Film>) session.createQuery(
+				"FROM Film as film WHERE isValidateFilm=0 AND film.titre LIKE '%"+key+"%'").list();	
+
+		close(session);	
+		return liste;
 	}
 
 

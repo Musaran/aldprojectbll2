@@ -13,18 +13,35 @@
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
 	
-	<table>
-		<tr>
-			<th>Titre</th>
-			<th></th>
-		</tr>
-		<logic:iterate id="recherche" name="RECHERCHEFILM" scope="session">
-		<tr>
-			<td><bean:write name="recherche" property="titre"/></td>
-			<td></td>
-		</tr>
-		</logic:iterate>
-	</table>
+	<logic:present name="RECHERCHEFILM" scope="session">
+		<table>
+			<tr>
+				<th>Titre</th>
+				<th></th>
+			</tr>
+			<logic:iterate id="rechercheFilm" name="RECHERCHEFILM" scope="session">
+			<tr>
+				<td><bean:write name="rechercheFilm" property="titre"/></td>
+				<td></td>
+			</tr>
+			</logic:iterate>
+		</table>
+	</logic:present>
+	
+	<logic:present name="RECHERCHEPERSONNE" scope="session">
+		<table>
+			<tr>
+				<th>Nom</th>
+				<th></th>
+			</tr>
+			<logic:iterate id="recherchePersonne" name="RECHERCHEFILM" scope="session">
+			<tr>
+				<td><bean:write name="recherchePersonne" property="nom"/></td>
+				<td></td>
+			</tr>
+			</logic:iterate>
+		</table>
+	</logic:present>
 	
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />

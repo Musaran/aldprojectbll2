@@ -13,6 +13,7 @@ public class ActionFormRecherche extends ActionForm{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String keywords;
+	private String type;
 	
 	public ActionFormRecherche(){
 		
@@ -20,8 +21,8 @@ public class ActionFormRecherche extends ActionForm{
 	
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
 		ActionErrors erreurs=new ActionErrors();
-		//if(keywords.trim().equals(""))
-			//erreurs.add("keywords", new ActionMessage("Erreur.champ.vide", "Recherche"));
+		if(keywords.trim().equals(""))
+			erreurs.add("keywords", new ActionMessage("Erreur.champ.vide", "Recherche"));
 		
 		return erreurs;
 	}
@@ -32,5 +33,13 @@ public class ActionFormRecherche extends ActionForm{
 
 	public String getKeywords() {
 		return keywords;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getType() {
+		return type;
 	}
 }

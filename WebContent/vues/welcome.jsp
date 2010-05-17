@@ -1,6 +1,9 @@
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
+<% if(session.getAttribute("LISTEFILMS")==null) {%>
+<jsp:forward page="index.jsp" />
+<%} %>
 
 <html:html>
 
@@ -12,18 +15,18 @@
 <body>
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
-	<table>
-		<tr>
-			<th>Titre</th>
-			<th></th>
-		</tr>
-		<logic:iterate id="liste" name="LISTEFILMS" scope="session">
-		<tr>
-			<td><bean:write name="liste" property="titre"/></td>
-			<td></td>
-		</tr>
-		</logic:iterate>
-	</table>
+	
+	
+	<logic:iterate id="liste" name="LISTEFILMS" scope="session">
+		Proposer une <html:link action="/modifierfilm.do">modification</html:link>.
+		<table>
+			<tr>
+				<td><bean:write name="liste" property="titre"/></td>
+				<td></td>
+			</tr>
+		</table>
+	</logic:iterate>
+	
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />
 </body>

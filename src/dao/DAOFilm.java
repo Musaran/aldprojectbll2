@@ -22,6 +22,7 @@ public interface DAOFilm {
 	void			remove(Film film)			throws Exception;
 	void 			remove(int idfilm) 			throws Exception;
 	void 			clear()						throws Exception;
+	ArrayList<Film>		loadFilmValide(String key)			throws Exception;
 	ArrayList<Film> loadFilmInvalide() throws Exception;
 	ArrayList<Film> loadFilmValide() throws Exception;
 	
