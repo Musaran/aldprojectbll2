@@ -23,4 +23,8 @@
 	<bean name="/inscription" class="struts.action.ActionInscription">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
 	</bean>
+	
+	<bean name="/welcome" class="struts.action.ActionListeFilms">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+	</bean>
 </beans>

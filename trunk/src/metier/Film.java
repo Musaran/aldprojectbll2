@@ -7,9 +7,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-
-
-
 /**
  * 
  * @author jerome
@@ -41,7 +38,6 @@ public class Film  {
 	private double noteMoyenne;
 	/// données concernant l acceptation
 	private int isValidateFilm=0;
-	
 	
 	/**
 	 * Constructeur par défaut
@@ -181,14 +177,9 @@ public class Film  {
 		this.setNoteMoyenne((note*1.0/compteur*1.0));
 	}
 	
-	
-	
 	/*
 	 * Getters and setters
 	 */
-	
-
-	
 
 	public int getIdFilm() {
 		return idFilm;

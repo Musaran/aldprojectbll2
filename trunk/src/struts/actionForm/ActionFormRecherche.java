@@ -20,8 +20,8 @@ public class ActionFormRecherche extends ActionForm{
 	
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
 		ActionErrors erreurs=new ActionErrors();
-		if(keywords.trim().equals(""))
-			erreurs.add("keywords", new ActionMessage("Erreur.champ.vide", "Recherche"));
+		//if(keywords.trim().equals(""))
+			//erreurs.add("keywords", new ActionMessage("Erreur.champ.vide", "Recherche"));
 		
 		return erreurs;
 	}
