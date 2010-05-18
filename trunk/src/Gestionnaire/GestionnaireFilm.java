@@ -45,8 +45,23 @@ public class GestionnaireFilm {
 			ArrayList<Film> liste = dao.loadFilmInvalide();
 			for(int i=0;i<liste.size();i++)
 			{
-				liste.get(i).setIsValidateFilm(1);
-				dao.saveOrUpdate(liste.get(i));
+				if(liste.get(i).getIsValidateFilm()!=0)
+				{
+					int leModfier = liste.get(i).getIsValidateFilm();
+					Film film = dao.get(leModfier);
+					film.setAffiche(liste.get(i).getAffiche());
+					film.setCout(liste.get(i).getCout());
+					film.setDateSortie(liste.get(i).getDateSortie());
+					film.setSynopsis(liste.get(i).getSynopsis());
+					film.setTitre(liste.get(i).getTitre());
+					dao.saveOrUpdate(film);
+					dao.remove(liste.get(i));
+				}
+				else
+				{
+					liste.get(i).setIsValidateFilm(-1);
+					dao.saveOrUpdate(liste.get(i));
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,16 +73,30 @@ public class GestionnaireFilm {
 	 * @param liste passé en parametre recup du listener qui lui la recup de la form
 	 */
 	public void accept(ArrayList<Film> liste) {
-		for(int i=0;i<liste.size();i++)
-		{
-			try {
-				Film temp = dao.get(liste.get(i).getIdFilm());
-				temp.setIsValidateFilm(1);
-				dao.saveOrUpdate(temp);
-			} catch (Exception e) {
+		try {
+			for(int i=0;i<liste.size();i++)
+			{
+				if(liste.get(i).getIsValidateFilm()!=0)
+				{
+					int leModfier = liste.get(i).getIsValidateFilm();
+					Film film = dao.get(leModfier);
+					film.setAffiche(liste.get(i).getAffiche());
+					film.setCout(liste.get(i).getCout());
+					film.setDateSortie(liste.get(i).getDateSortie());
+					film.setSynopsis(liste.get(i).getSynopsis());
+					film.setTitre(liste.get(i).getTitre());
+					dao.saveOrUpdate(film);
+					dao.remove(liste.get(i));
+				}
+				else
+				{
+					liste.get(i).setIsValidateFilm(-1);
+					dao.saveOrUpdate(liste.get(i));
+				}
+			} 
+		}catch (Exception e) {
 				e.printStackTrace();
-			}
-		}
+				}
 		
 		refresh();
 		

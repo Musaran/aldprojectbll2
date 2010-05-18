@@ -86,7 +86,7 @@ public class GestionnairePersonne {
 				else
 				{					
 						Personne temp = dao.get(liste.get(i).getIdPersonne());
-						temp.setIsValidatePersonne(1);
+						temp.setIsValidatePersonne(-1);
 						dao.saveOrUpdate(temp);
 				} 
 			}
