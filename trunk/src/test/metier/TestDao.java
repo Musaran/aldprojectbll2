@@ -208,7 +208,7 @@ public class TestDao extends TestCase {
 		System.out.println(dateFormat.format(c.getTime()));
 	
 		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );*/
-		System.out.println("invalide "+daop.loadInvalidePersonne().size());
-		System.out.println("valide "+daop.loadValidePersonne().size());
+		System.out.println("invalide "+daof.loadFilmInvalide().size());
+		System.out.println("valide "+daof.loadFilmValide().size());
 	}
 }
