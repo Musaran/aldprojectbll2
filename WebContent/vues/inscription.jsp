@@ -15,32 +15,32 @@
 	<table>
 		<html:form action="/inscription.do">
 			<tr>
-				<td>Nom</td>
+				<td><bean:message key="Nom"/></td>
 				<td><html:text property="nom" size="15" /></td>
 			</tr>
 			<tr>
-				<td>Prénom</td>
+				<td><bean:message key="Prenom"/></td>
 				<td><html:text property="prenom" size="15" /></td>
 			</tr>
 			<tr>
-				<td>Adresse</td>
+				<td><bean:message key="Adresse"/></td>
 				<td><html:text property="adresse" size="30" /></td>
 			</tr>
 			<tr>
-				<td>Login</td>
+				<td><bean:message key="Login"/></td>
 				<td><html:text property="login" size="10" /></td>
 			</tr>
 			<tr>
-				<td>Mot de passe</td>
+				<td><bean:message key="Mot.de.passe"/></td>
 				<td><html:password property="password" size="10" /></td>
 			</tr>
 			<tr>
-				<td>Confirmer mot de passe</td>
+				<td><bean:message key="Confirm.mot.de.passe"/></td>
 				<td><html:password property="confpass" size="10" /></td>
 			</tr>
 			<tr>
-				<td><html:cancel>annuler</html:cancel></td>
-				<td><html:submit>inscription</html:submit></td>
+				<td><html:cancel><bean:message key="Annuler"/></html:cancel></td>
+				<td><html:submit><bean:message key="Inscription"/></html:submit></td>
 			</tr>	
 		</html:form>
 	</table>

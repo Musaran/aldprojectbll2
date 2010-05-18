@@ -17,10 +17,10 @@
 		<tr>
 			<td colspan="2">
 				<img src="<bean:write name="liste" property="affiche"/>" align="left" height="150px"/>
-				Note: <bean:write name="liste" property="noteMoyenne"/> /10<br />
-				Sortie: <bean:write name="liste" property="dateSortie"/><br />
-				Coût: <bean:write name="liste" property="cout"/> euros<br />
-				Synopsis: <p><bean:write name="liste" property="synopsis"/></p>
+				<bean:message key="Note"/>: <bean:write name="liste" property="noteMoyenne"/> /10<br />
+				<bean:message key="Sortie"/>: <bean:write name="liste" property="dateSortie"/><br />
+				<bean:message key="Cout"/>: <bean:write name="liste" property="cout"/> Euros<br />
+				<bean:message key="Synopsis"/>: <p><bean:write name="liste" property="synopsis"/></p>
 			</td>
 		</tr>
 	</table>

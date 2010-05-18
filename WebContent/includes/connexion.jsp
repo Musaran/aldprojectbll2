@@ -28,7 +28,7 @@
 				<td><html:errors/></td>
 			</tr>
 			<tr>
-				<td><html:link href="./inscription.jsp">s'incrire</html:link></td>
+				<td><html:link href="./inscription.jsp"><bean:message key="Inscription"/></html:link></td>
 			</tr>
 		</table>				
 	</html:form>
