@@ -42,8 +42,23 @@ public class GestionnairePersonne {
 			ArrayList<Personne> liste = dao.loadInvalidePersonne();
 			for(int i=0;i<liste.size();i++)
 			{
-				liste.get(i).setIsValidatePersonne(1);
-				dao.saveOrUpdate(liste.get(i));
+				if(liste.get(i).getIsValidatePersonne()!=0)
+				{
+					int leModifier = liste.get(i).getIsValidatePersonne();
+					Personne personne = dao.get(leModifier);
+					personne.setBiographie(liste.get(i).getBiographie());
+					personne.setNom(liste.get(i).getNom());
+					personne.setPhoto(liste.get(i).getPhoto());
+					personne.setPrenom(liste.get(i).getPrenom());
+					personne.setDateDeNaissance(liste.get(i).getDateDeNaissance());
+					dao.saveOrUpdate(personne);
+					dao.remove(liste.get(i));
+				}
+				else
+				{
+					liste.get(i).setIsValidatePersonne(-1);
+					dao.saveOrUpdate(liste.get(i));
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -52,16 +67,32 @@ public class GestionnairePersonne {
 	}
 
 	public void accept(ArrayList<Personne> liste) {
-		for(int i=0;i<liste.size();i++)
-		{
-			try {
-				Personne temp = dao.get(liste.get(i).getIdPersonne());
-				temp.setIsValidatePersonne(1);
-				dao.saveOrUpdate(temp);
-			} catch (Exception e) {
-				e.printStackTrace();
+		try {
+			for(int i=0;i<liste.size();i++)
+			{
+				if(liste.get(i).getIsValidatePersonne()!=0)
+				{
+					int leModifier = liste.get(i).getIsValidatePersonne();
+					Personne personne = dao.get(leModifier);
+					personne.setBiographie(liste.get(i).getBiographie());
+					personne.setNom(liste.get(i).getNom());
+					personne.setPhoto(liste.get(i).getPhoto());
+					personne.setPrenom(liste.get(i).getPrenom());
+					personne.setDateDeNaissance(liste.get(i).getDateDeNaissance());
+					
+					dao.saveOrUpdate(personne);
+					dao.remove(liste.get(i));
+				}
+				else
+				{					
+						Personne temp = dao.get(liste.get(i).getIdPersonne());
+						temp.setIsValidatePersonne(1);
+						dao.saveOrUpdate(temp);
+				} 
 			}
-		}
+		}catch (Exception e) {
+					e.printStackTrace();
+			}
 		
 		refresh();
 		
