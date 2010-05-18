@@ -56,4 +56,17 @@ h1{
 	height:700px;
 	background: #FFFFFF;
 }
-
+img{
+	border:none;
+	text-decoration:none;
+}
+a{
+	color:maroon;
+	text-decoration:none;
+}
+a:hover,  a:focus {
+	color:red;
+}
+#film #head{
+	background-color: silver;
+}

@@ -29,4 +29,8 @@
 	<bean name="/welcome" class="struts.action.ActionListeFilms">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
+	
+	<bean name="/modifierfilm" class="struts.action.ActionModificationFilm">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+	</bean>
 </beans>

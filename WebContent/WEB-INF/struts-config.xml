@@ -80,7 +80,7 @@
 		</action>
 		
     	<action path="/modifierfilm" type="org.springframework.web.struts.DelegatingActionProxy">
-			<forward name="formModifierFilm" path="/vues/welcome.jsp" redirect="true"></forward>
+			<forward name="VueModificationFilm" path="/vues/modificationfilm.jsp" redirect="true"></forward>
 		</action>
     	
     </action-mappings>
