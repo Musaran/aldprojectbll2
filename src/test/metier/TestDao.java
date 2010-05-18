@@ -62,7 +62,7 @@ public class TestDao extends TestCase {
 		DAORoleProducteur daorop= new DAOHibernateRoleProducteur();
 		DAORoleRealisateur daoropr= new DAOHibernateRoleRealisateur();
 		
-		DateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd" );
+		/*DateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd" );
 		Date Ddate = dateFormat.parse( "2008-11-21" );
 		
 		Film armaggeddon = new Film( "armaggedon", Ddate, 100, "film de science fiction", 10,"pas_de_photo");
@@ -93,7 +93,7 @@ public class TestDao extends TestCase {
 		daotrf.clear();
 		daotrp.clear();
 		daorec.clear();*/
-		
+		/*
 		daof.save(armaggeddon);
 		daof.save(terminator);
 		
@@ -148,7 +148,7 @@ public class TestDao extends TestCase {
 		//daovote.save(V2);
 		armaggeddon.calculNoteMoyenne(daovote.loadFilmVote(armaggeddon));
 		//daof.saveOrUpdate(armaggeddon);
-		System.out.println(armaggeddon.getNoteMoyenne());
+		System.out.println(armaggeddon.getNoteMoyenne());*/
 		/* FIN exemple de vote */
 		//cinema = daopro.get(1);
 		//armaggeddon = daof.get(1);
@@ -196,7 +196,7 @@ public class TestDao extends TestCase {
 		
 				//daop.remove(chuckNorris);
 		*/
-		/* DELIRE des dates */
+		/* DELIRE des dates 
 		Calendar c = Calendar.getInstance();
 		c.add(Calendar.MONTH, -1);
 		Date bonne = c.getTime();
@@ -207,6 +207,8 @@ public class TestDao extends TestCase {
 		System.out.println(jsqlD);
 		System.out.println(dateFormat.format(c.getTime()));
 	
-		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );
+		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );*/
+		System.out.println("invalide "+daop.loadInvalidePersonne().size());
+		System.out.println("valide "+daop.loadValidePersonne().size());
 	}
 }

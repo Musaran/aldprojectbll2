@@ -81,7 +81,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 	public ArrayList<Personne> loadInvalidePersonne() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<Personne> set=(ArrayList<Personne>) session.createQuery("FROM Personne WHERE isValidatePersonne=0").list();	
+		ArrayList<Personne> set=(ArrayList<Personne>) session.createQuery("FROM Personne WHERE isValidatePersonne!=-1").list();	
 		close(session);	
 		return set;
 	}
@@ -90,7 +90,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 	public ArrayList<Personne> loadValidePersonne() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<Personne> set=(ArrayList<Personne>) session.createQuery("FROM Personne WHERE isValidatePersonne=1").list();	
+		ArrayList<Personne> set=(ArrayList<Personne>) session.createQuery("FROM Personne WHERE isValidatePersonne=-1").list();	
 		close(session);	
 		return set;
 	}
