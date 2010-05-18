@@ -16,16 +16,8 @@
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
 	
+	<jsp:include page="/includes/films.jsp" />
 	
-	<logic:iterate id="liste" name="LISTEFILMS" scope="session">
-		Proposer une <html:link action="/modifierfilm.do">modification</html:link>.
-		<table>
-			<tr>
-				<td><bean:write name="liste" property="titre"/></td>
-				<td></td>
-			</tr>
-		</table>
-	</logic:iterate>
 	
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />

@@ -15,6 +15,7 @@
 		</div>
 	    <div id="barreNews">
 	    	<jsp:include page="/includes/news.jsp" />
+	    	<html:link href="index.jsp"><img alt="accueil" height="30px" src="../img/home3.png" title="Accueil"></html:link>
 	   	</div>
 	   	<div id="mainContainer">
         	<div id="menuContent">

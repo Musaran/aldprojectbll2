@@ -3,11 +3,17 @@
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
 <html:html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><bean:message key="Erreurs.titre"/></title>
+	<jsp:include page="/includes/head.jsp" />
+	<title><bean:message key="Erreurs.titre"/></title>
 </head>
 <body>
+	<jsp:include page="/includes/top.jsp" />
+	<!-- ---------------------Contenu---------------------------- -->
+	
 	<center><h1><bean:message key="Liste.des.erreurs"/></h1></center>
 	<html:errors/>
+	
+	<!-- ---------------------------------------------------------- -->
+	<jsp:include page="/includes/bottom.jsp" />
 </body>
 </html:html>

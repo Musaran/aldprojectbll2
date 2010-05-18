@@ -2,14 +2,13 @@
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
 
-<% String loginSession = (String)session.getAttribute("login"); %>
-
 <!-- ----------------------------Pro Connecté--------------------------------------------- -->
 
-<% if(loginSession != null){ %>
-	Bienvenue <%= loginSession %> !
+<% if(session.getAttribute("login") != null){ %>
+	Bienvenue <%= session.getAttribute("login") %> !
 	<%-- se deconnecter --%>
 	<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
+	
 	
 <!-- ----------------------------non Connecté--------------------------------------------- -->
 
