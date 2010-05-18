@@ -5,11 +5,11 @@
 <html:form action="/search.do">
 	<table>
 		<tr>
-			<td>Recherche</td>
+			<td><bean:message key="Recherche"/></td>
 			<td><html:select property="type" >
-					<html:option value="tous" >Tous</html:option>
-					<html:option value="film" >Film</html:option>
-					<html:option value="personne">Personne</html:option>
+					<html:option value="tous" ><bean:message key="Tous"/></html:option>
+					<html:option value="film" ><bean:message key="Film"/></html:option>
+					<html:option value="personne"><bean:message key="Personne"/></html:option>
 				</html:select>
             </td>
 			<td><html:text property="keywords" size="20" /></td>

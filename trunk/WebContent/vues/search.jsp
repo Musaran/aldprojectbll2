@@ -16,7 +16,7 @@
 	<logic:present name="RECHERCHEFILM" scope="session">
 		<table>
 			<tr>
-				<th>Titre</th>
+				<th><bean:message key="Titre"/></th>
 				<th></th>
 			</tr>
 			<logic:iterate id="rechercheFilm" name="RECHERCHEFILM" scope="session">
@@ -31,7 +31,7 @@
 	<logic:present name="RECHERCHEPERSONNE" scope="session">
 		<table>
 			<tr>
-				<th>Nom</th>
+				<th><bean:message key="Nom"/></th>
 				<th></th>
 			</tr>
 			<logic:iterate id="recherchePersonne" name="RECHERCHEFILM" scope="session">

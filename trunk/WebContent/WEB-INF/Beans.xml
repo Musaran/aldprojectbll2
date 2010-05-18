@@ -33,4 +33,7 @@
 	<bean name="/modifierfilm" class="struts.action.ActionModificationFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
+	
+	<bean name="/changerlangue" class="struts.action.ActionChangementLangue"/>
+
 </beans>

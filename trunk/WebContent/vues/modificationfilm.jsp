@@ -16,25 +16,25 @@
 	
 		<html:form action="/inscription.do">
 			<tr>
-				<td>Titre</td>
+				<td><bean:message key="Search.titre"/></td>
 				<td><html:text property="titre" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
-				<td>Date de sortie</td>
+				<td><bean:message key="Date.de.Sortie"/></td>
 				<td><html:text property="dateSortie" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
-				<td>Coût du film</td>
+				<td><bean:message key="Cout.du.Film"/></td>
 				<td><html:text property="cout" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
-				<td>Synopsis</td>
+				<td><bean:message key="Synopsis"/></td>
 				<td><html:textarea property="synopsis" name="FILM" cols="30" rows="10"></html:textarea></td>
 			</tr>
 			
 			<tr>
-				<td><html:cancel>annuler</html:cancel></td>
-				<td><html:submit>inscription</html:submit></td>
+				<td><html:cancel><bean:message key="Annuler"/></html:cancel></td>
+				<td><html:submit><bean:message key="Inscription"/></html:submit></td>
 			</tr>	
 		</html:form>
 		

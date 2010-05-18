@@ -82,6 +82,10 @@
     	<action path="/modifierfilm" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="VueModificationFilm" path="/vues/modificationfilm.jsp" redirect="true"></forward>
 		</action>
+		
+		<action path="/changerlangue">
+			<forward name="VueChangerLangue" path="/vues/welcome.jsp" redirect="true"></forward>
+		</action>
     	
     </action-mappings>
 
