@@ -51,7 +51,7 @@ public class GestionnaireRoleActeur {
 			ArrayList<RoleActeur> liste = dao.loadActeurInvalide();
 			for(int i=0;i<liste.size();i++)
 			{
-				liste.get(i).setIsValidateRoleActeur(1);
+				liste.get(i).setIsValidateRoleActeur(-1);
 				dao.saveOrUpdate(liste.get(i));
 			}
 		} catch (Exception e) {
@@ -70,7 +70,7 @@ public class GestionnaireRoleActeur {
 		{
 			try {
 				RoleActeur temp = dao.get(liste.get(i).getPersonne(), liste.get(i).getFilm());
-				temp.setIsValidateRoleActeur(1);
+				temp.setIsValidateRoleActeur(-1);
 				dao.saveOrUpdate(temp);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

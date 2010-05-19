@@ -24,7 +24,7 @@ public class RoleActeur implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return personne.getNom()+" "+personne.getPrenom()+" (id="+personne.getIdPersonne()+")à joué dans "+
+		return personne.getNom()+" "+personne.getPrenom()+" (id="+personne.getIdPersonne()+")a joué dans "+
 		film.getTitre()+" (id="+film.getIdFilm()+")";
 	}
 	@Override
