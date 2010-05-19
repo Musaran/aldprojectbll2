@@ -59,7 +59,7 @@ public class GestionnaireRecompensePersonne {
 		{
 			try {
 				RecompensePersonne temp = dao.get(liste.get(i).getPersonne(), liste.get(i).getRecompense(),liste.get(i).getTypeRecompense(), liste.get(i).getAnnee() );
-				temp.setIsValidateRecompense(1);
+				temp.setIsValidateRecompense(-1);
 				dao.saveOrUpdate(temp);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -77,7 +77,7 @@ public class GestionnaireRecompensePersonne {
 			ArrayList<RecompensePersonne> liste = dao.loadInvalideRecompensePersonne();
 			for(int i=0;i<liste.size();i++)
 			{
-				liste.get(i).setIsValidateRecompense(1);
+				liste.get(i).setIsValidateRecompense(-1);
 				dao.saveOrUpdate(liste.get(i));
 			}
 		} catch (Exception e) {
