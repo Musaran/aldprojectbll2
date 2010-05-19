@@ -36,14 +36,14 @@
 			
 			<tr>
 				<td><html:cancel><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit>Enregistrer</html:submit></td>
+				<td><html:submit><bean:message key="Enregistrer"/></html:submit></td>
 			</tr>	
 		</table>
 	</div>
 	<div style="float:left;padding-left: 10px;">
 		<table>
 			<tr>
-				<td>Affiche</td>
+				<td><bean:message key="Affiche"/></td>
 				<td><img src="<bean:write name="FILM" property="affiche"/>"  height="150px"/></td>
 			</tr>
 			<tr>
