@@ -22,7 +22,7 @@
 					<html:text property="login" size="15" onfocus="javascript:this.value=''" style="color:#090909;"/>
 				</td>
 				<td>
-					<html:text property="motDePasse" size="10" onfocus="javascript:this.value=''" style="color:#090909;"/>
+					<html:password property="motDePasse" size="10" onfocus="javascript:this.value=''" style="color:#090909;"/>
 				</td>
 				<td>
 					<html:submit><bean:message key="Connecter"/></html:submit>&nbsp;
