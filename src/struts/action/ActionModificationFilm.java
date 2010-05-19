@@ -2,6 +2,8 @@ package struts.action;
 
 
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,7 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.upload.*;
 
 import struts.actionForm.ActionFormModificationFilm;
 import dao.DAOFilm;
@@ -24,16 +27,37 @@ public class ActionModificationFilm extends Action{
 			HttpServletResponse response){
 		ActionFormModificationFilm formFilm=(ActionFormModificationFilm)form;
 		Film film=null;
+		String affiche=formFilm.getAffiche();
 		try {
-			System.out.println(Date.valueOf(formFilm.getDateSortie()));
+			FormFile file=formFilm.getFile();
 			
-			film=new Film(formFilm.getTitre(),Date.valueOf(formFilm.getDateSortie()),formFilm.getCout(),formFilm.getSynopsis(),0,formFilm.getFile());
-			if(formFilm.getFile().equals(""))
-				
-			film.setIsValidateFilm(formFilm.getIdFilm());
-			
-			System.out.println(film.toString());
-			System.out.println(film.getAffiche());
+			String contentType = file.getContentType();
+	        String fileName    = file.getFileName();
+	        int fileSize       = file.getFileSize();
+	        byte[] fileData    = file.getFileData();
+	        
+	        String dossierTemp="imagestemp";
+	        
+	        String filePath = getServlet().getServletContext().getRealPath("/") +dossierTemp;
+
+			if(!fileName.equals(""))
+			{  
+				System.out.println("Server path:" +filePath);
+				//Create file
+				File fileToCreate = new File(filePath, fileName);
+				//If file does not exists create file                      
+				if(!fileToCreate.exists()){
+					FileOutputStream fileOutStream = new FileOutputStream(fileToCreate);
+					fileOutStream.write(file.getFileData());
+					fileOutStream.flush();
+					fileOutStream.close();
+					affiche="../"+dossierTemp+"/"+fileName;
+				}
+					
+			}  
+			film=new Film(formFilm.getTitre(),Date.valueOf(formFilm.getDateSortie()),formFilm.getCout(),formFilm.getSynopsis(),0,affiche);	
+			//film.setIsValidateFilm(formFilm.getIdFilm());	
+			daoFilm.save(film);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

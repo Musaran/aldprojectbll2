@@ -1,13 +1,12 @@
 package struts.actionForm;
 
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.upload.FormFile;
 
 public class ActionFormModificationFilm extends ActionForm{
 	/**
@@ -18,7 +17,8 @@ public class ActionFormModificationFilm extends ActionForm{
 	private String dateSortie;
 	private double cout;
 	private String synopsis;
-	private String file;
+	private FormFile file;//nouvelle affiche à uploader
+	private String affiche;//ancienne affiche
 	private int idFilm;
 	
 	public ActionFormModificationFilm(){
@@ -48,11 +48,11 @@ public class ActionFormModificationFilm extends ActionForm{
 		this.synopsis = synopsis;
 	}
 
-	public String getFile() {
+	public FormFile getFile() {
 		return file;
 	}
 
-	public void setFile(String file) {
+	public void setFile(FormFile file) {
 		this.file = file;
 	}
 
@@ -86,6 +86,14 @@ public class ActionFormModificationFilm extends ActionForm{
 
 	public int getIdFilm() {
 		return idFilm;
+	}
+
+	public void setAffiche(String affiche) {
+		this.affiche = affiche;
+	}
+
+	public String getAffiche() {
+		return affiche;
 	}
 
 }
