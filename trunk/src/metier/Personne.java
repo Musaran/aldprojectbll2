@@ -1,5 +1,6 @@
 package metier;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -134,6 +135,48 @@ public class Personne {
 	{
 		RecompensePersonne temp= new RecompensePersonne(this, r, t, annee);
 		this.listeRecompense.add(temp);
+	}
+	
+	public ArrayList<Film> listeDesFilmActeur()
+	{
+		ArrayList<Film> tab = new ArrayList<Film>();
+		Iterator<RoleActeur> i=this.filmographieActeur.iterator();
+		while(i.hasNext())
+		{
+			RoleActeur a = i.next();
+			if(a.getIsValidateRoleActeur()==-1)
+				tab.add(a.getFilm());
+			
+		}
+		return tab;
+	}
+	
+	public ArrayList<Film> listeDesFilmRealisateur()
+	{
+		ArrayList<Film> tab = new ArrayList<Film>();
+		Iterator<RoleRealisateur> i=this.filmographieRealisateur.iterator();
+		while(i.hasNext())
+		{
+			RoleRealisateur a = i.next();
+			if(a.getIsValidateRoleRealisateur()==-1)
+				tab.add(a.getFilm());
+			
+		}
+		return tab;
+	}
+	
+	public ArrayList<Film> listeDesFilmProducteur()
+	{
+		ArrayList<Film> tab = new ArrayList<Film>();
+		Iterator<RoleProducteur> i=this.filmographieProducteur.iterator();
+		while(i.hasNext())
+		{
+			RoleProducteur a = i.next();
+			if(a.getIsValidateRoleProducteur()==-1)
+				tab.add(a.getFilm());
+			
+		}
+		return tab;
 	}
 
 
