@@ -25,7 +25,7 @@
 					<html:text property="motDePasse" size="10" value="Password" onfocus="javascript:this.value=''" style="color:#090909;"/>
 				</td>
 				<td>
-					<html:submit>se connecter</html:submit>&nbsp;
+					<html:submit><bean:message key="Connecter"/></html:submit>&nbsp;
 				</td>
 				<td>
 					<html:link href="./inscription.jsp"><bean:message key="Inscription"/></html:link>
