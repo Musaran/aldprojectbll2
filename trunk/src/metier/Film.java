@@ -177,6 +177,48 @@ public class Film  {
 		this.setNoteMoyenne((note*1.0/compteur*1.0));
 	}
 	
+	public ArrayList<Personne> listeDesActeurs()
+	{
+		ArrayList<Personne> tab = new ArrayList<Personne>();
+		Iterator<RoleActeur> i=this.listDesActeurs.iterator();
+		while(i.hasNext())
+		{
+			RoleActeur a = i.next();
+			if(a.getIsValidateRoleActeur()==-1)
+				tab.add(a.getPersonne());
+			
+		}
+		return tab;
+	}
+	
+	public ArrayList<Personne> listeDesProducteurs()
+	{
+		ArrayList<Personne> tab = new ArrayList<Personne>();
+		Iterator<RoleProducteur> i=this.listeDesProducteurs.iterator();
+		while(i.hasNext())
+		{
+			RoleProducteur a = i.next();
+			if(a.getIsValidateRoleProducteur()==-1)
+				tab.add(a.getPersonne());
+			
+		}
+		return tab;
+	}
+	
+	public ArrayList<Personne> listeDesRealisateurs()
+	{
+		ArrayList<Personne> tab = new ArrayList<Personne>();
+		Iterator<RoleRealisateur> i=this.listeDesRealisateurs.iterator();
+		while(i.hasNext())
+		{
+			RoleRealisateur a = i.next();
+			if(a.getIsValidateRoleRealisateur()==-1)
+				tab.add(a.getPersonne());
+			
+		}
+		return tab;
+	}
+	
 	/*
 	 * Getters and setters
 	 */
