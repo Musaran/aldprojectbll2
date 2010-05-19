@@ -58,7 +58,7 @@ public class GestionnaireRecompenseFilm {
 		{
 			try {
 				RecompenseFilm temp = dao.get(liste.get(i).getFilm(), liste.get(i).getRecompense(),liste.get(i).getTypeRecompense(), liste.get(i).getAnnee() );
-				temp.setIsValidateRecompense(1);
+				temp.setIsValidateRecompense(-1);
 				dao.saveOrUpdate(temp);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -75,7 +75,7 @@ public class GestionnaireRecompenseFilm {
 			ArrayList<RecompenseFilm> liste = dao.loadInvalideRecompenseFilm();
 			for(int i=0;i<liste.size();i++)
 			{
-				liste.get(i).setIsValidateRecompense(1);
+				liste.get(i).setIsValidateRecompense(-1);
 				dao.saveOrUpdate(liste.get(i));
 			}
 		} catch (Exception e) {
