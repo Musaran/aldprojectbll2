@@ -51,6 +51,7 @@ public class ActionRecherche extends Action{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return mapping.findForward("ErreurServeur");
 		}
 		return mapping.findForward("VueListeRecherche");
 		

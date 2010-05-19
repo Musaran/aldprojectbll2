@@ -5,10 +5,12 @@
 <!-- ----------------------------Pro Connecté--------------------------------------------- -->
 
 <% if(session.getAttribute("login") != null){ %>
-	Bienvenue <%= session.getAttribute("login") %> !
-	<%-- se deconnecter --%>
-	<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
 	
+	Bienvenue <%= session.getAttribute("login") %> ! &nbsp;
+	
+	<%-- se deconnecter --%>
+	
+	<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
 	
 <!-- ----------------------------non Connecté--------------------------------------------- -->
 
@@ -16,19 +18,21 @@
 	<html:form action="/connexion.do">
 		<table>
 			<tr>
-				<td><bean:message key="Login"/></td>
-				<td><html:text property="login" size="10" /></td>
-			</tr>
-			<tr>
-				<td><bean:message key="Mot.de.passe"/></td>
-				<td><html:text property="motDePasse" size="10" /></td>
-				<td><html:submit>OK</html:submit></td>
+				<td>
+					<html:text property="login" size="15" value="Login"  onfocus="javascript:this.value=''" style="color:#090909;"/>
+				</td>
+				<td>
+					<html:text property="motDePasse" size="10" value="Password" onfocus="javascript:this.value=''" style="color:#090909;"/>
+				</td>
+				<td>
+					<html:submit>se connecter</html:submit>&nbsp;
+				</td>
+				<td>
+					<html:link href="./inscription.jsp"><bean:message key="Inscription"/></html:link>
+				</td>
 			</tr>
 			<tr>
 				<td><html:errors/></td>
-			</tr>
-			<tr>
-				<td><html:link href="./inscription.jsp"><bean:message key="Inscription"/></html:link></td>
 			</tr>
 		</table>				
 	</html:form>

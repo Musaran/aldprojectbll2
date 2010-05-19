@@ -38,7 +38,7 @@ public class ActionInscription extends Action{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return mapping.findForward("InscriptionImpossible"); 
+			return mapping.findForward("ErreurServeur");
 		}
 		return mapping.findForward("InscriptionEffectue");
 		

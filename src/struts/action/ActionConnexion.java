@@ -39,7 +39,7 @@ public class ActionConnexion extends Action{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return mapping.findForward("ConnexionImpossible"); 
+			return mapping.findForward("ErreurServeur");
 		}
 		return mapping.findForward("ConnexionEffectue");
 		
