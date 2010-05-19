@@ -86,6 +86,10 @@
     		<forward name="ModificationFilmEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="ModificationFilmImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
+    	
+    	<action path="/apercufilm" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueApercuFilm" path="/vues/apercufilm.jsp" redirect="true"></forward>
+		</action>
 		
 		<action path="/changerlangue">
 			<forward name="VueChangerLangue" path="/vues/welcome.jsp" redirect="true"></forward>

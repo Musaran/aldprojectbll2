@@ -55,7 +55,7 @@ public class ActionModificationFilm extends Action{
 				}
 					
 			}  
-			film=new Film(formFilm.getTitre(),Date.valueOf(formFilm.getDateSortie()),formFilm.getCout(),formFilm.getSynopsis(),0,affiche);	
+			film=new Film(formFilm.getTitre().replaceFirst(".",(formFilm.getTitre().charAt(0)+"").toUpperCase()),Date.valueOf(formFilm.getDateSortie()),formFilm.getCout(),formFilm.getSynopsis(),0,affiche);	
 			//film.setIsValidateFilm(formFilm.getIdFilm());	
 			daoFilm.save(film);
 		} catch (Exception e) {
