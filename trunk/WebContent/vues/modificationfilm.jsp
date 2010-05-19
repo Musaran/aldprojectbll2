@@ -12,9 +12,9 @@
 <body>
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
-	<html:form action="/modifierfilm.do">
+	<html:form action="/modifierfilm.do" enctype="multipart/form-data">
 	<html:hidden property="idFilm" name="FILM"/>
-	<html:hidden property="idFilm" name="FILM"/>
+	<html:hidden property="affiche" name="FILM"/>
 	<div  style="float:left;border-right: 1px solid black;padding-right: 10px;">
 		<table>
 			<tr>
