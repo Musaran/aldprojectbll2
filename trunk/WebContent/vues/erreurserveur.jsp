@@ -11,7 +11,7 @@
 	<!-- ---------------------Contenu---------------------------- -->
 	
 	<center><h1><bean:message key="Liste.des.erreurs"/></h1></center>
-	Erreur sur le serveur. On ne peut pas satisfaire la requête formulée.
+	<bean:message key="Erreur.requete.formulee"/>
 	
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />
