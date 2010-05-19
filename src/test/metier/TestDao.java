@@ -210,5 +210,9 @@ public class TestDao extends TestCase {
 		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );*/
 		System.out.println("invalide "+daof.loadFilmInvalide().size());
 		System.out.println("valide "+daof.loadFilmValide().size());
+		
+		Personne a = daop.get(4);
+		System.out.println(a.listeDesFilmRealisateur().size());
+		
 	}
 }
