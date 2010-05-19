@@ -19,7 +19,7 @@
 			<form-bean name="formActionConnexion" type="struts.actionForm.ActionFormConnexion"></form-bean>
 			<form-bean name="formActionRecherche" type="struts.actionForm.ActionFormRecherche"></form-bean>
 			<form-bean name="formActionInscription" type="struts.actionForm.ActionFormInscription"></form-bean>
-
+			<form-bean name="formActionModificationFilm" type="struts.actionForm.ActionFormModificationFilm"></form-bean>
     </form-beans>
 
 
@@ -77,9 +77,15 @@
 			<forward name="VueListeFilms" path="/vues/welcome.jsp" redirect="true"></forward>
 		</action>
 		
-    	<action path="/modifierfilm" type="org.springframework.web.struts.DelegatingActionProxy">
+    	<action path="/lienmodifierfilm" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="VueModificationFilm" path="/vues/modificationfilm.jsp" redirect="true"></forward>
 		</action>
+		
+		<action path="/modifierfilm" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionModificationFilm" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="ModificationFilmEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="ModificationFilmImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
 		
 		<action path="/changerlangue">
 			<forward name="VueChangerLangue" path="/vues/welcome.jsp" redirect="true"></forward>
