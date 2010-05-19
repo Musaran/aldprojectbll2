@@ -2,7 +2,7 @@
 /* CSS Document */
 body{
 	margin:0px;
-	background:#EEEEEE;
+	background:#090909;
 }
 h1{
 }
@@ -10,6 +10,20 @@ h1{
 	height:auto;
 	width:80%;
 	margin:auto;
+}
+#topbarre{
+	width:100%;
+	background: navy;	
+	height:32px;
+	color:white;
+}
+#connexion{
+	float: left;
+}
+#language{
+	padding-right:10px;
+	padding-top:5px;
+	float: right;
 }
 #header{
 	height:100px;
@@ -22,10 +36,10 @@ h1{
 	width:100%;
 	background: #EEEEEE;
 	text-align:center;
-	padding:5px;
+	border-top: solid #1C1C1C;
 }
 #mainContainer{
-
+ 	border-top: solid #1C1C1C;
 	width:100%;
 	height:700px;
 }
@@ -43,11 +57,12 @@ h1{
 	height:30px;
 	background-color: #EEEEEE;
 	padding:5px;
+	
 }
 #menuContent{
 	float:left;
-	width:200px;
-	border-right:#FFFFFF dotted 1px;
+	width:auto;
+	border-right:#000 dotted 1px;
 	height:700px;
 	background: #FFFFFF;
 }
@@ -69,4 +84,14 @@ a:hover,  a:focus {
 }
 #film #head{
 	background-color: silver;
+}
+#film{
+	width: auto;
+}
+#menu li{
+	margin-right: 20px;
+}
+
+#topbarre a{
+	color:white;
 }
