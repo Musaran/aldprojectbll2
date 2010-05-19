@@ -14,7 +14,6 @@
 		<html:link page='/changerlangue.do?lang=de&cty=DE'><img alt="de" height="20px" src="../img/Flags/DE.png" title="Deutsch"></html:link>
 		<html:link page='/changerlangue.do?lang=it&cty=IT'><img alt="it" height="20px" src="../img/Flags/IT.png" title="Italiano"></html:link>
 		<html:link page='/changerlangue.do?lang=ro&cty=RO'><img alt="ro" height="20px" src="../img/Flags/RO.png" title="Româna"></html:link>
-		<html:link page='/changerlangue.do?lang=cn&cty=CN'><img alt="cn" height="20px" src="../img/Flags/CN.png" title="Chinese"></html:link>
 	</div>
 </div>
 <div id="extern">
