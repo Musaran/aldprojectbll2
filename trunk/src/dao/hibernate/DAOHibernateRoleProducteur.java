@@ -25,7 +25,7 @@ public class DAOHibernateRoleProducteur extends DAOHibernate implements DAORoleP
 	public ArrayList<RoleProducteur> loadProducteurInvalide() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<RoleProducteur> set=(ArrayList<RoleProducteur>) session.createQuery("FROM RoleProducteur WHERE isValidateRoleProducteur=0").list();	
+		ArrayList<RoleProducteur> set=(ArrayList<RoleProducteur>) session.createQuery("FROM RoleProducteur WHERE isValidateRoleProducteur!=1").list();	
 		close(session);	
 		return set;
 	}
@@ -35,7 +35,7 @@ public class DAOHibernateRoleProducteur extends DAOHibernate implements DAORoleP
 	public ArrayList<RoleProducteur> loadProducteurValide() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<RoleProducteur> set=(ArrayList<RoleProducteur>) session.createQuery("FROM RoleProducteur WHERE isValidateRoleProducteur=1").list();	
+		ArrayList<RoleProducteur> set=(ArrayList<RoleProducteur>) session.createQuery("FROM RoleProducteur WHERE isValidateRoleProducteur=-1").list();	
 		close(session);	
 		return set;
 	}

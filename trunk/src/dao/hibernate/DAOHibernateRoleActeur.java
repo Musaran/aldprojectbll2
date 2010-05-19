@@ -14,7 +14,7 @@ public class DAOHibernateRoleActeur extends DAOHibernate implements DAORoleActeu
 	@Override
 	public ArrayList<RoleActeur> loadActeurInvalide() throws Exception {
 		Session	session = connect();
-		ArrayList<RoleActeur> set=(ArrayList<RoleActeur>) session.createQuery("FROM RoleActeur WHERE isValidateRoleActeur=0").list();	
+		ArrayList<RoleActeur> set=(ArrayList<RoleActeur>) session.createQuery("FROM RoleActeur WHERE isValidateRoleActeur!=1").list();	
 		close(session);	
 		return set;
 		
@@ -23,7 +23,7 @@ public class DAOHibernateRoleActeur extends DAOHibernate implements DAORoleActeu
 	@Override
 	public ArrayList<RoleActeur> loadActeurValide() throws Exception {
 		Session	session = connect();
-		ArrayList<RoleActeur> set=(ArrayList<RoleActeur>) session.createQuery("FROM RoleActeur WHERE isValidateRoleActeur=1").list();	
+		ArrayList<RoleActeur> set=(ArrayList<RoleActeur>) session.createQuery("FROM RoleActeur WHERE isValidateRoleActeur=-1").list();	
 		close(session);	
 		return set;
 	}
