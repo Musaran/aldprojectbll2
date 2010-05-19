@@ -24,7 +24,7 @@ public class DAOHibernateRoleRealisateur extends DAOHibernate implements DAORole
 	public ArrayList<RoleRealisateur> loadRealisateurInvalide() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<RoleRealisateur> set=(ArrayList<RoleRealisateur>) session.createQuery("FROM RoleRealisateur WHERE isValidateRoleRealisateur=0").list();	
+		ArrayList<RoleRealisateur> set=(ArrayList<RoleRealisateur>) session.createQuery("FROM RoleRealisateur WHERE isValidateRoleRealisateur!=1").list();	
 		close(session);	
 		return set;
 	}
@@ -33,7 +33,7 @@ public class DAOHibernateRoleRealisateur extends DAOHibernate implements DAORole
 	public ArrayList<RoleRealisateur> loadRealisateurValide() throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		ArrayList<RoleRealisateur> set=(ArrayList<RoleRealisateur>) session.createQuery("FROM RoleRealisateur WHERE isValidateRoleRealisateur=1").list();	
+		ArrayList<RoleRealisateur> set=(ArrayList<RoleRealisateur>) session.createQuery("FROM RoleRealisateur WHERE isValidateRoleRealisateur=-1").list();	
 		close(session);	
 		return set;
 	}
