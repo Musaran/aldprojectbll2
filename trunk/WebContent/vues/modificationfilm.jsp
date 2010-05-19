@@ -16,15 +16,15 @@
 	
 		<html:form action="/inscription.do">
 			<tr>
-				<td><bean:message key="Search.titre"/></td>
+				<td><bean:message key="Titre"/></td>
 				<td><html:text property="titre" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
-				<td><bean:message key="Date.de.Sortie"/></td>
+				<td><bean:message key="Sortie"/></td>
 				<td><html:text property="dateSortie" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
-				<td><bean:message key="Cout.du.Film"/></td>
+				<td><bean:message key="Cout"/></td>
 				<td><html:text property="cout" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
