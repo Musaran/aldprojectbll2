@@ -6,7 +6,9 @@
 		<tr id="head">
 			
 			<td colspan="2">
-				<h2><bean:write name="liste" property="titre"/></h2>
+				<html:link action="/apercufilm.do" paramId="code" paramName="liste" paramProperty="idFilm">
+					<h2><bean:write name="liste" property="titre"/></h2>
+				</html:link>
 			</td>
 			<td rowspan="2">
 				<% if(session.getAttribute("login") != null){ %>
@@ -18,7 +20,9 @@
 		</tr>
 		<tr>
 			<td>
-				<img src="<bean:write name="liste" property="affiche"/>"  height="150px"/>
+				<html:link action="/apercufilm.do" paramId="code" paramName="liste" paramProperty="idFilm">
+					<img src="<bean:write name="liste" property="affiche"/>"  height="150px"/>
+				</html:link>
 			</td>
 			<td>
 				<bean:message key="Note"/>: <bean:write name="liste" property="noteMoyenne"/> /10<br />
