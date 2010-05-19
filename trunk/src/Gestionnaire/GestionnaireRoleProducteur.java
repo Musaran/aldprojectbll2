@@ -40,7 +40,7 @@ public class GestionnaireRoleProducteur {
 			ArrayList<RoleProducteur> liste = dao.loadProducteurInvalide();
 			for(int i=0;i<liste.size();i++)
 			{
-				liste.get(i).setIsValidateRoleProducteur(1);
+				liste.get(i).setIsValidateRoleProducteur(-1);
 				dao.saveOrUpdate(liste.get(i));
 			}
 		} catch (Exception e) {
@@ -57,7 +57,7 @@ public class GestionnaireRoleProducteur {
 		{
 			try {
 				RoleProducteur temp = dao.get(liste.get(i).getPersonne(), liste.get(i).getFilm());
-				temp.setIsValidateRoleProducteur(1);
+				temp.setIsValidateRoleProducteur(-1);
 				dao.saveOrUpdate(temp);
 			} catch (Exception e) {
 				e.printStackTrace();
