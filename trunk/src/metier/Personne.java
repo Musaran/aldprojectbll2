@@ -107,7 +107,7 @@ public class Personne implements Serializable{
 	 * Methode de conversion de l'objet en string
 	 */
 	public String toString() {
-		return nom+" "+prenom+" date de naissance "+ dateDeNaissance+" biographie "+biographie+" "+photo+" nb requete "+nombreRequetes+ " valide : " +isValidatePersonne;
+		return nom+" "+prenom+" date de naissance "+ dateDeNaissance+" biographie "+biographie+" "+photo+" nb requete "+nombreRequetes+ " valide : " +isValidatePersonne+ "photo:" +photo;
 	}
 	
 
