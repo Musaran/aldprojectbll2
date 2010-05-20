@@ -39,7 +39,7 @@ public class ActionModificationFilm extends Action{
 	        //int fileSize       = file.getFileSize();
 	        //byte[] fileData    = file.getFileData();
 	        
-	        String dossierTemp="imagestemp";
+	        String dossierTemp="imagestemp/films";
 	        fileName=formFilm.getIdFilm()+"."+extension;
 	        String filePath = getServlet().getServletContext().getRealPath("/") +dossierTemp;
 
@@ -55,7 +55,7 @@ public class ActionModificationFilm extends Action{
 					fileOutStream.write(file.getFileData());
 					fileOutStream.flush();
 					fileOutStream.close();
-					affiche="../"+dossierTemp+"/"+fileName;
+					affiche="../"+dossierTemp+"/films/"+fileName;
 				}
 					
 			}  
