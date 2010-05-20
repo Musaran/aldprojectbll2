@@ -32,15 +32,19 @@ public class ActionModificationFilm extends Action{
 			FormFile file=formFilm.getFile();
 			
 			String contentType = file.getContentType();
+			String[] format=contentType.split("/");
+			String type=format[0];
+			String extension=format[1];
 	        String fileName    = file.getFileName();
-	        int fileSize       = file.getFileSize();
-	        byte[] fileData    = file.getFileData();
+	        //int fileSize       = file.getFileSize();
+	        //byte[] fileData    = file.getFileData();
 	        
 	        String dossierTemp="imagestemp";
-	        
+	        fileName=formFilm.getIdFilm()+"."+extension;
 	        String filePath = getServlet().getServletContext().getRealPath("/") +dossierTemp;
 
-			if(!fileName.equals(""))
+	        
+			if(!fileName.equals("") && type.equals("image"))
 			{  
 				System.out.println("Server path:" +filePath);
 				//Create file
@@ -56,7 +60,7 @@ public class ActionModificationFilm extends Action{
 					
 			}  
 			film=new Film(formFilm.getTitre().replaceFirst(".",(formFilm.getTitre().charAt(0)+"").toUpperCase()),Date.valueOf(formFilm.getDateSortie()),formFilm.getCout(),formFilm.getSynopsis(),0,affiche);	
-			//film.setIsValidateFilm(formFilm.getIdFilm());	
+			film.setIsValidateFilm(formFilm.getIdFilm());	
 			daoFilm.save(film);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -64,7 +68,6 @@ public class ActionModificationFilm extends Action{
 			return mapping.findForward("ErreurServeur");
 		}
 		return mapping.findForward("ModificationFilmEffectue");
-		
 	}
 
 	public DAOFilm getDaoFilm() {
