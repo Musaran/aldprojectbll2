@@ -8,12 +8,12 @@
 	</div>
 	
 	<div id="language">
-		<html:link page='/changerlangue.do?lang=fr&cty=FR'><img alt="fr" height="20px" src="../img/Flags/FR.png" title="Français"></html:link>
-		<html:link page='/changerlangue.do?lang=en&cty=EN'><img alt="en" height="20px" src="../img/Flags/EN.png" title="English"></html:link>
-		<html:link page='/changerlangue.do?lang=es&cty=ES'><img alt="es" height="20px" src="../img/Flags/ES.png" title="Español"></html:link>
-		<html:link page='/changerlangue.do?lang=de&cty=DE'><img alt="de" height="20px" src="../img/Flags/DE.png" title="Deutsch"></html:link>
-		<html:link page='/changerlangue.do?lang=it&cty=IT'><img alt="it" height="20px" src="../img/Flags/IT.png" title="Italiano"></html:link>
-		<html:link page='/changerlangue.do?lang=ro&cty=RO'><img alt="ro" height="20px" src="../img/Flags/RO.png" title="Româna"></html:link>
+		<html:link page='/changerlangue.do?lang=fr&cty=FR'><img alt="fr" height="20px" src="/sitewebald/img/Flags/FR.png" title="Français"></html:link>
+		<html:link page='/changerlangue.do?lang=en&cty=EN'><img alt="en" height="20px" src="/sitewebald/img/Flags/EN.png" title="English"></html:link>
+		<html:link page='/changerlangue.do?lang=es&cty=ES'><img alt="es" height="20px" src="/sitewebald/img/Flags/ES.png" title="Español"></html:link>
+		<html:link page='/changerlangue.do?lang=de&cty=DE'><img alt="de" height="20px" src="/sitewebald/img/Flags/DE.png" title="Deutsch"></html:link>
+		<html:link page='/changerlangue.do?lang=it&cty=IT'><img alt="it" height="20px" src="/sitewebald/img/Flags/IT.png" title="Italiano"></html:link>
+		<html:link page='/changerlangue.do?lang=ro&cty=RO'><img alt="ro" height="20px" src="/sitewebald/img/Flags/RO.png" title="Româna"></html:link>
 	</div>
 </div>
 <div id="extern">
@@ -31,7 +31,7 @@
 		</div>
 	    <div id="barreNews">
 	    	<jsp:include page="/includes/news.jsp" />
-	    	<html:link href="index.jsp"><img alt="accueil" height="30px" src="../img/home3.png" title="Accueil"></html:link>
+	    	<html:link href="/sitewebald/vues/index.jsp"><img alt="accueil" height="30px" src="/sitewebald/img/home3.png" title="Accueil"></html:link>
 	   	</div>
 	   	<div id="mainContainer">
         	<div id="menuContent">
