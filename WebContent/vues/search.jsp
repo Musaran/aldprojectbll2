@@ -21,7 +21,9 @@
 			</tr>
 			<logic:iterate id="rechercheFilm" name="RECHERCHEFILM" scope="session">
 			<tr>
-				<td><bean:write name="rechercheFilm" property="titre"/></td>
+				<td><html:link action="/apercufilm.do" paramId="code" paramName="rechercheFilm" paramProperty="idFilm">
+					<bean:write name="rechercheFilm" property="titre"/>
+				</html:link></td>
 				<td></td>
 			</tr>
 			</logic:iterate>
@@ -34,9 +36,9 @@
 				<th><bean:message key="Nom"/></th>
 				<th></th>
 			</tr>
-			<logic:iterate id="recherchePersonne" name="RECHERCHEFILM" scope="session">
+			<logic:iterate id="recherchePersonne" name="RECHERCHEPERSONNE" scope="session">
 			<tr>
-				<td><bean:write name="recherchePersonne" property="nom"/></td>
+				<td><bean:write name="recherchePersonne" property="nom"/> <bean:write name="recherchePersonne" property="prenom"/></td>
 				<td></td>
 			</tr>
 			</logic:iterate>

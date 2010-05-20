@@ -30,8 +30,8 @@ public class ActionRecherche extends Action{
 			System.out.println(recherche.getType());
 			if(recherche.getType().equals("personne"))
 			{
-				//personnes = daoPersonne.load(recherche.getKeywords());
-				//request.getSession().setAttribute("RECHERCHEPERSONNE", personnes);
+				personnes = daoPersonne.load(recherche.getKeywords());
+				request.getSession().setAttribute("RECHERCHEPERSONNE", personnes);
 				request.getSession().removeAttribute("RECHERCHEFILM");
 			}
 			else if(recherche.getType().equals("film"))
@@ -42,8 +42,8 @@ public class ActionRecherche extends Action{
 			}
 			else if(recherche.getType().equals("tous"))
 			{
-				//personnes = daoPersonne.load(recherche.getKeywords());
-				//request.getSession().setAttribute("RECHERCHEPERSONNE", personnes);
+				personnes = daoPersonne.load(recherche.getKeywords());
+				request.getSession().setAttribute("RECHERCHEPERSONNE", personnes);
 				films = daoFilm.loadFilmValide(recherche.getKeywords());
 				request.getSession().setAttribute("RECHERCHEFILM", films);
 			}
