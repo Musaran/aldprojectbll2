@@ -31,10 +31,29 @@
 	<tr>
 		<td><h3>Acteurs</h3></td>
 	</tr>
-	<%--<logic:iterate id="acteurs" name="ACTEURS" >
+	<logic:iterate id="acteurs" name="ACTEURS" >
 		<tr>
-			<td><bean:write name="acteurs" property="nom"/></td>
+			<td><bean:write name="acteurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></td>
 		</tr>
-		<bean:write name=""/>
-	</logic:iterate>--%>
+	</logic:iterate>
+</table>
+<table>
+	<tr>
+		<td><h3>Producteurs</h3></td>
+	</tr>
+	<logic:iterate id="producteurs" name="PRODUCTEURS" >
+		<tr>
+			<td><bean:write name="producteurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></td>
+		</tr>
+	</logic:iterate>
+</table>
+<table>
+	<tr>
+		<td><h3>Réalisateurs</h3></td>
+	</tr>
+	<logic:iterate id="realisateurs" name="REALISATEURS" >
+		<tr>
+			<td><bean:write name="realisateurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></td>
+		</tr>
+	</logic:iterate>
 </table>

@@ -6,7 +6,6 @@ import java.util.Locale;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -27,7 +26,6 @@ public class ActionChangementLangue extends Action
       String country = request.getParameter("cty");
       String language = request.getParameter("lang");
       String referer = request.getHeader("referer");
-      HttpSession session = request.getSession();
       ActionForward forward = null;
    
       // définition de la locale
