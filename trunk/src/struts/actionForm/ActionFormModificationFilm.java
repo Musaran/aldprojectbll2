@@ -28,13 +28,13 @@ public class ActionFormModificationFilm extends ActionForm{
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
 		ActionErrors erreurs=new ActionErrors();
 		if(titre.trim().equals(""))
-			erreurs.add("login",new ActionMessage("Erreur.champ.vide","titre"));
+			erreurs.add("titre",new ActionMessage("Erreur.champ.vide","titre"));
 		if(dateSortie==null)
-			erreurs.add("nom",new ActionMessage("Erreur.champ.vide","date de sortie"));
+			erreurs.add("dateSortie",new ActionMessage("Erreur.champ.vide","date de sortie"));
 		if(cout==0)
-			erreurs.add("prenom",new ActionMessage("Erreur.champ.vide","coût"));
+			erreurs.add("cout",new ActionMessage("Erreur.champ.vide","coût"));
 		if(synopsis.trim().equals(""))
-			erreurs.add("adresse",new ActionMessage("Erreur.champ.vide","synopsis"));
+			erreurs.add("synopsis",new ActionMessage("Erreur.champ.vide","synopsis"));
 		return erreurs;
 	}
 
