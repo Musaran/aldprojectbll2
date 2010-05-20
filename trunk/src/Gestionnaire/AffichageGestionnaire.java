@@ -1,6 +1,5 @@
 package Gestionnaire;
 
-import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,8 +10,6 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import metier.Film;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
@@ -884,7 +881,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
 
         conteneurOnglet.addTab("Inscrits", panelGestionInscrit);
 
-        labelAccueilRecompenseFilm.setText("Gestion des recompense de film");
+        labelAccueilRecompenseFilm.setText("Gestion des récompenses de film");
 
         labelNombreRecompenseFilm.setText("Nombre de mise à jour :");
 
