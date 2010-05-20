@@ -25,8 +25,8 @@
 				</html:link>
 			</td>
 			<td>
-				Date de naissance: <bean:write name="liste" property="dateDeNaissance"/><br />
-				Biographie: <p><bean:write name="liste" property="biographie"/></p>
+				<bean:message key="date.de.naissance"/>: <bean:write name="liste" property="dateDeNaissance"/><br />
+				<bean:message key="biographie"/>: <p><bean:write name="liste" property="biographie"/></p>
 			</td>
 		</tr>
 	</logic:iterate>

@@ -6,7 +6,7 @@
 
 <% if(session.getAttribute("login") != null){ %>
 	
-	Bienvenue <%= session.getAttribute("login") %> ! &nbsp;
+	<bean:message key="bienvenue"/> <%= session.getAttribute("login") %> ! &nbsp;
 	
 	<%-- se deconnecter --%>
 	
@@ -28,12 +28,13 @@
 					<html:submit><bean:message key="Connecter"/></html:submit>&nbsp;
 				</td>
 				<td>
-					<html:link href="./inscription.jsp"><bean:message key="Inscription"/></html:link>
+					<html:link href="/sitewebald/vues/inscription.jsp"><bean:message key="Inscription"/></html:link>
+					<td><html:errors/></td>
 				</td>
 			</tr>
-			<tr>
+			<!--tr>
 				<td><html:errors/></td>
-			</tr>
+			</tr-->
 		</table>				
 	</html:form>
 <% } %>

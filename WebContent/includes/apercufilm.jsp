@@ -29,7 +29,7 @@
 </table>
 <table>
 	<tr>
-		<td><h3>Acteurs</h3></td>
+		<td><h3><bean:message key="acteurs"/></h3></td>
 	</tr>
 	<logic:iterate id="acteurs" name="ACTEURS" >
 		<tr>
@@ -41,7 +41,7 @@
 </table>
 <table>
 	<tr>
-		<td><h3>Producteurs</h3></td>
+		<td><h3><bean:message key="producteurs"/></h3></td>
 	</tr>
 	<logic:iterate id="producteurs" name="PRODUCTEURS" >
 		<tr>
@@ -53,7 +53,7 @@
 </table>
 <table>
 	<tr>
-		<td><h3>Réalisateurs</h3></td>
+		<td><h3><bean:message key="realisateurs"/></h3></td>
 	</tr>
 	<logic:iterate id="realisateurs" name="REALISATEURS" >
 		<tr>
