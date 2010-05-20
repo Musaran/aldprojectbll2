@@ -1,5 +1,6 @@
 package metier;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,8 +14,12 @@ import java.util.Set;
  *
  */
 
-public class Professionnel {
+public class Professionnel  implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	///données propres au professionnel
 	private String login;
 	private String password;

@@ -1,5 +1,6 @@
 package metier;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -13,8 +14,12 @@ import java.util.Set;
  *
  */
 
-public class Personne {
+public class Personne implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	///données propre a la personnne
 	private int idPersonne;
 	private String nom;

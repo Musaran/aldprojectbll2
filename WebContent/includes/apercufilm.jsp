@@ -33,7 +33,9 @@
 	</tr>
 	<logic:iterate id="acteurs" name="ACTEURS" >
 		<tr>
-			<td><bean:write name="acteurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></td>
+			<td>
+			<html:link action="/apercupersonne.do" paramId="code" paramName="acteurs" paramProperty="idPersonne">
+			<bean:write name="acteurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></html:link></td>
 		</tr>
 	</logic:iterate>
 </table>
@@ -43,7 +45,9 @@
 	</tr>
 	<logic:iterate id="producteurs" name="PRODUCTEURS" >
 		<tr>
-			<td><bean:write name="producteurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></td>
+			<td><html:link action="/apercupersonne.do" paramId="code" paramName="producteurs" paramProperty="idPersonne">
+			<bean:write name="producteurs" property="nom"/> <bean:write name="producteurs" property="prenom"/>
+			</html:link></td>
 		</tr>
 	</logic:iterate>
 </table>
@@ -53,7 +57,8 @@
 	</tr>
 	<logic:iterate id="realisateurs" name="REALISATEURS" >
 		<tr>
-			<td><bean:write name="realisateurs" property="nom"/> <bean:write name="acteurs" property="prenom"/></td>
+			<td><html:link action="/apercupersonne.do" paramId="code" paramName="realisateurs" paramProperty="idPersonne">
+			<bean:write name="realisateurs" property="nom"/> <bean:write name="realisateurs" property="prenom"/></html:link></td>
 		</tr>
 	</logic:iterate>
 </table>

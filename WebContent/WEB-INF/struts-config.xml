@@ -20,6 +20,7 @@
 			<form-bean name="formActionRecherche" type="struts.actionForm.ActionFormRecherche"></form-bean>
 			<form-bean name="formActionInscription" type="struts.actionForm.ActionFormInscription"></form-bean>
 			<form-bean name="formActionModificationFilm" type="struts.actionForm.ActionFormModificationFilm"></form-bean>
+			<form-bean name="formActionModificationPersonne" type="struts.actionForm.ActionFormModificationPersonne"></form-bean>
     </form-beans>
 
 
@@ -65,6 +66,10 @@
     		<forward name="VueListeFilms" path="/vues/listefilms.jsp" redirect="true"></forward>
     	</action>
     	
+    	<action path="/listePersonnes" type="org.springframework.web.struts.DelegatingActionProxy">
+    		<forward name="VueListePersonnes" path="/vues/listepersonnes.jsp" redirect="true"></forward>
+    	</action>
+    	
     	<action path="/inscription" type="org.springframework.web.struts.DelegatingActionProxy"
     		name="formActionInscription" validate="true" input="/vues/erreurs.jsp" cancellable="true">
     		<forward name="InscriptionEffectue" path="/vues/index.jsp" redirect="true"></forward>
@@ -81,14 +86,28 @@
 			<forward name="VueModificationFilm" path="/vues/modificationfilm.jsp" redirect="true"></forward>
 		</action>
 		
+		<action path="/lienmodifierpersonne" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueModificationPersonne" path="/vues/modificationpersonne.jsp" redirect="true"></forward>
+		</action>
+		
 		<action path="/modifierfilm" type="org.springframework.web.struts.DelegatingActionProxy"
     		name="formActionModificationFilm" validate="true" input="/vues/erreurs.jsp" cancellable="true">
     		<forward name="ModificationFilmEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="ModificationFilmImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
     	
+    	<action path="/modifierpersonne" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionModificationPersonne" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="ModificationPersonneEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="ModificationPersonneImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	
     	<action path="/apercufilm" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="VueApercuFilm" path="/vues/apercufilm.jsp" redirect="true"></forward>
+		</action>
+		
+		<action path="/apercupersonne" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueApercuPersonne" path="/vues/apercupersonne.jsp" redirect="true"></forward>
 		</action>
 		
 		<action path="/changerlangue">

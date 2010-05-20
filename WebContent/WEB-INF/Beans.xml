@@ -21,7 +21,9 @@
 	<bean name="/listeFilms" class="struts.action.ActionListeFilms">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
-	
+	<bean name="/listePersonnes" class="struts.action.ActionListePersonnes">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+	</bean>
 	<bean name="/inscription" class="struts.action.ActionInscription">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
 	</bean>
@@ -33,13 +35,21 @@
 	<bean name="/lienmodifierfilm" class="struts.action.ActionLienModificationFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
+	<bean name="/lienmodifierpersonne" class="struts.action.ActionLienModificationPersonne">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+	</bean>
 	<bean name="/modifierfilm" class="struts.action.ActionModificationFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
+	</bean>
+	<bean name="/modifierpersonne" class="struts.action.ActionModificationPersonne">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
 	</bean>
 	<bean name="/apercufilm" class="struts.action.ActionApercuFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
-	
+	<bean name="/apercupersonne" class="struts.action.ActionApercuPersonne">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+	</bean>
 	<bean name="/changerlangue" class="struts.action.ActionChangementLangue"/>
 
 </beans>
