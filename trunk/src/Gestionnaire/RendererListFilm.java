@@ -1,6 +1,7 @@
 package Gestionnaire;
 
 import java.awt.Component;
+import java.awt.Image;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListCellRenderer;
@@ -35,8 +36,9 @@ public class RendererListFilm implements ListCellRenderer {
 		for(int i=0;i<lien.length;i++)
 			link+="/"+lien[i];
 		ImageIcon k = new ImageIcon(link);
-		System.out.println(k.getDescription());
-		renderer.setIcon(k);
+		Image temp=k.getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT);
+//		System.out.println(k.getDescription());
+		renderer.setIcon(new ImageIcon(temp));
 		
 		renderer.setText(a.toString());
 	 
