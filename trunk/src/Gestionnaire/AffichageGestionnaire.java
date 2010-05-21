@@ -11,6 +11,9 @@ import javax.swing.event.HyperlinkListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import metier.Film;
+import metier.Personne;
+
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -119,6 +122,9 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
         txtURL.addActionListener(al);
         
         listeFilm.addListSelectionListener(this);
+        
+        listeFilm.setCellRenderer(new RendererListFilm());
+        listePersonne.setCellRenderer(new RendererListPersonne());
 
 //        ImageIcon img=new ImageIcon("./WebContent/images/films/armageddon.jpg");
 //        Image temp=img.getImage().getScaledInstance(labelAffiche.getHeight(), labelAffiche.getWidth(), Image.SCALE_DEFAULT);
@@ -679,8 +685,8 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
         labelListeFilm.setText("Liste des mise à jour : ");
 
         listeFilm.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
+            Film[] strings;
+            public int getSize() { return 0; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         scrollPaneListeFilm.setViewportView(listeFilm);
@@ -1073,8 +1079,8 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
         boutonRefusAllPersonne.setText("Refuser toutes les mise à jour");
 
         listePersonne.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
+            Personne[] strings = { };
+            public int getSize() { return 0; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         scrollPaneListePersonne.setViewportView(listePersonne);
