@@ -17,8 +17,7 @@
 		<td>
 			<img src="<bean:write name="PERSONNE" property="photo"/>"  height="150px"/>
 		</td>
-		<td>
-			Popularité: <bean:write name="PERSONNE" property="nombreRequetes"/> requêtes<br />
+		<td><bean:message key="Popularite"/><bean:write name="PERSONNE" property="nombreRequetes"/> <bean:message key="requetes"/><br />
 			<bean:message key="date.de.naissance"/>: <bean:write name="PERSONNE" property="dateDeNaissance"/><br />
 			<bean:message key="biographie"/>: <bean:write name="PERSONNE" property="biographie"/><br />
 		</td>
