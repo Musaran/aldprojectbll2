@@ -28,7 +28,7 @@ import java.sql.SQLException;
  * @author jerome
  *
  */
-public class AffichageGestionnaire extends JFrame implements HyperlinkListener, ListSelectionListener {
+public class AffichageGestionnaire extends JFrame implements HyperlinkListener {
 	private static AffichageGestionnaire instance;
 	
 	/**
@@ -121,15 +121,10 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
         panelNavigateur.add(lblStatus, BorderLayout.SOUTH);
         txtURL.addActionListener(al);
         
-        listeFilm.addListSelectionListener(this);
-        
+                
         listeFilm.setCellRenderer(new RendererListFilm());
         listePersonne.setCellRenderer(new RendererListPersonne());
-
-//        ImageIcon img=new ImageIcon("./WebContent/images/films/armageddon.jpg");
-//        Image temp=img.getImage().getScaledInstance(labelAffiche.getHeight(), labelAffiche.getWidth(), Image.SCALE_DEFAULT);
-//        labelAffiche.setIcon(new ImageIcon(temp));
-           
+         
 	}
 	
 	 // Variables declaration - do not modify
@@ -736,7 +731,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
                                 .addGroup(panelGestionFilmLayout.createSequentialGroup()
                                     .addComponent(labelListeFilm)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addComponent(scrollPaneListeFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrollPaneListeFilm, 453, 453, 453))
                     .addGap(5, 5, 5)))
         );
         panelGestionFilmLayout.setVerticalGroup(
@@ -764,7 +759,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
                         .addComponent(labelListeFilm)
                         .addComponent(boutonRefusAllFilm))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(scrollPaneListeFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollPaneListeFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(159, Short.MAX_VALUE)))
         );
 
@@ -1158,7 +1153,7 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
                         .addComponent(labelListePersonne)
                         .addComponent(boutonRefusAllPersonne))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(scrollPaneListePersonne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollPaneListePersonne, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(159, Short.MAX_VALUE)))
         );
 
@@ -1979,11 +1974,6 @@ public class AffichageGestionnaire extends JFrame implements HyperlinkListener, 
 				javax.swing.JEditorPane jEditorPaneNavigateur) {
 			this.jEditorPaneNavigateur = jEditorPaneNavigateur;
 		}
-		@Override
-		public void valueChanged(ListSelectionEvent arg0) {
-
-		}
-	   
-		
+	
 		
 }
