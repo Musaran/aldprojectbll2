@@ -33,7 +33,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		ArrayList<Personne> liste=(ArrayList<Personne>) session.createQuery(
-				"FROM Personne as pers WHERE pers.nom LIKE '%"+key+"%'").list();	
+				"FROM Personne as pers WHERE pers.nom LIKE '%"+key+"%' OR pers.prenom LIKE '%"+key+"%'").list();	
 
 		close(session);	
 		return liste;
@@ -93,6 +93,18 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		ArrayList<Personne> set=(ArrayList<Personne>) session.createQuery("FROM Personne WHERE isValidatePersonne=-1").list();	
 		close(session);	
 		return set;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Personne> loadValidePersonne(String key) throws Exception {
+		// TODO Auto-generated method stub
+		Session	session = connect();
+		ArrayList<Personne> liste=(ArrayList<Personne>) session.createQuery(
+				"FROM Personne as pers WHERE isValidatePersonne=-1 AND (pers.nom LIKE '%"+key+"%' OR pers.prenom LIKE '%"+key+"%')").list();	
+
+		close(session);	
+		return liste;
 	}
 
 }

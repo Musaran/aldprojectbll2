@@ -30,7 +30,7 @@ public class ActionRecherche extends Action{
 			System.out.println(recherche.getType());
 			if(recherche.getType().equals("personne"))
 			{
-				personnes = daoPersonne.load(recherche.getKeywords());
+				personnes = daoPersonne.loadValidePersonne(recherche.getKeywords());
 				request.getSession().setAttribute("RECHERCHEPERSONNE", personnes);
 				request.getSession().removeAttribute("RECHERCHEFILM");
 			}

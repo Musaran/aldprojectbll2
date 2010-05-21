@@ -24,5 +24,6 @@ public interface DAOPersonne {
 	void 				clear()							throws Exception;
 	ArrayList<Personne> loadInvalidePersonne() throws Exception;
 	ArrayList<Personne> loadValidePersonne() throws Exception;
+	ArrayList<Personne> loadValidePersonne(String key) throws Exception;
 	
 }
