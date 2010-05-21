@@ -7,9 +7,13 @@
 		<tr>
 			<td><bean:message key="Recherche"/></td>
 			<td><html:select property="type" >
-					<html:option value="tous" ><bean:message key="Tous"/></html:option>
+					<% if(session.getAttribute("login") != null){ %>
+						<html:option value="tous" ><bean:message key="Tous"/></html:option>
+					<% } %>
 					<html:option value="film" ><bean:message key="Film"/></html:option>
-					<html:option value="personne"><bean:message key="Personne"/></html:option>
+					<% if(session.getAttribute("login") != null){ %>
+						<html:option value="personne"><bean:message key="Personne"/></html:option>
+					<% } %>
 				</html:select>
             </td>
 			<td><html:text property="keywords" size="20" /></td>

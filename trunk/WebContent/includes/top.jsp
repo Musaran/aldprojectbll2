@@ -21,9 +21,6 @@
 		<div id="header">
 			<h1></h1>
 			<div id="menuBarre">
-				
-			
-			
 			</div>
 	        <div id="searchBarre">
 	       	 	<jsp:include page="/includes/search.jsp" />
