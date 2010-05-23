@@ -29,10 +29,10 @@
 </table>
 <table>
 	<tr>
-		<td><h3>Récompenses</h3></td>
+		<td><h3><bean:message key="recompense"/></h3></td>
 		<td>
 		<html:link action="" paramId="code" paramName="FILM" paramProperty="idFilm">
-		ajout d'une récompense
+		<bean:message key="Ajout.recompense"/>
 		</html:link>	
 		</td>
 	</tr>
@@ -49,7 +49,7 @@
 		<td><h3><bean:message key="acteurs"/></h3></td>
 		<td>
 		<html:link action="/lienajoutcasting.do" paramId="code" paramName="FILM" paramProperty="idFilm">
-		ajout d'une personne au casting
+		<bean:message key="Ajout.casting"/>
 		</html:link>	
 		</td>
 	</tr>

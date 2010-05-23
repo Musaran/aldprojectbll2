@@ -17,7 +17,7 @@
 		<html:form action="/ajoutcasting.do">
 		<html:hidden property="idFilm" name="FILM"/>
 			<tr>
-				<td>Personne</td>
+				<td><bean:message key="Personne"/></td>
 				<td>
 				<html:select property="codePersonne" >
 					<html:options property="idPersonne" collection="LISTEPERSONNES" labelProperty="nom"/>
@@ -25,11 +25,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Rôle</td>
+				<td><bean:message key="role"/></td>
 				<td><html:select property="role">
-					<html:option value="acteur">Acteur</html:option>
-					<html:option value="producteur">Producteur</html:option>
-					<html:option value="realisateur">Réalisateur</html:option>
+					<html:option value="acteur"><bean:message key="acteur"/></html:option>
+					<html:option value="producteur"><bean:message key="producteur"/></html:option>
+					<html:option value="realisateur"><bean:message key="realisateur"/></html:option>
 				</html:select></td>
 			</tr>
 			<tr>

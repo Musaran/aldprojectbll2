@@ -19,19 +19,19 @@
 	<div  style="float:left;border-right: 1px solid black;padding-right: 10px;">
 		<table>
 			<tr>
-				<td>Nom</td>
+				<td><bean:message key="Nom"/></td>
 				<td><html:text property="nom" size="15" name="PERSONNE"/></td>
 			</tr>
 			<tr>
-				<td>Prénom</td>
+				<td><bean:message key="Prenom"/></td>
 				<td><html:text property="prenom" size="15" name="PERSONNE" />&nbsp;</td>
 			</tr>
 			<tr>
-				<td>Date de naissance</td>
+				<td><bean:message key="date.de.naissance"/></td>
 				<td><html:text property="dateDeNaissance" size="15" name="PERSONNE"/>&nbsp; AAAA-MM-JJ</td>
 			</tr>
 			<tr>
-				<td>Biographie</td>
+				<td><bean:message key="biographie"/></td>
 				<td><html:textarea property="biographie" name="PERSONNE" cols="30" rows="10"></html:textarea></td>
 			</tr>
 			
@@ -44,7 +44,7 @@
 	<div style="float:left;padding-left: 10px;">
 		<table>
 			<tr>
-				<td>Photo</td>
+				<td><bean:message key="Photo"/></td>
 				<td><img src="<bean:write name="PERSONNE" property="photo"/>"  height="150px"/></td>
 			</tr>
 			<tr>
