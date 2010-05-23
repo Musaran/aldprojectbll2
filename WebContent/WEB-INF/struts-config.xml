@@ -21,6 +21,8 @@
 			<form-bean name="formActionInscription" type="struts.actionForm.ActionFormInscription"></form-bean>
 			<form-bean name="formActionModificationFilm" type="struts.actionForm.ActionFormModificationFilm"></form-bean>
 			<form-bean name="formActionModificationPersonne" type="struts.actionForm.ActionFormModificationPersonne"></form-bean>
+   			<form-bean name="formActionAjoutCasting" type="struts.actionForm.ActionFormAjoutCasting"></form-bean>
+			
     </form-beans>
 
 
@@ -109,6 +111,15 @@
 		<action path="/apercupersonne" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="VueApercuPersonne" path="/vues/apercupersonne.jsp" redirect="true"></forward>
 		</action>
+		<action path="/lienajoutcasting" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueAjoutCasting" path="/vues/ajoutcasting.jsp" redirect="true"></forward>
+		</action>
+		<action path="/ajoutcasting" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionAjoutCasting" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="AjoutCastingEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="AjoutCastingImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+
 		
 		<action path="/changerlangue">
 			<forward name="VueChangerLangue" path="/vues/welcome.jsp" redirect="true"></forward>

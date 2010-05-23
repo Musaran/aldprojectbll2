@@ -14,7 +14,7 @@ import java.util.Set;
  *
  */
 
-public class Film   implements Serializable{
+public class Film implements Serializable{
 
 	/**
 	 * 

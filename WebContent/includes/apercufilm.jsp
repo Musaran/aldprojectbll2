@@ -30,6 +30,11 @@
 <table>
 	<tr>
 		<td><h3><bean:message key="acteurs"/></h3></td>
+		<td>
+		<html:link action="/lienajoutcasting.do" paramId="code" paramName="FILM" paramProperty="idFilm">
+		ajout d'une personne au casting
+		</html:link>	
+		</td>
 	</tr>
 	<logic:iterate id="acteurs" name="ACTEURS" >
 		<tr>

@@ -10,9 +10,14 @@
 			<logic:iterate id="rechercheFilm" name="RECHERCHEFILM" scope="session">
 			<tr>
 				<td>
+				<% if(session.getAttribute("login") != null){ %>
 				<html:link action="/apercufilm.do" paramId="code" paramName="rechercheFilm" paramProperty="idFilm">
 					<bean:write name="rechercheFilm" property="titre"/>
-				</html:link></td>
+				</html:link>
+				<% } else {%>
+				<bean:write name="rechercheFilm" property="titre"/>
+				<% } %>
+				</td>
 				<td></td>
 			</tr>
 			</logic:iterate>
