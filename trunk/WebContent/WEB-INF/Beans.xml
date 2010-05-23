@@ -5,6 +5,9 @@
 	<bean id="daoProfessionnelHBM" class="dao.hibernate.DAOHibernateProfessionnel"/>
 	<bean id="daoFilmHBM" class="dao.hibernate.DAOHibernateFilm"/>
 	<bean id="daoPersonneHBM" class="dao.hibernate.DAOHibernatePersonne"/>
+	<bean id="daoActeurHBM" class="dao.hibernate.DAOHibernateRoleActeur"/>
+	<bean id="daoProducteurHBM" class="dao.hibernate.DAOHibernateRoleProducteur"/>
+	<bean id="daoRealisateurHBM" class="dao.hibernate.DAOHibernateRoleRealisateur"/>
 	
 	<bean name="/connexion" class="struts.action.ActionConnexion">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
@@ -38,6 +41,10 @@
 	<bean name="/lienmodifierpersonne" class="struts.action.ActionLienModificationPersonne">
 		<property name="daoPersonne" ref="daoPersonneHBM"/>
 	</bean>
+	<bean name="/lienajoutcasting" class="struts.action.ActionLienAjoutCasting">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+	</bean>
 	<bean name="/modifierfilm" class="struts.action.ActionModificationFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
@@ -49,6 +56,13 @@
 	</bean>
 	<bean name="/apercupersonne" class="struts.action.ActionApercuPersonne">
 		<property name="daoPersonne" ref="daoPersonneHBM"/>
+	</bean>
+	<bean name="/ajoutcasting" class="struts.action.ActionAjoutCasting">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+		<property name="daoActeur" ref="daoActeurHBM"/>
+		<property name="daoProducteur" ref="daoProducteurHBM"/>
+		<property name="daoRealisateur" ref="daoRealisateurHBM"/>
 	</bean>
 	<bean name="/changerlangue" class="struts.action.ActionChangementLangue"/>
 

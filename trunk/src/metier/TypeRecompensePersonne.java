@@ -1,5 +1,7 @@
 package metier;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author jerome
@@ -7,8 +9,12 @@ package metier;
  *
  */
 
-public class TypeRecompensePersonne {
+public class TypeRecompensePersonne  implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	///données concernant les Type de recompenses pour les personnes 
 	private int idTypeRecompensePersonne;
 	private String nomTypeRecompensePersonne;

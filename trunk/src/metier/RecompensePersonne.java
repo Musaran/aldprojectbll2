@@ -12,6 +12,10 @@ import java.io.Serializable;
 
 public class RecompensePersonne implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	///données concernant les recompenses d'une personne
 	private Personne personne;
 	private Recompense recompense;
