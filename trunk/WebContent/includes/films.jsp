@@ -5,9 +5,13 @@
 <logic:iterate id="liste" name="LISTEFILMS" scope="session">
 		<tr id="head">
 			<td colspan="2">
+			<% if(session.getAttribute("login") != null){ %>
 				<html:link action="/apercufilm.do" paramId="code" paramName="liste" paramProperty="idFilm">
 				<h2><bean:write name="liste" property="titre"/></h2>
 				</html:link>
+				<%}  else {%>
+				<h2><bean:write name="liste" property="titre"/></h2>
+				<%} %>
 			</td>
 			<td rowspan="2">
 				<% if(session.getAttribute("login") != null){ %>
@@ -19,9 +23,13 @@
 		</tr>
 		<tr>
 			<td>
+			<% if(session.getAttribute("login") != null){ %>
 				<html:link action="/apercufilm.do" paramId="code" paramName="liste" paramProperty="idFilm">
 					<img src="<bean:write name="liste" property="affiche"/>"  height="150px"/>
 				</html:link>
+				<%} else {%>
+				<img src="<bean:write name="liste" property="affiche"/>"  height="150px"/>
+				<%} %>
 			</td>
 			<td>
 				<bean:message key="Note"/>: <bean:write name="liste" property="noteMoyenne"/> /10<br />
