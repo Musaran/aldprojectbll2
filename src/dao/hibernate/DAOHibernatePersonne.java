@@ -101,7 +101,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		ArrayList<Personne> liste=(ArrayList<Personne>) session.createQuery(
-				"FROM Personne as pers WHERE isValidatePersonne=-1 AND (pers.nom LIKE '%"+key+"%' OR pers.prenom LIKE '%"+key+"%')").list();	
+				"FROM Personne as pers WHERE isValidatePersonne=-1 AND pers.nom LIKE '%"+key+"%'").list();	
 
 		close(session);	
 		return liste;

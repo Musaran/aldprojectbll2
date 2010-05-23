@@ -5,5 +5,7 @@
 </div>
         </div>
 	    <div id="footer">
+	    	Jérôme Lombardi, Jean-Philippe Blaise & Matthieu Lauer<br />
+	    	copyright 2010
 	    </div>
 	</div>
