@@ -29,6 +29,16 @@ public class ActionModificationPersonne extends Action{
 		Personne personne=null;
 		String photo=formPersonne.getPhoto();
 		try {
+			personne=new Personne(formPersonne.getNom().replaceFirst(".",(formPersonne.getNom().charAt(0)+"").toUpperCase())
+						,formPersonne.getPrenom().replaceFirst(".",(formPersonne.getPrenom().charAt(0)+"").toUpperCase())
+						,Date.valueOf(formPersonne.getDateDeNaissance())
+						,formPersonne.getBiographie()
+						,photo,0);	
+			personne.setIsValidatePersonne(formPersonne.getIdPersonne());	
+			daoPersonne.save(personne);
+			
+			int code=personne.getIdPersonne();
+			
 			FormFile file=formPersonne.getFile();
 			
 			String contentType = file.getContentType();
@@ -39,12 +49,18 @@ public class ActionModificationPersonne extends Action{
 	        //int fileSize       = file.getFileSize();
 	        //byte[] fileData    = file.getFileData();
 	        
-	        String dossierTemp="imagestemp/personnes";
+	        String dossier="images/personnes/";
+	        
 	        fileName=formPersonne.getIdPersonne()+"."+extension;
-	        String filePath = getServlet().getServletContext().getRealPath("/") +dossierTemp;
+	        String filePath = getServlet().getServletContext().getRealPath("/") +dossier;
 	        
 			if(!fileName.equals("") && type.equals("image"))
 			{  
+				fileName=code+"."+extension;
+				photo="../images/personnes/"+fileName;
+				personne.setPhoto(photo);
+				daoPersonne.saveOrUpdate(personne);
+				
 				System.out.println("Server path:" +filePath);
 				//Create file
 				File fileToCreate = new File(filePath, fileName);
@@ -54,16 +70,9 @@ public class ActionModificationPersonne extends Action{
 					fileOutStream.write(file.getFileData());
 					fileOutStream.flush();
 					fileOutStream.close();
-					photo="../"+dossierTemp+"/"+fileName;
-				}	
+				}		
 			}  
-				personne=new Personne(formPersonne.getNom().replaceFirst(".",(formPersonne.getNom().charAt(0)+"").toUpperCase())
-						,formPersonne.getPrenom().replaceFirst(".",(formPersonne.getPrenom().charAt(0)+"").toUpperCase())
-						,Date.valueOf(formPersonne.getDateDeNaissance())
-						,formPersonne.getBiographie()
-						,photo,0);	
-			personne.setIsValidatePersonne(formPersonne.getIdPersonne());	
-			daoPersonne.save(personne);
+				
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
