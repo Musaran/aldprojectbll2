@@ -66,8 +66,7 @@ public class RecompenseFilm implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Le film "+film.getTitre()+" a reçu la recompense "+recompense.getNomRecompense()
-		+" - "+typeRecompense.getNomTypeRecompenseFilm()+" l'année "+annee;
+		return typeRecompense.getNomTypeRecompenseFilm()+" "+recompense.getNomRecompense()+" en "+annee;
 	}
 	/*
 	 * Getters and setters

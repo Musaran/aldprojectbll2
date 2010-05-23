@@ -20,7 +20,6 @@ import dao.DAOFilm;
 public class ActionApercuFilm extends Action{
 	private DAOFilm daoFilm=null;
 	
-	@SuppressWarnings("unchecked")
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response){
 		Film film=null;

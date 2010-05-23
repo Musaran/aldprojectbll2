@@ -26,6 +26,23 @@
 	</tr>
 	
 </table>
+<table>
+	<tr>
+		<td><h3>Récompenses</h3></td>
+		<td>
+		<html:link action="" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
+		ajout d'une récompense
+		</html:link>	
+		</td>
+	</tr>
+	<logic:iterate id="recompenses" name="RECOMPENSES" >
+		<tr>
+			<td>
+			<bean:write name="recompenses" property="recompense"/> du <bean:write name="recompenses" property="typeRecompense"/> en <bean:write name="recompenses" property="annee"/>
+			</td>
+		</tr>
+	</logic:iterate>
+</table>
 <h3><bean:message key="filmographie"/></h3>
 <table>
 	<tr>
@@ -33,11 +50,14 @@
 	</tr>
 	<logic:iterate id="acteurs" name="ACTEUR" >
 		<tr>
-			<td><% if(session.getAttribute("login") != null){ %>
+			<td>
+			<% if(session.getAttribute("login") != null){ %>
 			<html:link action="/apercufilm.do" paramId="code" paramName="acteurs" paramProperty="idFilm">
-					<%} %><bean:write name="acteurs" property="titre"/>
-					<% if(session.getAttribute("login") != null){ %>
-					</html:link><%} %></td>
+				<bean:write name="acteurs" property="titre"/>
+			</html:link>
+			<%} else {%>
+				<bean:write name="acteurs" property="titre"/>
+			<%} %></td>
 		</tr>
 	</logic:iterate>
 </table>
@@ -49,9 +69,11 @@
 		<tr>
 			<td><% if(session.getAttribute("login") != null){ %>
 			<html:link action="/apercufilm.do" paramId="code" paramName="producteurs" paramProperty="idFilm">
-					<%} %><bean:write name="producteurs" property="titre"/>
-					<% if(session.getAttribute("login") != null){ %>
-					</html:link><%} %></td>
+				<bean:write name="producteurs" property="titre"/>
+			</html:link>
+			<%} else {%>
+					<bean:write name="producteurs" property="titre"/>
+			<%} %></td>
 		</tr>
 	</logic:iterate>
 </table>
@@ -63,9 +85,11 @@
 		<tr>
 			<td><% if(session.getAttribute("login") != null){ %>
 			<html:link action="/apercufilm.do" paramId="code" paramName="realisateurs" paramProperty="idFilm">
-					<%} %><bean:write name="realisateurs" property="titre"/>
-					<% if(session.getAttribute("login") != null){ %>
-					</html:link><%} %></td>
+			<bean:write name="realisateurs" property="titre"/>
+			</html:link>		
+			<%} else{%>
+				<bean:write name="realisateurs" property="titre"/>	
+			<%} %></td>
 		</tr>
 	</logic:iterate>
 </table>

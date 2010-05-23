@@ -64,8 +64,7 @@ public class Recompense implements Serializable{
 	 */
 	@Override
 	public String toString() {
-		return "Recompense [idRecompense=" + idRecompense + ", nomRecompense="
-				+ nomRecompense + "]";
+		return nomRecompense;
 	}
 
 	/*

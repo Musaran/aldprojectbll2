@@ -45,8 +45,8 @@ public class RecompensePersonne implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return personne.getPrenom()+" "+personne.getNom()+" a reçu la récompense de "+recompense.getNomRecompense()+" - "
-		+typeRecompense.getNomTypeRecompensePersonne()+" durant l'année "+annee;
+		return typeRecompense.getNomTypeRecompensePersonne()+" "+recompense.getNomRecompense()+" en "
+		+annee;
 	}
 	/**
 	 * Les recompenses sont égales si tous les champs sont égaux

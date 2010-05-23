@@ -29,6 +29,23 @@
 </table>
 <table>
 	<tr>
+		<td><h3>Récompenses</h3></td>
+		<td>
+		<html:link action="" paramId="code" paramName="FILM" paramProperty="idFilm">
+		ajout d'une récompense
+		</html:link>	
+		</td>
+	</tr>
+	<logic:iterate id="recompenses" name="RECOMPENSES" >
+		<tr>
+			<td>
+			<bean:write name="recompenses" property="recompense"/> du <bean:write name="recompenses" property="typeRecompense"/> en <bean:write name="recompenses" property="annee"/>  
+			</td>
+		</tr>
+	</logic:iterate>
+</table>
+<table>
+	<tr>
 		<td><h3><bean:message key="acteurs"/></h3></td>
 		<td>
 		<html:link action="/lienajoutcasting.do" paramId="code" paramName="FILM" paramProperty="idFilm">

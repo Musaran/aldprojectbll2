@@ -58,9 +58,7 @@ public class TypeRecompensePersonne  implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "TypeRecompensePersonne [idTypeRecompensePersonne="
-				+ idTypeRecompensePersonne + ", nomTypeRecompensePersonne="
-				+ nomTypeRecompensePersonne + "]";
+		return nomTypeRecompensePersonne;
 	}
 	/*
 	 * Getters and setters

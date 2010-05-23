@@ -20,7 +20,6 @@ import dao.DAOPersonne;
 public class ActionApercuPersonne extends Action{
 	private DAOPersonne daoPersonne=null;
 	
-	@SuppressWarnings("unchecked")
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response){
 		Personne personne=null;
