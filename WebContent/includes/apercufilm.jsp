@@ -6,10 +6,12 @@
 		<td colspan="2">
 			<h2><bean:write name="FILM" property="titre"/></h2>
 		</td>
-		<td rowspan="2">		
+		<td rowspan="2">	
+			<% if(session.getAttribute("login") != null){ %>	
 			<html:link action="/lienmodifierfilm.do" paramId="code" paramName="FILM" paramProperty="idFilm">
 				<img src="../img/edit.png" alt="Editer" title="Editer" height="20px"/>
 			</html:link>
+			<%} %>
 		</td>
 	</tr>
 	<tr>

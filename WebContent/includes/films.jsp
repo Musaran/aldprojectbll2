@@ -10,9 +10,11 @@
 				</html:link>
 			</td>
 			<td rowspan="2">
+				<% if(session.getAttribute("login") != null){ %>
 				<html:link action="/lienmodifierfilm.do" paramId="code" paramName="liste" paramProperty="idFilm">
 					<img src="../img/edit.png" alt="Editer" title="Editer" height="20px"/>
 				</html:link>
+				<%} %>
 			</td>
 		</tr>
 		<tr>
