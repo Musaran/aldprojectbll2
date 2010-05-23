@@ -60,9 +60,7 @@ public class TypeRecompenseFilm  implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "TypeRecompenseFilm [idTypeRecompenseFilm="
-				+ idTypeRecompenseFilm + ", nomTypeRecompenseFilm="
-				+ nomTypeRecompenseFilm + "]";
+		return nomTypeRecompenseFilm ;
 	}
 
 	
