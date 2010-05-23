@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="Cout"/></td>
-				<td><html:text property="cout" size="15" name="FILM"/>&nbsp; euros</td>
+				<td><html:text property="cout" size="15" name="FILM"/>&nbsp; Euros</td>
 			</tr>
 			<tr>
 				<td><bean:message key="Synopsis"/></td>
@@ -47,7 +47,7 @@
 				<td><img src="<bean:write name="FILM" property="affiche"/>"  height="150px"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><html:file property="file">Parcourir...</html:file></td>
+				<td colspan="2"><html:file property="file"></html:file></td>
 			</tr>
 		</table>
 	</div>
