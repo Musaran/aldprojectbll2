@@ -19,24 +19,25 @@
 		<table>
 			<tr>
 				<td><bean:message key="Titre"/></td>
-				<td><html:text property="titre" size="15" name="FILM"/></td>
+				<td><html:text styleId="s" property="titre" size="15" name="FILM"/></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Sortie"/></td>
-				<td><html:text property="dateSortie" size="15" name="FILM" />&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" property="dateSortie" size="15" name="FILM" />&nbsp; AAAA-MM-JJ</td>
 			</tr>
 			<tr>
 				<td><bean:message key="Cout"/></td>
-				<td><html:text property="cout" size="15" name="FILM"/>&nbsp; Euros</td>
+				<td><html:text styleId="s" property="cout" size="15" name="FILM"/>&nbsp; Euros</td>
+
 			</tr>
 			<tr>
 				<td><bean:message key="Synopsis"/></td>
-				<td><html:textarea property="synopsis" name="FILM" cols="30" rows="10"></html:textarea></td>
+				<td><html:textarea styleId="s" property="synopsis" name="FILM" cols="30" rows="10"></html:textarea></td>
 			</tr>
 			
 			<tr>
-				<td><html:cancel><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit><bean:message key="Enregistrer"/></html:submit></td>
+				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
+				<td><html:submit styleClass="art-button"><bean:message key="Enregistrer"/></html:submit></td>
 			</tr>	
 		</table>
 	</div>
@@ -44,10 +45,11 @@
 		<table>
 			<tr>
 				<td><bean:message key="Affiche"/></td>
-				<td><img src="<bean:write name="FILM" property="affiche"/>"  height="150px"/></td>
+				<td><img class="art-article" src="<bean:write name="FILM" property="affiche"/>"  height="150px"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><html:file property="file"></html:file></td>
+				<td colspan="2"><html:file styleId="s" property="file"></html:file></td>
+
 			</tr>
 		</table>
 	</div>

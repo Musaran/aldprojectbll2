@@ -45,7 +45,7 @@
 
     <action-mappings>
     	<action path="/connexion" type="org.springframework.web.struts.DelegatingActionProxy"
-    		name="formActionConnexion" validate="true" input="/vues/welcome.jsp" >
+    		name="formActionConnexion" validate="true" input="/vues/erreurs.jsp" >
     		<forward name="ConnexionEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="ConnexionImpossible" path="/vues/index.jsp" redirect="true"></forward>		
     	</action>
