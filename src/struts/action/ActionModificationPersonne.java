@@ -28,12 +28,13 @@ public class ActionModificationPersonne extends Action{
 		ActionFormModificationPersonne formPersonne=(ActionFormModificationPersonne)form;
 		Personne personne=null;
 		String photo=formPersonne.getPhoto();
+		String urlPhoto=formPersonne.getUrlPhoto();
 		try {
 			personne=new Personne(formPersonne.getNom().replaceFirst(".",(formPersonne.getNom().charAt(0)+"").toUpperCase())
 						,formPersonne.getPrenom().replaceFirst(".",(formPersonne.getPrenom().charAt(0)+"").toUpperCase())
 						,Date.valueOf(formPersonne.getDateDeNaissance())
 						,formPersonne.getBiographie()
-						,photo,0);	
+						,photo,0,urlPhoto);	
 			personne.setIsValidatePersonne(formPersonne.getIdPersonne());	
 			daoPersonne.save(personne);
 			
@@ -52,13 +53,16 @@ public class ActionModificationPersonne extends Action{
 	        String dossier="images/personnes/";
 	        
 	        fileName=formPersonne.getIdPersonne()+"."+extension;
-	        String filePath = getServlet().getServletContext().getRealPath("/") +dossier;
+	        String filePath = getServlet().getServletContext().getRealPath("/").replace('\\','/') +dossier;
 	        
 			if(!fileName.equals("") && type.equals("image"))
 			{  
 				fileName=code+"."+extension;
+//				photo=filePath+fileName;
+				urlPhoto=getServlet().getServletContext().getRealPath("/").replace('\\','/');
 				photo="../images/personnes/"+fileName;
 				personne.setPhoto(photo);
+				personne.setUrlPhoto(urlPhoto);
 				daoPersonne.saveOrUpdate(personne);
 				
 				System.out.println("Server path:" +filePath);

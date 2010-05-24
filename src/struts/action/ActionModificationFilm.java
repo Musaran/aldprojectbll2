@@ -26,13 +26,15 @@ public class ActionModificationFilm extends Action{
 		ActionFormModificationFilm formFilm=(ActionFormModificationFilm)form;
 		Film film=null;
 		String affiche=formFilm.getAffiche();
+		String url=formFilm.getUrlAffiche();
 		try {
 			film=new Film(formFilm.getTitre().replaceFirst(".",(formFilm.getTitre().charAt(0)+"").toUpperCase()),
 					Date.valueOf(formFilm.getDateSortie()),
 					formFilm.getCout(),
 					formFilm.getSynopsis(),
 					0,
-					affiche);	
+					affiche,
+					url);	
 			film.setIsValidateFilm(formFilm.getIdFilm());	
 			daoFilm.save(film);
 			
@@ -50,13 +52,15 @@ public class ActionModificationFilm extends Action{
 	        String dossier="images/films/";
 	        
 			
-	        String filePath = getServlet().getServletContext().getRealPath("/")+dossier;
+	        String filePath = getServlet().getServletContext().getRealPath("/").replace('\\','/')+dossier;
 	        
 			if(!fileName.equals("") && type.equals("image"))
 			{  
 				fileName=code+"."+extension;
+				url=getServlet().getServletContext().getRealPath("/").replace('\\','/');
 				affiche="../images/films/"+fileName;
 				film.setAffiche(affiche);
+				film.setUrlAffiche(url);
 				daoFilm.saveOrUpdate(film);
 				
 				System.out.println("Server path:" +filePath);

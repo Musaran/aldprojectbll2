@@ -31,11 +31,12 @@ protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer(
 
 		Personne a = (Personne) list.getModel().getElementAt(index);
 		String[] lien = a.getPhoto().split("/");
-		lien[0] = "WebContent";
-		String link = ".";
-		for(int i=0;i<lien.length;i++)
+//		lien[0] = "WebContent";
+		String link = a.getUrlPhoto();
+		for(int i=1;i<lien.length;i++)
 			link+="/"+lien[i];
 		ImageIcon k = new ImageIcon(link);
+		System.out.println(link);
 		Image temp=k.getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT);
 //		System.out.println(k.getDescription());
 		renderer.setIcon(new ImageIcon(temp));

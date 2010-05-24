@@ -31,9 +31,9 @@ public class RendererListFilm implements ListCellRenderer {
 
 		Film a = (Film) list.getModel().getElementAt(index);
 		String[] lien = a.getAffiche().split("/");
-		lien[0] = "WebContent";
-		String link = ".";
-		for(int i=0;i<lien.length;i++)
+//		lien[0] = "WebContent";
+		String link =a.getUrlAffiche();
+		for(int i=1;i<lien.length;i++)
 			link+="/"+lien[i];
 		ImageIcon k = new ImageIcon(link);
 		Image temp=k.getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT);
