@@ -20,6 +20,7 @@ public class ActionFormModificationFilm extends ActionForm{
 	private FormFile file;//nouvelle affiche à uploader
 	private String affiche;//ancienne affiche
 	private int idFilm;
+	private String urlAffiche;
 	
 	public ActionFormModificationFilm(){
 		
@@ -94,6 +95,14 @@ public class ActionFormModificationFilm extends ActionForm{
 
 	public String getAffiche() {
 		return affiche;
+	}
+
+	public String getUrlAffiche() {
+		return urlAffiche;
+	}
+
+	public void setUrlAffiche(String urlAffiche) {
+		this.urlAffiche = urlAffiche;
 	}
 
 }

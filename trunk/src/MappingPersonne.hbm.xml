@@ -17,6 +17,7 @@
 	<property name="photo" type="string" column="photopersonne"/>
 	<property name="nombreRequetes" type="int" column="nombrerequetepersonne"/>
 	<property name="isValidatePersonne" type="integer" column="isvalidatepersonne"/>
+	<property name="urlPhoto" type="string" column="urlphoto"/>
 	
 	<!-- Définition des relations -->
 	<!-- Mapping vers les roles... -->

@@ -20,6 +20,7 @@ public class ActionFormModificationPersonne extends ActionForm{
 	private FormFile file;//nouvelle affiche à uploader
 	private String photo;//ancienne affiche
 	private int idPersonne;
+	private String urlPhoto;
 	
 	public ActionFormModificationPersonne(){
 		
@@ -94,7 +95,13 @@ public class ActionFormModificationPersonne extends ActionForm{
 		this.idPersonne = idPersonne;
 	}
 
-	
+	public String getUrlPhoto() {
+		return urlPhoto;
+	}
+
+	public void setUrlPhoto(String urlPhoto) {
+		this.urlPhoto = urlPhoto;
+	}
 
 	
 

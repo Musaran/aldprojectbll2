@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Lun 12 Avril 2010 à 20:45
+-- Généré le : Lun 24 Mai 2010 à 13:51
 -- Version du serveur: 5.1.37
 -- Version de PHP: 5.3.0
 
@@ -22,15 +22,10 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE IF NOT EXISTS `estunacteur` (
   `idfilm` int(11) NOT NULL,
   `idpersonne` int(11) NOT NULL,
-  `isvalidateacteur` int(11) DEFAULT NULL,
+  `isvalidateacteur` int(1) DEFAULT NULL,
   PRIMARY KEY (`idfilm`,`idpersonne`),
   KEY `FK_estunacteur_idpersonne` (`idpersonne`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `estunacteur`
---
-
 
 -- --------------------------------------------------------
 
@@ -46,11 +41,6 @@ CREATE TABLE IF NOT EXISTS `estunproducteur` (
   KEY `FK_estunproducteur_idpersonne` (`idpersonne`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `estunproducteur`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -65,11 +55,6 @@ CREATE TABLE IF NOT EXISTS `estunrealisateur` (
   KEY `FK_estunrealisateur_idpersonne` (`idpersonne`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `estunrealisateur`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -83,11 +68,6 @@ CREATE TABLE IF NOT EXISTS `evaluation` (
   PRIMARY KEY (`idfilm`,`professionnel`),
   KEY `FK_evaluation_idprofessionnel` (`professionnel`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `evaluation`
---
-
 
 -- --------------------------------------------------------
 
@@ -105,13 +85,9 @@ CREATE TABLE IF NOT EXISTS `film` (
   `notemoyenne` float DEFAULT NULL,
   `nombrerequetefilm` int(11) DEFAULT NULL,
   `synopsis` text,
+  `urlaffiche` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idfilm`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Contenu de la table `film`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 -- --------------------------------------------------------
 
@@ -128,13 +104,9 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `isvalidatepersonne` int(11) DEFAULT NULL,
   `nombrerequetepersonne` int(11) DEFAULT NULL,
   `biographie` text,
+  `urlphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idpersonne`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Contenu de la table `personne`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -153,11 +125,6 @@ CREATE TABLE IF NOT EXISTS `professionnel` (
   PRIMARY KEY (`login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `professionnel`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -168,12 +135,7 @@ CREATE TABLE IF NOT EXISTS `recompense` (
   `idrecompense` int(11) NOT NULL AUTO_INCREMENT,
   `titrerecompense` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idrecompense`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Contenu de la table `recompense`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -193,11 +155,6 @@ CREATE TABLE IF NOT EXISTS `recompensefilm` (
   KEY `idfilm` (`idfilm`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `recompensefilm`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -216,11 +173,6 @@ CREATE TABLE IF NOT EXISTS `recompensepersonne` (
   KEY `idrecompense` (`idrecompense`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `recompensepersonne`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -231,12 +183,7 @@ CREATE TABLE IF NOT EXISTS `typerecompensefilm` (
   `idtyperecompensefilm` int(11) NOT NULL AUTO_INCREMENT,
   `nomtyperecompensefilm` varchar(255) NOT NULL,
   PRIMARY KEY (`idtyperecompensefilm`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Contenu de la table `typerecompensefilm`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -248,9 +195,4 @@ CREATE TABLE IF NOT EXISTS `typerecompensepersonne` (
   `idtyperecompensepersonne` int(11) NOT NULL AUTO_INCREMENT,
   `nomtyperecompensepersonne` varchar(255) NOT NULL,
   PRIMARY KEY (`idtyperecompensepersonne`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Contenu de la table `typerecompensepersonne`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
