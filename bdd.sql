@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `film` (
   `synopsis` text,
   `urlaffiche` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idfilm`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `biographie` text,
   `urlphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idpersonne`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `recompense` (
   `idrecompense` int(11) NOT NULL AUTO_INCREMENT,
   `titrerecompense` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idrecompense`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `typerecompensefilm` (
   `idtyperecompensefilm` int(11) NOT NULL AUTO_INCREMENT,
   `nomtyperecompensefilm` varchar(255) NOT NULL,
   PRIMARY KEY (`idtyperecompensefilm`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -195,4 +195,4 @@ CREATE TABLE IF NOT EXISTS `typerecompensepersonne` (
   `idtyperecompensepersonne` int(11) NOT NULL AUTO_INCREMENT,
   `nomtyperecompensepersonne` varchar(255) NOT NULL,
   PRIMARY KEY (`idtyperecompensepersonne`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
