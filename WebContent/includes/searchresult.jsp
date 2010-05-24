@@ -1,10 +1,19 @@
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
-<logic:present name="RECHERCHEFILM" scope="session">
+<div class="art-content">
+    <div class="art-Post">
+        <div class="art-Post-body">
+      <div class="art-Post-inner">
+          <h2 class="art-PostHeaderIcon-wrapper">
+              <span class="art-PostHeader">
+              Résultat de la recherche
+              </span>
+          </h2>
+			<logic:present name="RECHERCHEFILM" scope="session">
 		<table>
 			<tr>
-				<th><bean:message key="Titre"/></th>
+				<th>Films</th>
 				<th></th>
 			</tr>
 			<logic:iterate id="rechercheFilm" name="RECHERCHEFILM" scope="session">
@@ -27,7 +36,7 @@
 	<logic:present name="RECHERCHEPERSONNE" scope="session">
 		<table>
 			<tr>
-				<th><bean:message key="Nom"/></th>
+				<th>Personnes</th>
 				<th></th>
 			</tr>
 			<logic:iterate id="recherchePersonne" name="RECHERCHEPERSONNE" scope="session">
@@ -44,3 +53,16 @@
 		</table>
 	</logic:present>
 	<% } %>
+      </div>    
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

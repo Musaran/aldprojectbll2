@@ -1,0 +1,1334 @@
+body
+{
+	margin: 0 auto;
+	padding: 0;
+	background-color: #2B2B2B;
+	background-image: url('/sitewebald/img/style/Page-BgTexture.jpg');
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: top left;
+}
+
+#art-main
+{
+	position: relative;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#art-page-background-glare
+{
+	position: absolute;
+	width: 100%;
+	height: 450px;
+	left: 0;
+	top: 0;
+}
+
+#art-page-background-glare-image
+{
+	background-image: url('/sitewebald/img/style/Page-BgGlare.png');
+	background-repeat: no-repeat;
+	height: 450px;
+	width: 376px;
+	margin: 0;
+}
+
+html:first-child #art-page-background-glare
+{
+	border: 1px solid transparent; /* Opera fix */
+}
+
+
+#art-page-background-gradient
+{
+	position: absolute;
+	background-image: url('/sitewebald/img/style/Page-BgGradient.jpg');
+	background-repeat: repeat-x;
+	top:0;
+	width:100%;
+	height: 500px;
+	
+}
+
+#art-page-background-gradient
+{
+	background-position: top left;
+}
+
+
+.cleared
+{
+	float: none;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size:1px;
+}
+
+
+form
+{
+	padding:0 !important;
+	margin:0 !important;
+}
+
+table.position
+{
+	position: relative;
+	width: 100%;
+	table-layout: fixed;
+}
+/* end Page */
+
+/* begin Box, Sheet */
+.art-Sheet
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	width: 1000px;
+	min-width:61px;
+	min-height:61px;
+}
+
+.art-Sheet-body
+{
+	position: relative;
+	z-index:1;
+	padding: 9px;
+}
+
+.art-Sheet-tr, .art-Sheet-tl, .art-Sheet-br, .art-Sheet-bl, .art-Sheet-tc, .art-Sheet-bc,.art-Sheet-cr, .art-Sheet-cl
+{
+	position:absolute;
+	z-index:-1;
+}
+
+.art-Sheet-tr, .art-Sheet-tl, .art-Sheet-br, .art-Sheet-bl
+{
+	width: 88px;
+	height: 88px;
+	background-image: url('/sitewebald/img/style/Sheet-s.png');
+}
+
+.art-Sheet-tl
+{
+	top:0;
+	left:0;
+	clip: rect(auto, 44px, 44px, auto);
+}
+
+.art-Sheet-tr
+{
+	top: 0;
+	right: 0;
+	clip: rect(auto, auto, 44px, 44px);
+}
+
+.art-Sheet-bl
+{
+	bottom: 0;
+	left: 0;
+	clip: rect(44px, 44px, auto, auto);
+}
+
+.art-Sheet-br
+{
+	bottom: 0;
+	right: 0;
+	clip: rect(44px, auto, auto, 44px);
+}
+
+.art-Sheet-tc, .art-Sheet-bc
+{
+	left: 44px;
+	right: 44px;
+	height: 88px;
+	background-image: url('/sitewebald/img/style/Sheet-h.png');
+}
+
+.art-Sheet-tc
+{
+	top: 0;
+	clip: rect(auto, auto, 44px, auto);
+}
+
+.art-Sheet-bc
+{
+	bottom: 0;
+	clip: rect(44px, auto, auto, auto);
+}
+
+.art-Sheet-cr, .art-Sheet-cl
+{
+	top: 44px;
+	bottom: 44px;
+	width: 88px;
+	background-image: url('/sitewebald/img/style/Sheet-v.png');
+}
+
+.art-Sheet-cr
+{
+	right:0;
+	clip: rect(auto, auto, auto, 44px);
+}
+
+.art-Sheet-cl
+{
+	left:0;
+	clip: rect(auto, 44px, auto, auto);
+}
+
+.art-Sheet-cc
+{
+	position:absolute;
+	z-index:-1;
+	top: 44px;
+	left: 44px;
+	right: 44px;
+	bottom: 44px;
+	background-color: #FCFDFD;
+}
+
+
+.art-Sheet
+{
+	margin-top: 30px !important;
+}
+
+#art-page-background-simple-gradient, #art-page-background-gradient, #art-page-background-glare
+{
+	min-width:1000px;
+}
+
+/* end Box, Sheet */
+
+/* begin Header */
+div.art-Header
+{
+	margin: 0 auto;
+	position: relative;
+	z-index:0;
+	width: 982px;
+	height: 150px;
+}
+
+div.art-Header-png
+{
+	position: absolute;
+	z-index:-2;
+	top: 0;
+	left: 0;
+	width: 982px;
+	height: 150px;
+	background-image: url('/sitewebald/img/style/Header.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+div.art-Header-jpeg
+{
+	position: absolute;
+	z-index:-1;
+	top: 0;
+	left: 0;
+	width: 982px;
+	height: 150px;
+	background-image: url('/sitewebald/img/style/Header.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/* end Header */
+
+/* begin Logo */
+.art-Logo
+{
+	display : block;
+	position: absolute;
+	left: 68px;
+	top: 36px;
+	width: 914px;
+}
+
+h1.art-Logo-name
+{
+	display: block;
+	text-align: center;
+}
+
+h1.art-Logo-name, h1.art-Logo-name a, h1.art-Logo-name a:link, h1.art-Logo-name a:visited, h1.art-Logo-name a:hover
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+	font-size: 42px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	font-variant: small-caps;
+	padding:0;
+	margin:0;
+	color: #03090C !important;
+}
+
+.art-Logo-text
+{
+	display: block;
+	text-align: center;
+}
+
+.art-Logo-text, .art-Logo-text a
+{
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	padding:0;
+	margin:0;
+	color: #03090C !important;
+}
+/* end Logo */
+
+/* begin Menu */
+/* menu structure */
+
+.art-menu a, .art-menu a:link, .art-menu a:visited, .art-menu a:hover
+{
+	text-align:left;
+	text-decoration:none;
+	outline:none;
+	letter-spacing:normal;
+	word-spacing:normal;
+}
+
+.art-menu, .art-menu ul
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+	display: block;
+}
+
+.art-menu li
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: block;
+	float: left;
+	position: relative;
+	z-index: 5;
+	background:none;
+}
+
+.art-menu li:hover
+{
+	z-index: 10000;
+	white-space: normal;
+}
+
+.art-menu li li
+{
+	float: none;
+}
+
+.art-menu ul
+{
+	visibility: hidden;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	background:none;
+}
+
+.art-menu li:hover>ul
+{
+	visibility: visible;
+	top: 100%;
+}
+
+.art-menu li li:hover>ul
+{
+	top: 0;
+	left: 100%;
+}
+
+.art-menu:after, .art-menu ul:after
+{
+	content: ".";
+	height: 0;
+	display: block;
+	visibility: hidden;
+	overflow: hidden;
+	clear: both;
+}
+.art-menu, .art-menu ul
+{
+	min-height: 0;
+}
+
+.art-menu ul
+{
+	background-image: url(/sitewebald/img/style/spacer.gif);
+	padding: 10px 30px 30px 30px;
+	margin: -10px 0 0 -30px;
+}
+
+.art-menu ul ul
+{
+	padding: 30px 30px 30px 10px;
+	margin: -30px 0 0 -10px;
+}
+
+
+
+
+
+div.art-nav-center
+{
+	position:relative;
+	float:right; 
+	right:50%;
+	
+}
+
+ul.art-menu
+{
+	position:relative;
+	float:left; 
+	left:50%;
+}
+
+
+/* menu structure */
+
+.art-menu
+{
+	padding: 0px 0px 0px 0px;
+}
+
+.art-nav
+{
+	position: relative;
+	height: 30px;
+	z-index: 100;
+}
+
+.art-nav .l, .art-nav .r
+{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	height: 30px;
+	background-image: url('/sitewebald/img/style/nav.png');
+}
+
+.art-nav .l
+{
+	left: 0;
+	right:0px;
+}
+
+.art-nav .r
+{
+	right: 0;
+	width: 982px;
+	clip: rect(auto, auto, auto, 982px);
+}
+
+
+/* end Menu */
+
+/* begin MenuItem */
+.art-menu ul li
+{
+	clear: both;
+}
+
+.art-menu a
+{
+	position:relative;
+	display: block;
+	overflow:hidden;
+	height: 30px;
+	cursor: pointer;
+	text-decoration: none;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+
+.art-menu a .r, .art-menu a .l
+{
+	position:absolute;
+	display: block;
+	top:0;
+	z-index:-1;
+	height: 90px;
+	background-image: url('/sitewebald/img/style/MenuItem.png');
+}
+
+.art-menu a .l
+{
+	left:0;
+	right:0px;
+}
+
+.art-menu a .r
+{
+	width:400px;
+	right:0;
+	clip: rect(auto, auto, auto, 400px);
+}
+
+.art-menu a .t 
+{
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #223F4F;
+	padding: 0 17px;
+	margin: 0 0px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.art-menu a:hover .l, .art-menu a:hover .r
+{
+	top:-30px;
+}
+
+.art-menu li:hover>a .l, .art-menu li:hover>a .r
+{
+	top:-30px;
+}
+
+.art-menu li:hover a .l, .art-menu li:hover a .r
+{
+	top:-30px;
+}
+.art-menu a:hover .t
+{
+	color: #24343D;
+}
+
+.art-menu li:hover a .t
+{
+	color: #24343D;
+}
+
+.art-menu li:hover>a .t
+{
+	color: #24343D;
+}
+
+
+
+/* end MenuItem */
+
+/* begin MenuSeparator */
+.art-nav .art-menu-separator
+{
+	display: block;
+	width: 1px;
+	height: 30px;
+	background-image: url('/sitewebald/img/style/MenuSeparator.png');
+}
+
+/* end MenuSeparator */
+
+/* begin ContentLayout */
+.art-contentLayout
+{
+	position: relative;
+	margin-bottom: 5px;
+	width: 982px;
+}
+/* end ContentLayout */
+
+/* begin Box, Block */
+.art-Block
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	min-width:1px;
+	min-height:1px;
+}
+
+.art-Block-body
+{
+	position: relative;
+	z-index:1;
+	padding: 0px;
+}
+
+
+
+.art-Block
+{
+	margin: 7px;
+}
+
+/* end Box, Block */
+
+/* begin BlockHeader */
+.art-BlockHeader
+{
+	position:relative;
+	z-index:0;
+	height: 30px;
+	padding: 0 7px;
+	margin-bottom: 0px;
+}
+
+.art-BlockHeader .t
+{
+	height: 30px;
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 14px;
+	font-variant: small-caps;
+	white-space : nowrap;
+	padding: 0 6px;
+	line-height: 30px;
+}
+
+
+
+
+
+.art-header-tag-icon
+{
+	display:inline-block;
+	background-position:left top;
+	background-image: url('/sitewebald/img/style/BlockHeaderIcon.png');
+	padding:0 0 0 9px;
+	background-repeat: no-repeat;
+	min-height: 16px;
+	margin: 0 0 0 5px;
+}
+
+
+/* end BlockHeader */
+
+/* begin Box, BlockContent */
+.art-BlockContent
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	min-width:11px;
+	min-height:11px;
+}
+
+.art-BlockContent-body
+{
+	position: relative;
+	z-index:1;
+	padding: 8px;
+}
+
+.art-BlockContent-tr, .art-BlockContent-tl, .art-BlockContent-br, .art-BlockContent-bl, .art-BlockContent-tc, .art-BlockContent-bc,.art-BlockContent-cr, .art-BlockContent-cl
+{
+	position:absolute;
+	z-index:-1;
+}
+
+.art-BlockContent-tr, .art-BlockContent-tl, .art-BlockContent-br, .art-BlockContent-bl
+{
+	width: 10px;
+	height: 10px;
+	background-image: url('/sitewebald/img/style/BlockContent-s.png');
+}
+
+.art-BlockContent-tl
+{
+	top:0;
+	left:0;
+	clip: rect(auto, 5px, 5px, auto);
+}
+
+.art-BlockContent-tr
+{
+	top: 0;
+	right: 0;
+	clip: rect(auto, auto, 5px, 5px);
+}
+
+.art-BlockContent-bl
+{
+	bottom: 0;
+	left: 0;
+	clip: rect(5px, 5px, auto, auto);
+}
+
+.art-BlockContent-br
+{
+	bottom: 0;
+	right: 0;
+	clip: rect(5px, auto, auto, 5px);
+}
+
+.art-BlockContent-tc, .art-BlockContent-bc
+{
+	left: 5px;
+	right: 5px;
+	height: 10px;
+	background-image: url('/sitewebald/img/style/BlockContent-h.png');
+}
+
+.art-BlockContent-tc
+{
+	top: 0;
+	clip: rect(auto, auto, 5px, auto);
+}
+
+.art-BlockContent-bc
+{
+	bottom: 0;
+	clip: rect(5px, auto, auto, auto);
+}
+
+.art-BlockContent-cr, .art-BlockContent-cl
+{
+	top: 5px;
+	bottom: 5px;
+	width: 10px;
+	background-image: url('/sitewebald/img/style/BlockContent-v.png');
+}
+
+.art-BlockContent-cr
+{
+	right:0;
+	clip: rect(auto, auto, auto, 5px);
+}
+
+.art-BlockContent-cl
+{
+	left:0;
+	clip: rect(auto, 5px, auto, auto);
+}
+
+.art-BlockContent-cc
+{
+	position:absolute;
+	z-index:-1;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	background-color: #CFDCE2;
+}
+
+
+.art-BlockContent-body
+{
+	color:#4E7083;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 13px;
+}
+
+.art-BlockContent-body a:link
+{
+	color: #2B78A1;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	text-decoration: none;
+}
+
+.art-BlockContent-body a:visited, .art-BlockContent-body a.visited
+{
+	color: #60899F;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	text-decoration: none;
+}
+
+.art-BlockContent-body a:hover, .art-BlockContent-body a.hover
+{
+	color: #09BDDC;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	text-decoration: underline;
+}
+
+.art-BlockContent-body ul
+{
+	list-style-type: none;
+	color: #3B5563;
+	margin:0;
+	padding:0;
+}
+
+.art-BlockContent-body li
+{
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 13px;
+}
+
+
+/* end Box, BlockContent */
+
+/* begin Box, Post */
+.art-Post
+{
+	position:relative;
+	z-index:0;
+	margin:0 auto;
+	min-width:1px;
+	min-height:1px;
+}
+
+.art-Post-body
+{
+	position: relative;
+	z-index:1;
+	padding: 7px;
+}
+
+
+
+.art-Post
+{
+	margin: 5px;
+}
+
+/* Start /sitewebald/img/style */
+a img
+{
+	border: 0;
+}
+
+.art-article img, img.art-article
+{
+	margin: 1em;
+}
+
+.art-metadata-icons img
+{
+	border: none;
+	vertical-align: middle;
+	margin:2px;
+}
+/* Finish /sitewebald/img/style */
+
+/* Start tables */
+
+.art-article table, table.art-article
+{
+	border-collapse: collapse;
+	margin: 1px;
+	width:auto;
+}
+
+.art-article table, table.art-article .art-article tr, .art-article th, .art-article td
+{
+	background-color:Transparent;
+}
+
+.art-article th, .art-article td
+{
+	padding: 2px;
+	border: solid 1px #7095A9;
+	vertical-align: top;
+	text-align:left;
+}
+
+.art-article th
+{
+	text-align:center;
+	vertical-align:middle;
+	padding: 7px;
+}
+
+/* Finish tables */
+/* end Box, Post */
+
+/* begin PostHeaderIcon */
+.art-PostHeaderIcon-wrapper
+{
+	text-decoration:none;
+	margin: 0.2em 0;
+	padding: 0;
+	font-weight:normal;
+	font-style:normal;
+	letter-spacing:normal;
+	word-spacing:normal;
+	font-variant:normal;
+	text-decoration:none;
+	font-variant:normal;
+	text-transform:none;
+	text-align:left;
+	text-indent:0;
+	line-height:inherit;
+	font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+	font-size: 31px;
+	text-align: center;
+	color: #226081;
+}
+
+.art-PostHeaderIcon-wrapper, .art-PostHeaderIcon-wrapper a, .art-PostHeaderIcon-wrapper a:link, .art-PostHeaderIcon-wrapper a:visited, .art-PostHeaderIcon-wrapper a:hover
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+	font-size: 31px;
+	text-align: center;
+	color: #226081;
+}
+
+/* end PostHeaderIcon */
+
+/* begin PostHeader */
+.art-PostHeader a:link
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+  font-variant: small-caps;
+  color: #2A759D;
+}
+
+.art-PostHeader a:visited, .art-PostHeader a.visited
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+  font-variant: small-caps;
+  color: #4B6B7C;
+}
+
+.art-PostHeader a:hover, .art-PostHeader a.hovered
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+  font-variant: small-caps;
+  color: #09BDDC;
+}
+/* end PostHeader */
+
+/* begin PostContent */
+/* Content Text Font & Color (Default) */
+body
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  color: #3D5866;
+}
+
+.art-PostContent
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: justify;
+  color: #3D5866;
+}
+
+
+/* Start Content link style */
+/*
+The right order of link pseudo-classes: Link-Visited-Hover-Focus-Active.
+http://www.w3schools.com/CSS/css_pseudo_classes.asp
+http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states/
+*/
+a
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+  color: #318AB9;
+}
+
+/* Adds special style to an unvisited link. */
+a:link
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: underline;
+  color: #318AB9;
+}
+
+/* Adds special style to a visited link. */
+a:visited, a.visited
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+  color: #587E93;
+}
+
+/* :hover - adds special style to an element when you mouse over it. */
+a:hover, a.hover
+{
+  font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+  text-decoration: none;
+  color: #09BDDC;
+}
+
+/* Finish Content link style */
+
+/* Resert some headings default style & links default style for links in headings*/
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited
+{
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
+/* Start Content headings Fonts & Colors  */
+h1, h1 a, h1 a:link, h1 a:visited, h1 a:hover
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 33px;
+  color: #246689;
+}
+
+h2, h2 a, h2 a:link, h2 a:visited, h2 a:hover
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 31px;
+  color: #318AB9;
+}
+
+h3, h3 a, h3 a:link, h3 a:visited, h3 a:hover
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 20px;
+  color: #4683A4;
+}
+
+h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 18px;
+  color: #4E7083;
+}
+
+h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 15px;
+  color: #4E7083;
+}
+
+h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover
+{
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  font-size: 13px;
+  color: #4E7083;
+}
+/* Finish Content headings Fonts & Colors  */
+/* end PostContent */
+
+/* begin PostBullets */
+/* Start Content list */
+ol, ul
+{
+	color: #091820;
+	margin:1em 0 1em 2em;
+	padding:0;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 13px;
+}
+
+li ol, li ul
+{
+	margin:0.5em 0 0.5em 2em;
+	padding:0;
+}
+
+li 
+{
+	margin:0.2em 0;
+	padding:0;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+ol
+{
+	list-style-position:inside;
+	
+}
+
+
+
+.art-Post li
+{
+	padding:0px 0 0px 13px;
+	line-height:1.2em;
+}
+
+.art-Post ol li, .art-Post ul ol li
+{
+	background: none;
+	padding-left:0;
+}
+
+.art-Post ul li, .art-Post ol ul li 
+{
+	background-image: url('/sitewebald/img/style/PostBullets.png');
+	background-repeat:no-repeat;
+	padding-left:13px;
+}
+
+
+/* Finish Content list */
+/* end PostBullets */
+
+/* begin PostQuote */
+/* Start blockquote */
+blockquote p
+{
+	color:#0B1013;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+}
+
+blockquote
+{
+		margin:10px 10px 10px 50px;
+	padding:5px 5px 5px 28px;
+	background-color:#D2DEE4;
+	background-image:url('/sitewebald/img/style/PostQuote.png');
+	background-position:left top;
+	background-repeat:no-repeat;
+}
+
+
+/* Finish blockuote */
+/* end PostQuote */
+
+/* begin Button */
+.art-button-wrapper .art-button
+{
+	display:inline-block;
+	width: auto;
+	outline:none;
+	border:none;
+	background:none;
+	line-height:32px;
+	margin:0 !important;
+	padding:0 !important;
+	overflow: visible;
+	cursor: default;
+	text-decoration: none !important;
+	z-index:0;
+}
+
+.art-button-wrapper
+{
+	display:inline-block;
+	position:relative;
+	height: 32px;
+	overflow:hidden;
+	white-space: nowrap;
+	width: auto;
+	z-index:0;
+}
+
+.art-button-wrapper .art-button
+{
+	display:block;
+	height: 32px;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	white-space: nowrap;
+	text-align: left;
+	padding: 0 19px !important;
+	line-height: 32px;
+	text-decoration: none !important;
+	color: #000000 !important;
+}
+
+input, select
+{
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.art-button-wrapper.hover .art-button, .art-button:hover
+{
+	color: #000000 !important;
+	text-decoration: none !important;
+}
+
+.art-button-wrapper.active .art-button
+{
+	color: #EDF4F7 !important;
+}
+
+.art-button-wrapper .l, .art-button-wrapper .r
+{
+	display:block;
+	position:absolute;
+	z-index:-1;
+	height: 96px;
+	background-image: url('/sitewebald/img/style/Button.png');
+}
+
+.art-button-wrapper .l
+{
+	left:0;
+	right:9px;
+}
+
+.art-button-wrapper .r
+{
+	width:411px;
+	right:0;
+	clip: rect(auto, auto, auto, 402px);
+}
+
+.art-button-wrapper.hover .l, .art-button-wrapper.hover .r
+{
+	top: -32px;
+}
+
+.art-button-wrapper.active .l, .art-button-wrapper.active .r
+{
+	top: -64px;
+}
+
+
+/* end Button */
+
+/* begin Footer */
+.art-Footer
+{
+	position:relative;
+	z-index:0;
+	overflow:hidden;
+	width: 982px;
+	margin: 5px auto 0px auto;
+}
+
+.art-Footer .art-Footer-inner
+{
+	height:1%;
+	position: relative;
+	z-index: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+.art-Footer .art-Footer-background
+{
+	position:absolute;
+	z-index:-1;
+	background-repeat:no-repeat;
+	background-image: url('/sitewebald/img/style/Footer.png');
+	width: 982px;
+	height: 150px;
+	bottom:0;
+	left:0;
+}
+
+
+.art-Footer .art-Footer-text p
+{
+	margin: 0;
+}
+
+.art-Footer .art-Footer-text
+{
+	display:inline-block;
+	color:#000000;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	font-size: 12px;
+}
+
+.art-Footer .art-Footer-text a:link
+{
+	text-decoration: none;
+	color: #226081;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	text-decoration: none;
+}
+
+.art-Footer .art-Footer-text a:visited
+{
+	text-decoration: none;
+	color: #3D5866;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	text-decoration: none;
+}
+
+.art-Footer .art-Footer-text a:hover
+{
+	text-decoration: none;
+	color: #09BDDC;
+	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+	text-decoration: underline;
+}
+/* end Footer */
+
+/* begin PageFooter */
+.art-page-footer, .art-page-footer a, .art-page-footer a:link, .art-page-footer a:visited, .art-page-footer a:hover
+{
+	font-family:Arial;
+	font-size:10px;
+	letter-spacing:normal;
+	word-spacing:normal;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+	color:#9ECCE5;
+}
+
+.art-page-footer
+{
+	margin:1em;
+	text-align:center;
+	text-decoration:none;
+	color:#B2C6D1;
+}
+/* end PageFooter */
+
+/* begin LayoutCell */
+.art-contentLayout .art-sidebar1
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 245px;
+}
+/* end LayoutCell */
+
+/* begin LayoutCell */
+.art-contentLayout .art-content
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 736px;
+}
+.art-contentLayout .art-content-wide
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: left;
+	overflow: hidden;
+	width: 981px;
+}
+/* end LayoutCell */
+
+

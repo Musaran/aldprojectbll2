@@ -1,16 +1,16 @@
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
-
+<div style="color:white">
 <!-- ----------------------------Pro Connecté--------------------------------------------- -->
 
 <% if(session.getAttribute("login") != null){ %>
 	
-	<bean:message key="bienvenue"/> <%= session.getAttribute("login") %> ! &nbsp;
+	<bean:message key="bienvenue" /> <%= session.getAttribute("login") %> ! &nbsp;
 	
 	<%-- se deconnecter --%>
 	
-	<html:link action="/deconnexion.do"><bean:message key="Deconnecter"/></html:link>
+	<b><html:link style="color:white" action="/deconnexion.do" ><bean:message key="Deconnecter"/></html:link></b>
 	
 <!-- ----------------------------non Connecté--------------------------------------------- -->
 
@@ -25,11 +25,13 @@
 					<html:password property="motDePasse" size="10" onfocus="javascript:this.value=''" style="color:#090909;"/>
 				</td>
 				<td>
-					<html:submit><bean:message key="Connecter"/></html:submit>&nbsp;
+					<html:submit ><bean:message key="Connecter"/></html:submit>&nbsp;
 				</td>
+				
+			</tr>
+			<tr>
 				<td>
-					<html:link href="/sitewebald/vues/inscription.jsp"><bean:message key="Inscription"/></html:link>
-					<td><html:errors/></td>
+					<b><html:link style="color:white" href="/sitewebald/vues/inscription.jsp"><bean:message key="Inscription"/></html:link></b>
 				</td>
 			</tr>
 			<!--tr>
@@ -38,3 +40,4 @@
 		</table>				
 	</html:form>
 <% } %>
+</div>

@@ -2,7 +2,6 @@
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
 <% if(session.getAttribute("login") != null){ %>
-
 <html:html>
 
 <head>
@@ -20,24 +19,24 @@
 		<table>
 			<tr>
 				<td><bean:message key="Nom"/></td>
-				<td><html:text property="nom" size="15" name="PERSONNE"/></td>
+				<td><html:text styleId="s" property="nom" size="15" name="PERSONNE"/></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Prenom"/></td>
-				<td><html:text property="prenom" size="15" name="PERSONNE" />&nbsp;</td>
+				<td><html:text styleId="s" property="prenom" size="15" name="PERSONNE" />&nbsp;</td>
 			</tr>
 			<tr>
 				<td><bean:message key="date.de.naissance"/></td>
-				<td><html:text property="dateDeNaissance" size="15" name="PERSONNE"/>&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" property="dateDeNaissance" size="15" name="PERSONNE"/>&nbsp; AAAA-MM-JJ</td>
 			</tr>
 			<tr>
 				<td><bean:message key="biographie"/></td>
-				<td><html:textarea property="biographie" name="PERSONNE" cols="30" rows="10"></html:textarea></td>
+				<td><html:textarea styleId="s" property="biographie" name="PERSONNE" cols="30" rows="10"></html:textarea></td>
 			</tr>
 			
 			<tr>
-				<td><html:cancel><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit><bean:message key="Enregistrer"/></html:submit></td>
+				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
+				<td><html:submit styleClass="art-button"><bean:message key="Enregistrer"/></html:submit></td>
 			</tr>	
 		</table>
 	</div>
@@ -45,10 +44,10 @@
 		<table>
 			<tr>
 				<td><bean:message key="Photo"/></td>
-				<td><img src="<bean:write name="PERSONNE" property="photo"/>"  height="150px"/></td>
+				<td><img class="art-article" src="<bean:write name="PERSONNE" property="photo"/>"  height="150px"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><html:file property="file">Parcourir...</html:file></td>
+				<td colspan="2"><html:file styleId="s" property="file">Parcourir...</html:file></td>
 			</tr>
 		</table>
 	</div>

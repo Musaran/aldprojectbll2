@@ -1,11 +1,15 @@
-<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
-<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
-<%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
-
-</div>
+<div class="cleared"></div><div class="art-Footer">
+                    <div class="art-Footer-inner">
+                        <div class="art-Footer-text">
+                            <p style="padding-bottom: 10px;">Jérôme Lombardi | Jean-Philippe Blaise | Matthieu Lauer
+                                <br />
+                                Copyright &copy; 2010 ---. Tous droits réservés.</p>
+                        </div>
+                    </div>
+                    <div class="art-Footer-background"></div>
+                </div>
+            </div>
         </div>
-	    <div id="footer">
-	    	Jérôme Lombardi, Jean-Philippe Blaise & Matthieu Lauer<br />
-	    	copyright 2010
-	    </div>
-	</div>
+        <div class="cleared"></div>
+        <p class="art-page-footer"></p>
+    </div>

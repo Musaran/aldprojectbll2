@@ -4,23 +4,17 @@
 <% if(session.getAttribute("LISTEFILMS")==null) {%>
 <jsp:forward page="index.jsp" />
 <%} %>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html:html>
-
 <head>
-	<jsp:include page="/includes/head.jsp" />
-	<title><bean:message key="Index.titre"/></title>
+    <jsp:include page="/includes/head.jsp" />
+    <title><bean:message key="Index.titre"/></title>
 </head>
-
 <body>
-	<jsp:include page="/includes/top.jsp" />
-	<!-- ---------------------Contenu---------------------------- -->
+	<jsp:include page="/includes/top.jsp" />  
 	
 	<jsp:include page="/includes/films.jsp" />
-	
-	
-	<!-- ---------------------------------------------------------- -->
-	<jsp:include page="/includes/bottom.jsp" />
-</body>
 
+	<jsp:include page="/includes/bottom.jsp" />      
+</body>
 </html:html>
