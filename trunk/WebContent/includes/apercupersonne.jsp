@@ -13,7 +13,7 @@
 	          <div class="art-PostContent">
 	              <img class="art-article" src="<bean:write name="PERSONNE" property="photo"/>"  height="150px" style="float:left"/>
 	              <p>
-	              	<bean:message key="Popularite"/><bean:write name="PERSONNE" property="nombreRequetes"/> <bean:message key="requetes"/><br />
+	              	<bean:message key="Popularite"/>: <bean:write name="PERSONNE" property="nombreRequetes"/> <bean:message key="requetes"/><br />
 			<bean:message key="date.de.naissance"/>: <bean:write name="PERSONNE" property="dateDeNaissance"/><br />
 			<br /><br />
 					<b><bean:message key="biographie"/></b>: 
@@ -26,17 +26,17 @@
 	              		<span class="l"> </span>
 	              		<span class="r"> </span>		
 							<html:link styleClass="art-button" action="/lienmodifierpersonne.do" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
-								Editer
+								<bean:message key="editer"/>
 							</html:link>
 	              	</span>
 	              </p> 
 	              <%} %>
 	              <table>
 					<tr>
-						<td><h3>Récompenses</h3></td>
+						<td><h3><bean:message key="recompense"/></h3></td>
 						<td>
 						<html:link action="" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
-						ajout d'une récompense
+						<bean:message key="Ajout.recompense"/>
 						</html:link>	
 						</td>
 					</tr>

@@ -9,8 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
-import metier.Film;
+import dao.hibernate.DAOHibernateServeur;
+
 import metier.Personne;
+import metier.Serveur;
 
 public class RendererListPersonne implements ListCellRenderer {
 
@@ -24,7 +26,13 @@ protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer(
 	
 	public Component getListCellRendererComponent(JList list, Object value,
 			int index, boolean isSelected, boolean cellHasFocus){
-		// TODO Auto-generated method stub
+		DAOHibernateServeur daoServeur= new DAOHibernateServeur();
+		Serveur s=new Serveur();
+		try {
+			s=daoServeur.load(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index,
 		        isSelected, cellHasFocus);
@@ -32,7 +40,7 @@ protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer(
 		Personne a = (Personne) list.getModel().getElementAt(index);
 		String[] lien = a.getPhoto().split("/");
 //		lien[0] = "WebContent";
-		String link = a.getUrlPhoto();
+		String link = s.getUrl();
 		for(int i=1;i<lien.length;i++)
 			link+="/"+lien[i];
 		ImageIcon k = new ImageIcon(link);

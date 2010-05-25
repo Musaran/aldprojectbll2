@@ -36,7 +36,6 @@ public class Personne implements Serializable{
 	private Set<RecompensePersonne> listeRecompense = new HashSet<RecompensePersonne>();
 	/// données concernant l acceptation
 	private int isValidatePersonne=0;
-	private String urlPhoto;
 
 	
 	
@@ -79,7 +78,7 @@ public class Personne implements Serializable{
 	 * @param nombreRequetes
 	 */
 	public Personne(String nom, String prenom, Date dateDeNaissance,
-			String biographie, String photo, int nombreRequetes, String urlPhoto) {
+			String biographie, String photo, int nombreRequetes) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -87,7 +86,6 @@ public class Personne implements Serializable{
 		this.biographie = biographie;
 		this.photo = photo;
 		this.nombreRequetes = nombreRequetes;
-		this.urlPhoto=urlPhoto;
 	}
 	
 	/**
@@ -262,14 +260,6 @@ public class Personne implements Serializable{
 	}
 	public void setIsValidatePersonne(int isValidatePersonne) {
 		this.isValidatePersonne = isValidatePersonne;
-	}
-
-	public String getUrlPhoto() {
-		return urlPhoto;
-	}
-
-	public void setUrlPhoto(String urlPhoto) {
-		this.urlPhoto = urlPhoto;
 	}
 
 }

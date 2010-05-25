@@ -18,6 +18,7 @@ import metier.RecompensePersonne;
 import metier.RoleActeur;
 import metier.RoleProducteur;
 import metier.RoleRealisateur;
+import metier.Serveur;
 import metier.TypeRecompenseFilm;
 import metier.TypeRecompensePersonne;
 import metier.Vote;
@@ -41,6 +42,7 @@ import dao.hibernate.DAOHibernateRecompensePersonne;
 import dao.hibernate.DAOHibernateRoleActeur;
 import dao.hibernate.DAOHibernateRoleProducteur;
 import dao.hibernate.DAOHibernateRoleRealisateur;
+import dao.hibernate.DAOHibernateServeur;
 import dao.hibernate.DAOHibernateTypeRecompenseFilm;
 import dao.hibernate.DAOHibernateTypeRecompensePersonne;
 import dao.hibernate.DAOHibernateVote;
@@ -208,11 +210,16 @@ public class TestDao extends TestCase {
 		System.out.println(dateFormat.format(c.getTime()));
 	
 		System.out.println("Les nouveaux sont :  "+daopro.loadInscritDuMois().size() );*/
-		System.out.println("invalide "+daof.loadFilmInvalide().size());
-		System.out.println("valide "+daof.loadFilmValide().size());
+//		System.out.println("invalide "+daof.loadFilmInvalide().size());
+//		System.out.println("valide "+daof.loadFilmValide().size());
+//		
+//		Film a = daof.get(3);
+//		System.out.println(a.listeDesRealisateurs().size());
 		
-		Film a = daof.get(3);
-		System.out.println(a.listeDesRealisateurs().size());
+		DAOHibernateServeur test= new DAOHibernateServeur();
+		Serveur huhu=new Serveur(0,"ca me gonfle severe");
+//		test.save(huhu);
+		System.out.println(test.load(0));
 		
 	}
 }

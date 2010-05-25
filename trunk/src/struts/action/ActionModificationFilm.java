@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import metier.Film;
+import metier.Serveur;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -17,24 +18,26 @@ import org.apache.struts.upload.*;
 
 import struts.actionForm.ActionFormModificationFilm;
 import dao.DAOFilm;
+import dao.DAOServeur;
 
 public class ActionModificationFilm extends Action{
 	private DAOFilm daoFilm=null;
+	private DAOServeur daoServeur=null;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response){
 		ActionFormModificationFilm formFilm=(ActionFormModificationFilm)form;
 		Film film=null;
+		Serveur serv=new Serveur();
 		String affiche=formFilm.getAffiche();
-		String url=formFilm.getUrlAffiche();
+		String url;
 		try {
 			film=new Film(formFilm.getTitre().replaceFirst(".",(formFilm.getTitre().charAt(0)+"").toUpperCase()),
 					Date.valueOf(formFilm.getDateSortie()),
 					formFilm.getCout(),
 					formFilm.getSynopsis(),
 					0,
-					affiche,
-					url);	
+					affiche);	
 			film.setIsValidateFilm(formFilm.getIdFilm());	
 			daoFilm.save(film);
 			
@@ -60,8 +63,9 @@ public class ActionModificationFilm extends Action{
 				url=getServlet().getServletContext().getRealPath("/").replace('\\','/');
 				affiche="../images/films/"+fileName;
 				film.setAffiche(affiche);
-				film.setUrlAffiche(url);
+				serv.setUrl(url);
 				daoFilm.saveOrUpdate(film);
+				daoServeur.save(serv);
 				
 				System.out.println("Server path:" +filePath);
 				//Create file
@@ -98,5 +102,14 @@ public class ActionModificationFilm extends Action{
 		this.daoFilm = daoFilm;
 	}
 
+	public DAOServeur getDaoServeur() {
+		return daoServeur;
+	}
+
+	public void setDaoServeur(DAOServeur daoServeur) {
+		this.daoServeur = daoServeur;
+	}
+
+	
 
 }

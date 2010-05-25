@@ -25,5 +25,6 @@
 	<mapping resource="MappingRoleActeur.hbm.xml"/>
 	<mapping resource="MappingRoleProducteur.hbm.xml"/>
 	<mapping resource="MappingRoleRealisateur.hbm.xml"/>
+	<mapping resource="MappingServeur.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>
