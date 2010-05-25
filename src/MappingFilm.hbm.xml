@@ -16,7 +16,6 @@
 	<property name="nombreRequetes" type="integer" column="nombrerequetefilm"/>
 	<property name="noteMoyenne" type="double" column="notemoyenne"/>
 	<property name="isValidateFilm" type="integer" column="isvalidatefilm"/>
-	<property name="urlAffiche" type="string" column="urlaffiche"/>
 	
 	<!-- Définition des relations -->
 	<!-- Mapping vers les roles -->

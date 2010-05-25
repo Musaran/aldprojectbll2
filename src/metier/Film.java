@@ -42,7 +42,6 @@ public class Film implements Serializable{
 	private double noteMoyenne;
 	/// données concernant l acceptation
 	private int isValidateFilm=0;
-	private String urlAffiche;
 	
 	/**
 	 * Constructeur par défaut
@@ -78,7 +77,7 @@ public class Film implements Serializable{
 	 * @param synopsis
 	 * @param requete
 	 */
-	public Film( String titre, Date sortie, double cout, String synopsis, int requete, String photo, String url)
+	public Film( String titre, Date sortie, double cout, String synopsis, int requete, String photo)
 	{
 		this.titre = titre;
 		this.dateSortie = sortie;
@@ -86,7 +85,6 @@ public class Film implements Serializable{
 		this.synopsis = synopsis;
 		this.nombreRequetes = requete;
 		this.affiche = photo;
-		this.urlAffiche=url;
 		
 	}
 	
@@ -299,13 +297,5 @@ public class Film implements Serializable{
 		this.isValidateFilm = isValidateFilm;
 	}
 
-	public String getUrlAffiche() {
-		return urlAffiche;
-	}
-
-	public void setUrlAffiche(String urlAffiche) {
-		this.urlAffiche = urlAffiche;
-	}
-	
 	
 }

@@ -2,15 +2,16 @@ package Gestionnaire;
 
 import java.awt.Component;
 import java.awt.Image;
-import java.util.ArrayList;
-
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
+import dao.hibernate.DAOHibernateServeur;
+
 import metier.Film;
+import metier.Serveur;
 
 public class RendererListFilm implements ListCellRenderer {
 
@@ -24,15 +25,23 @@ public class RendererListFilm implements ListCellRenderer {
 	
 	public Component getListCellRendererComponent(JList list, Object value,
 			int index, boolean isSelected, boolean cellHasFocus){
-		// TODO Auto-generated method stub
+		DAOHibernateServeur daoServeur= new DAOHibernateServeur();
+		Serveur s=new Serveur();
+		try {
+			s=daoServeur.load(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index,
 		        isSelected, cellHasFocus);
 
 		Film a = (Film) list.getModel().getElementAt(index);
+		
+		
 		String[] lien = a.getAffiche().split("/");
 //		lien[0] = "WebContent";
-		String link =a.getUrlAffiche();
+		String link = s.getUrl();
 		for(int i=1;i<lien.length;i++)
 			link+="/"+lien[i];
 		ImageIcon k = new ImageIcon(link);
@@ -42,10 +51,6 @@ public class RendererListFilm implements ListCellRenderer {
 		
 		renderer.setText(a.toString());
 	 
-		
-		
-		
-		
 		return renderer;
 	}
 

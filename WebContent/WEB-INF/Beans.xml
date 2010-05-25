@@ -8,6 +8,8 @@
 	<bean id="daoActeurHBM" class="dao.hibernate.DAOHibernateRoleActeur"/>
 	<bean id="daoProducteurHBM" class="dao.hibernate.DAOHibernateRoleProducteur"/>
 	<bean id="daoRealisateurHBM" class="dao.hibernate.DAOHibernateRoleRealisateur"/>
+	<bean id="daoServeurHBM" class="dao.hibernate.DAOHibernateServeur"/>
+	
 	
 	<bean name="/connexion" class="struts.action.ActionConnexion">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
@@ -47,9 +49,11 @@
 	</bean>
 	<bean name="/modifierfilm" class="struts.action.ActionModificationFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoServeur" ref="daoServeurHBM"/>
 	</bean>
 	<bean name="/modifierpersonne" class="struts.action.ActionModificationPersonne">
 		<property name="daoPersonne" ref="daoPersonneHBM"/>
+		<property name="daoServeur" ref="daoServeurHBM"/>
 	</bean>
 	<bean name="/apercufilm" class="struts.action.ActionApercuFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>

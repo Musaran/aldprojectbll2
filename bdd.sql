@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Lun 24 Mai 2010 à 13:51
+-- Généré le : Mar 25 Mai 2010 à 16:52
 -- Version du serveur: 5.1.37
 -- Version de PHP: 5.3.0
 
@@ -85,7 +85,6 @@ CREATE TABLE IF NOT EXISTS `film` (
   `notemoyenne` float DEFAULT NULL,
   `nombrerequetefilm` int(11) DEFAULT NULL,
   `synopsis` text,
-  `urlaffiche` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idfilm`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -104,7 +103,6 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `isvalidatepersonne` int(11) DEFAULT NULL,
   `nombrerequetepersonne` int(11) DEFAULT NULL,
   `biographie` text,
-  `urlphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idpersonne`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -171,6 +169,18 @@ CREATE TABLE IF NOT EXISTS `recompensepersonne` (
   KEY `FK_recompensepersonne_idtyperecompensepersonne` (`idtyperecompensepersonne`),
   KEY `FK_recompensepersonne_idpersonne` (`idpersonne`),
   KEY `idrecompense` (`idrecompense`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `serveur`
+--
+
+CREATE TABLE IF NOT EXISTS `serveur` (
+  `id` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

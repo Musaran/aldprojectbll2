@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import metier.Personne;
+import metier.Serveur;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -19,22 +20,25 @@ import org.apache.struts.upload.FormFile;
 
 import struts.actionForm.ActionFormModificationPersonne;
 import dao.DAOPersonne;
+import dao.DAOServeur;
 
 public class ActionModificationPersonne extends Action{
 	private DAOPersonne daoPersonne=null;
+	private DAOServeur daoServeur=null;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response){
 		ActionFormModificationPersonne formPersonne=(ActionFormModificationPersonne)form;
 		Personne personne=null;
+		Serveur serv=new Serveur();
 		String photo=formPersonne.getPhoto();
-		String urlPhoto=formPersonne.getUrlPhoto();
+		String url;//=formPersonne.getUrlPhoto();
 		try {
 			personne=new Personne(formPersonne.getNom().replaceFirst(".",(formPersonne.getNom().charAt(0)+"").toUpperCase())
 						,formPersonne.getPrenom().replaceFirst(".",(formPersonne.getPrenom().charAt(0)+"").toUpperCase())
 						,Date.valueOf(formPersonne.getDateDeNaissance())
 						,formPersonne.getBiographie()
-						,photo,0,urlPhoto);	
+						,photo,0);	
 			personne.setIsValidatePersonne(formPersonne.getIdPersonne());	
 			daoPersonne.save(personne);
 			
@@ -59,10 +63,11 @@ public class ActionModificationPersonne extends Action{
 			{  
 				fileName=code+"."+extension;
 //				photo=filePath+fileName;
-				urlPhoto=getServlet().getServletContext().getRealPath("/").replace('\\','/');
+				url=getServlet().getServletContext().getRealPath("/").replace('\\','/');
 				photo="../images/personnes/"+fileName;
 				personne.setPhoto(photo);
-				personne.setUrlPhoto(urlPhoto);
+				serv.setUrl(url);
+				daoServeur.save(serv);
 				daoPersonne.saveOrUpdate(personne);
 				
 				System.out.println("Server path:" +filePath);
@@ -91,6 +96,14 @@ public class ActionModificationPersonne extends Action{
 
 	public void setDaoPersonne(DAOPersonne daoPersonne) {
 		this.daoPersonne = daoPersonne;
+	}
+
+	public DAOServeur getDaoServeur() {
+		return daoServeur;
+	}
+
+	public void setDaoServeur(DAOServeur daoServeur) {
+		this.daoServeur = daoServeur;
 	}
 
 
