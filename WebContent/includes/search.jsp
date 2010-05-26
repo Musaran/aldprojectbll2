@@ -32,9 +32,9 @@
 						</html:select><br /><br />
 						<html:text property="keywords" size="30" styleId="s"/><br /><br />
 			            <span class="art-button-wrapper">
-		            	<span class="l"> </span>
-		            	<span class="r"> </span>
-		            	<html:submit styleClass="art-button">OK</html:submit>
+			            	<span class="l"> </span>
+			            	<span class="r"> </span>
+			            	<html:submit styleClass="art-button">OK</html:submit>
 	            		</span>
 	            	</html:form>
 	            </div>

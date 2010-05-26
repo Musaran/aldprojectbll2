@@ -35,7 +35,7 @@
 					<tr>
 						<td><h3><bean:message key="recompense"/></h3></td>
 						<td>
-						<html:link action="" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
+						<html:link action="lienajoutrecompensepersonne.do" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
 						<bean:message key="Ajout.recompense"/>
 						</html:link>	
 						</td>

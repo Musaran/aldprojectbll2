@@ -32,8 +32,8 @@
 				<% if(session.getAttribute("login") != null){ %>
 					<bean:message key="Sortie"/>: <bean:write name="liste" property="dateSortie"/><br />
 					<bean:message key="Cout"/>: <bean:write name="liste" property="cout"/> Euros<br />
-					<bean:message key="Synopsis"/>: <p><bean:write name="liste" property="synopsis"/></p>
-				<%} %></p>
+					<bean:message key="Synopsis"/>: </p><p><bean:write name="liste" property="synopsis"/></p>
+				<%} %>
 				<% if(session.getAttribute("login") != null){ %>
 	              <p>
 	              	<span class="art-button-wrapper">

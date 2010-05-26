@@ -22,6 +22,8 @@
 			<form-bean name="formActionModificationFilm" type="struts.actionForm.ActionFormModificationFilm"></form-bean>
 			<form-bean name="formActionModificationPersonne" type="struts.actionForm.ActionFormModificationPersonne"></form-bean>
    			<form-bean name="formActionAjoutCasting" type="struts.actionForm.ActionFormAjoutCasting"></form-bean>
+   			<form-bean name="formActionAjoutRecompenseFilm" type="struts.actionForm.ActionFormAjoutRecompenseFilm"></form-bean>
+   			<form-bean name="formActionAjoutRecompensePersonne" type="struts.actionForm.ActionFormAjoutRecompensePersonne"></form-bean>
 			
     </form-beans>
 
@@ -118,6 +120,22 @@
     		name="formActionAjoutCasting" validate="true" input="/vues/erreurs.jsp" cancellable="true">
     		<forward name="AjoutCastingEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="AjoutCastingImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	<action path="/lienajoutrecompensefilm" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueAjoutRecompenseFilm" path="/vues/ajoutrecompensefilm.jsp" redirect="true"></forward>
+		</action>
+		<action path="/ajoutrecompensefilm" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionAjoutRecompenseFilm" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="AjoutRecompenseFilmEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="AjoutRecompenseFilmImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	<action path="/lienajoutrecompensepersonne" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueAjoutRecompensePersonne" path="/vues/ajoutrecompensepersonne.jsp" redirect="true"></forward>
+		</action>
+		<action path="/ajoutrecompensepersonne" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionAjoutRecompensePersonne" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="AjoutRecompensePersonneEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="AjoutRecompensePersonneImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
 
 		
