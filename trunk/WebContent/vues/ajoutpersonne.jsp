@@ -2,6 +2,7 @@
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
 <% if(session.getAttribute("login") != null){ %>
+
 <html:html>
 
 <head>
@@ -21,7 +22,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="Prenom"/></td>
-				<td><html:text styleId="s" property="prenom" size="15" />&nbsp;</td>
+				<td><html:text styleId="s" property="prenom" size="15" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="date.de.naissance"/></td>
@@ -29,7 +30,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="biographie"/></td>
-				<td><html:textarea styleId="s" property="biographie" ncols="30" rows="10"></html:textarea></td>
+				<td><html:textarea styleId="s" property="biographie" cols="30" rows="10"></html:textarea></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Photo"/></td>
@@ -37,7 +38,7 @@
 			</tr>
 			<tr>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit></td>
+				<td><html:submit styleClass="art-button">Valider</html:submit></td>
 			</tr>	
 		</table>
 	</div>
