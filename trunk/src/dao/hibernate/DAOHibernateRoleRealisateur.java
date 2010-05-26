@@ -20,6 +20,7 @@ public class DAOHibernateRoleRealisateur extends DAOHibernate implements DAORole
 		return v;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RoleRealisateur> loadRealisateurInvalide() throws Exception {
 		// TODO Auto-generated method stub
@@ -29,6 +30,7 @@ public class DAOHibernateRoleRealisateur extends DAOHibernate implements DAORole
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RoleRealisateur> loadRealisateurValide() throws Exception {
 		// TODO Auto-generated method stub

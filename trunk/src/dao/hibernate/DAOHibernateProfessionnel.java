@@ -3,7 +3,6 @@ package dao.hibernate;
 import java.util.ArrayList;
 import java.util.Date;
 
-import metier.Film;
 import metier.Professionnel;
 
 import org.hibernate.Query;
@@ -22,10 +21,10 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 	}
 
 	@Override
-	public Professionnel get(String nom) throws Exception {
+	public Professionnel get(String login) throws Exception {
 		// TODO Auto-generated method stub
 		Session	session = connect();
-		Professionnel p=(Professionnel) session.get(Professionnel.class, nom);
+		Professionnel p=(Professionnel) session.get(Professionnel.class, login);
 		close(session);	
 		return p;
 	}
@@ -78,6 +77,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		close(session);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Professionnel> loadInactif(Date d) throws Exception {
 		// TODO Auto-generated method stub
@@ -90,6 +90,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Professionnel> loadInscritDuMois() throws Exception {
 		// TODO Auto-generated method stub

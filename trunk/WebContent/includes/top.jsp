@@ -50,7 +50,7 @@
                 		</li>
                 		<% if(session.getAttribute("login") != null){ %>
                 		<li>
-                			<html:link href="/sitewebald/vues/espacepro.jsp"><span class="l"></span><span class="r"></span><span class="t">
+                			<html:link action="/espacepro.do"><span class="l"></span><span class="r"></span><span class="t">
                 			Espace pro</span>
                 			</html:link>
                 		</li>

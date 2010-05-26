@@ -3,7 +3,6 @@ package dao;
 import java.util.ArrayList;
 import java.util.Date;
 
-import metier.Film;
 import metier.Professionnel;
 
 /**
@@ -15,7 +14,7 @@ import metier.Professionnel;
 
 public interface DAOProfessionnel {
 
-	Professionnel	get(String nom)										throws Exception;
+	Professionnel	get(String login)										throws Exception;
 	Professionnel	get(String login,String pass)						throws Exception;
 	/// liste de toutes les Professionnels 
 	ArrayList<Professionnel>	loadAll()									throws Exception;

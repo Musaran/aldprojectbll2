@@ -155,7 +155,9 @@
 		<action path="/changerlangue">
 			<forward name="VueChangerLangue" path="/vues/welcome.jsp" redirect="true"></forward>
 		</action>
-    	
+    	<action path="/espacepro" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueEspacePro" path="/vues/espacepro.jsp" redirect="true"></forward>
+		</action>
     </action-mappings>
 
 

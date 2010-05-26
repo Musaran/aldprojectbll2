@@ -75,6 +75,7 @@ public class DAOHibernateRecompenseFilm extends DAOHibernate implements DAORecom
 		close(session);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RecompenseFilm> loadInvalideRecompenseFilm()
 			throws Exception {
@@ -84,6 +85,7 @@ public class DAOHibernateRecompenseFilm extends DAOHibernate implements DAORecom
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RecompenseFilm> loadValideRecompenseFilm()
 			throws Exception {
