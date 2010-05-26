@@ -14,41 +14,7 @@
 <body>
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
-	<html:form action="/inscription.do">
-	<table>
-		
-			<tr>
-				<td><bean:message key="Nom"/></td>
-				<td><html:text styleId="s" property="nom" size="15" /></td>
-			</tr>
-			<tr>
-				<td><bean:message key="Prenom"/></td>
-				<td><html:text styleId="s" property="prenom" size="15" /></td>
-			</tr>
-			<tr>
-				<td><bean:message key="Adresse"/></td>
-				<td><html:text styleId="s" property="adresse" size="30" /></td>
-			</tr>
-			<tr>
-				<td><bean:message key="Login"/></td>
-				<td><html:text styleId="s" property="login" size="10" /></td>
-			</tr>
-			<tr>
-				<td><bean:message key="Mot.de.passe"/></td>
-				<td><html:password styleId="s" property="password" size="10" /></td>
-			</tr>
-			<tr>
-				<td><bean:message key="Confirm.mot.de.passe"/></td>
-				<td><html:password styleId="s" property="confpass" size="10" /></td>
-			</tr>
-			<tr>
-				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-				<td></td>
-			</tr>	
-		
-	</table>
-	<html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit>
-	</html:form>
+	<jsp:include page="/includes/inscription.jsp" />
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />
 </body>
