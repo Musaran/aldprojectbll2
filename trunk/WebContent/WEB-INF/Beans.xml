@@ -14,6 +14,7 @@
 	<bean id="daoTypeRecompensePersonneHBM" class="dao.hibernate.DAOHibernateTypeRecompensePersonne"/>
 	<bean id="daoRecompenseFilmHBM" class="dao.hibernate.DAOHibernateRecompenseFilm"/>
 	<bean id="daoRecompensePersonneHBM" class="dao.hibernate.DAOHibernateRecompensePersonne"/>
+	<bean id="daoVoteHBM" class="dao.hibernate.DAOHibernateVote"/>
 	
 	
 	<bean name="/connexion" class="struts.action.ActionConnexion">
@@ -107,5 +108,14 @@
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
 	</bean>
 	<bean name="/changerlangue" class="struts.action.ActionChangementLangue"/>
+	<bean name="/effectuerUnVote" class="struts.action.ActionLienEffectuerVote">
+		<property name="DAOProfessionnel" ref="daoProfessionnelHBM"/>
+		<property name="DAOVote" ref="daoVoteHBM"/>
+	</bean>
+	<bean name="/vote" class="struts.action.ActionVote">
+		<property name="daopro" ref="daoProfessionnelHBM"/>
+		<property name="daovote" ref="daoVoteHBM"/>
+		<property name="daofilm" ref="daoFilmHBM"/>
+	</bean>
 
 </beans>
