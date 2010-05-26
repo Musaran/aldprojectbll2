@@ -1,3 +1,4 @@
+</div><!-- fin art_contentlayout -->
 <div class="cleared"></div><div class="art-Footer">
                     <div class="art-Footer-inner">
                         <div class="art-Footer-text">
@@ -8,8 +9,8 @@
                     </div>
                     <div class="art-Footer-background"></div>
                 </div>
-            </div>
-        </div>
+            </div><!-- fin art_sheetbody -->
+        </div><!-- fin art_sheet -->
         <div class="cleared"></div>
         <p class="art-page-footer"></p>
-    </div>
+    </div><!-- fin art_main -->

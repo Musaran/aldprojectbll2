@@ -16,29 +16,31 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Ajout d'une personne au casting de <bean:write name="FILM" property="titre"/>
+		              Ajout d'une récompense à <bean:write name="PERSONNE" property="nom"/> <bean:write name="PERSONNE" property="prenom"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
-		     <html:form action="/ajoutcasting.do">
+		     <html:form action="/ajoutrecompensepersonne.do">
 		     	<table>	
-						<html:hidden property="idFilm" name="FILM"/>
+						<html:hidden property="idPersonne" name="PERSONNE"/>
 							<tr>
-								<td><bean:message key="Personne"/></td>
+								<td>Récompense</td>
 								<td>
-								<html:select property="codePersonne" >
-									<html:options property="idPersonne" collection="LISTEPERSONNES" labelProperty="nom"/>
+								<html:select property="codeRecompense" >
+									<html:options property="idRecompense" collection="RECOMPENSES" labelProperty="nomRecompense"/>
 								</html:select>
 								</td>
 							</tr>
 							<tr>
-								<td><bean:message key="role"/></td>
-								<td><html:select property="role">
-									<html:option value="acteur"><bean:message key="acteur"/></html:option>
-									<html:option value="producteur"><bean:message key="producteur"/></html:option>
-									<html:option value="realisateur"><bean:message key="realisateur"/></html:option>
+								<td>Type de récompense</td>
+								<td><html:select property="codeTypeRecompense" >
+									<html:options property="idTypeRecompensePersonne" collection="TYPERECOMPENSES" labelProperty="nomTypeRecompensePersonne"/>
 								</html:select></td>
-							</tr>		
+							</tr>	
+							<tr>
+								<td>Année</td>
+								<td><html:text property="annee" size="4" ></html:text></td>
+							</tr>	
 					</table><br /><br />
 						<span class="art-button-wrapper">
 			              		<span class="l"> </span>

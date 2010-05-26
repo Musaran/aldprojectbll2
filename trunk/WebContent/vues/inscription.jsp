@@ -14,8 +14,9 @@
 <body>
 	<jsp:include page="/includes/top.jsp" />
 	<!-- ---------------------Contenu---------------------------- -->
+	<html:form action="/inscription.do">
 	<table>
-		<html:form action="/inscription.do">
+		
 			<tr>
 				<td><bean:message key="Nom"/></td>
 				<td><html:text styleId="s" property="nom" size="15" /></td>
@@ -42,10 +43,12 @@
 			</tr>
 			<tr>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit></td>
+				<td></td>
 			</tr>	
-		</html:form>
+		
 	</table>
+	<html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit>
+	</html:form>
 	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />
 </body>

@@ -6,12 +6,8 @@
     <div id="art-page-background-glare">
         <div id="art-page-background-glare-image">
         </div>
-		
-    
-    </div>
-    
-    <div id="art-main">
-    
+    </div>   
+    <div id="art-main">  
         <div class="art-Sheet">
             <div class="art-Sheet-tl"></div>
             <div class="art-Sheet-tr"></div>
@@ -27,7 +23,6 @@
 	                <div id="connexion"  style="float:left;padding-top: 10px;padding-left: 10px;">
 						<jsp:include page="/includes/connexion.jsp" />
 					</div>
-					
 					<div id="language" style="float:right;padding-top: 10px;padding-right: 10px;">
 						<html:link page='/changerlangue.do?lang=fr&cty=FR'><img alt="fr" height="20px" src="/sitewebald/img/Flags/FR.png" title="Français"></html:link>
 						<html:link page='/changerlangue.do?lang=en&cty=EN'><img alt="en" height="20px" src="/sitewebald/img/Flags/EN.png" title="English"></html:link>
@@ -67,9 +62,6 @@
                     <div class="art-sidebar1">
                         <jsp:include page="/includes/search.jsp" /> 
                         <jsp:include page="/includes/menu.jsp" />
-                        
-                        
-                        
                         <div class="art-Block">
                             <div class="art-Block-body">
                                 <div class="art-BlockHeader">

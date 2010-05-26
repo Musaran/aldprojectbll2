@@ -9,6 +9,11 @@
 	<bean id="daoProducteurHBM" class="dao.hibernate.DAOHibernateRoleProducteur"/>
 	<bean id="daoRealisateurHBM" class="dao.hibernate.DAOHibernateRoleRealisateur"/>
 	<bean id="daoServeurHBM" class="dao.hibernate.DAOHibernateServeur"/>
+	<bean id="daoRecompenseHBM" class="dao.hibernate.DAOHibernateRecompense"/>
+	<bean id="daoTypeRecompenseFilmHBM" class="dao.hibernate.DAOHibernateTypeRecompenseFilm"/>
+	<bean id="daoTypeRecompensePersonneHBM" class="dao.hibernate.DAOHibernateTypeRecompensePersonne"/>
+	<bean id="daoRecompenseFilmHBM" class="dao.hibernate.DAOHibernateRecompenseFilm"/>
+	<bean id="daoRecompensePersonneHBM" class="dao.hibernate.DAOHibernateRecompensePersonne"/>
 	
 	
 	<bean name="/connexion" class="struts.action.ActionConnexion">
@@ -67,6 +72,28 @@
 		<property name="daoActeur" ref="daoActeurHBM"/>
 		<property name="daoProducteur" ref="daoProducteurHBM"/>
 		<property name="daoRealisateur" ref="daoRealisateurHBM"/>
+	</bean>
+	<bean name="/ajoutrecompensefilm" class="struts.action.ActionAjoutRecompenseFilm">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoRecompense" ref="daoRecompenseHBM"/>
+		<property name="daoTypeRecompense" ref="daoTypeRecompenseFilmHBM"/>
+		<property name="daoRecompenseFilm" ref="daoRecompenseFilmHBM"/>
+	</bean>
+	<bean name="/lienajoutrecompensefilm" class="struts.action.ActionLienAjoutRecompenseFilm">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoRecompense" ref="daoRecompenseHBM"/>
+		<property name="daoTypeRecompense" ref="daoTypeRecompenseFilmHBM"/>
+	</bean>
+	<bean name="/ajoutrecompensepersonne" class="struts.action.ActionAjoutRecompensePersonne">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+		<property name="daoRecompense" ref="daoRecompenseHBM"/>
+		<property name="daoTypeRecompense" ref="daoTypeRecompensePersonneHBM"/>
+		<property name="daoRecompensePersonne" ref="daoRecompensePersonneHBM"/>
+	</bean>
+	<bean name="/lienajoutrecompensepersonne" class="struts.action.ActionLienAjoutRecompensePersonne">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+		<property name="daoRecompense" ref="daoRecompenseHBM"/>
+		<property name="daoTypeRecompense" ref="daoTypeRecompensePersonneHBM"/>
 	</bean>
 	<bean name="/changerlangue" class="struts.action.ActionChangementLangue"/>
 

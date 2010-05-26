@@ -76,16 +76,12 @@ public class ActionModificationFilm extends Action{
 					fileOutStream.write(file.getFileData());
 					fileOutStream.flush();
 					fileOutStream.close();
-					
-					
-				}	
-				
+				}					
 			}  
-			
-			
-			
-			
-			
+			else
+			{
+				System.out.println("problème nom ou extension fichier");
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
