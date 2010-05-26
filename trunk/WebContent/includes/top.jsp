@@ -48,6 +48,18 @@
                 			Accueil</span>
                 			</html:link>
                 		</li>
+                		<% if(session.getAttribute("login") != null){ %>
+                		<li>
+                			<html:link href="/sitewebald/vues/espacepro.jsp"><span class="l"></span><span class="r"></span><span class="t">
+                			Espace pro</span>
+                			</html:link>
+                		</li>
+                		<%} %>
+                		<li>
+                			<html:link href="/sitewebald/vues/propos.jsp"><span class="l"></span><span class="r"></span><span class="t">
+                			A propos</span>
+                			</html:link>
+                		</li>
                 		<%--   <li><a href="#"><span class="l"></span><span class="r"></span><span class="t">About</span></a>
                 		</li>
                 		<li><a href="#"><span class="l"></span><span class="r"></span><span class="t">Services</span></a></li>

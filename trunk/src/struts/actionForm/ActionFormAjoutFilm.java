@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
-public class ActionFormModificationFilm extends ActionForm{
+public class ActionFormAjoutFilm extends ActionForm{
 	/**
 	 * 
 	 */
@@ -18,10 +18,8 @@ public class ActionFormModificationFilm extends ActionForm{
 	private double cout;
 	private String synopsis;
 	private FormFile file;//nouvelle affiche à uploader
-	private String affiche;//ancienne affiche
-	private int idFilm;
 	
-	public ActionFormModificationFilm(){
+	public ActionFormAjoutFilm(){
 		
 	}
 	
@@ -80,19 +78,4 @@ public class ActionFormModificationFilm extends ActionForm{
 		this.cout = cout;
 	}
 
-	public void setIdFilm(int idFilm) {
-		this.idFilm = idFilm;
-	}
-
-	public int getIdFilm() {
-		return idFilm;
-	}
-
-	public void setAffiche(String affiche) {
-		this.affiche = affiche;
-	}
-
-	public String getAffiche() {
-		return affiche;
-	}
 }

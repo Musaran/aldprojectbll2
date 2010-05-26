@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
-public class ActionFormModificationPersonne extends ActionForm{
+public class ActionFormAjoutPersonne extends ActionForm{
 	/**
 	 * 
 	 */
@@ -18,10 +18,8 @@ public class ActionFormModificationPersonne extends ActionForm{
 	private String dateDeNaissance;
 	private String biographie;
 	private FormFile file;//nouvelle affiche à uploader
-	private String photo;//ancienne affiche
-	private int idPersonne;
 	
-	public ActionFormModificationPersonne(){
+	public ActionFormAjoutPersonne(){
 		
 	}
 	
@@ -77,20 +75,6 @@ public class ActionFormModificationPersonne extends ActionForm{
 	public void setFile(FormFile file) {
 		this.file = file;
 	}
+	
 
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-	public int getIdPersonne() {
-		return idPersonne;
-	}
-
-	public void setIdPersonne(int idPersonne) {
-		this.idPersonne = idPersonne;
-	}
 }

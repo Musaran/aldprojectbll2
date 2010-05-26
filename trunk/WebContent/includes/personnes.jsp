@@ -10,6 +10,24 @@
               Personnes
               </span>
           </h2>
+          <% if(session.getAttribute("login") != null){ %>
+          <div class="art-PostContent">
+          
+	              <p>
+	              	<span class="art-button-wrapper">
+	              		<span class="l"> </span>
+	              		<span class="r"> </span>
+	              		
+						<html:link styleClass="art-button" href="ajoutpersonne.jsp">
+							Ajout d'une personne
+						</html:link>
+						
+	              	</span>
+	              </p> 
+	              
+          </div>
+          <div class="cleared"></div>
+          <%} %>
 			<logic:iterate id="liste" name="LISTEPERSONNES" scope="session">
 	          <div class="art-PostContent">	
 	              <% if(session.getAttribute("login") != null){ %>

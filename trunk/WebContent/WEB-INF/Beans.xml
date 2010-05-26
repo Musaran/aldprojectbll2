@@ -60,6 +60,14 @@
 		<property name="daoPersonne" ref="daoPersonneHBM"/>
 		<property name="daoServeur" ref="daoServeurHBM"/>
 	</bean>
+	<bean name="/ajoutfilm" class="struts.action.ActionAjoutFilm">
+		<property name="daoFilm" ref="daoFilmHBM"/>
+		<property name="daoServeur" ref="daoServeurHBM"/>
+	</bean>
+	<bean name="/ajoutpersonne" class="struts.action.ActionAjoutPersonne">
+		<property name="daoPersonne" ref="daoPersonneHBM"/>
+		<property name="daoServeur" ref="daoServeurHBM"/>
+	</bean>
 	<bean name="/apercufilm" class="struts.action.ActionApercuFilm">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>
