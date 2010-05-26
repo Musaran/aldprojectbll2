@@ -27,6 +27,8 @@ public class ActionApercuFilm extends Action{
 		Set<RecompenseFilm> recompenses;
 		try {
 			film=daoFilm.get(Integer.valueOf(request.getParameter("code")));
+			film.setNombreRequetes(film.getNombreRequetes()+1);
+			daoFilm.saveOrUpdate(film);
 			acteurs=film.listeDesActeurs();
 			realisateurs=film.listeDesRealisateurs();
 			producteurs=film.listeDesProducteurs();
