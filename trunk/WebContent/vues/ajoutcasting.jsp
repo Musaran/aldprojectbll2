@@ -16,7 +16,7 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Ajout d'une personne au casting de <bean:write name="FILM" property="titre"/>
+		              <bean:message key="Ajout.d'une.personne.au.casting.de"/> <bean:write name="FILM" property="titre"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
@@ -49,7 +49,7 @@
 			              	<span class="art-button-wrapper">
 			              		<span class="l"> </span>
 			              		<span class="r"> </span>
-			              		<html:submit styleClass="art-button">Ajouter</html:submit>	
+			              		<html:submit styleClass="art-button"><bean:message key="Ajouter"/></html:submit>	
 			              						
 			              	</span>
 			              	

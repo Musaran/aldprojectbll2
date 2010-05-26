@@ -32,7 +32,7 @@ public class ActionModificationPersonne extends Action{
 		Personne personne=null;
 		Serveur serv=new Serveur();
 		String photo=formPersonne.getPhoto();
-		String url;//=formPersonne.getUrlPhoto();
+		String url=null;
 		try {
 			personne=new Personne(formPersonne.getNom().replaceFirst(".",(formPersonne.getNom().charAt(0)+"").toUpperCase())
 						,formPersonne.getPrenom().replaceFirst(".",(formPersonne.getPrenom().charAt(0)+"").toUpperCase())

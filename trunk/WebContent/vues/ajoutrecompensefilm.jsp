@@ -16,7 +16,7 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Ajout d'une récompense à <bean:write name="FILM" property="titre"/>
+		              <bean:message key="Ajout.recompense"/> <bean:write name="FILM" property="titre"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
@@ -38,7 +38,7 @@
 								</html:select></td>
 							</tr>		
 							<tr>
-								<td>Année</td>
+								<td><bean:message key="annee"/></td>
 								<td><html:text property="annee" size="4" ></html:text></td>
 							</tr>	
 					</table><br /><br />
@@ -51,7 +51,7 @@
 			              	<span class="art-button-wrapper">
 			              		<span class="l"> </span>
 			              		<span class="r"> </span>
-			              		<html:submit styleClass="art-button">Ajouter</html:submit>	
+			              		<html:submit styleClass="art-button"><bean:message key="Ajouter"/></html:submit>	
 			              						
 			              	</span>
 			              	
