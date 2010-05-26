@@ -103,6 +103,9 @@
 		<property name="daoRecompense" ref="daoRecompenseHBM"/>
 		<property name="daoTypeRecompense" ref="daoTypeRecompensePersonneHBM"/>
 	</bean>
+	<bean name="/espacepro" class="struts.action.ActionLienEspacePro">
+		<property name="daoPro" ref="daoProfessionnelHBM"/>
+	</bean>
 	<bean name="/changerlangue" class="struts.action.ActionChangementLangue"/>
 
 </beans>

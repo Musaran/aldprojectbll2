@@ -1,8 +1,5 @@
 package dao.hibernate;
 
-import java.util.ArrayList;
-
-import metier.Film;
 import metier.Serveur;
 
 import org.hibernate.Session;

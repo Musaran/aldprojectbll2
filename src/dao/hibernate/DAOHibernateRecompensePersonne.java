@@ -75,6 +75,7 @@ public class DAOHibernateRecompensePersonne extends DAOHibernate implements DAOR
 		close(session);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RecompensePersonne> loadInvalideRecompensePersonne()
 			throws Exception {
@@ -84,6 +85,7 @@ public class DAOHibernateRecompensePersonne extends DAOHibernate implements DAOR
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RecompensePersonne> loadValideRecompensePersonne()
 			throws Exception {

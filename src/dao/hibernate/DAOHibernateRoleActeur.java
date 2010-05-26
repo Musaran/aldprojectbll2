@@ -11,6 +11,7 @@ import dao.DAORoleActeur;
 
 public class DAOHibernateRoleActeur extends DAOHibernate implements DAORoleActeur {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RoleActeur> loadActeurInvalide() throws Exception {
 		Session	session = connect();
@@ -20,6 +21,7 @@ public class DAOHibernateRoleActeur extends DAOHibernate implements DAORoleActeu
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<RoleActeur> loadActeurValide() throws Exception {
 		Session	session = connect();

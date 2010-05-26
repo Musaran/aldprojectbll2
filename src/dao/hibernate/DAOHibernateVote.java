@@ -84,6 +84,7 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Film> loadFilmNonVote(Professionnel p) throws Exception {
 		// TODO Auto-generated method stub

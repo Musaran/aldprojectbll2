@@ -77,6 +77,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Personne> loadInvalidePersonne() throws Exception {
 		// TODO Auto-generated method stub
@@ -86,6 +87,7 @@ public class DAOHibernatePersonne extends DAOHibernate implements DAOPersonne {
 		return set;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Personne> loadValidePersonne() throws Exception {
 		// TODO Auto-generated method stub

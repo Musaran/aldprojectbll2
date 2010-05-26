@@ -1,7 +1,5 @@
 package dao;
 
-import java.util.ArrayList;
-
 import metier.Serveur;
 
 public interface DAOServeur {
