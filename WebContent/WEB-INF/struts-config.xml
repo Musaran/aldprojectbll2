@@ -24,7 +24,8 @@
    			<form-bean name="formActionAjoutCasting" type="struts.actionForm.ActionFormAjoutCasting"></form-bean>
    			<form-bean name="formActionAjoutRecompenseFilm" type="struts.actionForm.ActionFormAjoutRecompenseFilm"></form-bean>
    			<form-bean name="formActionAjoutRecompensePersonne" type="struts.actionForm.ActionFormAjoutRecompensePersonne"></form-bean>
-			
+			<form-bean name="formActionAjoutFilm" type="struts.actionForm.ActionFormAjoutFilm"></form-bean>
+			<form-bean name="formActionAjoutPersonne" type="struts.actionForm.ActionFormAjoutPersonne"></form-bean>
     </form-beans>
 
 
@@ -104,6 +105,18 @@
     		name="formActionModificationPersonne" validate="true" input="/vues/erreurs.jsp" cancellable="true">
     		<forward name="ModificationPersonneEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="ModificationPersonneImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	
+    	<action path="/ajoutfilm" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionAjoutFilm" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="AjoutFilmEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="AjoutFilmImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	
+    	<action path="/ajoutpersonne" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionAjoutPersonne" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="AjoutPersonneEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="AjoutPersonneImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
     	
     	<action path="/apercufilm" type="org.springframework.web.struts.DelegatingActionProxy">

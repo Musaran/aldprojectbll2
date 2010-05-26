@@ -7,8 +7,6 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
-import dao.DAOProfessionnel;
-
 public class ActionFormInscription extends ActionForm{
 	/**
 	 * 
