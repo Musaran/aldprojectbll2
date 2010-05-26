@@ -22,7 +22,7 @@ public class ActionFormRecherche extends ActionForm{
 	public ActionErrors validate(ActionMapping mapping,HttpServletRequest request){
 		ActionErrors erreurs=new ActionErrors();
 		if(keywords.trim().equals(""))
-			erreurs.add("Note", new ActionMessage("Erreur.champ.incorrect", "Note"));
+			erreurs.add("keywords", new ActionMessage("Erreur.champ.vide", "Recherche"));
 		
 		return erreurs;
 	}
