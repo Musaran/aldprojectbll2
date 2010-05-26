@@ -26,6 +26,7 @@
    			<form-bean name="formActionAjoutRecompensePersonne" type="struts.actionForm.ActionFormAjoutRecompensePersonne"></form-bean>
 			<form-bean name="formActionAjoutFilm" type="struts.actionForm.ActionFormAjoutFilm"></form-bean>
 			<form-bean name="formActionAjoutPersonne" type="struts.actionForm.ActionFormAjoutPersonne"></form-bean>
+			<form-bean name="formActionVote" type="struts.actionForm.ActionFormVote"></form-bean>
     </form-beans>
 
 
@@ -149,6 +150,14 @@
     		name="formActionAjoutRecompensePersonne" validate="true" input="/vues/erreurs.jsp" cancellable="true">
     		<forward name="AjoutRecompensePersonneEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="AjoutRecompensePersonneImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
+    	<action path="/effectuerUnVote" type="org.springframework.web.struts.DelegatingActionProxy">
+    		<forward name="FormVote" path="/vues/vote.jsp" redirect="true"></forward>
+    	</action>
+    	<action path="/vote" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionVote" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="VoteEffectue" path="/vues/index.jsp" redirect="true"></forward>
+    		<forward name="VoteImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
 
 		
