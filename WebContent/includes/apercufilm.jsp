@@ -26,7 +26,7 @@
 	              		<span class="l"> </span>
 	              		<span class="r"> </span>		
 							<html:link styleClass="art-button" action="/lienmodifierfilm.do" paramId="code" paramName="FILM" paramProperty="idFilm">
-								Editer
+								<bean:message key="editer"/>
 							</html:link>
 	              	</span>
 	              </p> 

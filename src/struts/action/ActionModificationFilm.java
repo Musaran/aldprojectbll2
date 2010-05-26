@@ -30,7 +30,7 @@ public class ActionModificationFilm extends Action{
 		Film film=null;
 		Serveur serv=new Serveur();
 		String affiche=formFilm.getAffiche();
-		String url;
+		String url=null;
 		try {
 			film=new Film(formFilm.getTitre().replaceFirst(".",(formFilm.getTitre().charAt(0)+"").toUpperCase()),
 					Date.valueOf(formFilm.getDateSortie()),

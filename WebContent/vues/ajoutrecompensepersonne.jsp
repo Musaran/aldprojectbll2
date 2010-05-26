@@ -16,7 +16,7 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Ajout d'une récompense à <bean:write name="PERSONNE" property="nom"/> <bean:write name="PERSONNE" property="prenom"/>
+		              <bean:message key="Ajout.recompense"/> <bean:write name="PERSONNE" property="nom"/> <bean:write name="PERSONNE" property="prenom"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
@@ -24,7 +24,7 @@
 		     	<table>	
 						<html:hidden property="idPersonne" name="PERSONNE"/>
 							<tr>
-								<td>Récompense</td>
+								<td><bean:message key="recompense"/></td>
 								<td>
 								<html:select property="codeRecompense" >
 									<html:options property="idRecompense" collection="RECOMPENSES" labelProperty="nomRecompense"/>
@@ -32,13 +32,13 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Type de récompense</td>
+								<td><bean:message key="type.recompense"/></td>
 								<td><html:select property="codeTypeRecompense" >
 									<html:options property="idTypeRecompensePersonne" collection="TYPERECOMPENSES" labelProperty="nomTypeRecompensePersonne"/>
 								</html:select></td>
 							</tr>	
 							<tr>
-								<td>Année</td>
+								<td><bean:message key="annee"/></td>
 								<td><html:text property="annee" size="4" ></html:text></td>
 							</tr>	
 					</table><br /><br />
@@ -51,7 +51,7 @@
 			              	<span class="art-button-wrapper">
 			              		<span class="l"> </span>
 			              		<span class="r"> </span>
-			              		<html:submit styleClass="art-button">Ajouter</html:submit>	
+			              		<html:submit styleClass="art-button"><bean:message key="Ajouter"/></html:submit>	
 			              						
 			              	</span>
 			              	

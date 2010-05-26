@@ -7,13 +7,13 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              Résultat de la recherche
+              <bean:message key="resultat"/>
               </span>
           </h2>
 		<logic:present name="RECHERCHEFILM" scope="session">
 			<table>
 				<tr>
-					<th>Films</th>
+					<th><bean:message key="Film"/></th>
 				</tr>
 				<logic:iterate id="rechercheFilm" name="RECHERCHEFILM" scope="session">
 				<tr>
@@ -34,7 +34,7 @@
 	<logic:present name="RECHERCHEPERSONNE" scope="session">
 		<table>
 			<tr>
-				<th>Personnes</th>
+				<th><bean:message key="Personne"/></th>
 			</tr>
 			<logic:iterate id="recherchePersonne" name="RECHERCHEPERSONNE" scope="session">
 			<tr>

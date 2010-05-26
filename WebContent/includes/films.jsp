@@ -7,7 +7,7 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              Films
+              <bean:message key="Film"/>
               </span>
           </h2>
           <logic:iterate id="liste" name="LISTEFILMS" scope="session">
@@ -41,7 +41,7 @@
 	              		<span class="r"> </span>
 	              		
 						<html:link styleClass="art-button" action="/lienmodifierfilm.do" paramId="code" paramName="liste" paramProperty="idFilm">
-							Editer
+							<bean:message key="editer"/>
 						</html:link>
 						
 	              	</span>
