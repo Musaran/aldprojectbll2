@@ -927,6 +927,11 @@ body
   color: #3D5866;
 }
 
+.art-PostContent h1
+{
+  text-align: left;
+}
+
 
 /* Start Content link style */
 /*

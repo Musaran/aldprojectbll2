@@ -92,7 +92,7 @@ public class Film implements Serializable{
 	 * Methode qui permet de transformer en chaine de caractere
 	 */
 	public String toString() {
-		return this.getTitre()+" "+this.getDateSortie();
+		return this.getTitre()+" "+this.getDateSortie().toString().substring(0, 4);
 	}
 	
 	
