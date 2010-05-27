@@ -30,7 +30,7 @@
 								<html:option value="personne"><bean:message key="Personne"/></html:option>
 							<% } %>
 						</html:select><br /><br />
-						<html:text property="keywords" size="30" styleId="s"/><br /><br />
+						<html:text property="keywords" size="30" styleId="s" value=""/><br /><br />
 			            <span class="art-button-wrapper">
 			            	<span class="l"> </span>
 			            	<span class="r"> </span>

@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="Vote.note"/></td>
-				<td><html:text property="note" size="15" maxlength="2"/> /10</td>
+				<td><html:text property="note" size="15" maxlength="2" value=""/> /10</td>
 			</tr>
 			
 			<tr>

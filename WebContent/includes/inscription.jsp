@@ -16,27 +16,27 @@
 		
 			<tr>
 				<td><bean:message key="Nom"/></td>
-				<td><html:text styleId="s" property="nom" size="15" /></td>
+				<td><html:text styleId="s" property="nom" value="" size="15" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Prenom"/></td>
-				<td><html:text styleId="s" property="prenom" size="15" /></td>
+				<td><html:text styleId="s" property="prenom" value="" size="15" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Adresse"/></td>
-				<td><html:text styleId="s" property="adresse" size="30" /></td>
+				<td><html:text styleId="s" property="adresse" value="" size="30" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Login"/></td>
-				<td><html:text styleId="s" property="login" size="10" /></td>
+				<td><html:text styleId="s" property="login" value="" size="10" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Mot.de.passe"/></td>
-				<td><html:password styleId="s" property="password" size="10" /></td>
+				<td><html:password styleId="s" property="password" value="" size="10" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Confirm.mot.de.passe"/></td>
-				<td><html:password styleId="s" property="confpass" size="10" /></td>
+				<td><html:password styleId="s" property="confpass" value="" size="10" /></td>
 			</tr>
 			<tr>
 				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
