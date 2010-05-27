@@ -38,7 +38,12 @@
 	<bean name="/inscription" class="struts.action.ActionInscription">
 		<property name="daoPro" ref="daoProfessionnelHBM"/>
 	</bean>
-	
+	<bean name="/lienmodifierpro" class="struts.action.ActionLienModifierPro">
+		<property name="daoPro" ref="daoProfessionnelHBM"/>
+	</bean>
+	<bean name="/modifierpro" class="struts.action.ActionModificationPro">
+		<property name="daoPro" ref="daoProfessionnelHBM"/>
+	</bean>
 	<bean name="/welcome" class="struts.action.ActionListeFilms">
 		<property name="daoFilm" ref="daoFilmHBM"/>
 	</bean>

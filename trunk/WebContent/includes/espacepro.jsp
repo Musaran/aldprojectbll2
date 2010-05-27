@@ -39,6 +39,12 @@
 					<td><bean:write name="PRO" property="derniereConnexion"/></td>
 				</tr>	
 			</table>
+			<p>
+			<span class="art-button-wrapper">
+			            	<span class="l"> </span>
+			            	<span class="r"> </span>
+			            	<html:link action="/lienmodifierpro.do" styleClass="art-button">Modifier mon profil</html:link>
+	            		</span></p>
 			<logic:present name="VOTES" scope="session">
 			<h3><bean:message key="Vote"/></h3>
 			<table>
@@ -51,7 +57,7 @@
 					<td><bean:write name="votes" property="film"/></td>
 					<td><bean:write name="votes" property="note"/></td>
 				</tr>
-				</logic:iterate>
+				</logic:iterate>	
 			</table>
 			</logic:present><p>
 			<span class="art-button-wrapper">
