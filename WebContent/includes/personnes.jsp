@@ -49,7 +49,7 @@
 	              <p>
 	              	<% if(session.getAttribute("login") != null){ %>
 				<bean:message key="date.de.naissance"/>: <bean:write name="liste" property="dateDeNaissance"/><br /><br />
-				<b><bean:message key="biographie"/></b>: <bean:write name="liste" property="biographie"/>
+				
 				<%} %></p>
 				<% if(session.getAttribute("login") != null){ %>
 	              <p>
