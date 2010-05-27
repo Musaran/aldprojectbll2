@@ -43,7 +43,7 @@
 			<span class="art-button-wrapper">
 			            	<span class="l"> </span>
 			            	<span class="r"> </span>
-			            	<html:link action="/lienmodifierpro.do" styleClass="art-button">Modifier mon profil</html:link>
+			            	<html:link action="/lienmodifierpro.do" styleClass="art-button"><bean:message key="Modifier.profil"/></html:link>
 	            		</span></p>
 			<logic:present name="VOTES" scope="session">
 			<h3><bean:message key="Vote"/></h3>
