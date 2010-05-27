@@ -36,7 +36,7 @@
 					<td><html:file styleId="s" property="file"></html:file></td>
 				</tr>
 				<tr>
-					<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+					<td><html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset></td>
 					<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>
 					&nbsp;<html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit></td>
 				</tr>	

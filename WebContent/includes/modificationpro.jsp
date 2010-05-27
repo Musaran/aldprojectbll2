@@ -11,7 +11,7 @@
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
-		     <h3>Modifier mon profil</h3>
+		     <h3><bean:message key="Modifier.profil"/></h3>
 
 			<html:form action="/modifierpro.do">
 			<html:hidden name="PRO" property="login"/>
@@ -38,7 +38,7 @@
 				<td><html:password styleId="s" property="confpass" size="10" value=""/></td>
 			</tr>
 			<tr>
-				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+				<td><html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset></td>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
 				<html:submit styleClass="art-button"><bean:message key="Enregistrer"/></html:submit></td>
 			</tr>	
