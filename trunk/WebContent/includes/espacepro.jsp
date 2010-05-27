@@ -53,7 +53,12 @@
 				</tr>
 				</logic:iterate>
 			</table>
-			</logic:present>
+			</logic:present><p>
+			<span class="art-button-wrapper">
+			            	<span class="l"> </span>
+			            	<span class="r"> </span>
+			            	<html:link action="/effectuerUnVote.do" styleClass="art-button"><bean:message key="Effectuer.un.vote"/></html:link>
+	            		</span></p>
 			</div>
 	          <div class="cleared"></div>
 	      </div>    

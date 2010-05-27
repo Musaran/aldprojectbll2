@@ -30,12 +30,12 @@ public class ActionFormModificationPersonne extends ActionForm{
 		
 		if(nom.trim().equals(""))
 			erreurs.add("nom",new ActionMessage("Erreur.champ.vide","nom"));
-		else if(!nom.matches("^([a-zA-Z]| )+$"))
+		else if(!nom.matches("^([a-zA-Z]| |-)+$"))
 			erreurs.add("nom",new ActionMessage("Erreur.champ.incorrect","nom"));
 		
 		if(prenom.trim().equals(""))
 			erreurs.add("prenom",new ActionMessage("Erreur.champ.vide","prenom"));
-		else if(!prenom.matches("^([a-zA-Z]| )+$"))
+		else if(!prenom.matches("^([a-zA-Z]| |-)+$"))
 			erreurs.add("prenom",new ActionMessage("Erreur.champ.incorrect","prenom"));
 		
 		if(dateDeNaissance.trim().equals(""))

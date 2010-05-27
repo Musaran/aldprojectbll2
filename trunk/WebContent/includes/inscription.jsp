@@ -39,8 +39,9 @@
 				<td><html:password styleId="s" property="confpass" size="10" /></td>
 			</tr>
 			<tr>
-				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit></td>
+				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
+				<html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit></td>
 			</tr>	
 		
 	</table>

@@ -33,18 +33,9 @@
 								<td><html:text property="annee" size="4"  maxlength="4"></html:text></td>
 							</tr>	
 					</table><br /><br />
-						<span class="art-button-wrapper">
-			              		<span class="l"> </span>
-			              		<span class="r"> </span>
-			              		<html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>
-			              						
-			              	</span>
-			              	<span class="art-button-wrapper">
-			              		<span class="l"> </span>
-			              		<span class="r"> </span>
-			              		<html:submit styleClass="art-button"><bean:message key="Ajouter"/></html:submit>	
-			              						
-			              	</span>
+						<html:reset styleClass="art-button">Effacer</html:reset>&nbsp;
+				<html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
+				<html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit>
 			              	
 		     </html:form>
 			</div>
