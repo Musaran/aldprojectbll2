@@ -7,7 +7,7 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              A propos ...
+              <bean:message key="A.propos"/>
               </span>
           </h2>
 	          <div class="art-PostContent">

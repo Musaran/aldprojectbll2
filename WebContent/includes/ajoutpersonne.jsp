@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="date.de.naissance"/></td>
-				<td><html:text styleId="s" value="" property="dateDeNaissance" size="15"  maxlength="10"/>&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" value="" property="dateDeNaissance" size="15"  maxlength="10"/>&nbsp; <bean:message key="FormatDate"/></td>
 			</tr>
 			<tr>
 				<td><bean:message key="biographie"/></td>
@@ -35,7 +35,7 @@
 				<td><html:file styleId="s" property="file"></html:file></td>
 			</tr>
 			<tr>
-				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+				<td><html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset></td>
 				<td>
 				<html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
 				<html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit></td>

@@ -4,7 +4,7 @@
                         <div class="art-Footer-text">
                             <p style="padding-bottom: 10px;">Jérôme Lombardi | Jean-Philippe Blaise | Matthieu Lauer
                                 <br />
-                                Copyright &copy; 2010 ---. Tous droits réservés.</p>
+                                Copyright &copy; 2010 ---. <bean:message key="droits"/>.</p>
                         </div>
                     </div>
                     <div class="art-Footer-background"></div>

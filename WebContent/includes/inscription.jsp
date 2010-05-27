@@ -39,7 +39,7 @@
 				<td><html:password styleId="s" property="confpass" value="" size="10" /></td>
 			</tr>
 			<tr>
-				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+				<td><html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset></td>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
 				<html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit></td>
 			</tr>	

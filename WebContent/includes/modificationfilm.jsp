@@ -23,7 +23,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="Sortie"/></td>
-				<td><html:text styleId="s" property="dateSortie" size="15" maxlength="10" name="FILM" />&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" property="dateSortie" size="15" maxlength="10" name="FILM" />&nbsp; <bean:message key="FormatDate"/></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Cout"/></td>
@@ -36,7 +36,7 @@
 			</tr>
 			
 			<tr>
-				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+				<td><html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset></td>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
 				<html:submit styleClass="art-button"><bean:message key="Enregistrer"/></html:submit></td>
 			</tr>	
