@@ -40,10 +40,10 @@
 	              <h1>
 	              	<% if(session.getAttribute("login") != null){ %>
 					<html:link action="/apercupersonne.do" paramId="code" paramName="liste" paramProperty="idPersonne">
-						<bean:write name="liste" property="nom"/> <bean:write name="liste" property="prenom"/>
+						<bean:write name="liste" property="prenom"/> <bean:write name="liste" property="nom"/>
 					</html:link>
 					<%} else {%>
-						<bean:write name="liste" property="nom"/> <bean:write name="liste" property="prenom"/>
+						<bean:write name="liste" property="prenom"/> <bean:write name="liste" property="nom"/>
 					<%} %>
 				</h1>
 	              <p>

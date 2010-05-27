@@ -7,7 +7,7 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              <bean:write name="PERSONNE" property="nom"/> <bean:write name="PERSONNE" property="prenom"/>
+              <bean:write name="PERSONNE" property="prenom"/> <bean:write name="PERSONNE" property="nom"/>
               </span>
           </h2>
 	          <div class="art-PostContent">
