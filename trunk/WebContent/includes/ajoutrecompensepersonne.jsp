@@ -33,7 +33,7 @@
 								<td><html:text property="annee" size="4" value=""  maxlength="4"></html:text></td>
 							</tr>	
 					</table><br /><br />
-						<html:reset styleClass="art-button">Effacer</html:reset>&nbsp;
+						<html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset>&nbsp;
 				<html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
 				<html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit>
 			              	

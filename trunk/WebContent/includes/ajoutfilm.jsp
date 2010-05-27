@@ -20,7 +20,7 @@
 				</tr>
 				<tr>
 					<td><bean:message key="Sortie"/></td>
-					<td><html:text styleId="s"  value="" property="dateSortie" size="15" maxlength="10"/>&nbsp; AAAA-MM-JJ</td>
+					<td><html:text styleId="s"  value="" property="dateSortie" size="15" maxlength="10"/>&nbsp; <bean:message key="FormatDate"/></td>
 				</tr>
 				<tr>
 					<td><bean:message key="Cout"/></td>

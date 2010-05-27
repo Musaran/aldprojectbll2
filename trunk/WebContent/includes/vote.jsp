@@ -7,7 +7,7 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Evaluer un film
+		              <bean:message key="Evaluer.film"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent"><p>	
@@ -31,7 +31,7 @@
 			</tr>
 			
 			<tr>
-				<td><html:reset styleClass="art-button">Effacer</html:reset></td>
+				<td><html:reset styleClass="art-button"><bean:message key="Effacer"/></html:reset></td>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel>&nbsp;
 				<html:submit styleClass="art-button"><bean:message key="Enregistrer"/></html:submit></td>
 			</tr>	

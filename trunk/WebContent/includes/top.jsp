@@ -45,28 +45,21 @@
                 	<ul class="art-menu">
                 		<li>
                 			<html:link href="/sitewebald/vues/index.jsp"><span class="l"></span><span class="r"></span><span class="t">
-                			Accueil</span>
+                			<bean:message key="acceuil"/></span>
                 			</html:link>
                 		</li>
                 		<% if(session.getAttribute("login") != null){ %>
                 		<li>
                 			<html:link action="/espacepro.do"><span class="l"></span><span class="r"></span><span class="t">
-                			Espace pro</span>
+                			<bean:message key="mon.compte"/></span>
                 			</html:link>
                 		</li>
                 		<%} %>
                 		<li>
                 			<html:link href="/sitewebald/vues/propos.jsp"><span class="l"></span><span class="r"></span><span class="t">
-                			A propos</span>
+                			<bean:message key="A.propos"/></span>
                 			</html:link>
                 		</li>
-                		<%--   <li><a href="#"><span class="l"></span><span class="r"></span><span class="t">About</span></a>
-                		</li>
-                		<li><a href="#"><span class="l"></span><span class="r"></span><span class="t">Services</span></a></li>
-                		<li><a href="#"><span class="l"></span><span class="r"></span><span class="t">Solutions</span></a>
-                		</li>
-                		<li><a href="#"><span class="l"></span><span class="r"></span><span class="t">Contact</span></a></li>
-                		--%>
                 	</ul>
                 	</div>
                 </div>
@@ -78,7 +71,7 @@
                             <div class="art-Block-body">
                                 <div class="art-BlockHeader">
                                     <div class="art-header-tag-icon">
-                                        <div class="t">Contact</div>
+                                        <div class="t"><bean:message key="contact"/></div>
                                     </div>
                                 </div><div class="art-BlockContent">
                                     <div class="art-BlockContent-tl"></div>
@@ -96,10 +89,10 @@
                                         <br />
                                         <b>Films & co</b><br />
                                         Metz<br />
-                                        Email: <a href="">info@films.com</a><br />
+                                        <bean:message key="email"/>: <a href="">info@films.com</a><br />
                                         <br/>
-                                        Phone: 0300000000 <br/>
-                                        Fax:   0300000001
+                                        <bean:message key="telephone"/>: 0300000000 <br/>
+                                        <bean:message key="fax"/>:   0300000001
                                         </div>
                                     </div>
                                 </div>
