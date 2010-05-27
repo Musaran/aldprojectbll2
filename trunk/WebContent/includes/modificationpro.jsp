@@ -35,7 +35,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="Confirm.mot.de.passe"/></td>
-				<td><html:password styleId="s" property="confpass" size="10" /></td>
+				<td><html:password styleId="s" property="confpass" size="10" value=""/></td>
 			</tr>
 			<tr>
 				<td><html:reset styleClass="art-button">Effacer</html:reset></td>

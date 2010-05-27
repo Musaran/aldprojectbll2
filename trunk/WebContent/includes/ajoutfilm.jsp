@@ -16,20 +16,20 @@
 			<table>
 				<tr>
 					<td><bean:message key="Titre"/></td>
-					<td><html:text styleId="s" property="titre" size="15"/></td>
+					<td><html:text styleId="s" property="titre" size="15"  value=""/></td>
 				</tr>
 				<tr>
 					<td><bean:message key="Sortie"/></td>
-					<td><html:text styleId="s" property="dateSortie" size="15" maxlength="10"/>&nbsp; AAAA-MM-JJ</td>
+					<td><html:text styleId="s"  value="" property="dateSortie" size="15" maxlength="10"/>&nbsp; AAAA-MM-JJ</td>
 				</tr>
 				<tr>
 					<td><bean:message key="Cout"/></td>
-					<td><html:text styleId="s" property="cout" size="15"/>&nbsp; Euros</td>
+					<td><html:text styleId="s" value="" property="cout" size="15"/>&nbsp; Euros</td>
 	
 				</tr>
 				<tr>
 					<td><bean:message key="Synopsis"/></td>
-					<td><html:textarea styleId="s" property="synopsis" cols="30" rows="10"></html:textarea></td>
+					<td><html:textarea styleId="s" value="" property="synopsis" cols="30" rows="10"></html:textarea></td>
 				</tr>
 				<tr>
 					<td><bean:message key="Affiche"/></td>

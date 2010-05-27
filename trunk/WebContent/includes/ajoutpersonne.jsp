@@ -16,19 +16,19 @@
 		<table>
 			<tr>
 				<td><bean:message key="Nom"/></td>
-				<td><html:text styleId="s" property="nom" size="15" /></td>
+				<td><html:text styleId="s" value="" property="nom" size="15" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Prenom"/></td>
-				<td><html:text styleId="s" property="prenom" size="15" /></td>
+				<td><html:text styleId="s" value="" property="prenom" size="15" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="date.de.naissance"/></td>
-				<td><html:text styleId="s" property="dateDeNaissance" size="15"  maxlength="10"/>&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" value="" property="dateDeNaissance" size="15"  maxlength="10"/>&nbsp; AAAA-MM-JJ</td>
 			</tr>
 			<tr>
 				<td><bean:message key="biographie"/></td>
-				<td><html:textarea styleId="s" property="biographie" cols="30" rows="10"></html:textarea></td>
+				<td><html:textarea styleId="s" value="" property="biographie" cols="30" rows="10"></html:textarea></td>
 			</tr>
 			<tr>
 				<td><bean:message key="Photo"/></td>
