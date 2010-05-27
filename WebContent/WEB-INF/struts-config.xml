@@ -159,7 +159,15 @@
     		<forward name="VoteEffectue" path="/vues/index.jsp" redirect="true"></forward>
     		<forward name="VoteImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
     	</action>
-
+		<action path="/lienmodifierpro" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="VueModificationPro" path="/vues/modificationpro.jsp" redirect="true"></forward>
+		</action>
+		
+		<action path="/modifierpro" type="org.springframework.web.struts.DelegatingActionProxy"
+    		name="formActionInscription" validate="true" input="/vues/erreurs.jsp" cancellable="true">
+    		<forward name="ModificationProEffectue" path="/espacepro.do" redirect="true"></forward>
+    		<forward name="ModificationProImpossible" path="/vues/erreurs.jsp" redirect="true"></forward>		
+    	</action>
 		
 		<action path="/changerlangue">
 			<forward name="VueChangerLangue" path="/vues/welcome.jsp" redirect="true"></forward>

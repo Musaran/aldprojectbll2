@@ -76,6 +76,14 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		session.saveOrUpdate(professionnel);
 		close(session);
 	}
+	
+	@Override
+	public void update(Professionnel professionnel) throws Exception {
+		// TODO Auto-generated method stub
+		Session session = connect();
+		session.update(professionnel);
+		close(session);
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -102,6 +110,7 @@ public class DAOHibernateProfessionnel extends DAOHibernate implements DAOProfes
 		close(session);	
 		return set;
 	}
+
 
 	
 
