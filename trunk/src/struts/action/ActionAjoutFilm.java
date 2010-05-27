@@ -29,7 +29,7 @@ public class ActionAjoutFilm extends Action{
 		ActionFormAjoutFilm formFilm=(ActionFormAjoutFilm)form;
 		Film film=null;
 		Serveur serv=new Serveur();
-		String affiche=null;
+		String affiche="aucune_photo";
 		String url;
 		try {
 			film=new Film(formFilm.getTitre().replaceFirst(".",(formFilm.getTitre().charAt(0)+"").toUpperCase()),
