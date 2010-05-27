@@ -90,7 +90,8 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 		// TODO Auto-generated method stub
 		Session	session = connect();
 		ArrayList<Film> f=(ArrayList<Film>) session.createQuery(
-				"FROM Film f where f not in ( SELECT vote.film FROM Vote vote where vote.professionnel ='"+p.getLogin()+"')")
+				"FROM Film f where isValidateFilm=-1 and f not in " +
+				"( SELECT vote.film FROM Vote vote where vote.professionnel ='"+p.getLogin()+"') " )
 				.list();
 		close(session);	
 		return f;
