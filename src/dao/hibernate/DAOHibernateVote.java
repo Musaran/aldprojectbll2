@@ -91,7 +91,7 @@ public class DAOHibernateVote extends DAOHibernate implements DAOVote {
 		Session	session = connect();
 		ArrayList<Film> f=(ArrayList<Film>) session.createQuery(
 				"FROM Film f where isValidateFilm=-1 and f not in " +
-				"( SELECT vote.film FROM Vote vote where vote.professionnel ='"+p.getLogin()+"') " )
+				"( SELECT vote.film FROM Vote vote where vote.professionnel ='"+p.getLogin()+"')  order by titre" )
 				.list();
 		close(session);	
 		return f;

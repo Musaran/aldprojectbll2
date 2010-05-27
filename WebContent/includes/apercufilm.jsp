@@ -11,7 +11,7 @@
               </span>
           </h2>
 	          <div class="art-PostContent">
-	              <img class="art-article" src="<bean:write name="FILM" property="affiche"/>"  height="150px" style="float:left"/>
+	              <img class="art-article" src="<bean:write name="FILM" property="affiche"/>"  height="200px" style="float:left"/>
 	              <p>
 	              	<bean:message key="Note"/>: <bean:write name="FILM" property="noteMoyenne"/> /10<br />
 					<bean:message key="Sortie"/>: <bean:write name="FILM" property="dateSortie"/><br />
