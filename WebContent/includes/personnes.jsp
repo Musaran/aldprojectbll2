@@ -7,7 +7,7 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              Personnes
+              <bean:message key="Personne"/>
               </span>
           </h2>
           <% if(session.getAttribute("login") != null){ %>
@@ -19,7 +19,7 @@
 	              		<span class="r"> </span>
 	              		
 						<html:link styleClass="art-button" href="ajoutpersonne.jsp">
-							Ajout d'une personne
+							<bean:message key="Ajout.personne"/>
 						</html:link>
 						
 	              	</span>
@@ -57,7 +57,7 @@
 	              		<span class="l"> </span>
 	              		<span class="r"> </span>
 						<html:link styleClass="art-button" action="/lienmodifierpersonne.do" paramId="code" paramName="liste" paramProperty="idPersonne">
-							Editer
+							<bean:message key="editer"/>
 						</html:link>
 	              	</span>
 	              </p> 

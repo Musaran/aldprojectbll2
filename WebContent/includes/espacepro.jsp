@@ -7,11 +7,11 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Espace de <bean:write name="PRO" property="prenom"/> <bean:write name="PRO" property="nom"/>
+		              <bean:message key="espace.de"/> <bean:write name="PRO" property="prenom"/> <bean:write name="PRO" property="nom"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
-		     <h3>Informations personnelles</h3>
+		     <h3><bean:message key="Info.personelle"/></h3>
 		     <table>
 				<tr>
 					<td><bean:message key="Nom"/></td>
@@ -31,20 +31,20 @@
 					<td><bean:write name="PRO" property="adresse"/></td>
 				</tr>
 				<tr>
-					<td>Date d'inscription</td>
+					<td><bean:message key="date.inscription"/></td>
 					<td><bean:write name="PRO" property="dateInscription"/></td>
 				</tr>
 				<tr>
-					<td>Dernière connexion</td>
+					<td><bean:message key="derniere.connexion"/></td>
 					<td><bean:write name="PRO" property="derniereConnexion"/></td>
 				</tr>	
 			</table>
 			<logic:present name="VOTES" scope="session">
-			<h3>Votes</h3>
+			<h3><bean:message key="Vote"/></h3>
 			<table>
 				<tr>
-					<th>Film</th>
-					<th>Note</th>
+					<th><bean:message key="Film"/></th>
+					<th><bean:message key="Note"/></th>
 				</tr>
 				<logic:iterate id="votes" name="VOTES" scope="session">
 				<tr>

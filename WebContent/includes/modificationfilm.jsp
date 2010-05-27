@@ -7,7 +7,7 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              Modification de <bean:write name="FILM" property="titre"/>
+              <bean:message key="modification.de"/> <bean:write name="FILM" property="titre"/>
               </span>
           </h2>
 	          <div class="art-PostContent">
