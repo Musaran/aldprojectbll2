@@ -46,11 +46,11 @@
 					<bean:write name="liste" property="titre"/>
 					<%} %>
 				</h1>
-	              <p><bean:message key="Note"/>: <bean:write name="liste" property="noteMoyenne"/> /10<br />
+	              <p><b><bean:message key="Note"/>:</b> <bean:write name="liste" property="noteMoyenne"/> /10<br />
 				<% if(session.getAttribute("login") != null){ %>
-					<bean:message key="Sortie"/>: <bean:write name="liste" property="dateSortie"/><br />
-					<bean:message key="Cout"/>: <bean:write name="liste" property="cout"/> Euros<br />
-					<bean:message key="Synopsis"/>: </p><p><bean:write name="liste" property="synopsis"/></p>
+					<b><bean:message key="Sortie"/>:</b> <bean:write name="liste" property="dateSortie"/><br />
+					<b><bean:message key="Cout"/>:</b> <bean:write name="liste" property="cout"/> Euros<br /><br />
+					<b><bean:message key="Synopsis"/>:</b> </p><p><bean:write name="liste" property="synopsis"/></p>
 				<%} %>
 				<% if(session.getAttribute("login") != null){ %>
 	              <p>

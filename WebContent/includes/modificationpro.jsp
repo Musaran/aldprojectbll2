@@ -15,8 +15,7 @@
 
 			<html:form action="/modifierpro.do">
 			<html:hidden name="PRO" property="login"/>
-	<table>
-		
+	<table>	
 			<tr>
 				<td><bean:message key="Nom"/></td>
 				<td><html:text styleId="s" name="PRO" property="nom" size="15" /></td>

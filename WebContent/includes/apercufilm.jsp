@@ -33,11 +33,10 @@
 	              <%} %>
 	              <table>
 					<tr>
-						<td><h3><bean:message key="recompense"/></h3></td>
-						<td>
-						<html:link action="lienajoutrecompensefilm.do" paramId="code" paramName="FILM" paramProperty="idFilm">
-						<bean:message key="Ajout.recompense"/>
-						</html:link>	
+						<td><h3><bean:message key="recompense"/>&nbsp; <html:link action="lienajoutrecompensefilm.do" paramId="code" paramName="FILM" paramProperty="idFilm">
+							<img src="../img/icones/add.png" alt="<bean:message key="Ajout.recompense"/>" title="<bean:message key="Ajout.recompense"/>" height="20px"/>
+							</html:link>	
+							</h3>
 						</td>
 					</tr>
 					<logic:iterate id="recompenses" name="RECOMPENSES" >
@@ -50,12 +49,10 @@
 				</table>
 				<table>
 					<tr>
-						<td><h3><bean:message key="acteurs"/></h3></td>
-						<td>
-						<html:link action="/lienajoutcasting.do" paramId="code" paramName="FILM" paramProperty="idFilm">
-						<bean:message key="Ajout.casting"/>
-						</html:link>	
-						</td>
+						<td><h3><bean:message key="acteurs"/>&nbsp; <html:link action="lienajoutcasting.do" paramId="code" paramName="FILM" paramProperty="idFilm">
+							<img src="../img/icones/add.png" alt="<bean:message key="Ajout.casting"/>" title="<bean:message key="Ajout.casting"/>" height="20px"/>
+							</html:link>	</h3></td>
+						
 					</tr>
 					<logic:iterate id="acteurs" name="ACTEURS" >
 						<tr>

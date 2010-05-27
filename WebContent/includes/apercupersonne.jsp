@@ -33,12 +33,9 @@
 	              <%} %>
 	              <table>
 					<tr>
-						<td><h3><bean:message key="recompense"/></h3></td>
-						<td>
-						<html:link action="lienajoutrecompensepersonne.do" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
-						<bean:message key="Ajout.recompense"/>
-						</html:link>	
-						</td>
+						<td><h3><bean:message key="recompense"/>&nbsp; <html:link action="lienajoutrecompensepersonne.do" paramId="code" paramName="PERSONNE" paramProperty="idPersonne">
+							<img src="../img/icones/add.png" alt="<bean:message key="Ajout.recompense"/>" title="<bean:message key="Ajout.recompense"/>" height="20px"/>
+							</html:link></h3></td>
 					</tr>
 					<logic:iterate id="recompenses" name="RECOMPENSES" >
 						<tr>
