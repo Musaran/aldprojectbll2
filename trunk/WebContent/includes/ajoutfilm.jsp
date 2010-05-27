@@ -12,7 +12,7 @@
 		          </h2>
 		     <div class="art-PostContent">	
 		     <html:form action="/ajoutfilm.do" enctype="multipart/form-data">
-		<div  >
+		<div   style="float:left;border-right: 1px solid black;padding-right: 10px;">
 			<table>
 				<tr>
 					<td><bean:message key="Titre"/></td>
@@ -41,6 +41,9 @@
 					&nbsp;<html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit></td>
 				</tr>	
 			</table>
+		</div>
+		<div style="float:left;padding-left: 10px;">
+			<html:errors/>
 		</div>
 	</html:form>
 			</div>

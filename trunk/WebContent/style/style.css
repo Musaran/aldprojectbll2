@@ -248,9 +248,9 @@ div.art-Header-jpeg
 {
 	display : block;
 	position: absolute;
-	left: 68px;
+	left: 150px;
 	top: 36px;
-	width: 914px;
+	width: 750px;
 }
 
 h1.art-Logo-name
@@ -1028,7 +1028,7 @@ h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover
 /* Start Content list */
 ol, ul
 {
-	color: #091820;
+	color: red;
 	margin:1em 0 1em 2em;
 	padding:0;
 	font-family: Tahoma, Arial, Helvetica, Sans-Serif;
