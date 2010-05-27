@@ -11,10 +11,8 @@
     <title><bean:message key="Index.titre"/></title>
 </head>
 <body>
-<s style="" ></s>
 	<jsp:include page="/includes/top.jsp" />  
 	<jsp:include page="/includes/films.jsp" />
 	<jsp:include page="/includes/bottom.jsp" /> 
-	     
 </body>
 </html:html>

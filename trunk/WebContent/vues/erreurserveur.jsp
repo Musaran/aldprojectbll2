@@ -1,6 +1,7 @@
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="logic" uri="http://struts.apache.org/tags-logic" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html:html>
 <head>
 	<jsp:include page="/includes/head.jsp" />
@@ -8,12 +9,8 @@
 </head>
 <body>
 	<jsp:include page="/includes/top.jsp" />
-	<!-- ---------------------Contenu---------------------------- -->
-	
 	<center><h1><bean:message key="Liste.des.erreurs"/></h1></center>
 	<bean:message key="Erreur.requete.formulee"/>
-	
-	<!-- ---------------------------------------------------------- -->
 	<jsp:include page="/includes/bottom.jsp" />
 </body>
 </html:html>

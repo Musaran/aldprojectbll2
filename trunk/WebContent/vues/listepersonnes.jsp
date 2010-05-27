@@ -11,5 +11,5 @@
 	<jsp:include page="/includes/top.jsp" />
 	<jsp:include page="/includes/personnes.jsp" />
 	<jsp:include page="/includes/bottom.jsp" />
-	</body>
+</body>
 </html:html>
