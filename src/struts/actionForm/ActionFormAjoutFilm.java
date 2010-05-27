@@ -27,12 +27,18 @@ public class ActionFormAjoutFilm extends ActionForm{
 		ActionErrors erreurs=new ActionErrors();
 		if(titre.trim().equals(""))
 			erreurs.add("titre",new ActionMessage("Erreur.champ.vide","titre"));
-		if(dateSortie==null)
+		
+		if(dateSortie.trim().equals(""))
 			erreurs.add("dateSortie",new ActionMessage("Erreur.champ.vide","date de sortie"));
+		else if(!dateSortie.matches("([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|30|31)"))
+			erreurs.add("dateSortie",new ActionMessage("Erreur.champ.incorrect","date de sortie"));
+		
 		if(cout==0)
 			erreurs.add("cout",new ActionMessage("Erreur.champ.vide","coût"));
+		
 		if(synopsis.trim().equals(""))
 			erreurs.add("synopsis",new ActionMessage("Erreur.champ.vide","synopsis"));
+		
 		return erreurs;
 	}
 

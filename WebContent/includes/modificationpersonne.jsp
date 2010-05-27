@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<td><bean:message key="date.de.naissance"/></td>
-				<td><html:text styleId="s" property="dateDeNaissance" size="15" name="PERSONNE"/>&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" property="dateDeNaissance" size="15" maxlength="10" name="PERSONNE"/>&nbsp; AAAA-MM-JJ</td>
 			</tr>
 			<tr>
 				<td><bean:message key="biographie"/></td>
