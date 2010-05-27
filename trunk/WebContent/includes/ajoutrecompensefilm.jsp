@@ -30,7 +30,7 @@
 							</tr>		
 							<tr>
 								<td><bean:message key="annee"/></td>
-								<td><html:text property="annee" size="4" ></html:text></td>
+								<td><html:text property="annee" size="4"  maxlength="4"></html:text></td>
 							</tr>	
 					</table><br /><br />
 						<span class="art-button-wrapper">

@@ -9,6 +9,10 @@ import org.apache.struts.action.ActionMessage;
 
 public class ActionFormVote extends ActionForm{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String note="";
 	private int codeFilm;
 	

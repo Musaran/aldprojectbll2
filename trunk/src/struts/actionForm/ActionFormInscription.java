@@ -27,12 +27,20 @@ public class ActionFormInscription extends ActionForm{
 		ActionErrors erreurs=new ActionErrors();
 		if(login.trim().equals(""))
 			erreurs.add("login",new ActionMessage("Erreur.champ.vide","login"));
+		
 		if(nom.trim().equals(""))
 			erreurs.add("nom",new ActionMessage("Erreur.champ.vide","nom"));
+		else if(!nom.matches("^([a-zA-Z]| )+$"))
+			erreurs.add("nom",new ActionMessage("Erreur.champ.incorrect","nom"));
+		
 		if(prenom.trim().equals(""))
 			erreurs.add("prenom",new ActionMessage("Erreur.champ.vide","prenom"));
+		else if(!prenom.matches("^([a-zA-Z]| )+$"))
+			erreurs.add("prenom",new ActionMessage("Erreur.champ.incorrect","prenom"));
+		
 		if(adresse.trim().equals(""))
 			erreurs.add("adresse",new ActionMessage("Erreur.champ.vide","adresse"));
+		
 		if(password.trim().equals(""))
 			erreurs.add("password",new ActionMessage("Erreur.champ.vide","password"));
 		else if(!password.equals(confpass))

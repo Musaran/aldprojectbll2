@@ -27,12 +27,22 @@ public class ActionFormAjoutPersonne extends ActionForm{
 		ActionErrors erreurs=new ActionErrors();
 		if(nom.trim().equals(""))
 			erreurs.add("nom",new ActionMessage("Erreur.champ.vide","nom"));
+		else if(!nom.matches("^([a-zA-Z]| )+$"))
+			erreurs.add("nom",new ActionMessage("Erreur.champ.incorrect","nom"));
+		
 		if(prenom.trim().equals(""))
 			erreurs.add("prenom",new ActionMessage("Erreur.champ.vide","prenom"));
+		else if(!prenom.matches("^([a-zA-Z]| )+$"))
+			erreurs.add("prenom",new ActionMessage("Erreur.champ.incorrect","prenom"));
+		
 		if(dateDeNaissance.trim().equals(""))
 			erreurs.add("date naissance",new ActionMessage("Erreur.champ.vide","date naissance"));
+		else if(!dateDeNaissance.matches("([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|30|31)"))
+			erreurs.add("dateDeNaissance",new ActionMessage("Erreur.champ.incorrect","date naissance"));
+		
 		if(biographie.trim().equals(""))
 			erreurs.add("biographie",new ActionMessage("Erreur.champ.vide","biographie"));
+		
 		return erreurs;
 	}
 

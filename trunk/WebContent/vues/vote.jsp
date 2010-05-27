@@ -12,35 +12,7 @@
 </head>
 <body>
 	<jsp:include page="/includes/top.jsp" />
-	
-	<html:form action="/vote.do">
-		<table>
-			<tr>
-				<td><bean:message key="Vote.film"/></td>
-				<td>
-				<html:select property="codeFilm">
-				<html:options collection="FILM_A_VOTER"
-								labelProperty="titre"
-								property="idFilm"/>
-				</html:select>
-				
-				
-				</td>
-			</tr>
-			<tr>
-				<td><bean:message key="Vote.note"/></td>
-				<td><html:text property="note" size="15" onfocus="javascript:this.value=''" style="color:#090909;"/> /10</td>
-			</tr>
-			
-			<tr>
-				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-				<td><html:submit styleClass="art-button"><bean:message key="Enregistrer"/></html:submit></td>
-			</tr>	
-			</table>
-			
-		</html:form>
-	
-
+	<jsp:include page="/includes/vote.jsp" /> 
 	<jsp:include page="/includes/bottom.jsp" />      
 </body>
 </html:html>

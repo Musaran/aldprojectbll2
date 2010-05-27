@@ -24,8 +24,10 @@ public class ActionFormConnexion extends ActionForm{
 		
 		if(login.trim().equals(""))
 			erreurs.add("login",new ActionMessage("Erreur.champ.vide","login"));
+		
 		if(motDePasse.trim().equals(""))
 			erreurs.add("mot de passe",new ActionMessage("Erreur.champ.vide","mot de passe"));
+		
 		return erreurs;
 	}
 

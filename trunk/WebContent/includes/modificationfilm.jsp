@@ -23,11 +23,11 @@
 			</tr>
 			<tr>
 				<td><bean:message key="Sortie"/></td>
-				<td><html:text styleId="s" property="dateSortie" size="15" name="FILM" />&nbsp; AAAA-MM-JJ</td>
+				<td><html:text styleId="s" property="dateSortie" size="15" maxlength="10" name="FILM" />&nbsp; AAAA-MM-JJ</td>
 			</tr>
 			<tr>
 				<td><bean:message key="Cout"/></td>
-				<td><html:text styleId="s" property="cout" size="15" name="FILM"/>&nbsp; Euros</td>
+				<td><html:text styleId="s" property="cout" size="15" name="FILM" />&nbsp; Euros</td>
 
 			</tr>
 			<tr>
