@@ -31,7 +31,7 @@ public class ActionAjoutPersonne extends Action{
 		ActionFormAjoutPersonne formPersonne=(ActionFormAjoutPersonne)form;
 		Personne personne=null;
 		Serveur serv=new Serveur();
-		String photo=null;
+		String photo="aucune_photo";
 		String url;
 		try {
 			personne=new Personne(formPersonne.getNom().replaceFirst(".",(formPersonne.getNom().charAt(0)+"").toUpperCase())

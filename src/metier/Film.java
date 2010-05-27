@@ -95,7 +95,8 @@ public class Film implements Serializable{
 	//methode toString plus lisible dans le client lourd
 	@Override
 	public String toString() {
-		return this.getTitre()+" "+this.getDateSortie();
+		return this.getTitre()+" "+this.getDateSortie()+" (id="+this.getIdFilm()+")"+" Cout:"+
+		this.getCout()+" Note moyenne: " + this.getNoteMoyenne() +" Nombre requetes: "+this.getNombreRequetes()+" valide: "+this.getIsValidateFilm()+" affiche: "+this.getAffiche();
 		
 	}
 	
