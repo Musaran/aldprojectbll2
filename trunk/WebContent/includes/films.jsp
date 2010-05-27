@@ -19,7 +19,7 @@
 	              		<span class="r"> </span>
 	              		
 						<html:link styleClass="art-button" href="ajoutfilm.jsp">
-							Ajout d'un film
+							<bean:message key="Ajout.film"/>
 						</html:link>
 						
 	              	</span>

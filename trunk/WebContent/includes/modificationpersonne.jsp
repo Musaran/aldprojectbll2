@@ -7,7 +7,7 @@
       <div class="art-Post-inner">
           <h2 class="art-PostHeaderIcon-wrapper">
               <span class="art-PostHeader">
-              Modification de <bean:write name="PERSONNE" property="prenom"/> <bean:write name="PERSONNE" property="nom"/>
+              <bean:message key="modification.de"/> <bean:write name="PERSONNE" property="prenom"/> <bean:write name="PERSONNE" property="nom"/>
               </span>
           </h2>
 	          <div class="art-PostContent">
@@ -47,7 +47,7 @@
 				<td><img class="art-article" src="<bean:write name="PERSONNE" property="photo"/>"  height="150px"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><html:file styleId="s" property="file">Parcourir...</html:file></td>
+				<td colspan="2"><html:file styleId="s" property="file"></html:file></td>
 			</tr>
 		</table>
 	</div>

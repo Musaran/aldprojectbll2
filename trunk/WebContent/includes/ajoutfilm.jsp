@@ -7,7 +7,7 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Ajout d'un film
+		              <bean:message key="Ajout.film"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
@@ -37,7 +37,7 @@
 				</tr>
 				<tr>
 					<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-					<td><html:submit styleClass="art-button">Valider</html:submit></td>
+					<td><html:submit styleClass="art-button"><bean:message key="Valider"/></html:submit></td>
 				</tr>	
 			</table>
 		</div>

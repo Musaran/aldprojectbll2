@@ -5,7 +5,7 @@
     <div class="art-Block-body">
         <div class="art-BlockHeader">
             <div class="art-header-tag-icon">
-                <div class="t">Menu</div>
+                <div class="t"><bean:message key="menu"/></div>
             </div>
         </div><div class="art-BlockContent">
             <div class="art-BlockContent-tl"></div>

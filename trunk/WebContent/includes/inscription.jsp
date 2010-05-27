@@ -7,7 +7,7 @@
 	      <div class="art-Post-inner">
 			<h2 class="art-PostHeaderIcon-wrapper">
 		              <span class="art-PostHeader">
-		              Inscription
+		              <bean:message key="Inscription"/>
 		              </span>
 		          </h2>
 		     <div class="art-PostContent">	
@@ -40,11 +40,11 @@
 			</tr>
 			<tr>
 				<td><html:cancel styleClass="art-button"><bean:message key="Annuler"/></html:cancel></td>
-				<td></td>
+				<td><html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit></td>
 			</tr>	
 		
 	</table>
-	<html:submit styleClass="art-button"><bean:message key="Inscription"/></html:submit>
+	
 	</html:form>
 			</div>
 	          <div class="cleared"></div>
