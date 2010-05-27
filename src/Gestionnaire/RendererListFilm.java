@@ -49,7 +49,7 @@ public class RendererListFilm implements ListCellRenderer {
 //		System.out.println(k.getDescription());
 		renderer.setIcon(new ImageIcon(temp));
 		
-		renderer.setText(a.toString());
+		renderer.setText(a.toStringClient());
 	 
 		return renderer;
 	}
