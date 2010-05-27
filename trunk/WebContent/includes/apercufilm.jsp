@@ -58,7 +58,7 @@
 						<tr>
 							<td>
 							<html:link action="/apercupersonne.do" paramId="code" paramName="acteurs" paramProperty="idPersonne">
-							<bean:write name="acteurs" property="nom"/> <bean:write name="acteurs" property="prenom"/>
+							<bean:write name="acteurs" property="prenom"/> <bean:write name="acteurs" property="nom"/>
 							</html:link>
 							</td>
 						</tr>
@@ -72,7 +72,7 @@
 						<tr>
 							<td>
 							<html:link action="/apercupersonne.do" paramId="code" paramName="producteurs" paramProperty="idPersonne">
-							<bean:write name="producteurs" property="nom"/> <bean:write name="producteurs" property="prenom"/>
+							<bean:write name="producteurs" property="prenom"/> <bean:write name="producteurs" property="nom"/> 
 							</html:link>
 							</td>
 						</tr>
@@ -86,7 +86,7 @@
 						<tr>
 							<td>
 							<html:link action="/apercupersonne.do" paramId="code" paramName="realisateurs" paramProperty="idPersonne">
-							<bean:write name="realisateurs" property="nom"/> <bean:write name="realisateurs" property="prenom"/>
+							<bean:write name="realisateurs" property="prenom"/> <bean:write name="realisateurs" property="nom"/>
 							</html:link>
 							</td>
 						</tr>

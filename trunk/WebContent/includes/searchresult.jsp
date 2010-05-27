@@ -37,11 +37,11 @@
 					<tr>
 						<th><bean:message key="Personne"/></th>
 					</tr>
-					<logic:iterate id="recherchePersonne" name="RECHERCHEPERSONNE" scope="session">
+					<logic:iterate id="recherchePersonne" name="RECHERCHEPERSONNE" scope="session" >
 					<tr>
 						<td>
 						<html:link action="/apercupersonne.do" paramId="code" paramName="recherchePersonne" paramProperty="idPersonne">
-							<bean:write name="recherchePersonne" property="nom"/> <bean:write name="recherchePersonne" property="prenom"/>
+							<bean:write name="recherchePersonne" property="prenom"/> <bean:write name="recherchePersonne" property="nom"/>
 						</html:link>
 						</td>
 					</tr>
