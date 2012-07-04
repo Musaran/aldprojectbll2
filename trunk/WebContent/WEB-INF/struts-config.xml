@@ -14,8 +14,7 @@
 
 <!-- ================================================ Form Bean Definitions -->
 
-    <form-beans>
-			
+    <form-beans>		
 			<form-bean name="formActionConnexion" type="struts.actionForm.ActionFormConnexion"></form-bean>
 			<form-bean name="formActionRecherche" type="struts.actionForm.ActionFormRecherche"></form-bean>
 			<form-bean name="formActionInscription" type="struts.actionForm.ActionFormInscription"></form-bean>
